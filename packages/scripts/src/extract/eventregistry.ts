@@ -55,7 +55,7 @@ const { signals, rawCount } = dedupeByEvent(rawSignals);
 // Newest-first for the timeline / dashboard.
 signals.sort((a, b) => b.date.localeCompare(a.date));
 
-const out = await writeData(`signals/${entityId}.json`, signals);
+const out = await writeData(`signals/${entityId}.eventregistry.json`, signals);
 
 const byAxis = signals.reduce<Record<string, number>>((acc, s) => {
   acc[s.axis] = (acc[s.axis] ?? 0) + 1;
