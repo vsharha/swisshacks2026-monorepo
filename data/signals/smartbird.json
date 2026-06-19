@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "er-9364221001",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T16:32:59Z",
+    "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/allbirds-exposes-test-ai-trade-161700289.html",
+    "title": "Allbirds exposes a new test for the AI trade",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1372549019607843,
+      "sourceTitle": "Yahoo! Finance"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9364098417",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T14:36:07Z",
+    "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/ceo-allbirds-ai-biz-plan-130000192.html",
+    "title": "The CEO of Allbirds' new AI biz has a plan, but no employees",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "Yahoo! Finance"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9364062509",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T14:04:58Z",
+    "sourceUrl": "https://rocketnews.com/2026/06/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/",
+    "title": "The CEO of Allbirds' new AI biz has a plan, but no employees",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "RocketNews | Top News Stories From Around the Globe"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9364044307",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T13:51:41Z",
+    "sourceUrl": "https://www.newsobserver.com/news/business/article316192253.html",
+    "title": "Allbirds exposes a new test for the AI trade",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1372549019607843,
+      "sourceTitle": "The News&Observer"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363989052",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T13:03:15Z",
+    "sourceUrl": "https://beritaja.com/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees-beritaja-426450.html",
+    "title": "The Ceo Of Allbirds' New Ai Biz Has A Plan, But No Employees",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1372549019607843,
+      "sourceTitle": "Beritaja"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363987298",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T13:01:35Z",
+    "sourceUrl": "https://techcrunch.com/2026/06/19/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/",
+    "title": "The CEO of Allbirds' new AI biz has a plan, but no employees",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "TechCrunch"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363723640",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T09:14:51Z",
+    "sourceUrl": "https://www.retail-systems.com/rs/Allbirds_Becomes_Smartbird_As_AI_Pivot_Accelerates.php",
+    "title": "Allbirds becomes Smartbird as AI pivot accelerates",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.3490196078431373,
+      "sourceTitle": "retail-systems.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363673272",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T08:32:09Z",
+    "sourceUrl": "https://finance.yahoo.com/technology/articles/allbirds-officially-tech-company-american-210724994.html",
+    "title": "Allbirds Is Officially a Tech Company, American Exchange Group Takes Over Footwear Business",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.0980392156862746,
+      "sourceTitle": "Yahoo! Finance"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363547897",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T06:36:52Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/stocks/articles/allbirds-stock-takes-flight-announcing-184756905.html",
+    "title": "Allbirds stock takes flight after announcing new CEO and name change",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "Yahoo! Finance"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1203290530",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T03:41:54Z",
+    "sourceUrl": "https://si.fashionnetwork.com/news/American-exchange-group-wsg-brands-acquire-allbirds-intellectual-property,1841478.html",
+    "title": "American Exchange Group, WSG Brands acquire Allbirds intellectual property",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4745098039215687,
+      "sourceTitle": "FashionNetwork.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363376047",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T02:59:04Z",
+    "sourceUrl": "https://il.fashionnetwork.com/news/American-exchange-group-wsg-brands-acquire-allbirds-intellectual-property,1841478.html",
+    "title": "American Exchange Group, WSG Brands acquire Allbirds intellectual property",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4823529411764707,
+      "sourceTitle": "FashionNetwork.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363369492",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T02:48:09Z",
+    "sourceUrl": "https://us.fashionnetwork.com/news/American-exchange-group-wsg-brands-acquire-allbirds-intellectual-property,1841463.html",
+    "title": "American Exchange Group, WSG Brands acquire Allbirds intellectual property",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4823529411764707,
+      "sourceTitle": "FashionNetwork.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363362874",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T02:36:33Z",
+    "sourceUrl": "https://uk.fashionnetwork.com/news/American-exchange-group-wsg-brands-acquire-allbirds-intellectual-property,1841477.html",
+    "title": "American Exchange Group, WSG Brands acquire Allbirds intellectual property",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.4823529411764707,
+      "sourceTitle": "FashionNetwork.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363093508",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T19:53:37Z",
+    "sourceUrl": "https://dnyuz.com/2026/06/18/metas-ai-workers-are-revolting-peter-thiels-secret-society-and-sbfs-plea-to-trump/",
+    "title": "Meta's AI Workers Are Revolting, Peter Thiel's Secret Society, and SBF's Plea to Trump",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "DNyuz"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363081838",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T19:36:38Z",
+    "sourceUrl": "https://www.prnewsonline.com/pr-roundup-tylenol-tops-trust-rankings-local-journalism-hits-a-new-low-and-allbirds-becomes-smartbird/",
+    "title": "PR Roundup: Tylenol Tops Trust Rankings, Local Journalism Hits a New Low and Allbirds Becomes Smartbird",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.411764705882353,
+      "sourceTitle": "PRNEWS"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363079941",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T19:35:07Z",
+    "sourceUrl": "https://www.wired.com/story/uncanny-valley-podcast-meta-ai-workers-revolting-peter-thiel-secret-society-sbf-plea-to-trump/",
+    "title": "Meta's AI Workers Are Revolting, Peter Thiel's Secret Society, and SBF's Plea to Trump",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Wired"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363052353",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T19:02:46Z",
+    "sourceUrl": "https://www.barchart.com/story/news/2543541/bird-stock-surges-as-allbirds-rebrands-to-smartbird-in-ai-pivot",
+    "title": "BIRD Stock Surges as Allbirds Rebrands to Smartbird in AI Pivot",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.09019607843137245,
+      "sourceTitle": "Barchart.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1202957483",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T17:29:50Z",
+    "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-06-18/jeremy-grantham-points-to-a-watershed-moment-for-big-tech",
+    "title": "Jeremy Grantham Points to a Watershed Moment for Big Tech",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1137254901960785,
+      "sourceTitle": "Bloomberg Business"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362955774",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T17:21:15Z",
+    "sourceUrl": "https://fortune.com/2026/06/18/ruth-porat-google-alphabet-data-centers-ai-energy-costs/",
+    "title": "Google's Ruth Porat on AI's data centers, energy costs, and job creation | Fortune",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.0980392156862746,
+      "sourceTitle": "Fortune"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362924836",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T16:51:28Z",
+    "sourceUrl": "https://mr-mag.com/american-exchange-group-partners-with-wsg-brands-to-acquire-allbirds/",
+    "title": "AMERICAN EXCHANGE GROUP PARTNERS WITH WSG BRANDS TO ACQUIRE ALLBIRDS",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.6313725490196078,
+      "sourceTitle": "MR Magazine"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362882801",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T16:12:38Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/stocks/articles/former-allbirds-ceo-joe-vernachio-155155371.html",
+    "title": "Former Allbirds CEO Joe Vernachio Joins Sorel as President",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11754386",
+      "sentiment": 0.3803921568627451,
+      "sourceTitle": "Yahoo! Finance"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362855593",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T15:52:30Z",
+    "sourceUrl": "https://wwd.com/footwear-news/shoe-industry-news/joe-vernachio-sorel-president-1239016797/",
+    "title": "Former Allbirds CEO Joe Vernachio Joins Sorel as President",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11754386",
+      "sentiment": 0.3803921568627451,
+      "sourceTitle": "WWD"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362712805",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T13:58:40Z",
+    "sourceUrl": "https://blockonomi.com/smartbird-bird-stock-soars-39-after-complete-ai-infrastructure-transformation/",
+    "title": "Smartbird (BIRD) Stock Soars 39% After Complete AI Infrastructure Transformation",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.3254901960784313,
+      "sourceTitle": "Blockonomi"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362704438",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T13:52:16Z",
+    "sourceUrl": "https://www.bizzbuzz.news/technology/ai/allbirds-bets-on-bird-ai-smartbird-ceo-outlines-ai-powered-comeback-1394806",
+    "title": "Allbirds Bets on 'Bird AI': SmartBird CEO Outlines AI-Powered Comeback",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.3019607843137255,
+      "sourceTitle": "bizzbuzz.news"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1202743284",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T13:42:45Z",
+    "sourceUrl": "https://www.modaes.com/global/companies/american-exchange-group-partners-with-wsg-brands-to-acquire-allbirds",
+    "title": "American Exchange Group Partners with WSG Brands for Allbirds Acquisition - Modaes Global",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "modaes.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362636249",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T13:00:45Z",
+    "sourceUrl": "https://www.benzinga.com/trading-ideas/movers/26/06/53273389/why-is-smartbird-stock-surging-thursday",
+    "title": "Why Is Smartbird Stock Surging Thursday? - Allbirds (NASDAQ:BIRD)",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3254901960784313,
+      "sourceTitle": "Benzinga"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362613408",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T12:41:58Z",
+    "sourceUrl": "https://blockonomi.com/rum-group-rum-stock-soars-16-after-ai-infrastructure-pivot-and-northern-data-acquisition/",
+    "title": "RUM Group (RUM) Stock Soars 16% After AI Infrastructure Pivot and Northern Data Acquisition",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2156862745098038,
+      "sourceTitle": "Blockonomi"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362568582",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T12:08:06Z",
+    "sourceUrl": "https://techgenyz.com/smartbird-allbirds-ai-infrastructure-rebrand/",
+    "title": "Smartbird Takes Over as Allbirds Completes Dramatic AI Pivot",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.2470588235294118,
+      "sourceTitle": "TechGenyz"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1202635243",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T12:05:33Z",
+    "sourceUrl": "https://www.nytimes.com/2026/06/18/business/dealbook/warsh-fed-rates.html",
+    "title": "Warsh's Hawkish Turn Has Scrambled the Math on Rates",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11752849",
+      "sentiment": 0.1607843137254903,
+      "sourceTitle": "The New York Times"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362511501",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T11:24:20Z",
+    "sourceUrl": "https://www.morningstar.com/news/dow-jones/202606183252/dow-jones-top-company-headlines-at-7-am-et-bhp-flags-23-billion-potash-write-down-as-costs-rise-accenture",
+    "title": "Dow Jones Top Company Headlines at 7 AM ET: BHP Flags $2.3 Billion Potash Write-Down as Costs Rise | Accenture ...",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.05882352941176472,
+      "sourceTitle": "Morningstar"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1202577952",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T11:16:47Z",
+    "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-06-18/us-lawyer-pushed-uk-officials-to-ban-kids-from-social-media",
+    "title": "Lawyer Takes Fight to Keep Kids Off Social Media From Courthouse to Political Arena",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1137254901960785,
+      "sourceTitle": "Bloomberg Business"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362495654",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T11:12:01Z",
+    "sourceUrl": "https://dnyuz.com/2026/06/18/why-so-many-millennial-brands-are-dying/",
+    "title": "Why so many \"millennial\" brands are dying",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.003921568627450966,
+      "sourceTitle": "DNyuz"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362478908",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T11:00:55Z",
+    "sourceUrl": "https://www.vox.com/podcasts/491941/everlane-shein-millenial-brands-struggling-explained",
+    "title": "Why so many \"millennial\" brands are dying",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.0117647058823529,
+      "sourceTitle": "Vox"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1202550401",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T10:41:59Z",
+    "sourceUrl": "https://www.bloomberg.com/news/newsletters/2026-06-18/europe-wants-ai-in-manufacturing-before-its-workforce-retires",
+    "title": "Europe Wants AI in Manufacturing Before Its Workforce Retires",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753365",
+      "sentiment": 0.3490196078431373,
+      "sourceTitle": "Bloomberg Business"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362441979",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T10:30:43Z",
+    "sourceUrl": "https://pulse2.com/american-exchange-group-and-wsg-brands-acquire-allbirds-ip-assets/",
+    "title": "American Exchange Group And WSG Brands Acquire Allbirds IP Assets",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.4352941176470588,
+      "sourceTitle": "Pulse 2.0"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362399077",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T09:58:44Z",
+    "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/allbirds-sells-ip-rebrands-smartbird-095705173.html",
+    "title": "Allbirds sells IP, rebrands as Smartbird in AI infrastructure shift",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.3254901960784313,
+      "sourceTitle": "Yahoo! Finance"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362365720",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T09:32:56Z",
+    "sourceUrl": "https://fortune.com/2026/06/18/ai-chiefs-regulation-collaboration-g7-summit/",
+    "title": "Fortune Tech: AI chiefs at G7 summit, token prices vs AI use, Roelof Botha and SpaceX | Fortune",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753667",
+      "sentiment": 0.2078431372549019,
+      "sourceTitle": "Fortune"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362313422",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T08:53:30Z",
+    "sourceUrl": "https://fashionunited.uk/news/people/former-allbirds-ceo-tapped-as-president-of-sorel/2026061888724",
+    "title": "Former Allbirds CEO tapped as president of Sorel",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2470588235294118,
+      "sourceTitle": "FashionUnited"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362312775",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T08:52:51Z",
+    "sourceUrl": "https://fashionunited.com/news/people/former-allbirds-ceo-tapped-as-president-of-sorel/2026061873047",
+    "title": "Former Allbirds CEO tapped as president of Sorel",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11754386",
+      "sentiment": 0.2470588235294118,
+      "sourceTitle": "FashionUnited"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362284854",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T08:30:08Z",
+    "sourceUrl": "https://fashionunited.com/news/business/american-exchange-group-partners-with-wsg-brands-on-allbirds-acquisition/2026061873044",
+    "title": "American Exchange Group partners with WSG Brands on Allbirds acquisition",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4823529411764707,
+      "sourceTitle": "FashionUnited"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362280534",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T08:27:31Z",
+    "sourceUrl": "https://fashionunited.uk/news/business/american-exchange-group-partners-with-wsg-brands-on-allbirds-acquisition/2026061888721",
+    "title": "American Exchange Group partners with WSG Brands on Allbirds acquisition",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.4823529411764707,
+      "sourceTitle": "FashionUnited"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362212960",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T07:31:56Z",
+    "sourceUrl": "https://www.silicon.co.uk/cloud/ai/allbirds-ai-630335",
+    "title": "Former Shoe Maker Changes Name, CEO In AI Push",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.3647058823529412,
+      "sourceTitle": "Silicon UK"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362141906",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T06:29:43Z",
+    "sourceUrl": "https://www.chosun.com/english/industry-en/2026/06/18/B2VUBU6YSNB5JCXXC7IFKVS27U/",
+    "title": "Snap's AI Glasses Flop as Allbirds' B2B Shift Boosts Stock",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.06666666666666665,
+      "sourceTitle": "조선일보"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362120766",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T06:07:49Z",
+    "sourceUrl": "https://stocktwits.com/news-articles/markets/equity/allbirds-rebrands-smartbird-ai-pivot-new-ceo-ignites-retail-optimism/cZKjshBR7eo",
+    "title": "BIRD Stock To Finally Take Flight? Allbirds Rebrands To Smartbird To Double Down On AI Pivot, Ignites Retail Optimism",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.4666666666666666,
+      "sourceTitle": "Stocktwits"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362099267",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T05:45:45Z",
+    "sourceUrl": "https://www.businessupturn.com/brand-post/joe-vernachio-named-president-of-sorel/",
+    "title": "Joe Vernachio Named President of SOREL - Business Upturn",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3568627450980393,
+      "sourceTitle": "Business Upturn"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362085426",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T05:31:05Z",
+    "sourceUrl": "https://newsable.asianetnews.com/markets/bird-stock-to-finally-take-flight-allbirds-rebrands-to-smartbird-to-double-down-on-ai-pivot-ignites-retail-optimism-articleshow-5manyyg",
+    "title": "BIRD Stock To Finally Take Flight? Allbirds Rebrands To Smartbird To Double Down On AI Pivot, Ignites Retail Optimism",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.4274509803921569,
+      "sourceTitle": "Asianet News Network Pvt Ltd"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362078739",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T05:22:49Z",
+    "sourceUrl": "https://www.morningstar.com/news/dow-jones/20260618330/dow-jones-top-company-headlines-at-1-am-et-apple-to-raise-prices-due-to-memory-chip-crunch-tim-cook-says-wall",
+    "title": "Dow Jones Top Company Headlines at 1 AM ET: Apple to Raise Prices Due to Memory Chip Crunch, Tim Cook Says | Wall ...",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.03529411764705892,
+      "sourceTitle": "Morningstar"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362034679",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T04:31:17Z",
+    "sourceUrl": "https://www.newsbytesapp.com/news/business/how-a-4b-sneaker-brand-became-an-ai-company/story",
+    "title": "How a $4B sneaker brand became an AI company",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.0980392156862746,
+      "sourceTitle": "NewsBytes"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362031493",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T04:26:46Z",
+    "sourceUrl": "https://sgbonline.com/sorel-appoints-former-allbirds-ceo-as-president/",
+    "title": "Sorel Appoints Former Allbirds' CEO as President",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11754386",
+      "sentiment": 0.3254901960784313,
+      "sourceTitle": "sgbonline.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361980896",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T03:22:28Z",
+    "sourceUrl": "https://www.morningstar.com/news/dow-jones/202606179087/dow-jones-top-company-headlines-at-11-pm-et-apple-to-raise-prices-due-to-memory-chip-crunch-tim-cook-says-wall",
+    "title": "Dow Jones Top Company Headlines at 11 PM ET: Apple to Raise Prices Due to Memory Chip Crunch, Tim Cook Says | Wall ...",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.05882352941176472,
+      "sourceTitle": "Morningstar"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361966779",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T03:03:43Z",
+    "sourceUrl": "https://markets.businessinsider.com/news/stocks/five-below-appoints-chief-retail-officer-and-chief-legal-officer-1036258340",
+    "title": "Five Below appoints Chief Retail Officer and Chief Legal Officer",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11756107",
+      "sentiment": 0.1450980392156862,
+      "sourceTitle": "Markets Insider"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361931719",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T02:08:39Z",
+    "sourceUrl": "https://il.fashionnetwork.com/news/Sorel-names-joe-vernachio-new-president,1841077.html",
+    "title": "Sorel names Joe Vernachio new president",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3019607843137255,
+      "sourceTitle": "FashionNetwork.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361926538",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T02:02:54Z",
+    "sourceUrl": "https://si.fashionnetwork.com/news/Sorel-names-joe-vernachio-new-president,1841077.html",
+    "title": "Sorel names Joe Vernachio new president",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3019607843137255,
+      "sourceTitle": "FashionNetwork.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361924572",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T02:00:55Z",
+    "sourceUrl": "https://us.fashionnetwork.com/news/Sorel-names-joe-vernachio-new-president,1841085.html",
+    "title": "Sorel names Joe Vernachio new president",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3019607843137255,
+      "sourceTitle": "FashionNetwork.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361922305",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T01:55:43Z",
+    "sourceUrl": "https://uk.fashionnetwork.com/news/Sorel-names-joe-vernachio-new-president,1841084.html",
+    "title": "Sorel names Joe Vernachio new president",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11754386",
+      "sentiment": 0.3019607843137255,
+      "sourceTitle": "FashionNetwork.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361911305",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T01:37:00Z",
+    "sourceUrl": "https://www.morningstar.com/news/dow-jones/202606178854/dow-jones-top-company-headlines-at-9-pm-et-apple-to-raise-prices-due-to-memory-chip-crunch-tim-cook-says-doj",
+    "title": "Dow Jones Top Company Headlines at 9 PM ET: Apple to Raise Prices Due to Memory Chip Crunch, Tim Cook Says | DOJ ...",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "Morningstar"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361235172",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T01:18:22Z",
+    "sourceUrl": "https://www.investing.com/news/stock-market-news/allbirds-rebrands-as-smartbird-in-ai-pivot-hires-former-aws-executive-as-ceo-4747458",
+    "title": "Allbirds rebrands as Smartbird in AI pivot, hires former AWS executive as CEO By Reuters",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11752027",
+      "sentiment": 0.2941176470588236,
+      "sourceTitle": "Investing.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361838784",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T23:36:59Z",
+    "sourceUrl": "https://www.morningstar.com/news/dow-jones/202606178518/dow-jones-top-company-headlines-at-7-pm-et-apple-to-raise-prices-due-to-memory-chip-crunch-tim-cook-says-trump",
+    "title": "Dow Jones Top Company Headlines at 7 PM ET: Apple to Raise Prices Due to Memory Chip Crunch, Tim Cook Says | Trump ...",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.06666666666666665,
+      "sourceTitle": "Morningstar"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361838781",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T23:36:59Z",
+    "sourceUrl": "https://www.morningstar.com/news/marketwatch/20260617568/rumble-gets-22000-nvidia-chips-but-the-video-companys-ceo-insists-this-isnt-a-fad-like-pivot",
+    "title": "Rumble gets 22,000 Nvidia chips, but the video company's CEO insists this isn't a fad-like pivot",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753781",
+      "sentiment": 0.223529411764706,
+      "sourceTitle": "Morningstar"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361724621",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T23:12:03Z",
+    "sourceUrl": "https://www.nytimes.com/2026/06/17/style/maximalism-aesthetic-hyper-goo.html",
+    "title": "The Blobby, Drippy Maximalist Design You're Seeing Everywhere",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1450980392156862,
+      "sourceTitle": "The New York Times"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361821991",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T23:09:55Z",
+    "sourceUrl": "https://www.wboc.com/online_features/press_releases/joe-vernachio-named-president-of-sorel/article_6029bd35-b80f-5c98-9439-e6d00ff33a56.html",
+    "title": "Joe Vernachio Named President of SOREL",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3568627450980393,
+      "sourceTitle": "WBOC TV-16"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361819322",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T23:06:43Z",
+    "sourceUrl": "https://www.mykxlg.com/online_features/press_releases/joe-vernachio-named-president-of-sorel/article_e86f47c3-228f-55b4-bce9-08cc551c657d.html",
+    "title": "Joe Vernachio Named President of SOREL",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3568627450980393,
+      "sourceTitle": "mykxlg.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361796650",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T22:33:33Z",
+    "sourceUrl": "https://www.arcamax.com/business/businessnews/s-4231785",
+    "title": "Allbirds stock takes flight after announcing new CEO and name change",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1764705882352942,
+      "sourceTitle": "ArcaMax"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361784879",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T22:16:43Z",
+    "sourceUrl": "https://montrealgazette.com/press-releases/business-wire/joe-vernachio-named-president-of-sorel/",
+    "title": "Joe Vernachio Named President of SOREL",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11754386",
+      "sentiment": 0.3019607843137255,
+      "sourceTitle": "The Montreal Gazette"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361773292",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T22:03:41Z",
+    "sourceUrl": "https://www.barchart.com/story/news/2525019/joe-vernachio-named-president-of-sorel",
+    "title": "Joe Vernachio Named President of SOREL",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11754386",
+      "sentiment": 0.3176470588235294,
+      "sourceTitle": "Barchart.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361770537",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T22:00:48Z",
+    "sourceUrl": "https://www.wallstreet-online.de/nachricht/21015197-joe-vernachio-named-president-of-sorel",
+    "title": "Joe Vernachio Named President of SOREL",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11744717",
+      "sentiment": 0.3490196078431373,
+      "sourceTitle": "wallstreet:online"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361764958",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T21:52:47Z",
+    "sourceUrl": "https://ktla.com/news/allbirds-pivot-to-ai-rebrands/",
+    "title": "Allbirds officially rebrands as it pivots from footwear to A.I., sending stock soaring",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11752849",
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "KTLA 5"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361735332",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T21:08:45Z",
+    "sourceUrl": "https://wwd.com/footwear-news/shoe-industry-news/allbirds-american-exchange-wsg-brands-assets-smartbird-1239015666/",
+    "title": "Allbirds Is Officially a Tech Company, American Exchange Group Takes Over Footwear Business",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.0980392156862746,
+      "sourceTitle": "WWD"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361735130",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T21:08:42Z",
+    "sourceUrl": "https://dnyuz.com/2026/06/17/the-glitchy-gloppy-look-of-now/",
+    "title": "The Glitchy, Gloppy Look of Now",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1450980392156862,
+      "sourceTitle": "DNyuz"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361724631",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T20:57:55Z",
+    "sourceUrl": "https://www.manilatimes.net/2026/06/18/tmt-newswire/globenewswire/five-below-announces-leadership-appointments/2367950",
+    "title": "Five Below Announces Leadership Appointments",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11756107",
+      "sentiment": 0.3254901960784313,
+      "sourceTitle": "The Manila times"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361723499",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T20:56:53Z",
+    "sourceUrl": "https://www.barchart.com/story/news/2523941/five-below-announces-leadership-appointments",
+    "title": "Five Below Announces Leadership Appointments",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11756107",
+      "sentiment": 0.3176470588235294,
+      "sourceTitle": "Barchart.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361721979",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T20:54:45Z",
+    "sourceUrl": "https://stockhouse.com/news/press-releases/2026/06/17/five-below-announces-leadership-appointments-xa0",
+    "title": "2026-06-17 | Five Below Announces Leadership Appointments | NDAQ:FIVE | Press Release",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3490196078431373,
+      "sourceTitle": "stockhouse"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361720580",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T20:52:29Z",
+    "sourceUrl": "https://taiwannews.com.tw/en/news/6385212",
+    "title": "Five Below Announces Leadership Appointments | Taiwan News | Jun. 18, 2026 04:42",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Taiwan News"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361716614",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T20:46:46Z",
+    "sourceUrl": "https://www.wallstreet-online.de/nachricht/21015026-five-below-announces-leadership-appointments",
+    "title": "Five Below Announces Leadership Appointments",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11756107",
+      "sentiment": 0.3411764705882352,
+      "sourceTitle": "wallstreet:online"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361698838",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T20:24:20Z",
+    "sourceUrl": "https://www.politico.com/newsletters/digital-future-daily/2026/06/17/congress-wants-artists-to-own-their-aesthetic-00965381",
+    "title": "Congress wants artists to own their aesthetic",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3647058823529412,
+      "sourceTitle": "POLITICO"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361695226",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T20:19:49Z",
+    "sourceUrl": "https://www.fastcompany.com/91561440/allbirds-bird-stock-today-ai-smartbird-pivot-huge-change",
+    "title": "BIRD takes flight: Allbirds pivot to AI company Smartbird is a huge change -- that's good for the stock",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.2705882352941176,
+      "sourceTitle": "Fast Company"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361675792",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T19:58:13Z",
+    "sourceUrl": "https://sgbonline.com/american-exchange-group-and-wsg-brands-complete-deal-to-acquire-allbirds-ip-assets/",
+    "title": "American Exchange Group and WSG Brands Complete Deal to Acquire Allbirds IP Assets",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.4666666666666666,
+      "sourceTitle": "sgbonline.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361655927",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T19:33:04Z",
+    "sourceUrl": "https://www.ocregister.com/2026/06/17/the-latest-on-allbirds-abrupt-pivot-to-ai-a-new-name-and-ceo/",
+    "title": "White House looks to woo Wall Street dealmakers with $400,000 jobs",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "The Orange County Register"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361650172",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T19:27:03Z",
+    "sourceUrl": "https://www.myrtlebeachonline.com/news/business/article316166493.html",
+    "title": "Allbirds becomes Smartbird, names new CEO amid AI shift",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3098039215686275,
+      "sourceTitle": "MyrtleBeachOnline"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361649322",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T19:25:36Z",
+    "sourceUrl": "https://www.cnhinews.com/news/article_fbb6be90-e132-570c-a07f-fd41025f56e7.html",
+    "title": "American Exchange Group Proudly Announces Partnership with WSG Brands in the Acquisition of Allbirds",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11755205",
+      "sentiment": 0.6235294117647059,
+      "sourceTitle": "CNHI News"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361647710",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T19:23:15Z",
+    "sourceUrl": "https://dnyuz.com/2026/06/17/allbirds-stock-takes-flight-after-announcing-new-ceo-and-name-change-2/",
+    "title": "Allbirds stock takes flight after announcing new CEO and name change",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "DNyuz"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361620006",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:54:17Z",
+    "sourceUrl": "https://thenextweb.com/news/allbirds-smartbird-ai-infrastructure-pivot",
+    "title": "Allbirds renames itself Smartbird in AI pivot",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1294117647058823,
+      "sourceTitle": "The Next Web"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361617154",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:50:37Z",
+    "sourceUrl": "https://cryptobriefing.com/smartbird-nadia-carlsten-ceo-ai-pivot/",
+    "title": "Smartbird appoints former Amazon executive Nadia Carlsten as CEO to lead AI infrastructure pivot",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.2,
+      "sourceTitle": "Crypto Briefing"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361616562",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:49:53Z",
+    "sourceUrl": "https://www.latimes.com/business/story/2026-06-17/allbirds-stock-takes-flight-after-announcing-new-ceo-name-change",
+    "title": "Allbirds stock takes flight after announcing new CEO and name change",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "Los Angeles Times"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361612893",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:46:50Z",
+    "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/allbirds-becomes-smartbird-names-ceo-183811815.html",
+    "title": "Allbirds becomes Smartbird, names new CEO amid AI shift",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3098039215686275,
+      "sourceTitle": "Yahoo! Finance"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361612162",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:44:38Z",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/allbirds-becomes-smartbird-names-ceo-183811815.html",
+    "title": "Allbirds becomes Smartbird, names new CEO amid AI shift",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3098039215686275,
+      "sourceTitle": "Yahoo! Finance"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361611419",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:43:36Z",
+    "sourceUrl": "https://www.marketscreener.com/news/allbirds-rebrands-as-smartbird-in-ai-pivot-hires-amazon-alum-as-ceo-ce7f5cdcd08ff62d",
+    "title": "Allbirds rebrands as Smartbird in AI pivot, hires Amazon alum as CEO",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3254901960784313,
+      "sourceTitle": "Market Screener"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361608916",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:40:39Z",
+    "sourceUrl": "https://www.upi.com/Top_News/US/2026/06/17/allbirds-rebrands-as-smartbird/6071781719985/",
+    "title": "Allbirds becomes Smartbird, names new CEO amid AI shift",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.3098039215686275,
+      "sourceTitle": "UPI"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361353573",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:33:29Z",
+    "sourceUrl": "https://www.investing.com/news/stock-market-news/smartbird-stock-surges-25-on-new-ceo-appointment-93CH-4747723",
+    "title": "Smartbird stock surges 25% on new CEO appointment By Investing.com",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11752027",
+      "sentiment": 0.2078431372549019,
+      "sourceTitle": "Investing.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361584494",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:12:37Z",
+    "sourceUrl": "https://www.benzinga.com/trading-ideas/movers/26/06/53259486/why-is-smartbird-stock-gaining-wednesday",
+    "title": "Why Is Smartbird Stock Gaining Wednesday? - Allbirds (NASDAQ:BIRD)",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3176470588235294,
+      "sourceTitle": "Benzinga"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361581758",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:10:16Z",
+    "sourceUrl": "https://www.newser.com/story/391235/in-ai-pivot-allbirds-rebrands-as-smartbird.html",
+    "title": "In AI Pivot, Allbirds Rebrands as Smartbird",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.07450980392156858,
+      "sourceTitle": "Newser"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1201866013",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T18:04:20Z",
+    "sourceUrl": "https://www.bloomberg.com/opinion/newsletters/2026-06-17/the-new-bird-is-smartbird",
+    "title": "The New Bird Is Smartbird",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.3254901960784313,
+      "sourceTitle": "Bloomberg Business"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361567982",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T17:58:11Z",
+    "sourceUrl": "https://ppinewsagency.com/smartbird-appoints-new-ceo-to-advance-ai-infrastructure-strategy/",
+    "title": "Smartbird Appoints New CEO to Advance AI Infrastructure Strategy - PPI News Agency",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3568627450980393,
+      "sourceTitle": "ppinewsagency.com"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361545733",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T17:34:39Z",
+    "sourceUrl": "https://www.morningstar.com/news/dow-jones/202606175835/dow-jones-top-company-headlines-at-1-pm-et-trump-says-anthropic-negotiations-going-fine-as-ai-model-shutdown-drags-on-doj",
+    "title": "Dow Jones Top Company Headlines at 1 PM ET: Trump Says Anthropic Negotiations 'Going Fine' as AI Model Shutdown Drags On | DOJ ...",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.02745098039215677,
+      "sourceTitle": "Morningstar"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361534537",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T17:23:36Z",
+    "sourceUrl": "https://gizmodo.com/?p=2000773115",
+    "title": "AIbirds Was Sitting Right There: Allbirds Changes Name to Smartbird in AI Pivot",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.07450980392156858,
+      "sourceTitle": "Gizmodo"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361530329",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T17:19:06Z",
+    "sourceUrl": "https://www.morningstar.com/news/marketwatch/20260617179/snap-breaks-from-the-pack-with-heavy-2195-smart-glasses-wall-street-is-panning-the-move",
+    "title": "Snap breaks from the pack with heavy $2,195 smart glasses. Wall Street is panning the move.",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11752824",
+      "sentiment": 0.1058823529411765,
+      "sourceTitle": "Morningstar"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361496379",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T16:47:37Z",
+    "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/allbirds-stock-pumps-again-sneaker-162130805.html",
+    "title": "Allbirds Stock Pumps Again as Sneaker Firm Completes AI Pivot, Rebranding to Smartbird",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2313725490196079,
+      "sourceTitle": "Yahoo! Finance"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361495963",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T16:46:58Z",
+    "sourceUrl": "https://www.arise.tv/allbirds-becomes-smartbird-in-ai-pivot-names-former-aws-executive-as-ceo/",
+    "title": "Allbirds Becomes Smartbird In AI Pivot, Names Former AWS Executive As CEO",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.2392156862745098,
+      "sourceTitle": "Arise News"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361493730",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T16:44:47Z",
+    "sourceUrl": "https://www.datacenterdynamics.com/en/news/former-shoe-company-allbirds-becomes-smartbird-appoints-former-aws-quantum-exec-as-part-of-ai-pivot/",
+    "title": "Former shoe company Allbirds becomes Smartbird, appoints former AWS quantum exec as part of AI cloud pivot",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.223529411764706,
+      "sourceTitle": "DCD"
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361470044",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T16:23:18Z",
+    "sourceUrl": "https://decrypt.co/371426/allbirds-stock-pumps-sneaker-firm-rebrands-smartbird-ai-pivot",
+    "title": "Allbirds Stock Pumps Again as Sneaker Firm Completes AI Pivot, Rebranding to Smartbird",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2705882352941176,
+      "sourceTitle": "Decrypt"
+    },
+    "confidence": 0.6
+  }
+]

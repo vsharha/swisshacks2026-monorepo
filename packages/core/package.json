@@ -6,7 +6,9 @@
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./schemas": "./src/schemas/index.ts"
+    "./schemas": "./src/schemas/index.ts",
+    "./connectors": "./src/connectors/index.ts",
+    "./pipeline": "./src/pipeline/index.ts"
   },
   "scripts": {
     "build": "tsc",

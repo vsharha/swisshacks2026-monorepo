@@ -2,6 +2,8 @@
 
 Dynamic KYC-Drift Monitor — a real-time risk-profiling system for AMINA Bank's SwissHacks 2026 challenge. Continuous cheap monitoring of a customer book, escalating to deep LLM reasoning only when a customer's KYC baseline structurally drifts.
 
+This is an evolving prototype: all code is a target for refactoring. Favour clear, working slices over premature polish, and don't treat existing modules as fixed — reshape them freely as the design firms up.
+
 ## Frontend guidance
 
 Use the browser to visually inspect the UI to iterate on the design and confirm it matches your vision.
