@@ -34,8 +34,11 @@ export default defineConfig(
 		}
 	},
 	{
-		// Override or add rule settings here, such as:
-		// 'svelte/button-has-type': 'error'
-		rules: {}
+		rules: {
+			// This app deliberately links out to external citation/source URLs
+			// (every claim is clickable to its source); this rule targets internal
+			// SvelteKit navigation, so it does not apply here.
+			'svelte/no-navigation-without-resolve': 'off'
+		}
 	}
 );

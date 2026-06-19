@@ -4,6 +4,11 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+	// @kyc/core ships TypeScript source (no build step); bundle it for SSR so
+	// Node never tries to import raw .ts.
+	ssr: {
+		noExternal: ['@kyc/core']
+	},
 	plugins: [
 		tailwindcss(),
 		sveltekit({

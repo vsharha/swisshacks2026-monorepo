@@ -1,0 +1,18 @@
+{
+  "entityId": "helvetia-trading",
+  "name": "Helvetia Trading AG",
+  "aliases": [
+    "Helvetia Trading"
+  ],
+  "legalForm": "Swiss Aktiengesellschaft",
+  "jurisdiction": "CH",
+  "businessModel": "Commodity trading and logistics for Swiss agricultural exports.",
+  "beneficialOwners": [
+    {
+      "name": "Familie Brunner",
+      "role": "Majority owner"
+    }
+  ],
+  "riskRating": "low",
+  "onboardedAt": "2019-03-12"
+}

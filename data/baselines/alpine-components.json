@@ -1,0 +1,19 @@
+{
+  "entityId": "alpine-components",
+  "name": "Alpine Components AG",
+  "aliases": [
+    "Alpine Components"
+  ],
+  "legalForm": "Swiss Aktiengesellschaft",
+  "jurisdiction": "CH",
+  "businessModel": "Precision-machined components for industrial and medical equipment.",
+  "beneficialOwners": [
+    {
+      "name": "Alpine Holding SA",
+      "share": 1,
+      "role": "Parent"
+    }
+  ],
+  "riskRating": "low",
+  "onboardedAt": "2017-06-01"
+}

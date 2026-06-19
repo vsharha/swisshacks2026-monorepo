@@ -1,0 +1,18 @@
+{
+  "entityId": "nordtrade-holding",
+  "name": "NordTrade Holding",
+  "aliases": [
+    "NordTrade"
+  ],
+  "legalForm": "Holding company",
+  "jurisdiction": "DE",
+  "businessModel": "Payment processing and merchant acquiring across the EU.",
+  "beneficialOwners": [
+    {
+      "name": "Disclosed nominee structure",
+      "role": "Beneficial owner (layered)"
+    }
+  ],
+  "riskRating": "medium",
+  "onboardedAt": "2020-09-30"
+}

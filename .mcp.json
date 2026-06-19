@@ -2,11 +2,17 @@
   "mcpServers": {
     "svelte": {
       "command": "npx",
-      "args": ["-y", "@sveltejs/mcp"]
+      "args": ["-y", "@sveltejs/mcp"],
+      "env": {
+        "NODE_EXTRA_CA_CERTS": "C:\\Users\\olivi\\node-ca-bundle.pem"
+      }
     },
     "playwright": {
       "command": "npx",
-      "args": ["@playwright/mcp@latest"]
+      "args": ["-y", "@playwright/mcp@latest", "--browser", "chromium"],
+      "env": {
+        "NODE_EXTRA_CA_CERTS": "C:\\Users\\olivi\\node-ca-bundle.pem"
+      }
     }
   }
 }
