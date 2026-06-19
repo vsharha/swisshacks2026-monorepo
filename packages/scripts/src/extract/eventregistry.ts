@@ -1,4 +1,9 @@
-import { extractEntitySignals, suggestConcept } from "@kyc/core/connectors";
+import {
+  articlesToSignals,
+  dedupeByEvent,
+  fetchArticlesWindowed,
+  suggestConcept,
+} from "@kyc/core/connectors";
 import { loadRootEnv, writeData } from "../lib/repo.ts";
 
 /**
@@ -19,7 +24,12 @@ if (!apiKey) {
 // ER_CONCEPT_URI if entity resolution picks the wrong concept.
 const entityId = "smartbird";
 const name = "Allbirds";
-const dateStart = "2024-01-01";
+// NOTE: this EventRegistry key only serves ~the last 30 days of news (older
+// windows return 0). EventRegistry therefore supplies recent adverse-media
+// texture; the historical structural spine (2024 delisting, Apr-2026 financing)
+// comes from the SEC EDGAR and Wayback connectors. Window densely over the
+// available range so we don't miss recent events to the 100-article cap.
+const dateStart = "2026-05-01";
 const dateEnd = "2026-06-20";
 
 const conceptUri = process.env.ER_CONCEPT_URI ?? (await suggestConcept(apiKey, name));
@@ -29,14 +39,21 @@ if (!conceptUri) {
 }
 console.log(`Entity "${entityId}" → concept ${conceptUri}`);
 
-const { signals, dropped } = await extractEntitySignals({
+// Window the full scenario range so older structural events are captured, not
+// just the most recent news.
+const articles = await fetchArticlesWindowed({
   apiKey,
   conceptUri,
-  entityId,
   dateStart,
   dateEnd,
+  windowDays: 7,
   count: 100,
 });
+
+const { signals: rawSignals, dropped } = articlesToSignals(articles, entityId);
+const { signals, rawCount } = dedupeByEvent(rawSignals);
+// Newest-first for the timeline / dashboard.
+signals.sort((a, b) => b.date.localeCompare(a.date));
 
 const out = await writeData(`signals/${entityId}.json`, signals);
 
@@ -45,5 +62,9 @@ const byAxis = signals.reduce<Record<string, number>>((acc, s) => {
   return acc;
 }, {});
 
-console.log(`Wrote ${signals.length} signals (${dropped} dropped) → ${out}`);
+console.log(
+  `Funnel: ${articles.length} articles → ${rawCount} signals (${dropped} dropped) → ${signals.length} events`,
+);
+console.log(`Range: ${signals.at(-1)?.date} → ${signals.at(0)?.date}`);
+console.log(`Wrote ${signals.length} clustered signals → ${out}`);
 console.log("By axis:", byAxis);

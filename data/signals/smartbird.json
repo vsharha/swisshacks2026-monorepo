@@ -1,133 +1,5 @@
 [
   {
-    "id": "er-9364221001",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-19T16:32:59Z",
-    "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/allbirds-exposes-test-ai-trade-161700289.html",
-    "title": "Allbirds exposes a new test for the AI trade",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1372549019607843,
-      "sourceTitle": "Yahoo! Finance"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9364098417",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-19T14:36:07Z",
-    "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/ceo-allbirds-ai-biz-plan-130000192.html",
-    "title": "The CEO of Allbirds' new AI biz has a plan, but no employees",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1686274509803922,
-      "sourceTitle": "Yahoo! Finance"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9364062509",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-19T14:04:58Z",
-    "sourceUrl": "https://rocketnews.com/2026/06/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/",
-    "title": "The CEO of Allbirds' new AI biz has a plan, but no employees",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1686274509803922,
-      "sourceTitle": "RocketNews | Top News Stories From Around the Globe"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9364044307",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-19T13:51:41Z",
-    "sourceUrl": "https://www.newsobserver.com/news/business/article316192253.html",
-    "title": "Allbirds exposes a new test for the AI trade",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1372549019607843,
-      "sourceTitle": "The News&Observer"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9363989052",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-19T13:03:15Z",
-    "sourceUrl": "https://beritaja.com/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees-beritaja-426450.html",
-    "title": "The Ceo Of Allbirds' New Ai Biz Has A Plan, But No Employees",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1372549019607843,
-      "sourceTitle": "Beritaja"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9363987298",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-19T13:01:35Z",
-    "sourceUrl": "https://techcrunch.com/2026/06/19/the-ceo-of-allbirds-new-ai-biz-has-a-plan-but-no-employees/",
-    "title": "The CEO of Allbirds' new AI biz has a plan, but no employees",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1686274509803922,
-      "sourceTitle": "TechCrunch"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9363723640",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-19T09:14:51Z",
-    "sourceUrl": "https://www.retail-systems.com/rs/Allbirds_Becomes_Smartbird_As_AI_Pivot_Accelerates.php",
-    "title": "Allbirds becomes Smartbird as AI pivot accelerates",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.3490196078431373,
-      "sourceTitle": "retail-systems.com"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9363673272",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-19T08:32:09Z",
-    "sourceUrl": "https://finance.yahoo.com/technology/articles/allbirds-officially-tech-company-american-210724994.html",
-    "title": "Allbirds Is Officially a Tech Company, American Exchange Group Takes Over Footwear Business",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11755205",
-      "sentiment": 0.0980392156862746,
-      "sourceTitle": "Yahoo! Finance"
-    },
-    "confidence": 0.6
-  },
-  {
     "id": "er-9363547897",
     "entityId": "smartbird",
     "axis": "business_model",
@@ -139,7 +11,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.1686274509803922,
-      "sourceTitle": "Yahoo! Finance"
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -155,7 +28,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.4745098039215687,
-      "sourceTitle": "FashionNetwork.com"
+      "sourceTitle": "FashionNetwork.com",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -171,7 +45,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.4823529411764707,
-      "sourceTitle": "FashionNetwork.com"
+      "sourceTitle": "FashionNetwork.com",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -187,23 +62,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.4823529411764707,
-      "sourceTitle": "FashionNetwork.com"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9363362874",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-19T02:36:33Z",
-    "sourceUrl": "https://uk.fashionnetwork.com/news/American-exchange-group-wsg-brands-acquire-allbirds-intellectual-property,1841477.html",
-    "title": "American Exchange Group, WSG Brands acquire Allbirds intellectual property",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11755205",
-      "sentiment": 0.4823529411764707,
-      "sourceTitle": "FashionNetwork.com"
+      "sourceTitle": "FashionNetwork.com",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -219,7 +79,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.2,
-      "sourceTitle": "DNyuz"
+      "sourceTitle": "DNyuz",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -235,7 +96,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.411764705882353,
-      "sourceTitle": "PRNEWS"
+      "sourceTitle": "PRNEWS",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -251,23 +113,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.2,
-      "sourceTitle": "Wired"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9363052353",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T19:02:46Z",
-    "sourceUrl": "https://www.barchart.com/story/news/2543541/bird-stock-surges-as-allbirds-rebrands-to-smartbird-in-ai-pivot",
-    "title": "BIRD Stock Surges as Allbirds Rebrands to Smartbird in AI Pivot",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.09019607843137245,
-      "sourceTitle": "Barchart.com"
+      "sourceTitle": "Wired",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -283,7 +130,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.1137254901960785,
-      "sourceTitle": "Bloomberg Business"
+      "sourceTitle": "Bloomberg Business",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -299,103 +147,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.0980392156862746,
-      "sourceTitle": "Fortune"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362924836",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-18T16:51:28Z",
-    "sourceUrl": "https://mr-mag.com/american-exchange-group-partners-with-wsg-brands-to-acquire-allbirds/",
-    "title": "AMERICAN EXCHANGE GROUP PARTNERS WITH WSG BRANDS TO ACQUIRE ALLBIRDS",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11755205",
-      "sentiment": 0.6313725490196078,
-      "sourceTitle": "MR Magazine"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362882801",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T16:12:38Z",
-    "sourceUrl": "https://finance.yahoo.com/markets/stocks/articles/former-allbirds-ceo-joe-vernachio-155155371.html",
-    "title": "Former Allbirds CEO Joe Vernachio Joins Sorel as President",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11754386",
-      "sentiment": 0.3803921568627451,
-      "sourceTitle": "Yahoo! Finance"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362855593",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T15:52:30Z",
-    "sourceUrl": "https://wwd.com/footwear-news/shoe-industry-news/joe-vernachio-sorel-president-1239016797/",
-    "title": "Former Allbirds CEO Joe Vernachio Joins Sorel as President",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11754386",
-      "sentiment": 0.3803921568627451,
-      "sourceTitle": "WWD"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362712805",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T13:58:40Z",
-    "sourceUrl": "https://blockonomi.com/smartbird-bird-stock-soars-39-after-complete-ai-infrastructure-transformation/",
-    "title": "Smartbird (BIRD) Stock Soars 39% After Complete AI Infrastructure Transformation",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.3254901960784313,
-      "sourceTitle": "Blockonomi"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362704438",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T13:52:16Z",
-    "sourceUrl": "https://www.bizzbuzz.news/technology/ai/allbirds-bets-on-bird-ai-smartbird-ceo-outlines-ai-powered-comeback-1394806",
-    "title": "Allbirds Bets on 'Bird AI': SmartBird CEO Outlines AI-Powered Comeback",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.3019607843137255,
-      "sourceTitle": "bizzbuzz.news"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-2026-06-1202743284",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T13:42:45Z",
-    "sourceUrl": "https://www.modaes.com/global/companies/american-exchange-group-partners-with-wsg-brands-to-acquire-allbirds",
-    "title": "American Exchange Group Partners with WSG Brands for Allbirds Acquisition - Modaes Global",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11755205",
-      "sentiment": 0.1686274509803922,
-      "sourceTitle": "modaes.com"
+      "sourceTitle": "Fortune",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -411,7 +164,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3254901960784313,
-      "sourceTitle": "Benzinga"
+      "sourceTitle": "Benzinga",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -427,39 +181,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.2156862745098038,
-      "sourceTitle": "Blockonomi"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362568582",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T12:08:06Z",
-    "sourceUrl": "https://techgenyz.com/smartbird-allbirds-ai-infrastructure-rebrand/",
-    "title": "Smartbird Takes Over as Allbirds Completes Dramatic AI Pivot",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.2470588235294118,
-      "sourceTitle": "TechGenyz"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-2026-06-1202635243",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T12:05:33Z",
-    "sourceUrl": "https://www.nytimes.com/2026/06/18/business/dealbook/warsh-fed-rates.html",
-    "title": "Warsh's Hawkish Turn Has Scrambled the Math on Rates",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11752849",
-      "sentiment": 0.1607843137254903,
-      "sourceTitle": "The New York Times"
+      "sourceTitle": "Blockonomi",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -475,7 +198,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.05882352941176472,
-      "sourceTitle": "Morningstar"
+      "sourceTitle": "Morningstar",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -491,7 +215,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.1137254901960785,
-      "sourceTitle": "Bloomberg Business"
+      "sourceTitle": "Bloomberg Business",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -507,7 +232,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": -0.003921568627450966,
-      "sourceTitle": "DNyuz"
+      "sourceTitle": "DNyuz",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -523,7 +249,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": -0.0117647058823529,
-      "sourceTitle": "Vox"
+      "sourceTitle": "Vox",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -539,39 +266,8 @@
     "payload": {
       "eventUri": "eng-11753365",
       "sentiment": 0.3490196078431373,
-      "sourceTitle": "Bloomberg Business"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362441979",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-18T10:30:43Z",
-    "sourceUrl": "https://pulse2.com/american-exchange-group-and-wsg-brands-acquire-allbirds-ip-assets/",
-    "title": "American Exchange Group And WSG Brands Acquire Allbirds IP Assets",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11755205",
-      "sentiment": 0.4352941176470588,
-      "sourceTitle": "Pulse 2.0"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362399077",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T09:58:44Z",
-    "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/allbirds-sells-ip-rebrands-smartbird-095705173.html",
-    "title": "Allbirds sells IP, rebrands as Smartbird in AI infrastructure shift",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11755205",
-      "sentiment": 0.3254901960784313,
-      "sourceTitle": "Yahoo! Finance"
+      "sourceTitle": "Bloomberg Business",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -587,7 +283,8 @@
     "payload": {
       "eventUri": "eng-11753667",
       "sentiment": 0.2078431372549019,
-      "sourceTitle": "Fortune"
+      "sourceTitle": "Fortune",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -603,23 +300,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.2470588235294118,
-      "sourceTitle": "FashionUnited"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362312775",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-18T08:52:51Z",
-    "sourceUrl": "https://fashionunited.com/news/people/former-allbirds-ceo-tapped-as-president-of-sorel/2026061873047",
-    "title": "Former Allbirds CEO tapped as president of Sorel",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11754386",
-      "sentiment": 0.2470588235294118,
-      "sourceTitle": "FashionUnited"
+      "sourceTitle": "FashionUnited",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -635,39 +317,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.4823529411764707,
-      "sourceTitle": "FashionUnited"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362280534",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-18T08:27:31Z",
-    "sourceUrl": "https://fashionunited.uk/news/business/american-exchange-group-partners-with-wsg-brands-on-allbirds-acquisition/2026061888721",
-    "title": "American Exchange Group partners with WSG Brands on Allbirds acquisition",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11755205",
-      "sentiment": 0.4823529411764707,
-      "sourceTitle": "FashionUnited"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362212960",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T07:31:56Z",
-    "sourceUrl": "https://www.silicon.co.uk/cloud/ai/allbirds-ai-630335",
-    "title": "Former Shoe Maker Changes Name, CEO In AI Push",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.3647058823529412,
-      "sourceTitle": "Silicon UK"
+      "sourceTitle": "FashionUnited",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -683,23 +334,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.06666666666666665,
-      "sourceTitle": "조선일보"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362120766",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T06:07:49Z",
-    "sourceUrl": "https://stocktwits.com/news-articles/markets/equity/allbirds-rebrands-smartbird-ai-pivot-new-ceo-ignites-retail-optimism/cZKjshBR7eo",
-    "title": "BIRD Stock To Finally Take Flight? Allbirds Rebrands To Smartbird To Double Down On AI Pivot, Ignites Retail Optimism",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.4666666666666666,
-      "sourceTitle": "Stocktwits"
+      "sourceTitle": "조선일보",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -715,23 +351,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3568627450980393,
-      "sourceTitle": "Business Upturn"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362085426",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T05:31:05Z",
-    "sourceUrl": "https://newsable.asianetnews.com/markets/bird-stock-to-finally-take-flight-allbirds-rebrands-to-smartbird-to-double-down-on-ai-pivot-ignites-retail-optimism-articleshow-5manyyg",
-    "title": "BIRD Stock To Finally Take Flight? Allbirds Rebrands To Smartbird To Double Down On AI Pivot, Ignites Retail Optimism",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.4274509803921569,
-      "sourceTitle": "Asianet News Network Pvt Ltd"
+      "sourceTitle": "Business Upturn",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -747,39 +368,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.03529411764705892,
-      "sourceTitle": "Morningstar"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362034679",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T04:31:17Z",
-    "sourceUrl": "https://www.newsbytesapp.com/news/business/how-a-4b-sneaker-brand-became-an-ai-company/story",
-    "title": "How a $4B sneaker brand became an AI company",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.0980392156862746,
-      "sourceTitle": "NewsBytes"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9362031493",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T04:26:46Z",
-    "sourceUrl": "https://sgbonline.com/sorel-appoints-former-allbirds-ceo-as-president/",
-    "title": "Sorel Appoints Former Allbirds' CEO as President",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11754386",
-      "sentiment": 0.3254901960784313,
-      "sourceTitle": "sgbonline.com"
+      "sourceTitle": "Morningstar",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -795,23 +385,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.05882352941176472,
-      "sourceTitle": "Morningstar"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361966779",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-18T03:03:43Z",
-    "sourceUrl": "https://markets.businessinsider.com/news/stocks/five-below-appoints-chief-retail-officer-and-chief-legal-officer-1036258340",
-    "title": "Five Below appoints Chief Retail Officer and Chief Legal Officer",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11756107",
-      "sentiment": 0.1450980392156862,
-      "sourceTitle": "Markets Insider"
+      "sourceTitle": "Morningstar",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -827,7 +402,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3019607843137255,
-      "sourceTitle": "FashionNetwork.com"
+      "sourceTitle": "FashionNetwork.com",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -843,7 +419,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3019607843137255,
-      "sourceTitle": "FashionNetwork.com"
+      "sourceTitle": "FashionNetwork.com",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -859,23 +436,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3019607843137255,
-      "sourceTitle": "FashionNetwork.com"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361922305",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-18T01:55:43Z",
-    "sourceUrl": "https://uk.fashionnetwork.com/news/Sorel-names-joe-vernachio-new-president,1841084.html",
-    "title": "Sorel names Joe Vernachio new president",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11754386",
-      "sentiment": 0.3019607843137255,
-      "sourceTitle": "FashionNetwork.com"
+      "sourceTitle": "FashionNetwork.com",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -891,23 +453,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.1686274509803922,
-      "sourceTitle": "Morningstar"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361235172",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-18T01:18:22Z",
-    "sourceUrl": "https://www.investing.com/news/stock-market-news/allbirds-rebrands-as-smartbird-in-ai-pivot-hires-former-aws-executive-as-ceo-4747458",
-    "title": "Allbirds rebrands as Smartbird in AI pivot, hires former AWS executive as CEO By Reuters",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11752027",
-      "sentiment": 0.2941176470588236,
-      "sourceTitle": "Investing.com"
+      "sourceTitle": "Morningstar",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -923,7 +470,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.06666666666666665,
-      "sourceTitle": "Morningstar"
+      "sourceTitle": "Morningstar",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -939,7 +487,8 @@
     "payload": {
       "eventUri": "eng-11753781",
       "sentiment": 0.223529411764706,
-      "sourceTitle": "Morningstar"
+      "sourceTitle": "Morningstar",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -955,7 +504,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.1450980392156862,
-      "sourceTitle": "The New York Times"
+      "sourceTitle": "The New York Times",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -971,7 +521,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3568627450980393,
-      "sourceTitle": "WBOC TV-16"
+      "sourceTitle": "WBOC TV-16",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -987,39 +538,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3568627450980393,
-      "sourceTitle": "mykxlg.com"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361796650",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T22:33:33Z",
-    "sourceUrl": "https://www.arcamax.com/business/businessnews/s-4231785",
-    "title": "Allbirds stock takes flight after announcing new CEO and name change",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1764705882352942,
-      "sourceTitle": "ArcaMax"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361784879",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-17T22:16:43Z",
-    "sourceUrl": "https://montrealgazette.com/press-releases/business-wire/joe-vernachio-named-president-of-sorel/",
-    "title": "Joe Vernachio Named President of SOREL",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11754386",
-      "sentiment": 0.3019607843137255,
-      "sourceTitle": "The Montreal Gazette"
+      "sourceTitle": "mykxlg.com",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1035,7 +555,8 @@
     "payload": {
       "eventUri": "eng-11754386",
       "sentiment": 0.3176470588235294,
-      "sourceTitle": "Barchart.com"
+      "sourceTitle": "Barchart.com",
+      "clusterSize": 7
     },
     "confidence": 0.6
   },
@@ -1051,7 +572,8 @@
     "payload": {
       "eventUri": "eng-11744717",
       "sentiment": 0.3490196078431373,
-      "sourceTitle": "wallstreet:online"
+      "sourceTitle": "wallstreet:online",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1067,23 +589,8 @@
     "payload": {
       "eventUri": "eng-11752849",
       "sentiment": 0.1686274509803922,
-      "sourceTitle": "KTLA 5"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361735332",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T21:08:45Z",
-    "sourceUrl": "https://wwd.com/footwear-news/shoe-industry-news/allbirds-american-exchange-wsg-brands-assets-smartbird-1239015666/",
-    "title": "Allbirds Is Officially a Tech Company, American Exchange Group Takes Over Footwear Business",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11755205",
-      "sentiment": 0.0980392156862746,
-      "sourceTitle": "WWD"
+      "sourceTitle": "KTLA 5",
+      "clusterSize": 2
     },
     "confidence": 0.6
   },
@@ -1099,39 +606,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.1450980392156862,
-      "sourceTitle": "DNyuz"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361724631",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-17T20:57:55Z",
-    "sourceUrl": "https://www.manilatimes.net/2026/06/18/tmt-newswire/globenewswire/five-below-announces-leadership-appointments/2367950",
-    "title": "Five Below Announces Leadership Appointments",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11756107",
-      "sentiment": 0.3254901960784313,
-      "sourceTitle": "The Manila times"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361723499",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-17T20:56:53Z",
-    "sourceUrl": "https://www.barchart.com/story/news/2523941/five-below-announces-leadership-appointments",
-    "title": "Five Below Announces Leadership Appointments",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11756107",
-      "sentiment": 0.3176470588235294,
-      "sourceTitle": "Barchart.com"
+      "sourceTitle": "DNyuz",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1147,7 +623,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3490196078431373,
-      "sourceTitle": "stockhouse"
+      "sourceTitle": "stockhouse",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1163,7 +640,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.2862745098039217,
-      "sourceTitle": "Taiwan News"
+      "sourceTitle": "Taiwan News",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1179,7 +657,8 @@
     "payload": {
       "eventUri": "eng-11756107",
       "sentiment": 0.3411764705882352,
-      "sourceTitle": "wallstreet:online"
+      "sourceTitle": "wallstreet:online",
+      "clusterSize": 4
     },
     "confidence": 0.6
   },
@@ -1195,55 +674,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3647058823529412,
-      "sourceTitle": "POLITICO"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361695226",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T20:19:49Z",
-    "sourceUrl": "https://www.fastcompany.com/91561440/allbirds-bird-stock-today-ai-smartbird-pivot-huge-change",
-    "title": "BIRD takes flight: Allbirds pivot to AI company Smartbird is a huge change -- that's good for the stock",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.2705882352941176,
-      "sourceTitle": "Fast Company"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361675792",
-    "entityId": "smartbird",
-    "axis": "ownership",
-    "type": "control_change",
-    "date": "2026-06-17T19:58:13Z",
-    "sourceUrl": "https://sgbonline.com/american-exchange-group-and-wsg-brands-complete-deal-to-acquire-allbirds-ip-assets/",
-    "title": "American Exchange Group and WSG Brands Complete Deal to Acquire Allbirds IP Assets",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11755205",
-      "sentiment": 0.4666666666666666,
-      "sourceTitle": "sgbonline.com"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361655927",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T19:33:04Z",
-    "sourceUrl": "https://www.ocregister.com/2026/06/17/the-latest-on-allbirds-abrupt-pivot-to-ai-a-new-name-and-ceo/",
-    "title": "White House looks to woo Wall Street dealmakers with $400,000 jobs",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1686274509803922,
-      "sourceTitle": "The Orange County Register"
+      "sourceTitle": "POLITICO",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1259,7 +691,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3098039215686275,
-      "sourceTitle": "MyrtleBeachOnline"
+      "sourceTitle": "MyrtleBeachOnline",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1275,7 +708,8 @@
     "payload": {
       "eventUri": "eng-11755205",
       "sentiment": 0.6235294117647059,
-      "sourceTitle": "CNHI News"
+      "sourceTitle": "CNHI News",
+      "clusterSize": 10
     },
     "confidence": 0.6
   },
@@ -1291,55 +725,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.1686274509803922,
-      "sourceTitle": "DNyuz"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361620006",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T18:54:17Z",
-    "sourceUrl": "https://thenextweb.com/news/allbirds-smartbird-ai-infrastructure-pivot",
-    "title": "Allbirds renames itself Smartbird in AI pivot",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1294117647058823,
-      "sourceTitle": "The Next Web"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361617154",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T18:50:37Z",
-    "sourceUrl": "https://cryptobriefing.com/smartbird-nadia-carlsten-ceo-ai-pivot/",
-    "title": "Smartbird appoints former Amazon executive Nadia Carlsten as CEO to lead AI infrastructure pivot",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.2,
-      "sourceTitle": "Crypto Briefing"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361616562",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T18:49:53Z",
-    "sourceUrl": "https://www.latimes.com/business/story/2026-06-17/allbirds-stock-takes-flight-after-announcing-new-ceo-name-change",
-    "title": "Allbirds stock takes flight after announcing new CEO and name change",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.1686274509803922,
-      "sourceTitle": "Los Angeles Times"
+      "sourceTitle": "DNyuz",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1355,7 +742,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3098039215686275,
-      "sourceTitle": "Yahoo! Finance"
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1371,7 +759,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3098039215686275,
-      "sourceTitle": "Yahoo! Finance"
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1387,39 +776,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3254901960784313,
-      "sourceTitle": "Market Screener"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361608916",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T18:40:39Z",
-    "sourceUrl": "https://www.upi.com/Top_News/US/2026/06/17/allbirds-rebrands-as-smartbird/6071781719985/",
-    "title": "Allbirds becomes Smartbird, names new CEO amid AI shift",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.3098039215686275,
-      "sourceTitle": "UPI"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361353573",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T18:33:29Z",
-    "sourceUrl": "https://www.investing.com/news/stock-market-news/smartbird-stock-surges-25-on-new-ceo-appointment-93CH-4747723",
-    "title": "Smartbird stock surges 25% on new CEO appointment By Investing.com",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11752027",
-      "sentiment": 0.2078431372549019,
-      "sourceTitle": "Investing.com"
+      "sourceTitle": "Market Screener",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1435,39 +793,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3176470588235294,
-      "sourceTitle": "Benzinga"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361581758",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T18:10:16Z",
-    "sourceUrl": "https://www.newser.com/story/391235/in-ai-pivot-allbirds-rebrands-as-smartbird.html",
-    "title": "In AI Pivot, Allbirds Rebrands as Smartbird",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.07450980392156858,
-      "sourceTitle": "Newser"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-2026-06-1201866013",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T18:04:20Z",
-    "sourceUrl": "https://www.bloomberg.com/opinion/newsletters/2026-06-17/the-new-bird-is-smartbird",
-    "title": "The New Bird Is Smartbird",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.3254901960784313,
-      "sourceTitle": "Bloomberg Business"
+      "sourceTitle": "Benzinga",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1483,7 +810,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.3568627450980393,
-      "sourceTitle": "ppinewsagency.com"
+      "sourceTitle": "ppinewsagency.com",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1499,23 +827,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.02745098039215677,
-      "sourceTitle": "Morningstar"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361534537",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T17:23:36Z",
-    "sourceUrl": "https://gizmodo.com/?p=2000773115",
-    "title": "AIbirds Was Sitting Right There: Allbirds Changes Name to Smartbird in AI Pivot",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.07450980392156858,
-      "sourceTitle": "Gizmodo"
+      "sourceTitle": "Morningstar",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1531,7 +844,8 @@
     "payload": {
       "eventUri": "eng-11752824",
       "sentiment": 0.1058823529411765,
-      "sourceTitle": "Morningstar"
+      "sourceTitle": "Morningstar",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1547,23 +861,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.2313725490196079,
-      "sourceTitle": "Yahoo! Finance"
-    },
-    "confidence": 0.6
-  },
-  {
-    "id": "er-9361495963",
-    "entityId": "smartbird",
-    "axis": "business_model",
-    "type": "business_model_change",
-    "date": "2026-06-17T16:46:58Z",
-    "sourceUrl": "https://www.arise.tv/allbirds-becomes-smartbird-in-ai-pivot-names-former-aws-executive-as-ceo/",
-    "title": "Allbirds Becomes Smartbird In AI Pivot, Names Former AWS Executive As CEO",
-    "source": "eventregistry",
-    "payload": {
-      "eventUri": "eng-11753222",
-      "sentiment": 0.2392156862745098,
-      "sourceTitle": "Arise News"
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1579,7 +878,8 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.223529411764706,
-      "sourceTitle": "DCD"
+      "sourceTitle": "DCD",
+      "clusterSize": 1
     },
     "confidence": 0.6
   },
@@ -1595,7 +895,2014 @@
     "payload": {
       "eventUri": null,
       "sentiment": 0.2705882352941176,
-      "sourceTitle": "Decrypt"
+      "sourceTitle": "Decrypt",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361451177",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T16:07:54Z",
+    "sourceUrl": "https://www.datacenterdynamics.com/en/news/drone-company-visionwave-plans-data-center-in-israel/",
+    "title": "Drone company VisionWave plans data center in Israel",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11748599",
+      "sentiment": 0.192156862745098,
+      "sourceTitle": "DCD",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361441638",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T16:01:21Z",
+    "sourceUrl": "https://au.finance.yahoo.com/news/allbirds-stock-surges-over-30-after-company-rebrands-to-smartbird-appoints-aws-exec-as-ceo-155224745.html",
+    "title": "Allbirds stock surges over 30% after company rebrands to Smartbird, appoints AWS exec as CEO",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2784313725490195,
+      "sourceTitle": "Yahoo7 Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361437636",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T15:57:45Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/stocks/articles/allbirds-changes-name-smartbird-stock-154112649.html",
+    "title": "Allbirds Changes Name To Smartbird -- Stock Skyrockets Again After AI Pivot",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.223529411764706,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361433320",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T15:54:10Z",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/allbirds-stock-surges-over-30-after-company-rebrands-to-smartbird-appoints-aws-exec-as-ceo-155224745.html",
+    "title": "Allbirds stock surges over 30% after company rebrands to Smartbird, appoints AWS exec as CEO",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2784313725490195,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1201750043",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T15:51:11Z",
+    "sourceUrl": "https://www.reuters.com/business/retail-consumer/allbirds-rebrands-smartbird-ai-pivot-hires-former-aws-executive-ceo-2026-06-17/",
+    "title": "Allbirds rebrands as Smartbird in AI pivot, hires former AWS executive as CEO; shares soar",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3098039215686275,
+      "sourceTitle": "Reuters",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361423741",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T15:46:18Z",
+    "sourceUrl": "https://www.forbes.com/sites/zacharyfolk/2026/06/17/allbirds-changes-name-to-smartbird-stock-skyrockets-again-after-ai-pivot/",
+    "title": "Allbirds Changes Name To Smartbird -- Stock Skyrockets Again After AI Pivot",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753222",
+      "sentiment": 0.1529411764705881,
+      "sourceTitle": "Forbes",
+      "clusterSize": 28
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361415142",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T15:39:05Z",
+    "sourceUrl": "https://tech.yahoo.com/general/article/allbirds-is-now-ai-company-smartbird-with-former-aws-executive-as-ceo-153659474.html",
+    "title": "Allbirds is now AI company Smartbird, with former AWS executive as CEO",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11752027",
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "Yahoo Tech",
+      "clusterSize": 7
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361401918",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T15:27:37Z",
+    "sourceUrl": "https://www.morningstar.com/news/dow-jones/202606174848/dow-jones-top-company-headlines-at-11-am-et-carmaxs-turnaround-is-taking-shape-still-has-long-way-to-go-cme",
+    "title": "Dow Jones Top Company Headlines at 11 AM ET: CarMax's Turnaround Is Taking Shape, Still Has Long Way to Go | CME ...",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Morningstar",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1196227811",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-11T18:54:01Z",
+    "sourceUrl": "https://www.fastcompany.com/91556482/sustainable-fashion-isnt-a-standalone-category",
+    "title": "Sustainable fashion isn't a standalone category",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.05882352941176472,
+      "sourceTitle": "Fast Company",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9354277301",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T17:48:19Z",
+    "sourceUrl": "https://dnyuz.com/2026/06/11/tech-leaders-argue-ais-real-future-is-task-augmentation-not-mass-layoffs/",
+    "title": "Tech leaders argue AI's real future Is task augmentation, not mass layoffs",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.05882352941176472,
+      "sourceTitle": "DNyuz",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351492696",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T19:27:48Z",
+    "sourceUrl": "https://fortune.com/2026/06/09/not-an-allbirds-moment-xboxs-ceo-says-she-is-grounding-the-console-in-gaming-roots/",
+    "title": "'Not an Allbirds Moment': Xbox's CEO says she is grounding the console in gaming roots not AI | Fortune",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11725405",
+      "sentiment": 0.2078431372549019,
+      "sourceTitle": "Fortune",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350895943",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-09T11:09:14Z",
+    "sourceUrl": "https://dnyuz.com/2026/06/09/the-untold-story-of-the-google-buses-that-took-over-san-francisco/",
+    "title": "The Untold Story of the Google Buses That Took Over San Francisco",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.1372549019607843,
+      "sourceTitle": "DNyuz",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1191945886",
+    "entityId": "smartbird",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-06-07T21:35:27Z",
+    "sourceUrl": "https://www.mensjournal.com/shopping/skechers-higgins-drexer-mesh-sneaker-walmart-sale",
+    "title": "This $40 Skechers Sneaker Is Breathable, Machine-Washable, and Ultra Comfortable",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3490196078431373,
+      "sourceTitle": "Men's Journal",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-9347431860",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-06T11:10:58Z",
+    "sourceUrl": "https://health.yahoo.com/your-body/foot-health/articles/podiatrists-share-theyd-never-wish-110018517.html",
+    "title": "Podiatrists Share What They'd Never Do (And Wish You Wouldn't Either)",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.0117647058823529,
+      "sourceTitle": "Yahoo! Health",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9347431108",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-06T11:10:25Z",
+    "sourceUrl": "https://ca.style.yahoo.com/podiatrists-share-theyd-never-wish-110018753.html",
+    "title": "Podiatrists Share What They'd Never Do (And Wish You Wouldn't Either)",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.1450980392156863,
+      "sourceTitle": "Yahoo!",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9347430879",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-06T11:09:54Z",
+    "sourceUrl": "https://nz.news.yahoo.com/podiatrists-share-theyd-never-wish-110018753.html",
+    "title": "Podiatrists Share What They'd Never Do (And Wish You Wouldn't Either)",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.1450980392156863,
+      "sourceTitle": "Yahoo News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9347383139",
+    "entityId": "smartbird",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-06-06T10:06:57Z",
+    "sourceUrl": "https://www.travelandleisure.com/sally-field-slip-on-sneakers-travel-shoes-june-2026-11990496",
+    "title": "Sally Field Looks Incredibly Polished in These Casual Slip-on Sneakers That Are Perfect for Travel -- from $27",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4745098039215687,
+      "sourceTitle": "Travel + Leisure",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-9347076217",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-06T02:15:01Z",
+    "sourceUrl": "https://www.ndtvprofit.com/business/bata-has-a-gen-z-challenge-as-sneaker-culture-reshapes-indias-footwear-market-11597882",
+    "title": "Bata Has A Gen Z Challenge. And It Knows It",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "NDTV Profit",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344370492",
+    "entityId": "smartbird",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-06-04T02:36:49Z",
+    "sourceUrl": "https://finance.yahoo.com/sectors/healthcare/articles/supportive-shoes-long-term-comfort-023000391.html",
+    "title": "How to find supportive shoes for long-term comfort",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.09019607843137256,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-9344252018",
+    "entityId": "smartbird",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-06-03T23:33:08Z",
+    "sourceUrl": "https://www.thestreet.com/shopping/how-to-find-supportive-shoes",
+    "title": "How to find supportive shoes for long-term comfort",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.01960784313725494,
+      "sourceTitle": "TheStreet",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-9344142623",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T21:03:59Z",
+    "sourceUrl": "https://www.investing.com/news/insider-trading-news/allbirds-ceo-sells-15007-in-shares-to-cover-tax-obligations-93CH-4725284",
+    "title": "Allbirds CEO sells $15,007 in shares to cover tax obligations By Investing.com",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1764705882352942,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-1306104986",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-02T10:17:12Z",
+    "sourceUrl": "https://www.bloomberg.com/news/articles/2026-05-02/is-this-a-stock-market-melt-up-here-are-ways-to-tell",
+    "title": "Is This a Stock Market Melt-Up? Here Are Ways to Tell",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.003921568627450966,
+      "sourceTitle": "Bloomberg Business",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9340749907",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-01T13:55:26Z",
+    "sourceUrl": "https://www.inc.com/dave-kerpen/shoes-helped-build-million-dollar-brand/91353174",
+    "title": "I've Worn the Exact Same Color Shoes Every Day for 15 Years. Here's What It Taught Me About Building a Million-Dollar Brand",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11699082",
+      "sentiment": 0.1529411764705881,
+      "sourceTitle": "Inc.",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9340570474",
+    "entityId": "smartbird",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-01T11:36:29Z",
+    "sourceUrl": "https://shutok.ru/nejroseti/243482-is-it-okay-to-put-on-counterfeit-shoes-exploring-principles-quality-and-social-understanding.html",
+    "title": "Is It Okay To Put On Counterfeit Shoes? Exploring Principles, Quality, And Social Understanding",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "ШутОк",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9338648478",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-30T12:06:46Z",
+    "sourceUrl": "https://www.theverge.com/tech/940092/007-first-light-oura-ring-5-installer",
+    "title": "This is the James Bond game we've been waiting for",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4745098039215687,
+      "sourceTitle": "The Verge",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336740149",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-05-28T21:32:34Z",
+    "sourceUrl": "https://www.marketscreener.com/news/allbirds-enters-third-amendment-to-credit-agreement-with-second-avenue-capital-partners-ce7f5ddad18ff62c",
+    "title": "Allbirds - Enters third amendment to credit agreement with Second Avenue Capital Partners",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.388235294117647,
+      "sourceTitle": "Market Screener",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336532405",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T17:35:27Z",
+    "sourceUrl": "https://journalrecord.com/2026/05/28/rocket-one-ai-space-rebrand-shares-jump/",
+    "title": "From biotech to orbit: Rocket One's AI and space rebrand sends shares flying",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.01960784313725483,
+      "sourceTitle": "The Journal Record",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336308118",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T14:22:40Z",
+    "sourceUrl": "https://superhits979.com/2026/05/28/from-biotech-to-orbit-rocket-ones-ai-and-space-re-brand-sends-shares-flying/",
+    "title": "From biotech to orbit: Rocket One's AI and space re-brand sends shares flying",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1764705882352942,
+      "sourceTitle": "Superhits 97.9 Terre Haute, IN",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336303571",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T14:18:55Z",
+    "sourceUrl": "https://www.theringer.com/2026/05/28/tech/pope-leo-xiv-ai-encyclical-tech-industry-problems",
+    "title": "The 40 Most Rage-Inducing Problems in Tech",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.04313725490196085,
+      "sourceTitle": "The Ringer",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336145967",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T12:19:48Z",
+    "sourceUrl": "https://www.channelnewsasia.com/business/biotech-orbit-rocket-ones-ai-and-space-re-brand-sends-shares-flying-6147311",
+    "title": "From biotech to orbit: Rocket One's AI and space re-brand sends shares flying",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "CNA",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336129253",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T12:06:55Z",
+    "sourceUrl": "https://www.investing.com/news/stock-market-news/from-biotech-to-orbit-rocket-ones-ai-and-space-rebrand-sends-shares-flying-4714191",
+    "title": "From biotech to orbit: Rocket One's AI and space re-brand sends shares flying By Reuters",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336108333",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T11:51:43Z",
+    "sourceUrl": "https://www.marketscreener.com/news/from-biotech-to-orbit-rocket-one-s-ai-and-space-re-brand-sends-shares-flying-ce7f5ddadb8df026",
+    "title": "From biotech to orbit: Rocket One's AI and space re-brand sends shares flying",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "Market Screener",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336102327",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T11:46:40Z",
+    "sourceUrl": "https://uk.finance.yahoo.com/news/biotech-orbit-rocket-ones-ai-113421717.html",
+    "title": "From biotech to orbit: Rocket One's AI and space re-brand sends shares flying",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336098680",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T11:44:12Z",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/biotech-orbit-rocket-ones-ai-113421717.html",
+    "title": "From biotech to orbit: Rocket One's AI and space re-brand sends shares flying",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336097843",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T11:43:52Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/stocks/articles/biotech-orbit-rocket-ones-ai-113421717.html",
+    "title": "From biotech to orbit: Rocket One's AI and space re-brand sends shares flying",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11693071",
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9235560082",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-27T16:40:40Z",
+    "sourceUrl": "https://www.mcsweeneys.net/articles/ai-writing-jobs-you-should-apply-to-today",
+    "title": "AI Writing Jobs You Should Apply to Today",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11687114",
+      "sentiment": 0.411764705882353,
+      "sourceTitle": "McSweeney's Internet Tendency",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9234055585",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T16:18:00Z",
+    "sourceUrl": "https://www.salon.com/2026/05/26/everlane-was-never-your-friend/?utm_source=website&utm_medium=social&utm_campaign=ogshare&utm_content=og",
+    "title": "Everlane was never your friend\n                    Andi Zeisler\n                        Everlane was never your friend\n            Andi Zeisler\n                        Sorrow over the clothing company's sale to Shein marks the end of an era that believed commerce could care about us",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.1058823529411764,
+      "sourceTitle": "Salon.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1180478790",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T14:07:12Z",
+    "sourceUrl": "https://www.wpri.com/business/chinese-fast-fashion-juggernaut-shein-to-buy-eco-friendly-everlane-in-an-unlikely-fit/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "WPRI.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9233604899",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T10:37:25Z",
+    "sourceUrl": "https://fortune.com/2026/05/26/matthew-hussey-gabby-bernstein-content-ai-outsource-effort-paradox/",
+    "title": "Creators who built followings based on trust refuse to outsource some tasks to AI: Humans can 'sense a decoy' | Fortune",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Fortune",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179923176",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T03:03:57Z",
+    "sourceUrl": "https://www.wdsu.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "WDSU News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179924345",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T03:02:02Z",
+    "sourceUrl": "https://www.kcra.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "KCRA",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179923189",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T03:01:17Z",
+    "sourceUrl": "https://www.wapt.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "WAPT",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179923271",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T03:00:41Z",
+    "sourceUrl": "https://www.wlky.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "WLKY",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179923169",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T03:00:18Z",
+    "sourceUrl": "https://www.wjcl.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1450980392156862,
+      "sourceTitle": "ABC 22 - WJCL Savannah",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179923046",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T02:59:44Z",
+    "sourceUrl": "https://www.kmbc.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "KMBC 9",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179923051",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T02:59:34Z",
+    "sourceUrl": "https://www.wgal.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "WGAL 8 Lancaster/Harrisburg",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179922173",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T02:56:08Z",
+    "sourceUrl": "https://www.wyff4.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "WYFF4",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179921260",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T02:53:16Z",
+    "sourceUrl": "https://www.wmur.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "WMUR9",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179918081",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T02:45:56Z",
+    "sourceUrl": "https://www.koat.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "KOAT 7",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179917187",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T02:42:56Z",
+    "sourceUrl": "https://www.kcci.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "KCCI",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179917022",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T02:42:18Z",
+    "sourceUrl": "https://www.wlwt.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "WLWT5",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179915692",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T02:35:30Z",
+    "sourceUrl": "https://www.wxii12.com/article/shein-acquires-everlane-sustainable-fashion-deal/71386526",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11687472",
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "WXII",
+      "clusterSize": 7
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1179780994",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-25T20:50:13Z",
+    "sourceUrl": "https://www.csschopper.com/blog/shopify-vs-shopify-plus/",
+    "title": "Shopify vs Shopify Plus: Unlocking eCommerce Success",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.0117647058823529,
+      "sourceTitle": "CSSChopper",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1178783900",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-24T15:37:32Z",
+    "sourceUrl": "https://cebudailynews.inquirer.net/731227/chinese-fast-fashion-juggernaut-shein-to-buy-eco-friendly-everlane",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "CDN Digital",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1178112823",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-05-23T14:04:54Z",
+    "sourceUrl": "https://edition.cnn.com/cnn-underscored/travel/how-i-booked-a-luxury-beach-getaway-using-points",
+    "title": "I \"weekend-maxxed\" a trip to San Diego with my mom -- here's how I booked a luxury beach getaway using points, price-matching and smart travel gear",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11675466",
+      "sentiment": 0.5058823529411764,
+      "sourceTitle": "CNN International",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9230219466",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-23T12:06:25Z",
+    "sourceUrl": "https://dnyuz.com/2026/05/23/the-quiet-death-of-conscious-consumerism-from-everlane-and-allbirds-to-beyond-meat/",
+    "title": "The quiet death of conscious consumerism, from Everlane and Allbirds to Beyond Meat",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4901960784313726,
+      "sourceTitle": "DNyuz",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229937631",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-23T06:51:54Z",
+    "sourceUrl": "https://www.arkansasonline.com/news/2026/may/23/online-retailer-shein-acquires-everlane/",
+    "title": "Online retailer Shein acquires Everlane | Arkansas Democrat Gazette",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.08235294117647052,
+      "sourceTitle": "ArkansasOnline",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229829528",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-23T04:25:57Z",
+    "sourceUrl": "https://www.asiaone.com/money/chinese-fast-fashion-juggernaut-shein-buy-eco-friendly-everlane-unlikely-fit",
+    "title": "AsiaOne",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "AsiaOne",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229560539",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T21:03:47Z",
+    "sourceUrl": "https://nwasianweekly.com/2026/05/chinese-fast-fashion-juggernaut-shein-to-buy-eco-friendly-everlane-in-an-unlikely-fit/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Northwest Asian Weekly",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229552234",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T20:53:07Z",
+    "sourceUrl": "https://cbs58.com/news/chinese-fast-fashion-juggernaut-shein-to-buy-eco-friendly-everlane-in-an-unlikely-fit",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "CBS58",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1177566398",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T19:23:25Z",
+    "sourceUrl": "https://www.yakimaherald.com/news/nation_and_world/nation/chinese-fast-fashion-juggernaut-shein-to-buy-eco-friendly-everlane-in-an-unlikely-fit/article_605e11b8-482a-5299-9f22-2e178e2f3077.html",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2470588235294118,
+      "sourceTitle": "Yakima Herald-Republic",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1177548985",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T18:56:25Z",
+    "sourceUrl": "https://www.news-gazette.com/news/nation-world/chinese-fast-fashion-juggernaut-shein-to-buy-eco-friendly-everlane-in-an-unlikely-fit/article_9c2b993e-6a5f-52e8-8566-1812fde9b5b1.html",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2470588235294118,
+      "sourceTitle": "The News-Gazette",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229397352",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:56:46Z",
+    "sourceUrl": "https://www.sandiegouniontribune.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "San Diego Union-Tribune",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229391385",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:50:08Z",
+    "sourceUrl": "https://www.broomfieldenterprise.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Broomfield Enterprise",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229380733",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:41:03Z",
+    "sourceUrl": "https://www.newcastleherald.com.au/story/9252141/fast-fashion-giant-shein-to-buy-eco-friendly-everlane/",
+    "title": "Fast-fashion giant Shein to buy eco-friendly Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Newcastle Herald",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229371960",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:32:05Z",
+    "sourceUrl": "https://www.ocregister.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "The Orange County Register",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229368779",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:29:05Z",
+    "sourceUrl": "https://www.dailynews.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Daily News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229368168",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:28:44Z",
+    "sourceUrl": "https://www.dailycamera.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Boulder Daily Camera",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229366464",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:26:56Z",
+    "sourceUrl": "https://www.readingeagle.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Reading Eagle",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229366329",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:26:39Z",
+    "sourceUrl": "https://www.whittierdailynews.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Whittier Daily News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229364671",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:25:19Z",
+    "sourceUrl": "https://www.naroomanewsonline.com.au/story/9252141/fast-fashion-giant-shein-to-buy-eco-friendly-everlane/",
+    "title": "Fast-fashion giant Shein to buy eco-friendly Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Narooma News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229364105",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:24:43Z",
+    "sourceUrl": "https://www.dailybreeze.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Daily Breeze",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229363967",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:24:20Z",
+    "sourceUrl": "https://www.journal-advocate.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Sterling Journal-Advocate",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229361983",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:22:11Z",
+    "sourceUrl": "https://www.chicoer.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Chico Enterprise-Record",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229361816",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:21:55Z",
+    "sourceUrl": "https://www.sbsun.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "San Bernardino Sun",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229361554",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:21:39Z",
+    "sourceUrl": "https://www.twincities.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Twin Cities",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229359573",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:19:45Z",
+    "sourceUrl": "https://www.pressdemocrat.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Santa Rosa Press Democrat",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229359312",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:19:43Z",
+    "sourceUrl": "https://www.redlandsdailyfacts.com/2026/05/22/shein-everlane-takeover/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Redlands Daily Facts",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229359286",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:19:38Z",
+    "sourceUrl": "https://www.castanet.net/news/Business/615730/Chinese-fast-fashion-juggernaut-Shein-to-buy-eco-friendly-Everlane-in-an-unlikely-fit",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Castanet",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229340486",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:02:24Z",
+    "sourceUrl": "https://www.maitlandmercury.com.au/story/9252141/fast-fashion-giant-shein-to-buy-eco-friendly-everlane/",
+    "title": "Fast-fashion giant Shein to buy eco-friendly Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "The Maitland Mercury",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229338256",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T17:00:25Z",
+    "sourceUrl": "https://www.yasstribune.com.au/story/9252141/fast-fashion-giant-shein-to-buy-eco-friendly-everlane/",
+    "title": "Fast-fashion giant Shein to buy eco-friendly Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Yass Tribune",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229329756",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T16:52:26Z",
+    "sourceUrl": "https://www.perthnow.com.au/news/business/fast-fashion-giant-shein-to-buy-eco-friendly-everlane-c-22325371",
+    "title": "Fast-fashion giant Shein to buy eco-friendly Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Perth Now",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229307000",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T16:30:52Z",
+    "sourceUrl": "https://www.cp24.com/news/world/2026/05/22/chinese-fast-fashion-juggernaut-shein-to-buy-eco-friendly-everlane-in-an-unlikely-fit/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Pulse24.com                        ",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1177445345",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T16:29:10Z",
+    "sourceUrl": "https://www.independent.co.uk/life-style/shein-buys-everlane-sale-b2982136.html",
+    "title": "Everlane sold itself as the alternative to fast fashion. Then Shein came calling",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2549019607843137,
+      "sourceTitle": "The Independent",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229302848",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T16:26:39Z",
+    "sourceUrl": "https://www.bnnbloomberg.ca/business/2026/05/22/chinese-fast-fashion-juggernaut-shein-to-buy-eco-friendly-everlane-in-an-unlikely-fit/",
+    "title": "Chinese fast-fashion juggernaut Shein to buy eco-friendly Everlane in an unlikely fit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "BNN",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229272910",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T16:02:00Z",
+    "sourceUrl": "https://www.kpbs.org/news/economy/2026/05/22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "KPBS",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1177415825",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:57:43Z",
+    "sourceUrl": "https://www.wwno.org/npr-news/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3098039215686275,
+      "sourceTitle": "WWNO",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229264723",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:57:01Z",
+    "sourceUrl": "https://www.gpb.org/news/2026/05/22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Georgia Public Broadcasting",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229260569",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:51:21Z",
+    "sourceUrl": "https://www.ctpublic.org/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Connecticut Public",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229257625",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:48:19Z",
+    "sourceUrl": "https://www.aspenpublicradio.org/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Aspen Public Radio",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229257376",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:48:04Z",
+    "sourceUrl": "https://www.wfae.org/united-states-world/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "WFAE 90.7 - Charlotte's NPR News Source",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229257078",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:47:47Z",
+    "sourceUrl": "https://www.boisestatepublicradio.org/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Boise State Public Radio",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229256905",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:47:34Z",
+    "sourceUrl": "https://www.publicradiotulsa.org/npr-national-news/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "Public Radio Tulsa",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229254561",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:45:38Z",
+    "sourceUrl": "https://www.kgou.org/business-and-economy/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "KGOU 106.3",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229254376",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:45:31Z",
+    "sourceUrl": "https://www.weku.org/npr-news/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "weku.org",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1177403105",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:43:45Z",
+    "sourceUrl": "https://www.kosu.org/business/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3098039215686275,
+      "sourceTitle": "KOSU",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229247179",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:38:58Z",
+    "sourceUrl": "https://www.bpr.org/npr-news/2026-05-22/shein-buys-everlane-which-sold-millennials-the-dream-of-ethical-affordable-luxury",
+    "title": "Shein buys Everlane, which sold millennials the dream of ethical, affordable luxury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "bpr.org",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229233093",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:26:46Z",
+    "sourceUrl": "https://gvwire.com/2026/05/22/shein-the-face-of-fast-fashion-buys-the-sustainability-minded-everlane/",
+    "title": "Shein, the Face of Fast Fashion, Buys the Sustainability-Minded Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11677940",
+      "sentiment": 0.1764705882352942,
+      "sourceTitle": "GV Wire",
+      "clusterSize": 20
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9227451868",
+    "entityId": "smartbird",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-05-21T11:55:10Z",
+    "sourceUrl": "https://blockclubchicago.org/2026/05/21/reformation-opens-stores-in-fulton-market-southport-corridor/",
+    "title": "Reformation Opens Stores In Fulton Market, Southport Corridor",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "Block Club Chicago",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-2026-05-1176095930",
+    "entityId": "smartbird",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-05-21T11:37:12Z",
+    "sourceUrl": "https://people.com/sally-field-slip-on-platform-sneakers-amazon-may-2026-11978832",
+    "title": "Sally Field, 79, Convinced Me, 46, to Swap My Boring Sneakers for This Surprisingly Comfy Polished Style -- from $40",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4509803921568627,
+      "sourceTitle": "People.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-2026-05-1175512616",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-20T21:21:11Z",
+    "sourceUrl": "https://www.waaytv.com/news/social/everlane-shoppers-come-unraveled-over-sale-to-shein/article_da0ae11e-bd01-5108-a781-69b4f2c67af4.html",
+    "title": "Everlane shoppers come unraveled over sale to Shein",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2156862745098038,
+      "sourceTitle": "WAAY TV 31",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1175502897",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-20T21:04:42Z",
+    "sourceUrl": "https://us.cnn.com/2026/05/20/style/everlane-shein-sustainable-fashion-cec",
+    "title": "Everlane shoppers come unraveled over sale to Shein | CNN",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1764705882352942,
+      "sourceTitle": "CNN",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1175462920",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-05-20T20:02:10Z",
+    "sourceUrl": "https://www.toptenwholesale.com/news/news-dtc-brand-collapse-everlane-shein-allbirds-wholesale-resellers-2026-190.html",
+    "title": "DTC Brand Collapse 2026: What Everlane, Allbirds and Shein Mean for Wholesale Resellers",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "Wholesale News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9225160270",
+    "entityId": "smartbird",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-05-19T23:47:52Z",
+    "sourceUrl": "https://chicago.suntimes.com/small-business/2026/05/19/retailer-reformation-expands-lake-view-fulton-market",
+    "title": "Popular retailer Reformation expands to Lake View and Fulton Market",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.06666666666666665,
+      "sourceTitle": "Chicago Sun-Times",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-2026-05-1174316978",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T19:04:55Z",
+    "sourceUrl": "https://www.bostonherald.com/2026/05/19/shein-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1686274509803922,
+      "sourceTitle": "Boston Herald",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224919579",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T18:56:43Z",
+    "sourceUrl": "https://www.dailycamera.com/2026/05/19/shein-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Boulder Daily Camera",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224904828",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T18:42:21Z",
+    "sourceUrl": "https://www.broomfieldenterprise.com/2026/05/19/shein-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Broomfield Enterprise",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224901025",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T18:38:53Z",
+    "sourceUrl": "https://www.chicoer.com/2026/05/19/shein-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Chico Enterprise-Record",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224895994",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T18:34:56Z",
+    "sourceUrl": "https://www.sandiegouniontribune.com/2026/05/19/shein-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "San Diego Union-Tribune",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224896685",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T18:34:47Z",
+    "sourceUrl": "https://www.readingeagle.com/2026/05/19/shein-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Reading Eagle",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224894793",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T18:32:21Z",
+    "sourceUrl": "https://www.twincities.com/2026/05/19/shein-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Twin Cities",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224893902",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T18:32:06Z",
+    "sourceUrl": "https://www.pressdemocrat.com/2026/05/19/shein-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Santa Rosa Press Democrat",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224892730",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T18:30:48Z",
+    "sourceUrl": "https://www.journal-advocate.com/2026/05/19/shein-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Sterling Journal-Advocate",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224796928",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T17:04:01Z",
+    "sourceUrl": "https://dnyuz.com/2026/05/19/the-end-of-sustainable-fashion/",
+    "title": "The End of Sustainable Fashion",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.192156862745098,
+      "sourceTitle": "DNyuz",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1174188967",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T16:23:47Z",
+    "sourceUrl": "https://www.independent.co.uk/life-style/everlane-sold-shein-clothing-b2979602.html",
+    "title": "Everlane sold itself as the alternative to fast fashion. Then Shein came calling",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2549019607843137,
+      "sourceTitle": "The Independent",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1174092033",
+    "entityId": "smartbird",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-05-19T14:46:24Z",
+    "sourceUrl": "https://www.travelandleisure.com/best-outdoor-slippers-6931141",
+    "title": "Ugg, Teva, and Crocs Make Some of Our Favorite Outdoor Slippers -- Here Are 9 Pairs We Love",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11672755",
+      "sentiment": 0.4431372549019608,
+      "sourceTitle": "Travel + Leisure",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-9224323958",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T11:13:21Z",
+    "sourceUrl": "https://dnyuz.com/2026/05/19/online-retailer-shein-to-acquire-san-francisco-based-everlane/",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "DNyuz",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9224242670",
+    "entityId": "smartbird",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-19T10:14:11Z",
+    "sourceUrl": "https://www.latimes.com/business/story/2026-05-19/online-retailer-shein-to-acquire-san-francisco-based-everlane",
+    "title": "Online retailer Shein to acquire San Francisco-based Everlane",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11662857",
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Los Angeles Times",
+      "clusterSize": 13
     },
     "confidence": 0.6
   }

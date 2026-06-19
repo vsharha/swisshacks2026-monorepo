@@ -93,6 +93,52 @@ export async function fetchArticles(p: FetchArticlesParams): Promise<ERArticle[]
   return json.articles?.results ?? [];
 }
 
+export interface FetchArticlesWindowedParams extends FetchArticlesParams {
+  dateStart: string;
+  dateEnd: string;
+  /** Window size in days (default 30). Smaller windows = denser timeline coverage. */
+  windowDays?: number;
+}
+
+const isoDay = (d: Date): string => d.toISOString().slice(0, 10);
+
+/** Split an inclusive [start, end] date range into disjoint day-windows. */
+function dateWindows(start: string, end: string, days: number): Array<{ dateStart: string; dateEnd: string }> {
+  const windows: Array<{ dateStart: string; dateEnd: string }> = [];
+  const final = new Date(`${end}T00:00:00Z`);
+  let cursor = new Date(`${start}T00:00:00Z`);
+  while (cursor <= final) {
+    const winEnd = new Date(cursor);
+    winEnd.setUTCDate(winEnd.getUTCDate() + days - 1);
+    windows.push({ dateStart: isoDay(cursor), dateEnd: isoDay(winEnd > final ? final : winEnd) });
+    cursor = new Date(winEnd);
+    cursor.setUTCDate(cursor.getUTCDate() + 1);
+  }
+  return windows;
+}
+
+/**
+ * Fetch articles across the whole date range by querying it in windows. A
+ * single sort-by-date call only returns the most recent N; windowing guarantees
+ * coverage of older structural events (2024 delisting, Apr-2026 financing).
+ * De-duplicates by article URI across windows.
+ */
+export async function fetchArticlesWindowed(p: FetchArticlesWindowedParams): Promise<ERArticle[]> {
+  const windows = dateWindows(p.dateStart, p.dateEnd, p.windowDays ?? 30);
+  const seen = new Set<string>();
+  const all: ERArticle[] = [];
+  for (const w of windows) {
+    const arts = await fetchArticles({ ...p, dateStart: w.dateStart, dateEnd: w.dateEnd });
+    for (const a of arts) {
+      if (!seen.has(a.uri)) {
+        seen.add(a.uri);
+        all.push(a);
+      }
+    }
+  }
+  return all;
+}
+
 export interface NormalizeResult {
   signals: Signal[];
   /** Count of raw articles dropped because they failed Signal validation. */
@@ -130,6 +176,33 @@ export function articlesToSignals(articles: ERArticle[], entityId: string): Norm
     else dropped++;
   }
   return { signals, dropped };
+}
+
+export interface DedupeResult {
+  signals: Signal[];
+  /** How many raw signals went in (before clustering). */
+  rawCount: number;
+}
+
+/**
+ * Collapse signals that describe the same underlying event into one — the
+ * native EventRegistry cost lever ("one event, not 200 articles"). Clusters by
+ * `eventUri` (falling back to source URL), keeps the earliest-dated signal as
+ * the representative, and records `clusterSize` in its payload.
+ */
+export function dedupeByEvent(signals: Signal[]): DedupeResult {
+  const byKey = new Map<string, Signal>();
+  const sorted = [...signals].sort((a, b) => a.date.localeCompare(b.date));
+  for (const s of sorted) {
+    const key = (s.payload.eventUri as string | null) || s.sourceUrl;
+    const existing = byKey.get(key);
+    if (!existing) {
+      byKey.set(key, { ...s, payload: { ...s.payload, clusterSize: 1 } });
+    } else {
+      existing.payload.clusterSize = (existing.payload.clusterSize as number) + 1;
+    }
+  }
+  return { signals: [...byKey.values()], rawCount: signals.length };
 }
 
 export interface ExtractParams extends FetchArticlesParams {
