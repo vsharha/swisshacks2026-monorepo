@@ -1,0 +1,27 @@
+{
+  "entityId": "smartbird",
+  "name": "Allbirds, Inc.",
+  "aliases": [
+    "Allbirds",
+    "NewBird AI",
+    "Smartbird"
+  ],
+  "legalForm": "Delaware C corporation",
+  "jurisdiction": "US",
+  "businessModel": "Direct-to-consumer sustainable footwear and apparel — eco-friendly shoes made from natural materials (merino wool, eucalyptus, sugarcane).",
+  "beneficialOwners": [
+    {
+      "name": "Timothy Brown",
+      "role": "Co-founder & Co-CEO (at onboarding)"
+    },
+    {
+      "name": "Joey Zwillinger",
+      "role": "Co-founder & Co-CEO (at onboarding)"
+    }
+  ],
+  "riskRating": "low",
+  "onboardedAt": "2021-11-03",
+  "conceptUri": "http://en.wikipedia.org/wiki/Allbirds",
+  "cik": "1653909",
+  "domain": "https://www.allbirds.com"
+}

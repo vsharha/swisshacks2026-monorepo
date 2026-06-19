@@ -10,6 +10,8 @@
     "dev": "pnpm tsx src/index.ts",
     "extract:er": "tsx src/extract/eventregistry.ts",
     "extract:sec": "tsx src/extract/sec-edgar.ts",
+    "build:baseline": "tsx src/build-baseline.ts",
+    "build:patterns": "tsx src/build-pattern-library.ts",
     "lint": "eslint .",
     "check": "tsc --noEmit",
     "fix": "eslint src --fix",
