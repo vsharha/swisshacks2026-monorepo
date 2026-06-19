@@ -1,5 +1,5 @@
 import { existsSync } from "node:fs";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,4 +27,10 @@ export async function writeData(relPath: string, value: unknown): Promise<string
   await mkdir(dirname(full), { recursive: true });
   await writeFile(full, JSON.stringify(value, null, 2) + "\n", "utf8");
   return full;
+}
+
+/** Read and JSON-parse a file under data/. */
+export async function readData<T = unknown>(relPath: string): Promise<T> {
+  const full = join(repoRoot, "data", relPath);
+  return JSON.parse(await readFile(full, "utf8")) as T;
 }

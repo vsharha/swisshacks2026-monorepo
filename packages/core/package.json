@@ -8,7 +8,8 @@
     ".": "./src/index.ts",
     "./schemas": "./src/schemas/index.ts",
     "./connectors": "./src/connectors/index.ts",
-    "./pipeline": "./src/pipeline/index.ts"
+    "./pipeline": "./src/pipeline/index.ts",
+    "./drift": "./src/drift/index.ts"
   },
   "scripts": {
     "build": "tsc",
