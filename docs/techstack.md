@@ -54,14 +54,14 @@ The same extraction code powers both the curated demo dataset and the live pipel
 **Canonical seam — a Zod `Signal` schema** every source normalizes to:
 `{ entityId, axis, type, date, sourceUrl, title, payload, confidence }`. It's the contract shared by scripts and the app, and where source-citation enforcement lives.
 
-**Mode 1 — offline extraction scripts** (`tsx`, write versioned JSON into `data/`, committed):
-- `scripts/extract/eventregistry.ts` — entity `conceptUri` + date range → clustered events, normalized signals, concept-distribution snapshots per window
-- `scripts/extract/sec-edgar.ts` — Allbirds CIK 1653909 → 8-K filings (rename, asset sale, $50M financing): ground-truth structural events
-- `scripts/extract/wayback.ts` — allbirds.com → smartbird snapshots → website/business-activity change
-- `scripts/extract/opensanctions.ts` — entity + co-mentioned people screening
-- `scripts/build-baseline.ts` — assemble baseline KYC profiles
-- `scripts/build-timeline.ts` — merge all sources into the unified, dated, cited scripted-clock timeline → `data/timeline/<entity>.json`
-- `scripts/precompute-fallback.ts` — run the pipeline over the timeline to produce the demo fallback cache
+**Mode 1 — offline extraction scripts** (`@kyc/scripts`, run with `tsx`, write versioned JSON into `data/`, committed):
+- `extract/eventregistry.ts` — entity `conceptUri` + date range → clustered events, normalized signals, concept-distribution snapshots per window
+- `extract/sec-edgar.ts` — Allbirds CIK 1653909 → 8-K filings (rename, asset sale, $50M financing): ground-truth structural events
+- `extract/wayback.ts` — allbirds.com → smartbird snapshots → website/business-activity change
+- `extract/opensanctions.ts` — entity + co-mentioned people screening
+- `build-baseline.ts` — assemble baseline KYC profiles
+- `build-timeline.ts` — merge all sources into the unified, dated, cited scripted-clock timeline → `data/timeline/<entity>.json`
+- `precompute-fallback.ts` — run the pipeline over the timeline to produce the demo fallback cache
 
 **Mode 2 — live runtime:** SvelteKit server routes import the *same* connector functions to run EventRegistry live during the demo. Same fetch → normalize → validate path.
 
@@ -79,21 +79,30 @@ EventRegistry is the workhorse: its native event-clustering is a cost lever (one
 
 ## Repo layout
 
-Single SvelteKit app — no pnpm workspaces (separation via `src/lib` + `scripts/`, zero workspace tooling overhead).
+**pnpm workspace.** Global `check` / `fix` / `lint` / `format` / `build` at the root fan out to each package via `pnpm -r run …` (see root `package.json`). The `node-template` starter (ESM TS, ESLint flat config, strict tsconfig) seeds each package.
 
 ```
-src/lib/
-  schemas/        # Zod: Signal, KYCBaseline, DriftVector, Alert, AuditEntry
-  connectors/     # eventRegistry.ts, secEdgar.ts, wayback.ts, openSanctions.ts
-  pipeline/       # stage0-filter, stage1-embeddings, stage2-axis-llm, stage3-synthesis
-  drift/          # per-axis scorers + composite
-  audit/          # append-only log (SQLite/libSQL)
-scripts/
-  extract/        # offline extractors (Mode 1)
-  build-timeline.ts, build-baseline.ts, precompute-fallback.ts
-data/             # committed: baselines, timelines, pattern-library, fallback cache
-src/routes/       # dashboard + API endpoints (Mode 2 live pipeline)
+package.json            # root: private, global scripts (pnpm -r run …)
+pnpm-workspace.yaml     # globs: apps/*, packages/*
+apps/
+  web/                  # SvelteKit app — dashboard + API routes (Mode 2 live pipeline)   [not scaffolded yet]
+packages/
+  core/                 # @kyc/core — framework-agnostic shared lib                        [not scaffolded yet]
+    src/
+      schemas/          #   Zod: Signal, KYCBaseline, DriftVector, Alert, AuditEntry
+      connectors/       #   eventRegistry.ts, secEdgar.ts, wayback.ts, openSanctions.ts
+      pipeline/         #   stage0-filter, stage1-embeddings, stage2-axis-llm, stage3-synthesis
+      drift/            #   per-axis scorers + composite
+      audit/            #   append-only log (SQLite/libSQL)
+  scripts/              # @kyc/scripts — offline extractors + builders (Mode 1)            [seeded from node-template]
+    src/
+      extract/          #   eventregistry, sec-edgar, wayback, opensanctions
+      build-baseline.ts, build-timeline.ts, precompute-fallback.ts
+data/                   # committed: baselines, timelines, pattern-library, fallback cache
+docs/
 ```
+
+`@kyc/core` stays SvelteKit-free so both `apps/web` and `packages/scripts` can import it (the "one connector layer, two callers" seam). It and `apps/web` are reserved in the workspace but not yet scaffolded; `packages/scripts` currently holds the `node-template` placeholder.
 
 ## State by type
 
