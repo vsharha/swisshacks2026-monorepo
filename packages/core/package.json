@@ -1,0 +1,31 @@
+{
+  "name": "@kyc/core",
+  "version": "1.0.0",
+  "description": "Framework-agnostic shared library: schemas, connectors, pipeline, drift, audit",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schemas": "./src/schemas/index.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint .",
+    "check": "tsc --noEmit",
+    "fix": "eslint src --fix",
+    "format": "prettier --write src"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^25.2.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-unused-imports": "^4.3.0",
+    "globals": "^17.3.0",
+    "jiti": "^2.4.0",
+    "prettier": "^3.5.3",
+    "typescript-eslint": "^8.54.0"
+  }
+}
