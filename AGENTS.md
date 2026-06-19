@@ -1,8 +1,19 @@
 # SwissHacks 2026 monorepo
 
+Dynamic KYC-Drift Monitor — a real-time risk-profiling system for AMINA Bank's SwissHacks 2026 challenge. Continuous cheap monitoring of a customer book, escalating to deep LLM reasoning only when a customer's KYC baseline structurally drifts.
+
+## Frontend guidance
+
+Use the browser to visually inspect the UI to iterate on the design and confirm it matches your vision.
+
 ## Docs
 
-The `docs/` directory holds relevant background and reference material — consult to it when needed.
+The `docs/` directory holds relevant background and reference material — consult to it when needed:
+
+- `docs/product.md` — concept, drift model, scenario, scope
+- `docs/techstack.md` — stack, cost architecture, extraction
+- `docs/frontend.md` — "Risk Control Room" design system
+- `docs/challenge.md`, `docs/description.md` — the original challenge brief
 
 ## Provided APIs
 
