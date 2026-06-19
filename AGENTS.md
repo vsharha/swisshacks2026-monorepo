@@ -6,16 +6,16 @@ Dynamic KYC-Drift Monitor — a real-time risk-profiling system for AMINA Bank's
 
 Use the browser to visually inspect the UI to iterate on the design and confirm it matches your vision.
 
-The `@kyc/web` app uses shadcn-svelte (lyra preset) for UI primitives — add components with `pnpm dlx shadcn-svelte@latest add <component> -c apps/web`, then restyle tokens to the "Risk Control Room" palette in `docs/frontend.md`.
+The `@kyc/web` app uses shadcn-svelte (lyra preset) for UI primitives — add components with `pnpm dlx shadcn-svelte@latest add <component> -c apps/web`, then restyle tokens to the "Risk Control Room" palette in `docs/reference/frontend.md`.
 
 ## Docs
 
 The `docs/` directory holds relevant background and reference material — consult to it when needed:
 
-- `docs/product.md` — concept, drift model, scenario, scope
-- `docs/techstack.md` — stack, cost architecture, extraction
-- `docs/frontend.md` — "Risk Control Room" design system
-- `docs/challenge.md`, `docs/description.md` — the original challenge brief
+- `docs/reference/product.md` — concept, drift model, scenario, scope
+- `docs/reference/techstack.md` — stack, cost architecture, extraction
+- `docs/reference/frontend.md` — "Risk Control Room" design system
+- `docs/brief/challenge.md`, `docs/brief/description.md` — the original challenge brief
 
 ## Provided APIs
 
