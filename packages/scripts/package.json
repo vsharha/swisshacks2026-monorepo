@@ -13,6 +13,7 @@
     "build:baseline": "tsx src/build-baseline.ts",
     "build:patterns": "tsx src/build-pattern-library.ts",
     "score:drift": "tsx src/score-drift.ts",
+    "analyze": "tsx src/analyze.ts",
     "lint": "eslint .",
     "check": "tsc --noEmit",
     "fix": "eslint src --fix",

@@ -9,7 +9,8 @@
     "./schemas": "./src/schemas/index.ts",
     "./connectors": "./src/connectors/index.ts",
     "./pipeline": "./src/pipeline/index.ts",
-    "./drift": "./src/drift/index.ts"
+    "./drift": "./src/drift/index.ts",
+    "./llm": "./src/llm/index.ts"
   },
   "scripts": {
     "build": "tsc",
@@ -19,6 +20,8 @@
     "format": "prettier --write src"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.85",
+    "ai": "^6.0.208",
     "zod": "^4.0.0"
   },
   "devDependencies": {
