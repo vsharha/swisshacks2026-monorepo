@@ -6,6 +6,8 @@ Dynamic KYC-Drift Monitor — a real-time risk-profiling system for AMINA Bank's
 
 Use the browser to visually inspect the UI to iterate on the design and confirm it matches your vision.
 
+The `@kyc/web` app uses shadcn-svelte (lyra preset) for UI primitives — add components with `pnpm dlx shadcn-svelte@latest add <component> -c apps/web`, then restyle tokens to the "Risk Control Room" palette in `docs/frontend.md`.
+
 ## Docs
 
 The `docs/` directory holds relevant background and reference material — consult to it when needed:
