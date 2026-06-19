@@ -1,0 +1,3 @@
+**Dynamic Risk Profiling System (Real Time Intelligence)**
+
+Build an AI system that spots financial risk early by combining real time public signals (news, sanctions lists, adverse media, ownership changes, funding events) with internal KYC and AML data. The twist is KYC drift: catching slow structural changes that quietly invalidate a customer's original risk profile. Teams build two layers, public intelligence first, then simulated internal bank data, all wrapped in strong guardrails like explainable AI, human in the loop validation, and audit logs. They also want cost awareness, so cheap models filter first and heavy reasoning only kicks in for high risk cases.
