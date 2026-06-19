@@ -1,0 +1,14 @@
+{
+  "name": "swisshacks2026-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.2",
+  "scripts": {
+    "check": "pnpm -r run check",
+    "lint": "pnpm -r run lint",
+    "fix": "pnpm -r run fix",
+    "format": "pnpm -r run format",
+    "build": "pnpm -r run build"
+  }
+}
