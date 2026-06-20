@@ -42,6 +42,8 @@ export const GraphNodeSchema = z.object({
   label: z.string().min(1),
   /** ISO 3166-1 alpha-2, when the node carries a country (domicile/nationality). */
   country: z.string().optional(),
+  /** Customer baseline id, set on `entity` nodes that are in the book. */
+  entityId: z.string().optional(),
 });
 export type GraphNode = z.infer<typeof GraphNodeSchema>;
 

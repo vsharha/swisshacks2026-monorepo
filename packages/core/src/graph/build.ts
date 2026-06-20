@@ -72,12 +72,24 @@ export function buildGraph(baselines: KYCBaseline[], extraEdges: GraphEdge[] = [
     const existing = nodes.get(node.id);
     // Keep the richest record: prefer a real label / country over a placeholder.
     if (!existing) nodes.set(node.id, node);
-    else nodes.set(node.id, { ...existing, ...node, country: node.country ?? existing.country });
+    else
+      nodes.set(node.id, {
+        ...existing,
+        ...node,
+        country: node.country ?? existing.country,
+        entityId: node.entityId ?? existing.entityId,
+      });
   };
 
   for (const b of baselines) {
     const entityId = nodeIdFor(b.name, "entity");
-    addNode({ id: entityId, type: "entity", label: b.name, country: b.jurisdiction });
+    addNode({
+      id: entityId,
+      type: "entity",
+      label: b.name,
+      country: b.jurisdiction,
+      entityId: b.entityId,
+    });
 
     // Domicile.
     const countryId = nodeIdFor(b.jurisdiction, "country");
