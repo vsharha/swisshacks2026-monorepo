@@ -1,8 +1,11 @@
 import { randomUUID } from 'node:crypto';
+import type { RiskRating } from '@kyc/core';
 import { loadBook, loadPatternLibrary } from '$lib/server/data';
 import { analyzeEntity } from '$lib/server/analyze';
-import { appendAudit, auditCount } from '$lib/server/audit';
+import { appendAudit, auditCount, currentRating, listAudit } from '$lib/server/audit';
 import type { Actions, PageServerLoad } from './$types';
+
+const now = () => new Date().toISOString();
 
 export const load: PageServerLoad = () => {
 	const book = loadBook();
@@ -13,7 +16,20 @@ export const load: PageServerLoad = () => {
 	const timeStart = dates.at(0) ?? '2024-01-01T00:00:00Z';
 	const timeEnd = dates.at(-1) ?? new Date().toISOString();
 
-	return { book, patterns, timeStart, timeEnd, auditCount: auditCount() };
+	// Effective current rating per entity, replayed from the audit log.
+	const ratings: Record<string, RiskRating> = {};
+	for (const e of book)
+		ratings[e.baseline.entityId] = currentRating(e.baseline.entityId, e.baseline.riskRating);
+
+	return {
+		book,
+		patterns,
+		timeStart,
+		timeEnd,
+		ratings,
+		auditCount: auditCount(),
+		audit: listAudit(undefined, 40)
+	};
 };
 
 export const actions: Actions = {
@@ -24,11 +40,12 @@ export const actions: Actions = {
 		const entityId = String(form.get('entityId'));
 		const asOf = String(form.get('asOf'));
 		const result = await analyzeEntity(entityId, asOf);
-		return { ...result, auditCount: auditCount() };
+		return { ...result, auditCount: auditCount(), audit: listAudit(undefined, 40) };
 	},
 
 	// Human-in-the-loop gate: the analyst's escalate/dismiss decision is written
-	// to the append-only audit log before any risk-rating change.
+	// to the append-only audit log before any risk-rating change. Escalation
+	// then writes the outcome — the actual rating change.
 	decide: async ({ request }) => {
 		const form = await request.formData();
 		const entityId = String(form.get('entityId'));
@@ -39,9 +56,12 @@ export const actions: Actions = {
 				? 'Confirmed structural drift; re-KYC required.'
 				: 'Reviewed; no action.');
 
+		const baseRating =
+			loadBook().find((e) => e.baseline.entityId === entityId)?.baseline.riskRating ?? 'low';
+
 		appendAudit({
 			id: randomUUID(),
-			ts: new Date().toISOString(),
+			ts: now(),
 			entityId,
 			kind: 'human_action',
 			analyst: 'analyst@amina',
@@ -49,6 +69,20 @@ export const actions: Actions = {
 			rationale
 		});
 
-		return { decided: decision, auditCount: auditCount() };
+		let rating = currentRating(entityId, baseRating);
+		if (decision === 'escalate' && rating !== 'high') {
+			appendAudit({
+				id: randomUUID(),
+				ts: now(),
+				entityId,
+				kind: 'outcome',
+				fromRating: rating,
+				toRating: 'high',
+				newStatus: 'alert'
+			});
+			rating = 'high';
+		}
+
+		return { decided: decision, rating, auditCount: auditCount(), audit: listAudit(undefined, 40) };
 	}
 };

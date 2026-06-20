@@ -1,7 +1,7 @@
 import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
-import { AuditEntrySchema, type AuditEntry } from '@kyc/core';
+import { AuditEntrySchema, type AuditEntry, type RiskRating } from '@kyc/core';
 import { dataDir } from './data';
 
 /**
@@ -52,4 +52,14 @@ export function listAudit(entityId?: string, limit = 50): AuditEntry[] {
 
 export function auditCount(): number {
 	return readLines().length;
+}
+
+/** Effective current rating: the most recent `outcome` for the entity, else the baseline. */
+export function currentRating(entityId: string, fallback: RiskRating): RiskRating {
+	let rating = fallback;
+	for (const line of readLines()) {
+		const e = JSON.parse(line) as AuditEntry;
+		if (e.kind === 'outcome' && e.entityId === entityId) rating = e.toRating;
+	}
+	return rating;
 }

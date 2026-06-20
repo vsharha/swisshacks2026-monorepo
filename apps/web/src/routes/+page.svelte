@@ -4,6 +4,7 @@
 	import { enhance } from '$app/forms';
 	import DriftRadar from '$lib/components/DriftRadar.svelte';
 	import TimelineScrubber from '$lib/components/TimelineScrubber.svelte';
+	import AuditDrawer from '$lib/components/AuditDrawer.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -26,6 +27,9 @@
 		usd: number;
 	} | null>(null);
 	let auditCount = $state(data.auditCount);
+	let auditEntries = $state(data.audit);
+	let ratings = $state(data.ratings);
+	let showAudit = $state(false);
 
 	type ActionResult = { type: string; data?: Record<string, unknown> };
 
@@ -44,6 +48,7 @@
 			}
 			const body = result.data ?? {};
 			if (typeof body.auditCount === 'number') auditCount = body.auditCount;
+			if (Array.isArray(body.audit)) auditEntries = body.audit as typeof auditEntries;
 			llmCost = (body.cost as typeof llmCost) ?? null;
 			if (body.llm && body.alert) llmAlert = body.alert as Alert;
 			else if (!body.llm)
@@ -52,13 +57,16 @@
 		};
 	};
 
-	// HITL decision → append-only audit log.
+	// HITL decision → append-only audit log (+ rating outcome on escalate).
 	const enhanceDecide = () => {
 		return async ({ result }: { result: ActionResult }) => {
 			if (result.type !== 'success') return;
 			const body = result.data ?? {};
 			if (body.decided === 'escalate' || body.decided === 'dismiss') decision = body.decided;
 			if (typeof body.auditCount === 'number') auditCount = body.auditCount;
+			if (Array.isArray(body.audit)) auditEntries = body.audit as typeof auditEntries;
+			if (typeof body.rating === 'string')
+				ratings = { ...ratings, [selectedId]: body.rating as (typeof ratings)[string] };
 		};
 	};
 
@@ -167,7 +175,13 @@
 				<span class="text-muted2 tracking-widest">LIVE</span>
 			</span>
 			<span class="text-muted2">book <span class="text-text">{data.book.length}</span></span>
-			<span class="text-muted2">audit <span class="text-text">{auditCount}</span></span>
+			<button
+				class="text-muted2 hover:text-text transition-colors"
+				onclick={() => (showAudit = true)}
+				title="Open the append-only audit trail"
+			>
+				audit <span class="text-text underline-offset-2 hover:underline">{auditCount}</span>
+			</button>
 			<span class="text-muted2">cost/day <span class="text-stable">$0.75</span></span>
 		</div>
 	</header>
@@ -246,7 +260,14 @@
 						<h1 class="font-sans text-lg font-semibold tracking-tight">{selected.baseline.name}</h1>
 						<p class="text-muted2 text-[11px]">
 							{selected.baseline.jurisdiction} · onboarded {fmtDate(selected.baseline.onboardedAt)} ·
-							baseline <span class="uppercase">{selected.baseline.riskRating}</span>
+							baseline
+							<span class="uppercase">{selected.baseline.riskRating}</span
+							>{#if ratings[selectedId] && ratings[selectedId] !== selected.baseline.riskRating}<span
+									class="uppercase"
+									style="color: var(--alert)"
+								>
+									→ {ratings[selectedId]}</span
+								>{/if}
 						</p>
 					</div>
 					<div
@@ -460,3 +481,7 @@
 		{/if}
 	</footer>
 </div>
+
+{#if showAudit}
+	<AuditDrawer entries={auditEntries} onclose={() => (showAudit = false)} />
+{/if}
