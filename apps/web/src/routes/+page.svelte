@@ -183,7 +183,9 @@
 					/>
 				</div>
 			{/if}
-			<CostFunnel {funnel} {llmCost} />
+			{#if selected}
+				<CostFunnel {funnel} {llmCost} />
+			{/if}
 		</aside>
 
 		<!-- Center · selected entity -->
