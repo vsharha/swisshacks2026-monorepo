@@ -5,6 +5,7 @@
 	import { fmtDate, type BookEntity } from '$lib/view';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
+	import MagnifyingGlass from 'phosphor-svelte/lib/MagnifyingGlass';
 
 	let {
 		entity,
@@ -141,33 +142,55 @@
 				</div>
 			{:else}
 				<div class="flex flex-col gap-2">
-					<form method="POST" action="?/decide" use:enhance={enhanceDecide}>
-						<input type="hidden" name="entityId" value={entityId} />
-						<input type="hidden" name="decision" value="escalate" />
-						<Button type="submit" size="sm" class="w-full rounded-md text-[12px] font-medium">
-							Escalate · re-KYC
-						</Button>
-					</form>
-					<form method="POST" action="?/decide" use:enhance={enhanceDecide}>
-						<input type="hidden" name="entityId" value={entityId} />
-						<input type="hidden" name="decision" value="dismiss" />
-						<Button type="submit" variant="outline" size="sm" class="w-full rounded-md text-[12px]">
-							Dismiss
-						</Button>
-					</form>
+					<!-- Investigate first: Stage 3 is the tool you use to make the call. -->
 					<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze}>
 						<input type="hidden" name="entityId" value={entityId} />
 						<input type="hidden" name="asOf" value={asOfIso} />
 						<Button
 							type="submit"
-							variant="ghost"
 							size="sm"
 							disabled={analyzing}
-							class="text-muted2 hover:text-text hover:bg-panel2 w-full rounded-md text-[11px]"
+							class="w-full rounded-md text-[12px] font-medium"
 						>
+							<MagnifyingGlass size={13} weight="bold" class="mr-1.5" />
 							{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
 						</Button>
 					</form>
+
+					<!-- The decision lives below the tool you use to make it. -->
+					<div
+						class="text-muted2 my-0.5 flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase"
+					>
+						<span class="bg-line h-px flex-1"></span>
+						decide
+						<span class="bg-line h-px flex-1"></span>
+					</div>
+					<div class="flex gap-2">
+						<form method="POST" action="?/decide" use:enhance={enhanceDecide} class="flex-1">
+							<input type="hidden" name="entityId" value={entityId} />
+							<input type="hidden" name="decision" value="escalate" />
+							<Button
+								type="submit"
+								variant="destructive"
+								size="sm"
+								class="w-full rounded-md text-[12px] font-medium"
+							>
+								Escalate
+							</Button>
+						</form>
+						<form method="POST" action="?/decide" use:enhance={enhanceDecide} class="flex-1">
+							<input type="hidden" name="entityId" value={entityId} />
+							<input type="hidden" name="decision" value="dismiss" />
+							<Button
+								type="submit"
+								variant="outline"
+								size="sm"
+								class="w-full rounded-md text-[12px]"
+							>
+								Dismiss
+							</Button>
+						</form>
+					</div>
 				</div>
 			{/if}
 			{#if llmNote}
