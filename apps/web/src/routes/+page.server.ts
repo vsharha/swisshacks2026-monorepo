@@ -64,7 +64,8 @@ export const actions: Actions = {
 			ts: now(),
 			entityId,
 			kind: 'human_action',
-			analyst: 'analyst@amina',
+			actor: 'analyst@amina',
+			role: 'analyst',
 			decision,
 			rationale
 		});

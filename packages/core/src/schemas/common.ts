@@ -25,6 +25,14 @@ export type RiskStatus = z.infer<typeof RiskStatusSchema>;
 export const RiskRatingSchema = z.enum(["low", "medium", "high"]);
 export type RiskRating = z.infer<typeof RiskRatingSchema>;
 
+/** Line-of-defence role that performed a human action (governance). */
+export const HumanRoleSchema = z.enum(["analyst", "compliance_officer"]);
+export type HumanRole = z.infer<typeof HumanRoleSchema>;
+
+/** The human decisions in the maker-checker workflow. */
+export const HumanDecisionSchema = z.enum(["escalate", "dismiss", "approve", "reject"]);
+export type HumanDecision = z.infer<typeof HumanDecisionSchema>;
+
 /** Tiered cascade stage that did the work. See docs/reference/techstack.md. */
 export const PipelineStageSchema = z.enum(["stage0", "stage1", "stage2", "stage3"]);
 export type PipelineStage = z.infer<typeof PipelineStageSchema>;
