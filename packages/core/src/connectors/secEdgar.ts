@@ -1,4 +1,5 @@
 import { SignalSchema, type Signal, type DriftAxis } from "../schemas/index.ts";
+import { isRetryableStatus, withRetry } from "../util/pool.ts";
 
 /**
  * SEC EDGAR connector — the ground-truth structural spine. EDGAR is free and
@@ -86,13 +87,26 @@ function filingUrl(cik: string, accessionNumber: string): string {
 
 /** Fetch the full submissions history for a CIK. */
 export async function fetchSubmissions(cik: string, userAgent: string): Promise<Submissions> {
-  const res = await fetch(`${BASE}/submissions/CIK${tenDigitCik(cik)}.json`, {
-    headers: { "User-Agent": userAgent, Accept: "application/json" },
-  });
-  if (!res.ok) {
-    throw new Error(`SEC EDGAR submissions → ${res.status}: ${await res.text()}`);
-  }
-  return (await res.json()) as Submissions;
+  // SEC mandates a contact User-Agent and throttles aggressively; retry the
+  // transient 429/503 with backoff rather than aborting (proposal 11).
+  return withRetry(
+    async () => {
+      const res = await fetch(`${BASE}/submissions/CIK${tenDigitCik(cik)}.json`, {
+        headers: { "User-Agent": userAgent, Accept: "application/json" },
+      });
+      if (!res.ok) {
+        throw new Error(`SEC EDGAR submissions → ${res.status}: ${await res.text()}`);
+      }
+      return (await res.json()) as Submissions;
+    },
+    {
+      retries: 3,
+      shouldRetry: (e) => {
+        const status = e instanceof Error ? Number(e.message.match(/→ (\d{3})/)?.[1]) : NaN;
+        return Number.isNaN(status) || isRetryableStatus(status);
+      },
+    },
+  );
 }
 
 export interface SecNormalizeResult {

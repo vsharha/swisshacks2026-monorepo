@@ -1,6 +1,7 @@
 import { SignalSchema, type Signal } from "../schemas/index.ts";
 import { classifyAxis } from "../pipeline/stage0.ts";
 import { dedupeSignals, type DedupeResult } from "./dedup.ts";
+import { isRetryableStatus, mapPool, withRetry } from "../util/pool.ts";
 
 /**
  * EventRegistry connector — the workhorse source. Framework-agnostic: it takes
@@ -47,15 +48,28 @@ export interface FetchArticlesParams {
 }
 
 async function erPost<T>(path: string, body: unknown): Promise<T> {
-  const res = await fetch(`${BASE}/${path}`, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) {
-    throw new Error(`EventRegistry ${path} → ${res.status}: ${await res.text()}`);
-  }
-  return (await res.json()) as T;
+  // Retry transient rate-limit / server errors with backoff (proposal 11); a
+  // 4xx (other than 429) or a parse error fails fast.
+  return withRetry(
+    async () => {
+      const res = await fetch(`${BASE}/${path}`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        throw new Error(`EventRegistry ${path} → ${res.status}: ${await res.text()}`);
+      }
+      return (await res.json()) as T;
+    },
+    {
+      retries: 3,
+      shouldRetry: (e) => {
+        const status = e instanceof Error ? Number(e.message.match(/→ (\d{3})/)?.[1]) : NaN;
+        return Number.isNaN(status) || isRetryableStatus(status);
+      },
+    },
+  );
 }
 
 /**
@@ -99,6 +113,8 @@ export interface FetchArticlesWindowedParams extends FetchArticlesParams {
   dateEnd: string;
   /** Window size in days (default 30). Smaller windows = denser timeline coverage. */
   windowDays?: number;
+  /** Max windows fetched concurrently (default 4). */
+  concurrency?: number;
 }
 
 const isoDay = (d: Date): string => d.toISOString().slice(0, 10);
@@ -126,10 +142,16 @@ function dateWindows(start: string, end: string, days: number): Array<{ dateStar
  */
 export async function fetchArticlesWindowed(p: FetchArticlesWindowedParams): Promise<ERArticle[]> {
   const windows = dateWindows(p.dateStart, p.dateEnd, p.windowDays ?? 30);
+  // Fetch windows with bounded concurrency + per-call backoff (proposal 11)
+  // rather than strictly sequentially, then de-duplicate by article URI.
+  const perWindow = await mapPool(
+    windows,
+    (w) => fetchArticles({ ...p, dateStart: w.dateStart, dateEnd: w.dateEnd }),
+    p.concurrency ?? 4,
+  );
   const seen = new Set<string>();
   const all: ERArticle[] = [];
-  for (const w of windows) {
-    const arts = await fetchArticles({ ...p, dateStart: w.dateStart, dateEnd: w.dateEnd });
+  for (const arts of perWindow) {
     for (const a of arts) {
       if (!seen.has(a.uri)) {
         seen.add(a.uri);

@@ -11,6 +11,12 @@ import type { DriftAxis } from "../schemas/index.ts";
  *
  * Provisional and expected to move into a richer stage0 filter as the pipeline
  * grows — see AGENTS.md on this being an evolving prototype.
+ *
+ * Multilingual (proposal 11): once RSS brings in non-English entries, a few
+ * high-signal DE/FR/ES tokens are folded into each rule so common structural
+ * events route correctly without a model. These are non-English-only terms, so
+ * they never change English routing; deeper multilingual coverage is the NER /
+ * embedding stage (proposal 8).
  */
 
 interface AxisRule {
@@ -24,31 +30,31 @@ const RULES: readonly AxisRule[] = [
     axis: "business_model",
     type: "business_model_change",
     pattern:
-      /\b(rebrand|renam(?:e|ed|ing)|pivot|repositions?|business model|now offers?|transition(?:s|ed|ing)? (?:to|into)|shift(?:s|ed|ing)? (?:to|into)|GPU|artificial intelligence|\bA\.?I\.?\b|blockchain|crypto)\b/i,
+      /(?<![\p{L}\p{N}])(rebrand|renam(?:e|ed|ing)|pivot|repositions?|business model|now offers?|transition(?:s|ed|ing)? (?:to|into)|shift(?:s|ed|ing)? (?:to|into)|GPU|artificial intelligence|A\.?I\.?|blockchain|crypto|Umfirmierung|Umbenennung|changement de nom)(?![\p{L}\p{N}])/iu,
   },
   {
     axis: "ownership",
     type: "control_change",
     pattern:
-      /\b(CEO|chief executive|appoint(?:s|ed|ment)?|new owner|beneficial owner|stake|board of directors|takeover|acquir(?:e|ed|es|ing|sition)|merger|controlling interest)\b/i,
+      /(?<![\p{L}\p{N}])(CEO|chief executive|appoint(?:s|ed|ment)?|new owner|beneficial owner|stake|board of directors|takeover|acquir(?:e|ed|es|ing|sition)|merger|controlling interest|Übernahme|Beteiligung|rachat|adquisición)(?![\p{L}\p{N}])/iu,
   },
   {
     axis: "scale",
     type: "scale_change",
     pattern:
-      /\b(financing|convertible|raise[sd]?|funding|capital|revenue|valuation|reverse split|stock split|market cap|\$\s?\d|million|billion)\b/i,
+      /(?<![\p{L}\p{N}])(financing|convertible|raise[sd]?|funding|capital|revenue|valuation|reverse split|stock split|market cap|\$\s?\d|million|billion|Kapitalerhöhung|Finanzierung|levée de fonds)(?![\p{L}\p{N}])/iu,
   },
   {
     axis: "jurisdiction",
     type: "jurisdiction_change",
     pattern:
-      /\b(headquarter|relocat(?:e|ed|ion)|domicil(?:e|ed)|offshore|reincorporat|incorporat(?:e|ed) in|moves? to|registered in)\b/i,
+      /(?<![\p{L}\p{N}])(headquarter|relocat(?:e|ed|ion)|domicil(?:e|ed)|offshore|reincorporat|incorporat(?:e|ed) in|moves? to|registered in|Sitzverlegung|délocalisation)(?![\p{L}\p{N}])/iu,
   },
   {
     axis: "reputation",
     type: "adverse_media",
     pattern:
-      /\b(SEC|lawsuit|sue[sd]?|fraud|investigation|probe|charged|indict|delist|sanction|settlement|misconduct|allegation)\b/i,
+      /(?<![\p{L}\p{N}])(SEC|lawsuit|sue[sd]?|fraud|investigation|probe|charged|indict|delist|sanction|settlement|misconduct|allegation|Insolvenz|Betrug|Geldwäsche|faillite|blanchiment)(?![\p{L}\p{N}])/iu,
   },
 ];
 
