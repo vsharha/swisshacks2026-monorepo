@@ -1,5 +1,7 @@
 <script lang="ts">
 	import {
+		deriveMarketResearch,
+		deriveSignalInference,
 		fmtDate,
 		secFilingDescription,
 		secFormCode,
@@ -40,15 +42,15 @@
 			<Table.Header>
 				<Table.Row class="border-line hover:bg-transparent">
 					<Table.Head
-						class="text-muted2 bg-panel sticky top-0 z-10 h-auto py-1.5 text-[10px] tracking-[0.12em] uppercase"
+						class="text-muted2 bg-panel sticky top-0 z-10 h-auto w-[34%] py-1.5 text-[10px] tracking-[0.12em] uppercase"
 						>Event</Table.Head
 					>
 					<Table.Head
-						class="text-muted2 bg-panel sticky top-0 z-10 h-auto py-1.5 text-[10px] tracking-[0.12em] uppercase"
+						class="text-muted2 bg-panel sticky top-0 z-10 h-auto w-[27%] py-1.5 text-[10px] tracking-[0.12em] uppercase"
 						>Market research</Table.Head
 					>
 					<Table.Head
-						class="text-muted2 bg-panel sticky top-0 z-10 h-auto py-1.5 text-right text-[10px] tracking-[0.12em] uppercase"
+						class="text-muted2 bg-panel sticky top-0 z-10 h-auto w-[64px] py-1.5 text-right text-[10px] tracking-[0.12em] uppercase"
 						>Confidence</Table.Head
 					>
 					<Table.Head
@@ -103,9 +105,9 @@
 							</div>
 						</Table.Cell>
 
-						<!-- Market research (placeholder, pending data) -->
-						<Table.Cell class="text-muted2 py-2 align-top whitespace-normal">
-							<span class="text-muted2/60">—</span>
+						<!-- Market research -->
+						<Table.Cell class="text-muted2 py-2 align-top leading-snug whitespace-normal">
+							{deriveMarketResearch(s)}
 						</Table.Cell>
 
 						<!-- Confidence -->
@@ -117,9 +119,9 @@
 							>
 						</Table.Cell>
 
-						<!-- Signal inference (placeholder, pending data) -->
-						<Table.Cell class="text-muted2 py-2 align-top whitespace-normal">
-							<span class="text-muted2/60">—</span>
+						<!-- Signal inference -->
+						<Table.Cell class="text-text2 py-2 align-top leading-snug whitespace-normal">
+							{deriveSignalInference(s)}
 						</Table.Cell>
 					</Table.Row>
 				{/each}

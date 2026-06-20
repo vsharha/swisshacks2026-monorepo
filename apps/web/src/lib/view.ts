@@ -99,3 +99,141 @@ export function secFormCode(s: Signal): string | null {
 	if (s.source !== 'sec_edgar') return null;
 	return typeof s.payload.form === 'string' ? s.payload.form : null;
 }
+
+/** Narrow a payload value to a number, or null. */
+function num(v: unknown): number | null {
+	return typeof v === 'number' && Number.isFinite(v) ? v : null;
+}
+
+/** Narrow a payload value to a non-empty string, or null. */
+function str(v: unknown): string | null {
+	return typeof v === 'string' && v.length > 0 ? v : null;
+}
+
+/** Compact USD: $1.2B / $340M / $5K / $42. */
+function fmtUsd(n: number): string {
+	const abs = Math.abs(n);
+	const sign = n < 0 ? '-' : '';
+	if (abs >= 1e9) return `${sign}$${(abs / 1e9).toFixed(1)}B`;
+	if (abs >= 1e6) return `${sign}$${(abs / 1e6).toFixed(1)}M`;
+	if (abs >= 1e3) return `${sign}$${(abs / 1e3).toFixed(0)}K`;
+	return `${sign}$${abs}`;
+}
+
+/**
+ * Supporting research/evidence context for a signal, derived from its source
+ * and `payload`. Honours an explicit `marketResearch` field when present;
+ * otherwise synthesises a concise summary from the structured extras each
+ * connector carries (media coverage, market data, filings, on-chain, etc.).
+ */
+export function deriveMarketResearch(s: Signal): string {
+	if (s.marketResearch) return s.marketResearch;
+	const p = s.payload;
+	switch (s.source) {
+		case 'eventregistry': {
+			const cluster = num(p.clusterSize) ?? 1;
+			const sentiment = num(p.sentiment);
+			const outlet = str(p.sourceTitle);
+			const tone =
+				sentiment === null
+					? null
+					: sentiment > 0.15
+						? 'positive'
+						: sentiment < -0.15
+							? 'negative'
+							: 'neutral';
+			const parts = [`${cluster} correlated report${cluster === 1 ? '' : 's'}`];
+			if (tone)
+				parts.push(`${tone} coverage${sentiment === null ? '' : ` (${sentiment.toFixed(2)})`}`);
+			if (outlet) parts.push(outlet);
+			return parts.join(' · ');
+		}
+		case 'market': {
+			const parts: string[] = [];
+			const changePct = num(p.changePct);
+			const valuation = num(p.valuationUsd);
+			const amount = num(p.amountUsd);
+			if (changePct !== null) parts.push(`${changePct > 0 ? '+' : ''}${changePct}% YoY`);
+			if (valuation !== null) parts.push(`mkt cap ${fmtUsd(valuation)}`);
+			if (amount !== null) parts.push(`${fmtUsd(amount)} move`);
+			return parts.length ? `Market data — ${parts.join(' · ')}` : 'Market data';
+		}
+		case 'sec_edgar': {
+			const form = str(p.form);
+			const reportDate = str(p.reportDate);
+			return `Regulatory filing${form ? ` ${form}` : ''}${reportDate ? ` · ${reportDate.slice(0, 10)}` : ''}`;
+		}
+		case 'chain': {
+			const magnitude = num(p.magnitudeUsd);
+			const asset = str(p.asset);
+			const share = num(p.share);
+			const chain = str(p.chain);
+			if (magnitude !== null) {
+				const parts = [`On-chain — ${fmtUsd(magnitude)}${asset ? ` in ${asset}` : ''}`];
+				if (share !== null) parts.push(`${(share * 100).toFixed(0)}% of holdings`);
+				return parts.join(' · ');
+			}
+			const parts = ['On-chain'];
+			if (chain) parts.push(chain);
+			if (p.exposure && typeof p.exposure === 'object') {
+				const ex = Object.entries(p.exposure as Record<string, unknown>)
+					.filter(([, v]) => typeof v === 'number')
+					.map(([k, v]) => `${k} ${(v as number).toFixed(2)}`);
+				if (ex.length) parts.push(ex.join(', '));
+			}
+			if (Array.isArray(p.counterparties) && p.counterparties.length) {
+				const names = p.counterparties.filter((c): c is string => typeof c === 'string');
+				if (names.length) parts.push(`counterparty: ${names.join(', ')}`);
+			}
+			return parts.join(' · ');
+		}
+		case 'graph': {
+			const hops = num(p.hops);
+			const from = str(p.from) ?? str(p.origin);
+			const parts = ['Network link'];
+			if (hops !== null) parts.push(`${hops} hop${hops === 1 ? '' : 's'}`);
+			if (from) parts.push(`from ${from}`);
+			return parts.join(' · ');
+		}
+		case 'internal': {
+			const kind = str(p.kind);
+			const resolved = p.hasOutcome === true;
+			return `Internal ${kind ? kind.replace(/_/g, ' ') : 'record'} (${resolved ? 'resolved' : 'open'})`;
+		}
+		case 'opensanctions': {
+			const list = str(p.list);
+			const matchType = str(p.matchType);
+			const owner = str(p.owner);
+			return `Screening hit${list ? ` — ${list}` : ''}${matchType ? ` (${matchType} match)` : ''}${owner ? ` on ${owner}` : ''}`;
+		}
+		case 'regulator': {
+			const level = str(p.level);
+			const country = str(p.country);
+			const owner = str(p.owner);
+			return `Regulator notice${level ? ` — ${level}` : ''}${country ? ` (${country})` : ''}${owner ? ` re ${owner}` : ''}`;
+		}
+		default:
+			return `${s.source.replace(/_/g, ' ')} record`;
+	}
+}
+
+/**
+ * Per-signal drift inference — a concise read of what this event implies for the
+ * KYC baseline. Honours an explicit `signalInference` field; otherwise derives a
+ * line from the axis, type, confidence band, and any directional payload cue.
+ */
+export function deriveSignalInference(s: Signal): string {
+	if (s.signalInference) return s.signalInference;
+	const axis = AXIS_LABEL[s.axis].toLowerCase();
+	const band = s.confidence >= 0.85 ? 'Strong' : s.confidence >= 0.6 ? 'Moderate' : 'Weak';
+	const typeText = s.type.replace(/_/g, ' ');
+	const sentiment = num(s.payload.sentiment);
+	const changePct = num(s.payload.changePct);
+	let nuance = '';
+	if (s.axis === 'reputation' && sentiment !== null) {
+		nuance = sentiment < -0.15 ? ' — adverse tone' : sentiment > 0.15 ? ' — favourable tone' : '';
+	} else if (s.axis === 'scale' && changePct !== null) {
+		nuance = changePct < 0 ? ' — contraction' : ' — expansion';
+	}
+	return `${band} ${axis} drift signal (${typeText})${nuance}.`;
+}

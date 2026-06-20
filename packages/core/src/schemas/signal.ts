@@ -33,6 +33,17 @@ export const SignalSchema = z.object({
   payload: z.record(z.string(), z.unknown()).default({}),
   /** Extraction confidence in [0, 1]. */
   confidence: Confidence,
+  /**
+   * Supporting market/external research context for this signal. Optional: the
+   * UI derives a concise summary from `payload` when this is absent, so an
+   * enrichment step (or hand-authored data) can override it later.
+   */
+  marketResearch: z.string().optional(),
+  /**
+   * Per-signal drift inference — what this event implies for the KYC baseline.
+   * Optional for the same reason as `marketResearch`.
+   */
+  signalInference: z.string().optional(),
 });
 export type Signal = z.infer<typeof SignalSchema>;
 
