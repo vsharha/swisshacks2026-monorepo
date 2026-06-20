@@ -16,6 +16,7 @@ export const SOURCE_QUALITY: Record<Source, number> = {
   opencorporates: 0.85,
   market: 0.8, // structured market-event feeds (proposal 12)
   chain: 0.78, // on-chain / wallet-screening providers (proposal 14)
+  linkedin: 0.7, // structured hiring-trend data (inferred from public postings)
   graph: 0.7,
   wayback: 0.7,
   eventregistry: 0.7,
