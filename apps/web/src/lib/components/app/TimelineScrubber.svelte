@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Signal } from '@kyc/core';
-	import { STRUCTURAL_CONFIDENCE } from '$lib/view';
 
 	let {
 		signals,
@@ -15,10 +14,9 @@
 	} = $props();
 
 	// High-confidence structural events become labelled dots on the recorder.
-	// Same threshold the event log uses, so the dots line up with that list.
 	const events = $derived(
 		signals
-			.filter((s) => s.confidence >= STRUCTURAL_CONFIDENCE)
+			.filter((s) => s.confidence >= 0.85)
 			.map((s) => ({ t: Date.parse(s.date), s }))
 			.filter((e) => e.t >= start && e.t <= end)
 	);

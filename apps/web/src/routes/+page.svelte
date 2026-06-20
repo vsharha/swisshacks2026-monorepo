@@ -11,7 +11,6 @@
 	import EntityHeader from '$lib/components/app/EntityHeader.svelte';
 	import AxisBreakdown from '$lib/components/app/AxisBreakdown.svelte';
 	import EscalationPanel from '$lib/components/app/EscalationPanel.svelte';
-	import EventLog from '$lib/components/app/EventLog.svelte';
 	import SignalsRail from '$lib/components/app/SignalsRail.svelte';
 	import type { PageData } from './$types';
 
@@ -170,11 +169,8 @@
 				<EntityHeader entity={selected} rating={ratings[selectedId]} />
 
 				<div class="grid min-h-0 flex-1 grid-cols-[280px_1fr] gap-4">
-					<div class="flex min-h-0 flex-col gap-3">
-						<div class="flex shrink-0 justify-center">
-							<DriftRadar axes={selected.drift.axes} status={selected.drift.status} />
-						</div>
-						<EventLog signals={selected.signals} start={startMs} end={endMs} bind:asOf />
+					<div class="flex items-center justify-center">
+						<DriftRadar axes={selected.drift.axes} status={selected.drift.status} />
 					</div>
 					<AxisBreakdown axes={selected.drift.axes} />
 				</div>
