@@ -28,21 +28,6 @@
 		{baseline.name}
 	</h1>
 
-	<!-- The selected customer's live drift verdict lives here, with its identity. -->
-	<div
-		class="flex items-center justify-between rounded-lg border px-3 py-2.5"
-		style="border-color: color-mix(in oklab, {statusVar[
-			status
-		]} 45%, var(--line)); background: color-mix(in oklab, {statusVar[status]} 6%, transparent)"
-	>
-		<span class="text-[10px] tracking-[0.16em] uppercase" style="color: {statusVar[status]}">
-			Drift {status}
-		</span>
-		<span class="font-mono text-2xl leading-none tabular-nums" style="color: {statusVar[status]}">
-			{entity.drift.composite.toFixed(2)}
-		</span>
-	</div>
-
 	<dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5">
 		<dt class="text-muted2">Country</dt>
 		<dd class="text-text2">{baseline.jurisdiction}</dd>
@@ -76,5 +61,20 @@
 	<div>
 		<div class="text-muted2 mb-1.5 text-[10px] tracking-[0.16em] uppercase">Business model</div>
 		<p class="text-text2 leading-relaxed">{baseline.businessModel}</p>
+	</div>
+
+	<!-- The selected customer's live drift verdict. -->
+	<div
+		class="mt-1 flex items-center justify-between rounded-lg border px-3 py-2.5"
+		style="border-color: color-mix(in oklab, {statusVar[
+			status
+		]} 45%, var(--line)); background: color-mix(in oklab, {statusVar[status]} 6%, transparent)"
+	>
+		<span class="text-[10px] tracking-[0.16em] uppercase" style="color: {statusVar[status]}">
+			Drift {status}
+		</span>
+		<span class="font-mono text-2xl leading-none tabular-nums" style="color: {statusVar[status]}">
+			{entity.drift.composite.toFixed(2)}
+		</span>
 	</div>
 </div>
