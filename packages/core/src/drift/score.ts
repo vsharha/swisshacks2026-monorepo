@@ -8,6 +8,7 @@ import {
   type RiskStatus,
   type Signal,
 } from "../schemas/index.ts";
+import { confidenceForAxis, recencyWeight } from "./confidence.ts";
 
 /**
  * Cheap-tier drift scoring (Stage 0/1): aggregate the signals on each axis into
@@ -28,27 +29,16 @@ export const AXIS_WEIGHTS: Record<DriftAxis, number> = {
   jurisdiction: 0.1,
 };
 
-/** Recency half-life in days — structural drift persists ~a year. */
-const HALF_LIFE_DAYS = 365;
-
 /** Saturation constant: how much weighted evidence ≈ full drift. */
 const SATURATION_K = 3;
 
 const ALERT_THRESHOLD = 0.7;
 const WATCH_THRESHOLD = 0.4;
 
-const MS_PER_DAY = 86_400_000;
-
 export function statusForScore(score: number): RiskStatus {
   if (score >= ALERT_THRESHOLD) return "alert";
   if (score >= WATCH_THRESHOLD) return "watch";
   return "stable";
-}
-
-function recencyWeight(signalDate: string, asOf: string): number {
-  const ageDays = (Date.parse(asOf) - Date.parse(signalDate)) / MS_PER_DAY;
-  if (Number.isNaN(ageDays) || ageDays <= 0) return 1;
-  return Math.pow(0.5, ageDays / HALF_LIFE_DAYS);
 }
 
 function clusterBonus(signal: Signal): number {
@@ -63,18 +53,16 @@ export function scoreAxis(signals: Signal[], asOf: string): AxisDrift {
   }
 
   let weighted = 0;
-  let maxConfidence = 0;
   const sorted = [...signals].sort((a, b) => b.date.localeCompare(a.date));
   for (const s of sorted) {
     weighted += s.confidence * recencyWeight(s.date, asOf) * clusterBonus(s);
-    maxConfidence = Math.max(maxConfidence, s.confidence);
   }
 
   const score = 1 - Math.exp(-weighted / SATURATION_K);
   const latest = sorted[0]!;
   return {
     score,
-    confidence: maxConfidence,
+    confidence: confidenceForAxis(sorted, asOf),
     status: statusForScore(score),
     tierReached: "stage0",
     signalIds: sorted.map((s) => s.id),

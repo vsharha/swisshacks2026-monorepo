@@ -1,5 +1,6 @@
 import { SignalSchema, type Signal } from "../schemas/index.ts";
 import { classifyAxis } from "../pipeline/stage0.ts";
+import { dedupeSignals, type DedupeResult } from "./dedup.ts";
 
 /**
  * EventRegistry connector — the workhorse source. Framework-agnostic: it takes
@@ -178,31 +179,13 @@ export function articlesToSignals(articles: ERArticle[], entityId: string): Norm
   return { signals, dropped };
 }
 
-export interface DedupeResult {
-  signals: Signal[];
-  /** How many raw signals went in (before clustering). */
-  rawCount: number;
-}
-
 /**
- * Collapse signals that describe the same underlying event into one — the
- * native EventRegistry cost lever ("one event, not 200 articles"). Clusters by
- * `eventUri` (falling back to source URL), keeps the earliest-dated signal as
- * the representative, and records `clusterSize` in its payload.
+ * Back-compat alias: collapse same-event signals. Now delegates to the generic
+ * cross-source `dedupeSignals` (proposal 9) — clusters by eventUri, sourceUrl or
+ * title fingerprint and keeps the highest-confidence representative.
  */
 export function dedupeByEvent(signals: Signal[]): DedupeResult {
-  const byKey = new Map<string, Signal>();
-  const sorted = [...signals].sort((a, b) => a.date.localeCompare(b.date));
-  for (const s of sorted) {
-    const key = (s.payload.eventUri as string | null) || s.sourceUrl;
-    const existing = byKey.get(key);
-    if (!existing) {
-      byKey.set(key, { ...s, payload: { ...s.payload, clusterSize: 1 } });
-    } else {
-      existing.payload.clusterSize = (existing.payload.clusterSize as number) + 1;
-    }
-  }
-  return { signals: [...byKey.values()], rawCount: signals.length };
+  return dedupeSignals(signals);
 }
 
 export interface ExtractParams extends FetchArticlesParams {

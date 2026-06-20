@@ -2,10 +2,12 @@ import { scoreDriftVector } from "../drift/score.ts";
 import {
   AXES,
   type Alert,
+  type AuditEntry,
   type DriftAxis,
   type DriftVector,
   type KYCBaseline,
   type PatternArchetype,
+  type RiskStatus,
   type Signal,
 } from "../schemas/index.ts";
 import { costUsd, type LLMConfig, type LLMUsage } from "../llm/config.ts";
@@ -43,6 +45,54 @@ export interface Stage3Outcome {
   model: string;
 }
 
+/** Minimum composite jump since the last evaluation that escalates on its own. */
+export const ESCALATION_DELTA = 0.15;
+
+export interface EscalationGate {
+  escalated: boolean;
+  reason: string;
+}
+
+/**
+ * Change-triggered escalation (proposal 2): fire Stage 3 on an absolute alert,
+ * OR when the composite jumps by `delta` since the prior evaluation even below
+ * the absolute threshold. With no `priorComposite` this is byte-for-byte the
+ * original level-only gate, so every existing caller is unchanged.
+ */
+export function escalationGate(
+  composite: number,
+  status: RiskStatus,
+  priorComposite?: number,
+  delta = ESCALATION_DELTA,
+): EscalationGate {
+  if (status === "alert") {
+    return { escalated: true, reason: `Composite ${composite.toFixed(2)} crossed the alert threshold.` };
+  }
+  if (priorComposite !== undefined && composite - priorComposite >= delta) {
+    return {
+      escalated: true,
+      reason: `Composite jumped ${(composite - priorComposite).toFixed(2)} (${priorComposite.toFixed(2)} → ${composite.toFixed(2)}), exceeding the ${delta} delta.`,
+    };
+  }
+  return { escalated: false, reason: `Composite ${composite.toFixed(2)} below the alert threshold.` };
+}
+
+/**
+ * Most-recent composite-level (`axis` omitted) `drift_evaluated` score for an
+ * entity, or undefined if none. The caller owns the audit log and passes the
+ * result into `runEscalation` as `priorComposite`, keeping escalation
+ * side-effect-free.
+ */
+export function priorComposite(entries: AuditEntry[], entityId: string): number | undefined {
+  let latest: { ts: string; score: number } | undefined;
+  for (const e of entries) {
+    if (e.kind === "drift_evaluated" && e.entityId === entityId && e.axis === undefined) {
+      if (!latest || e.ts > latest.ts) latest = { ts: e.ts, score: e.score };
+    }
+  }
+  return latest?.score;
+}
+
 export interface EscalationResult {
   drift: DriftVector;
   /** Axes that left 'stable' and were escalated to Stage 2, in axis order. */
@@ -52,6 +102,8 @@ export interface EscalationResult {
   escalated: boolean;
   /** Present iff escalated. */
   stage3?: Stage3Outcome;
+  /** Why Stage 3 did or did not fire (level-cross vs delta-cross). */
+  escalationReason: string;
   cost: EscalationCost;
 }
 
@@ -64,6 +116,8 @@ export interface RunEscalationParams {
   asOf: string;
   /** Stable id for a produced alert. Defaults to `alert-<entity>-<now>`. */
   alertId?: string;
+  /** Prior composite from the last evaluation; enables change-triggered escalation. */
+  priorComposite?: number;
 }
 
 /**
@@ -99,9 +153,10 @@ export async function runEscalation(params: RunEscalationParams): Promise<Escala
     stage2.push({ axis, result, usage, model });
   }
 
-  const escalated = drift.status === "alert";
+  const gate = escalationGate(drift.composite, drift.status, params.priorComposite);
+  const escalated = gate.escalated;
   if (!escalated) {
-    return { drift, drifting, stage2, escalated, cost };
+    return { drift, drifting, stage2, escalated, escalationReason: gate.reason, cost };
   }
 
   // Stage 3 — synthesize the RE-KYC alert.
@@ -116,5 +171,13 @@ export async function runEscalation(params: RunEscalationParams): Promise<Escala
   });
   tally(model, usage);
 
-  return { drift, drifting, stage2, escalated, stage3: { alert, usage, model }, cost };
+  return {
+    drift,
+    drifting,
+    stage2,
+    escalated,
+    escalationReason: gate.reason,
+    stage3: { alert, usage, model },
+    cost,
+  };
 }

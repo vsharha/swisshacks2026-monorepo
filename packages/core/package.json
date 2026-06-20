@@ -16,6 +16,8 @@
     "build": "tsc",
     "lint": "eslint .",
     "check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "fix": "eslint src --fix",
     "format": "prettier --write src"
   },
@@ -32,6 +34,7 @@
     "globals": "^17.3.0",
     "jiti": "^2.4.0",
     "prettier": "^3.5.3",
-    "typescript-eslint": "^8.54.0"
+    "typescript-eslint": "^8.54.0",
+    "vitest": "^4.1.9"
   }
 }

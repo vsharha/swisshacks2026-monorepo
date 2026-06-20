@@ -1,10 +1,16 @@
 import { randomUUID } from 'node:crypto';
 import { env } from '$env/dynamic/private';
 import type { Alert, DriftAxis } from '@kyc/core';
-import { runEscalation, type AxisMateriality, type EscalationCost } from '@kyc/core/pipeline';
+import { AXES } from '@kyc/core';
+import {
+	priorComposite,
+	runEscalation,
+	type AxisMateriality,
+	type EscalationCost
+} from '@kyc/core/pipeline';
 import { costUsd } from '@kyc/core/llm';
 import { loadBook, loadPatternLibrary } from './data';
-import { appendAudit } from './audit';
+import { appendAudit, listAudit } from './audit';
 
 /**
  * Server-only Stage 2/3 escalation. Lives in $lib/server so the framework keeps
@@ -35,6 +41,8 @@ export async function analyzeEntity(entityId: string, asOf: string): Promise<Ana
 	const apiKey = env.PUBLICAI_API_KEY;
 	if (!apiKey) return { llm: false };
 
+	const prior = priorComposite(listAudit(entityId, 500), entityId);
+
 	const result = await runEscalation({
 		config: {
 			apiKey,
@@ -46,7 +54,21 @@ export async function analyzeEntity(entityId: string, asOf: string): Promise<Ana
 		signals: entity.signals,
 		archetypes: loadPatternLibrary(),
 		asOf,
-		alertId: `alert-${entityId}-${Date.now()}`
+		alertId: `alert-${entityId}-${Date.now()}`,
+		priorComposite: prior
+	});
+
+	// Stage 1 — record the composite-level evaluation (axis omitted) so later runs
+	// can detect a delta-triggered jump (proposal 2).
+	const compositeConfidence = Math.max(...AXES.map((a) => result.drift.axes[a].confidence));
+	appendAudit({
+		id: randomUUID(),
+		ts: now(),
+		entityId,
+		kind: 'drift_evaluated',
+		tier: 'stage1',
+		score: result.drift.composite,
+		confidence: compositeConfidence
 	});
 
 	// Stage 2 — record each per-axis materiality verdict (with its cost).
@@ -79,9 +101,7 @@ export async function analyzeEntity(entityId: string, asOf: string): Promise<Ana
 		kind: 'escalation_decision',
 		composite: result.drift.composite,
 		escalated: result.escalated,
-		reason: result.escalated
-			? `Composite ${result.drift.composite.toFixed(2)} crossed the alert threshold.`
-			: `Composite ${result.drift.composite.toFixed(2)} below the alert threshold.`
+		reason: result.escalationReason
 	});
 
 	if (!result.stage3) return { llm: true, materiality, alert: null, cost: result.cost };
