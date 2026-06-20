@@ -1,0 +1,9 @@
+[
+  {
+    "from": { "name": "Viktor Petrov", "type": "individual" },
+    "to": { "name": "Caspian Holdings Ltd", "type": "entity" },
+    "type": "CONTROLS",
+    "note": "Registry-derived control link (GLEIF/OpenCorporates) the baselines cannot express on their own — unmasks the controller behind NordTrade's nominee parent.",
+    "sourceUrl": "https://search.gleif.org/"
+  }
+]

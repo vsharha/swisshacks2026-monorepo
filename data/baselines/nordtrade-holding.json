@@ -9,8 +9,8 @@
   "businessModel": "Payment processing and merchant acquiring across the EU.",
   "beneficialOwners": [
     {
-      "name": "Disclosed nominee structure",
-      "role": "Beneficial owner (layered)"
+      "name": "Caspian Holdings Ltd",
+      "role": "Parent (nominee structure)"
     }
   ],
   "riskRating": "medium",

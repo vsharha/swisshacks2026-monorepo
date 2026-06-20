@@ -1,0 +1,40 @@
+[
+  {
+    "id": "graph-nordtrade-holding-person-viktor-petrov",
+    "entityId": "nordtrade-holding",
+    "axis": "ownership",
+    "type": "graph_exposure",
+    "date": "2026-06-20",
+    "sourceUrl": "https://sanctionssearch.ofac.treas.gov/",
+    "title": "Risk reaches NordTrade Holding through Caspian Holdings Ltd (2 hops): Viktor Petrov matches OFAC SDN (sanction).",
+    "source": "graph",
+    "payload": {
+      "path": {
+        "nodes": [
+          {
+            "id": "org:nordtrade holding",
+            "label": "NordTrade Holding",
+            "type": "entity"
+          },
+          {
+            "id": "org:caspian holdings ltd",
+            "label": "Caspian Holdings Ltd",
+            "type": "entity"
+          },
+          {
+            "id": "person:viktor petrov",
+            "label": "Viktor Petrov",
+            "type": "individual"
+          }
+        ],
+        "edges": [
+          "CONTROLS",
+          "CONTROLS"
+        ]
+      },
+      "hops": 2,
+      "origin": "Viktor Petrov matches OFAC SDN (sanction)"
+    },
+    "confidence": 0.582
+  }
+]
