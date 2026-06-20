@@ -118,6 +118,7 @@
 			{book}
 			{selectedId}
 			{selected}
+			rating={ratings[selectedId]}
 			{funnel}
 			{llmCost}
 			onselect={(id) => (selectedId = id)}
@@ -129,7 +130,6 @@
 			<EntityView
 				entity={selected}
 				{asOfIso}
-				rating={ratings[selectedId]}
 				{archetype}
 				{decision}
 				{auditCount}

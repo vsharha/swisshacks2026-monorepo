@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { RiskRating } from '@kyc/core';
 	import BookList from './BookList.svelte';
 	import CompanyDetail from './CompanyDetail.svelte';
 	import CostFunnel from './CostFunnel.svelte';
@@ -8,6 +9,7 @@
 		book,
 		selectedId,
 		selected,
+		rating,
 		funnel,
 		llmCost,
 		onselect,
@@ -16,6 +18,7 @@
 		book: BookEntity[];
 		selectedId: string;
 		selected: BookEntity | undefined;
+		rating: RiskRating | undefined;
 		funnel: { s0: number; s1: number; s2: number; s3: number };
 		llmCost: {
 			stage2Calls: number;
@@ -36,6 +39,7 @@
 	{#if panelView === 'detail' && selected}
 		<CompanyDetail
 			entity={selected}
+			{rating}
 			onback={() => {
 				panelView = 'list';
 				onclear();

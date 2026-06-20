@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { AXES, type Alert, type PatternArchetype, type RiskRating } from '@kyc/core';
+	import { AXES, type Alert, type PatternArchetype } from '@kyc/core';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import DriftRadar from './DriftRadar.svelte';
 	import AxisBreakdown from './AxisBreakdown.svelte';
-	import EntityHeader from './EntityHeader.svelte';
 	import EventsView from './EventsView.svelte';
 	import EscalationPanel from './EscalationPanel.svelte';
 	import type { BookEntity } from '$lib/view';
@@ -11,7 +10,6 @@
 	let {
 		entity,
 		asOfIso,
-		rating,
 		archetype,
 		decision,
 		auditCount,
@@ -23,7 +21,6 @@
 	}: {
 		entity: BookEntity;
 		asOfIso: string;
-		rating: RiskRating | undefined;
 		archetype: PatternArchetype | undefined;
 		decision: 'escalate' | 'dismiss' | null;
 		auditCount: number;
@@ -78,15 +75,14 @@
 </script>
 
 <main class="flex min-h-0 min-w-0 flex-col gap-4">
-	<EntityHeader {entity} {rating} />
-
-	<div
-		class="border-line bg-panel grid h-[284px] shrink-0 grid-cols-[280px_1fr] gap-5 rounded-lg border p-4"
-	>
-		<div class="border-line/70 flex items-center justify-center border-r pr-2">
-			<DriftRadar axes={entity.drift.axes} status={entity.drift.status} />
+	<div class="border-line bg-panel flex shrink-0 flex-col gap-3 rounded-lg border p-4">
+		<div class="text-muted2 text-[10px] tracking-[0.16em] uppercase">Drift vector · 5 axes</div>
+		<div class="grid h-[244px] grid-cols-[280px_1fr] gap-5">
+			<div class="border-line/70 flex items-center justify-center border-r pr-2">
+				<DriftRadar axes={entity.drift.axes} status={entity.drift.status} />
+			</div>
+			<AxisBreakdown axes={entity.drift.axes} />
 		</div>
-		<AxisBreakdown axes={entity.drift.axes} />
 	</div>
 
 	<EventsView {entity} {asOfIso} />
