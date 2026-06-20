@@ -8,6 +8,7 @@ import {
 } from "@kyc/core";
 import { scoreDriftVector } from "@kyc/core/drift";
 import { reasonAxisMateriality, synthesizeAlert } from "@kyc/core/pipeline";
+import { costUsd } from "@kyc/core/llm";
 import { loadRootEnv, readData, writeData } from "./lib/repo.ts";
 
 /**
@@ -45,17 +46,19 @@ const drift = scoreDriftVector(baseline, signals, { asOf });
 console.log(`Composite ${drift.composite.toFixed(2)} (${drift.status}) as of ${asOf}`);
 
 // Stage 2 — only the axes that actually moved escalate (the cost story).
+let totalUsd = 0;
 const drifting = AXES.filter((a) => drift.axes[a].status !== "stable");
 console.log(`Stage 2 — reasoning ${drifting.length} drifting axis/axes...`);
 for (const axis of drifting) {
   const axisSignals = signals.filter((s) => s.axis === axis && s.date <= asOf);
-  const m = await reasonAxisMateriality({
+  const { result: m, usage, model } = await reasonAxisMateriality({
     config,
     baseline,
     axis,
     signals: axisSignals,
     prior: drift.axes[axis],
   });
+  totalUsd += costUsd(model, usage);
   console.log(`  ${axis.padEnd(15)} ${m.verdict} (${m.score.toFixed(2)}) — ${m.reasoning}`);
 }
 
@@ -66,7 +69,7 @@ if (drift.status !== "alert") {
 }
 
 console.log("Stage 3 — synthesizing RE-KYC alert...");
-const alert = await synthesizeAlert({
+const { alert, usage: s3usage, model: s3model } = await synthesizeAlert({
   config,
   baseline,
   drift,
@@ -74,6 +77,7 @@ const alert = await synthesizeAlert({
   archetypes,
   alertId: `alert-${entityId}-${Date.now()}`,
 });
+totalUsd += costUsd(s3model, s3usage);
 
 const out = await writeData(`alerts/${entityId}.json`, alert);
 console.log(`\nRecommended: ${alert.recommendedAction}`);
@@ -84,4 +88,5 @@ if (alert.patternMatch) {
   );
 }
 console.log(`Citations:   ${alert.citations.length}`);
+console.log(`Cost:        $${totalUsd.toFixed(4)} this run`);
 console.log(`Wrote → ${out}`);

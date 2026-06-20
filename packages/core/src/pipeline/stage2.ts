@@ -8,7 +8,12 @@ import {
   type KYCBaseline,
   type Signal,
 } from "../schemas/index.ts";
-import { anthropicProvider, STAGE2_MODEL, type LLMConfig } from "../llm/config.ts";
+import {
+  anthropicProvider,
+  STAGE2_MODEL,
+  type LLMConfig,
+  type LLMUsage,
+} from "../llm/config.ts";
 
 /**
  * Stage 2 — per-drifting-axis LLM reasoning about *materiality*. Only fires on
@@ -58,15 +63,22 @@ function renderSignals(signals: Signal[]): string {
     .join("\n");
 }
 
+export interface AxisMaterialityResult {
+  result: AxisMateriality;
+  usage: LLMUsage;
+  model: string;
+}
+
 /** Reason about the materiality of drift on a single axis. */
 export async function reasonAxisMateriality(
   params: ReasonAxisParams,
-): Promise<AxisMateriality> {
+): Promise<AxisMaterialityResult> {
   const { config, baseline, axis, signals, prior } = params;
   const provider = anthropicProvider(config);
+  const model = config.stage2Model ?? STAGE2_MODEL;
 
-  const { object } = await generateObject({
-    model: provider(config.stage2Model ?? STAGE2_MODEL),
+  const { object, usage } = await generateObject({
+    model: provider(model),
     schema: AxisMaterialitySchema,
     system:
       "You are a KYC analyst assessing whether a customer's risk profile has structurally drifted on ONE axis. " +
@@ -81,5 +93,9 @@ export async function reasonAxisMateriality(
       `Assess the materiality of drift on this axis. Return a refined score, confidence, a verdict, and concise reasoning.`,
   });
 
-  return object;
+  return {
+    result: object,
+    usage: { inputTokens: usage.inputTokens ?? 0, outputTokens: usage.outputTokens ?? 0 },
+    model,
+  };
 }

@@ -20,7 +20,7 @@ function repoRoot(): string {
 	throw new Error('Could not locate repo root');
 }
 
-const dataDir = join(repoRoot(), 'data');
+export const dataDir = join(repoRoot(), 'data');
 
 function readJson(relPath: string): unknown {
 	return JSON.parse(readFileSync(join(dataDir, relPath), 'utf8'));

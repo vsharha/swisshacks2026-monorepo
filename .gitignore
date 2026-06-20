@@ -7,3 +7,6 @@ dist
 # Playwright MCP scratch (screenshots, snapshots)
 .playwright-mcp/
 /dashboard-*.png
+
+# Runtime audit log (append-only write state, not seed data)
+data/audit.jsonl

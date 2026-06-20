@@ -19,6 +19,15 @@
 	let analyzing = $state(false);
 	let llmAlert = $state<Alert | null>(null);
 	let llmNote = $state<string | null>(null);
+	let llmCost = $state<{
+		stage2Calls: number;
+		inputTokens: number;
+		outputTokens: number;
+		usd: number;
+	} | null>(null);
+	let auditCount = $state(data.auditCount);
+
+	type ActionResult = { type: string; data?: Record<string, unknown> };
 
 	// `use:enhance` handler: keep the result in local state instead of a full
 	// page reload, so the radar/scrubber context is preserved.
@@ -26,17 +35,30 @@
 		analyzing = true;
 		llmNote = null;
 		llmAlert = null;
-		return async ({ result }: { result: { type: string; data?: Record<string, unknown> } }) => {
+		llmCost = null;
+		return async ({ result }: { result: ActionResult }) => {
 			analyzing = false;
 			if (result.type !== 'success') {
 				llmNote = 'Analysis failed.';
 				return;
 			}
-			const data = result.data ?? {};
-			if (data.llm && data.alert) llmAlert = data.alert as Alert;
-			else if (!data.llm)
+			const body = result.data ?? {};
+			if (typeof body.auditCount === 'number') auditCount = body.auditCount;
+			llmCost = (body.cost as typeof llmCost) ?? null;
+			if (body.llm && body.alert) llmAlert = body.alert as Alert;
+			else if (!body.llm)
 				llmNote = 'No ANTHROPIC_API_KEY configured — showing the rule-based recommendation.';
 			else llmNote = 'Composite below the alert threshold — no Stage 3 synthesis.';
+		};
+	};
+
+	// HITL decision → append-only audit log.
+	const enhanceDecide = () => {
+		return async ({ result }: { result: ActionResult }) => {
+			if (result.type !== 'success') return;
+			const body = result.data ?? {};
+			if (body.decided === 'escalate' || body.decided === 'dismiss') decision = body.decided;
+			if (typeof body.auditCount === 'number') auditCount = body.auditCount;
 		};
 	};
 
@@ -127,6 +149,7 @@
 		decision = null;
 		llmAlert = null;
 		llmNote = null;
+		llmCost = null;
 	});
 </script>
 
@@ -144,6 +167,7 @@
 				<span class="text-muted2 tracking-widest">LIVE</span>
 			</span>
 			<span class="text-muted2">book <span class="text-text">{data.book.length}</span></span>
+			<span class="text-muted2">audit <span class="text-text">{auditCount}</span></span>
 			<span class="text-muted2">cost/day <span class="text-stable">$0.75</span></span>
 		</div>
 	</header>
@@ -187,13 +211,27 @@
 			<div class="border-line mt-auto border-t pt-2">
 				<div class="text-muted2 mb-2 text-[10px] tracking-widest uppercase">Cost funnel</div>
 				<div class="flex flex-col gap-1.5 text-[11px]">
-					{#each [{ k: 'S0 rules', v: funnel.s0, c: 'var(--muted)' }, { k: 'S1 drift', v: funnel.s1, c: 'var(--muted)' }, { k: 'S2 axis-LLM', v: funnel.s2, c: 'var(--watch)' }, { k: 'S3 synth', v: funnel.s3, c: 'var(--alert)' }] as row (row.k)}
+					{#each [{ k: 'S0 rules', v: funnel.s0, c: 'var(--muted)' }, { k: 'S1 drift', v: funnel.s1, c: 'var(--muted)' }, { k: 'S2 axis-LLM', v: llmCost ? llmCost.stage2Calls : funnel.s2, c: 'var(--watch)' }, { k: 'S3 synth', v: funnel.s3, c: 'var(--alert)' }] as row (row.k)}
 						<div class="flex items-center justify-between">
 							<span class="text-muted2">{row.k}</span>
 							<span style="color: {row.c}">{row.v}</span>
 						</div>
 					{/each}
 				</div>
+				{#if llmCost}
+					<div class="border-line mt-2 flex flex-col gap-1 border-t pt-2 text-[11px]">
+						<div class="flex items-center justify-between">
+							<span class="text-muted2">tokens</span>
+							<span class="text-text"
+								>{(llmCost.inputTokens + llmCost.outputTokens).toLocaleString()}</span
+							>
+						</div>
+						<div class="flex items-center justify-between">
+							<span class="text-muted2">$ this run</span>
+							<span class="text-stable">${llmCost.usd.toFixed(4)}</span>
+						</div>
+					</div>
+				{/if}
 				<div class="text-muted2 mt-2 text-[10px] leading-relaxed">
 					vs naïve LLM-on-everything<br /><span class="text-stable">~99% cheaper</span>
 				</div>
@@ -325,17 +363,27 @@
 							{#if decision}
 								<span class="text-[11px]" style="color: var(--stable)">
 									✓ {decision === 'escalate' ? 'Escalated to MLRO' : 'Dismissed'} · written to audit log
+									(#{auditCount})
 								</span>
 							{:else}
-								<button
-									class="rounded-sm px-3 py-1 text-[11px] font-medium"
-									style="background: var(--alert); color: var(--bg)"
-									onclick={() => (decision = 'escalate')}>Escalate · re-KYC</button
-								>
-								<button
-									class="border-line text-muted2 hover:text-text rounded-sm border px-3 py-1 text-[11px]"
-									onclick={() => (decision = 'dismiss')}>Dismiss</button
-								>
+								<form method="POST" action="?/decide" use:enhance={enhanceDecide}>
+									<input type="hidden" name="entityId" value={selected.baseline.entityId} />
+									<input type="hidden" name="decision" value="escalate" />
+									<button
+										type="submit"
+										class="rounded-sm px-3 py-1 text-[11px] font-medium"
+										style="background: var(--alert); color: var(--bg)">Escalate · re-KYC</button
+									>
+								</form>
+								<form method="POST" action="?/decide" use:enhance={enhanceDecide}>
+									<input type="hidden" name="entityId" value={selected.baseline.entityId} />
+									<input type="hidden" name="decision" value="dismiss" />
+									<button
+										type="submit"
+										class="border-line text-muted2 hover:text-text rounded-sm border px-3 py-1 text-[11px]"
+										>Dismiss</button
+									>
+								</form>
 								<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze}>
 									<input type="hidden" name="entityId" value={selected.baseline.entityId} />
 									<input type="hidden" name="asOf" value={asOfIso} />

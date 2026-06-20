@@ -25,3 +25,22 @@ export interface LLMConfig {
 export function anthropicProvider(config: LLMConfig) {
   return createAnthropic({ apiKey: config.apiKey });
 }
+
+/** Token usage from one LLM call. */
+export interface LLMUsage {
+  inputTokens: number;
+  outputTokens: number;
+}
+
+/** Per-model price in USD per million tokens (input / output). */
+const PRICING: Record<string, { input: number; output: number }> = {
+  "claude-haiku-4-5": { input: 1, output: 5 },
+  "claude-sonnet-4-6": { input: 3, output: 15 },
+  "claude-opus-4-8": { input: 5, output: 25 },
+};
+
+/** USD cost of a call. Falls back to Sonnet pricing for unknown models. */
+export function costUsd(model: string, usage: LLMUsage): number {
+  const p = PRICING[model] ?? PRICING["claude-sonnet-4-6"]!;
+  return (usage.inputTokens * p.input + usage.outputTokens * p.output) / 1_000_000;
+}

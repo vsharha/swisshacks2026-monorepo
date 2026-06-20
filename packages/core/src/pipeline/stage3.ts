@@ -12,7 +12,12 @@ import {
   type PatternArchetype,
   type Signal,
 } from "../schemas/index.ts";
-import { anthropicProvider, STAGE3_MODEL, type LLMConfig } from "../llm/config.ts";
+import {
+  anthropicProvider,
+  STAGE3_MODEL,
+  type LLMConfig,
+  type LLMUsage,
+} from "../llm/config.ts";
 
 /**
  * Stage 3 — deep synthesis. Fires only on entities that crossed the composite
@@ -69,8 +74,16 @@ function renderSignals(signals: Signal[]): string {
     .join("\n");
 }
 
+export interface SynthesizeAlertResult {
+  alert: Alert;
+  usage: LLMUsage;
+  model: string;
+}
+
 /** Synthesize a RE-KYC alert for an entity that crossed the threshold. */
-export async function synthesizeAlert(params: SynthesizeAlertParams): Promise<Alert> {
+export async function synthesizeAlert(
+  params: SynthesizeAlertParams,
+): Promise<SynthesizeAlertResult> {
   const { config, baseline, drift, signals, archetypes, alertId } = params;
   const provider = anthropicProvider(config);
   const evidence = signals.filter((s) => s.date <= drift.asOf);
@@ -80,7 +93,7 @@ export async function synthesizeAlert(params: SynthesizeAlertParams): Promise<Al
     .map(([axis, a]) => `  ${axis}: ${a.score.toFixed(2)} (${a.status})`)
     .join("\n");
 
-  const { object: draft } = await generateObject({
+  const { object: draft, usage } = await generateObject({
     model: provider(model),
     schema: SynthesisDraftSchema,
     system:
@@ -127,7 +140,7 @@ export async function synthesizeAlert(params: SynthesizeAlertParams): Promise<Al
         }
       : undefined;
 
-  return AlertSchema.parse({
+  const alert = AlertSchema.parse({
     id: alertId,
     entityId: baseline.entityId,
     createdAt: new Date().toISOString(),
@@ -141,4 +154,10 @@ export async function synthesizeAlert(params: SynthesizeAlertParams): Promise<Al
     confidence: draft.confidence,
     modelVersion: model,
   } satisfies Record<string, unknown>);
+
+  return {
+    alert,
+    usage: { inputTokens: usage.inputTokens ?? 0, outputTokens: usage.outputTokens ?? 0 },
+    model,
+  };
 }
