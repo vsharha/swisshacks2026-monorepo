@@ -28,7 +28,7 @@
 			<div class="border-line/60 flex items-start gap-2 border-b pb-1 text-[11px]">
 				<span
 					class="mt-1.5 h-2 w-2 shrink-0 rounded-full border"
-					style="border-color: var(--watch); background: {relevant
+					style="border-color: {relevant ? 'var(--watch)' : 'var(--muted)'}; background: {relevant
 						? 'var(--watch)'
 						: 'transparent'}"
 					title={relevant ? 'High-relevance event' : ''}
