@@ -9,8 +9,8 @@ import {
   type Signal,
 } from "../schemas/index.ts";
 import {
-  anthropicProvider,
-  STAGE2_MODEL,
+  languageModel,
+  stageModel,
   type LLMConfig,
   type LLMUsage,
 } from "../llm/config.ts";
@@ -74,11 +74,10 @@ export async function reasonAxisMateriality(
   params: ReasonAxisParams,
 ): Promise<AxisMaterialityResult> {
   const { config, baseline, axis, signals, prior } = params;
-  const provider = anthropicProvider(config);
-  const model = config.stage2Model ?? STAGE2_MODEL;
+  const model = stageModel(config, 2);
 
   const { object, usage } = await generateObject({
-    model: provider(model),
+    model: languageModel(config, model),
     schema: AxisMaterialitySchema,
     system:
       "You are a KYC analyst assessing whether a customer's risk profile has structurally drifted on ONE axis. " +

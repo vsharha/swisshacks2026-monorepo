@@ -13,8 +13,8 @@ import {
   type Signal,
 } from "../schemas/index.ts";
 import {
-  anthropicProvider,
-  STAGE3_MODEL,
+  languageModel,
+  stageModel,
   type LLMConfig,
   type LLMUsage,
 } from "../llm/config.ts";
@@ -85,16 +85,15 @@ export async function synthesizeAlert(
   params: SynthesizeAlertParams,
 ): Promise<SynthesizeAlertResult> {
   const { config, baseline, drift, signals, archetypes, alertId } = params;
-  const provider = anthropicProvider(config);
   const evidence = signals.filter((s) => s.date <= drift.asOf);
-  const model = config.stage3Model ?? STAGE3_MODEL;
+  const model = stageModel(config, 3);
 
   const axisLines = Object.entries(drift.axes)
     .map(([axis, a]) => `  ${axis}: ${a.score.toFixed(2)} (${a.status})`)
     .join("\n");
 
   const { object: draft, usage } = await generateObject({
-    model: provider(model),
+    model: languageModel(config, model),
     schema: SynthesisDraftSchema,
     system:
       "You are a senior KYC/AML analyst writing a re-KYC recommendation for a human reviewer. " +

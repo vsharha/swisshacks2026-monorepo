@@ -20,7 +20,7 @@
     "format": "prettier --write src"
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "^3.0.85",
+    "@ai-sdk/openai-compatible": "^2.0.51",
     "ai": "^6.0.208",
     "zod": "^4.0.0"
   },

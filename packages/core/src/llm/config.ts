@@ -1,29 +1,53 @@
-import { createAnthropic } from "@ai-sdk/anthropic";
+import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+import type { LanguageModel } from "ai";
 
 /**
  * LLM tier configuration. Framework-agnostic — the apiKey is injected by the
  * caller (SvelteKit route or offline script), never read from process.env here.
  *
- * Model tiering IS the cost story: cheaper models reason per-axis (Stage 2),
- * the stronger model only synthesizes the final alert (Stage 3). See
+ * Reasoning runs on Apertus — Switzerland's fully-open sovereign LLM (EPFL /
+ * ETH Zurich / CSCS) — served over Public AI's OpenAI-compatible endpoint.
+ * Swiss-hosted + open-weight reasoning is a real data-residency / auditability
+ * story for the AMINA KYC use case (and free during the hackathon → $0 marginal).
+ *
+ * Model tiering IS the cost story: a cheaper model reasons per-axis (Stage 2),
+ * a stronger model synthesizes the final alert (Stage 3). Public AI currently
+ * serves Apertus-70B only, so both tiers default to it; override stage2Model
+ * once an 8B endpoint is available for a true cheap/expensive split. See
  * docs/reference/techstack.md.
  */
 
-/** Stage 2 — per-axis materiality reasoning. Cheap/mid tier. */
-export const STAGE2_MODEL = "claude-haiku-4-5";
+/** Public AI inference utility — OpenAI-compatible base URL. */
+export const PUBLICAI_BASE_URL = "https://api.publicai.co/v1";
 
-/** Stage 3 — deep synthesis + recommended action. Expensive tier. */
-export const STAGE3_MODEL = "claude-sonnet-4-6";
+/** Stage 2 — per-axis materiality reasoning. Confirm the exact id in your Public AI dashboard. */
+export const STAGE2_MODEL = "swiss-ai/Apertus-70B-Instruct";
+
+/** Stage 3 — deep synthesis + recommended action. */
+export const STAGE3_MODEL = "swiss-ai/Apertus-70B-Instruct";
 
 export interface LLMConfig {
   apiKey: string;
+  /** Override the Public AI base URL (e.g. a self-hosted Apertus endpoint). */
+  baseURL?: string;
   stage2Model?: string;
   stage3Model?: string;
 }
 
-/** Build an Anthropic provider bound to the caller-supplied key. */
-export function anthropicProvider(config: LLMConfig) {
-  return createAnthropic({ apiKey: config.apiKey });
+/** The model id for a stage, honouring per-stage overrides then defaults. */
+export function stageModel(config: LLMConfig, stage: 2 | 3): string {
+  if (stage === 2) return config.stage2Model ?? STAGE2_MODEL;
+  return config.stage3Model ?? STAGE3_MODEL;
+}
+
+/** Resolve an AI SDK language model bound to the caller-supplied Public AI key. */
+export function languageModel(config: LLMConfig, model: string): LanguageModel {
+  const provider = createOpenAICompatible({
+    name: "publicai",
+    baseURL: config.baseURL ?? PUBLICAI_BASE_URL,
+    apiKey: config.apiKey,
+  });
+  return provider(model);
 }
 
 /** Token usage from one LLM call. */
@@ -34,13 +58,16 @@ export interface LLMUsage {
 
 /** Per-model price in USD per million tokens (input / output). */
 const PRICING: Record<string, { input: number; output: number }> = {
-  "claude-haiku-4-5": { input: 1, output: 5 },
-  "claude-sonnet-4-6": { input: 3, output: 15 },
-  "claude-opus-4-8": { input: 5, output: 25 },
+  // Apertus via Public AI is free during the hackathon → $0 marginal cost. This
+  // strengthens the funnel (Swiss open model, zero unit cost vs the naive
+  // baseline); swap to representative self-host pricing if you want non-zero $.
+  "swiss-ai/Apertus-70B-Instruct": { input: 0, output: 0 },
 };
 
-/** USD cost of a call. Falls back to Sonnet pricing for unknown models. */
+/** USD cost of a call. Unknown models are treated as free (Apertus is free). */
 export function costUsd(model: string, usage: LLMUsage): number {
-  const p = PRICING[model] ?? PRICING["claude-sonnet-4-6"]!;
-  return (usage.inputTokens * p.input + usage.outputTokens * p.output) / 1_000_000;
+  const p = PRICING[model] ?? { input: 0, output: 0 };
+  return (
+    (usage.inputTokens * p.input + usage.outputTokens * p.output) / 1_000_000
+  );
 }

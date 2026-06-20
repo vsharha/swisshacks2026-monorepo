@@ -8,10 +8,13 @@ import { appendAudit } from './audit';
 
 /**
  * Server-only Stage 2/3 escalation. Lives in $lib/server so the framework keeps
- * it (and ANTHROPIC_API_KEY, read via the private env) off the client. The tier
- * orchestration itself is the shared @kyc/core `runEscalation`; this wrapper
+ * the API key (PUBLICAI_API_KEY, read via the private env) off the client. The
+ * tier orchestration itself is the shared @kyc/core `runEscalation`; this wrapper
  * adds the app-specific side effects — recording each verdict in the append-only
  * audit log — and adapts the result to the page's shape.
+ *
+ * Reasoning runs on Apertus (Swiss open model) over Public AI; without a key the
+ * cheap deterministic tiers still run and deep synthesis is skipped.
  */
 
 export type RunCost = EscalationCost;
@@ -29,11 +32,16 @@ export async function analyzeEntity(entityId: string, asOf: string): Promise<Ana
 	const entity = loadBook().find((e) => e.baseline.entityId === entityId);
 	if (!entity) return { llm: false };
 
-	const apiKey = env.ANTHROPIC_API_KEY;
+	const apiKey = env.PUBLICAI_API_KEY;
 	if (!apiKey) return { llm: false };
 
 	const result = await runEscalation({
-		config: { apiKey },
+		config: {
+			apiKey,
+			baseURL: env.PUBLICAI_BASE_URL || undefined,
+			stage2Model: env.PUBLICAI_STAGE2_MODEL || undefined,
+			stage3Model: env.PUBLICAI_STAGE3_MODEL || undefined
+		},
 		baseline: entity.baseline,
 		signals: entity.signals,
 		archetypes: loadPatternLibrary(),

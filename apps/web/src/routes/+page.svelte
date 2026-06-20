@@ -56,7 +56,7 @@
 			llmCost = (body.cost as typeof llmCost) ?? null;
 			if (body.llm && body.alert)
 				llmNote = 'Stage 3 synthesis complete — written to the audit log.';
-			else if (!body.llm) llmNote = 'No ANTHROPIC_API_KEY configured — deep synthesis skipped.';
+			else if (!body.llm) llmNote = 'No PUBLICAI_API_KEY configured — deep synthesis skipped.';
 			else llmNote = 'Composite below the alert threshold — no Stage 3 synthesis.';
 		};
 	};
