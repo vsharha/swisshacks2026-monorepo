@@ -9,10 +9,6 @@
 
 <aside class="border-line flex min-h-0 flex-col gap-3 border-l pl-3 text-[11px]">
 	<div>
-		<div class="text-muted2 mb-1 text-[10px] tracking-widest uppercase">Baseline</div>
-		<p class="text-muted2 leading-relaxed">{baseline.businessModel}</p>
-	</div>
-	<div>
 		<div class="text-muted2 mb-1 text-[10px] tracking-widest uppercase">Identifiers</div>
 		<div class="flex flex-col gap-0.5">
 			{#if baseline.cik}

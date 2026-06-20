@@ -7,6 +7,7 @@
 	import AuditDrawer from '$lib/components/app/AuditDrawer.svelte';
 	import TopBar from '$lib/components/app/TopBar.svelte';
 	import BookList from '$lib/components/app/BookList.svelte';
+	import CompanyDetail from '$lib/components/app/CompanyDetail.svelte';
 	import CostFunnel from '$lib/components/app/CostFunnel.svelte';
 	import EntityHeader from '$lib/components/app/EntityHeader.svelte';
 	import AxisBreakdown from '$lib/components/app/AxisBreakdown.svelte';
@@ -21,6 +22,9 @@
 
 	let asOf = $state(endMs);
 	let selectedId = $state(data.book[0]?.baseline.entityId ?? '');
+	// Left sidebar mode: the book ('list') or the selected company's detail.
+	// A company is selected on load, so open straight to its detail.
+	let panelView = $state<'list' | 'detail'>('detail');
 	let decision = $state<'escalate' | 'dismiss' | null>(null);
 
 	// Stage 3 deep analysis — server-side LLM via the `analyze` form action.
@@ -85,7 +89,7 @@
 			drift: scoreDriftVector(e.baseline, e.signals, { asOf: asOfIso })
 		}))
 	);
-	const selected = $derived(book.find((e) => e.baseline.entityId === selectedId) ?? book[0]);
+	const selected = $derived(book.find((e) => e.baseline.entityId === selectedId));
 
 	// Cost cascade for the selected entity at the current clock.
 	const funnel = $derived.by(() => {
@@ -156,10 +160,29 @@
 	<TopBar bookCount={data.book.length} {auditCount} onOpenAudit={() => (showAudit = true)} />
 
 	<!-- ── Main grid ───────────────────────────────────────────────────── -->
-	<div class="grid min-h-0 flex-1 grid-cols-[200px_1fr_220px] gap-3 py-3">
-		<!-- Left rail · the book + cost funnel -->
-		<aside class="border-line flex flex-col gap-1 border-r pr-3">
-			<BookList {book} {selectedId} onselect={(id) => (selectedId = id)} />
+	<div class="grid min-h-0 flex-1 grid-cols-[220px_1fr_220px] gap-3 py-3">
+		<!-- Left rail · company selection / selected company detail -->
+		<aside class="border-line flex min-h-0 flex-col gap-1 border-r pr-3">
+			{#if panelView === 'detail' && selected}
+				<CompanyDetail
+					entity={selected}
+					onback={() => {
+						panelView = 'list';
+						selectedId = '';
+					}}
+				/>
+			{:else}
+				<div class="flex min-h-0 flex-col gap-1 overflow-y-auto">
+					<BookList
+						{book}
+						{selectedId}
+						onselect={(id) => {
+							selectedId = id;
+							panelView = 'detail';
+						}}
+					/>
+				</div>
+			{/if}
 			<CostFunnel {funnel} {llmCost} />
 		</aside>
 
@@ -195,7 +218,7 @@
 				{/if}
 			</main>
 
-			<!-- Right rail · baseline + signals -->
+			<!-- Right rail · signals -->
 			<SignalsRail entity={selected} {asOfIso} />
 		{/if}
 	</div>

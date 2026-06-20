@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { RiskRating } from '@kyc/core';
-	import { fmtDate, statusVar, type BookEntity } from '$lib/view';
+	import { statusVar, type BookEntity } from '$lib/view';
 
 	let { entity, rating }: { entity: BookEntity; rating: RiskRating | undefined } = $props();
 
@@ -9,9 +9,8 @@
 
 <div class="flex items-start justify-between">
 	<div>
-		<h1 class="font-sans text-lg font-semibold tracking-tight">{entity.baseline.name}</h1>
 		<p class="text-muted2 text-[11px]">
-			{entity.baseline.jurisdiction} · onboarded {fmtDate(entity.baseline.onboardedAt)} · baseline
+			baseline
 			<span class="uppercase">{entity.baseline.riskRating}</span>{#if drifted}<span
 					class="uppercase"
 					style="color: var(--alert)"
