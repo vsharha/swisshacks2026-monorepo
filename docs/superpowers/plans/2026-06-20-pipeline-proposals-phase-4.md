@@ -1,8 +1,13 @@
 # Pipeline Proposals — Phase 4 (Source Connectors & Intelligence) Plan
 
-> Status: **not started.** Phases 1–3 are merged (10/14 proposals) plus a SEC
-> litigation/enforcement connector. This doc scopes the remaining work so it can
-> be picked up directly.
+> Status: **done.** All 14 proposals are merged. This phase shipped: SEC
+> enforcement (live), the GLEIF registry → ownership-edge connector, the market
+> connector (`scale`), the blockchain connector (wallet screening + on-chain
+> treasury + wallet graph nodes), the internal/MCP feedback loop (closing the
+> confidence engine's historical-accuracy term), and the opt-in NER
+> `resolveEntities` seam. Companies House / ZEFIX and a *live* GLEIF/market/chain/
+> MCP fetch remain as documented seams (scaffolds return `[]`/`null` without creds).
+> Kept below as the record of intent.
 
 **Goal:** Complete proposals 8, 12, 13, 14 from `pipeline-proposals.md`. Per the
 locked tier-D convention, the external/registry/internal/on-chain sources ship as

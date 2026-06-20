@@ -1,0 +1,36 @@
+[
+  {
+    "id": "chain-strategy-BTC-bm",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "treasury_composition",
+    "date": "2026-05-08",
+    "sourceUrl": "https://www.blockchain.com/explorer",
+    "title": "On-chain: ~$250M of corporate treasury moved into Bitcoin (≈60% of reserves).",
+    "source": "chain",
+    "payload": {
+      "asset": "BTC",
+      "kind": "shift_to",
+      "magnitudeUsd": 250000000,
+      "share": 0.6
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "chain-strategy-BTC-scale",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "treasury_shift",
+    "date": "2026-05-08",
+    "sourceUrl": "https://www.blockchain.com/explorer",
+    "title": "On-chain: ~$250M of corporate treasury moved into Bitcoin (≈60% of reserves).",
+    "source": "chain",
+    "payload": {
+      "asset": "BTC",
+      "kind": "shift_to",
+      "magnitudeUsd": 250000000,
+      "share": 0.6
+    },
+    "confidence": 0.8
+  }
+]

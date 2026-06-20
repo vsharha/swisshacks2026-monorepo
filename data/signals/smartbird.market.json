@@ -1,0 +1,18 @@
+[
+  {
+    "id": "market-smartbird-valuation_change-2026-03-20",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "valuation_change",
+    "date": "2026-03-20",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/stocks/bird",
+    "title": "Market capitalisation down ~38% year-on-year amid margin pressure.",
+    "source": "market",
+    "payload": {
+      "amountUsd": null,
+      "valuationUsd": null,
+      "changePct": -38
+    },
+    "confidence": 0.8
+  }
+]

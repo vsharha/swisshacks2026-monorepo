@@ -1,0 +1,18 @@
+[
+  {
+    "entityId": "strategy",
+    "kind": "funding_round",
+    "amountUsd": 500000000,
+    "date": "2026-04-15",
+    "sourceUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1050446",
+    "title": "$500M convertible notes priced to fund further digital-asset purchases."
+  },
+  {
+    "entityId": "smartbird",
+    "kind": "valuation_change",
+    "changePct": -38,
+    "date": "2026-03-20",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/stocks/bird",
+    "title": "Market capitalisation down ~38% year-on-year amid margin pressure."
+  }
+]

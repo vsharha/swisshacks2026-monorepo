@@ -1,0 +1,17 @@
+[
+  {
+    "entityId": "gulf-bridge-capital",
+    "kind": "investigation",
+    "date": "2024-11-02",
+    "summary": "Prior enhanced-due-diligence review of the offshore investor structure; escalated.",
+    "sourceUrl": "https://internal.amina.example/cases/2024-1180",
+    "outcome": { "fromRating": "medium", "toRating": "high" }
+  },
+  {
+    "entityId": "gulf-bridge-capital",
+    "kind": "txn_anomaly",
+    "date": "2026-06-05",
+    "summary": "Transaction monitoring flagged unusual high-value transfers to newly-onboarded counterparties.",
+    "sourceUrl": "https://internal.amina.example/cases/2026-0613"
+  }
+]

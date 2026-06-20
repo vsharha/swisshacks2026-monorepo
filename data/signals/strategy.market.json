@@ -1,0 +1,18 @@
+[
+  {
+    "id": "market-strategy-funding_round-2026-04-15",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "funding_round",
+    "date": "2026-04-15",
+    "sourceUrl": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1050446",
+    "title": "$500M convertible notes priced to fund further digital-asset purchases.",
+    "source": "market",
+    "payload": {
+      "amountUsd": 500000000,
+      "valuationUsd": null,
+      "changePct": null
+    },
+    "confidence": 0.8
+  }
+]
