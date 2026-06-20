@@ -1,18 +1,24 @@
 import { extractSecSignals } from "@kyc/core/connectors";
-import { loadRootEnv, writeData } from "../lib/repo.ts";
+import { loadRootEnv, readData, writeData } from "../lib/repo.ts";
 
 /**
- * Mode 1 offline extractor: pull the hero entity's SEC EDGAR filing history and
+ * Mode 1 offline extractor: pull a hero entity's SEC EDGAR filing history and
  * normalize the structural filings (rename, asset sale, financing, delisting)
  * into validated Signals. EDGAR is free + permanent, so this covers the
- * historical timeline EventRegistry can't reach. CIK 1653909 = Allbirds.
- * Run with `pnpm --filter @kyc/scripts extract:sec`.
+ * historical timeline EventRegistry can't reach. The CIK is read from the
+ * entity's baseline; pass an entityId as the first arg (defaults to "smartbird").
+ * Run with `pnpm --filter @kyc/scripts exec tsx src/extract/sec-edgar.ts <entityId>`.
  */
 
 loadRootEnv();
 
-const cik = process.env.SEC_CIK ?? "1653909";
-const entityId = "smartbird";
+const entityId = process.argv[2] ?? "smartbird";
+const baseline = await readData<{ cik?: string }>(`baselines/${entityId}.json`);
+const cik = process.env.SEC_CIK ?? baseline.cik;
+if (!cik) {
+  console.error(`Baseline "${entityId}" has no cik — SEC EDGAR extraction needs one.`);
+  process.exit(1);
+}
 // SEC requires a descriptive User-Agent with contact info.
 const userAgent = process.env.SEC_USER_AGENT ?? "KYC-Drift-Monitor olivier.luethy@gmx.net";
 

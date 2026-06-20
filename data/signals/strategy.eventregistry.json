@@ -1,0 +1,3606 @@
+[
+  {
+    "id": "er-9365134861",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-20T15:04:48Z",
+    "sourceUrl": "https://coinfomania.com/cryptokaleo-critiques-saylors-post-heres-why-it-matters/",
+    "title": "CryptoKaleo Critiques Saylor's Post -- Here's Why It Matters",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.08235294117647052,
+      "sourceTitle": "Coinfomania",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9364659213",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-20T04:09:35Z",
+    "sourceUrl": "https://cryptobriefing.com/igloo-crypto-tokens-nyse-registered-securities/",
+    "title": "Igloo develops instrument for crypto tokens to list on NYSE as registered securities",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.03529411764705892,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9364636674",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-20T03:31:14Z",
+    "sourceUrl": "https://economictimes.indiatimes.com/markets/cryptocurrency/the-crypto-treasury-dream-unravels-after-a-90-stock-plunge/articleshow/131869889.cms",
+    "title": "The crypto-treasury dream unravels after a 90% stock plunge",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1372549019607843,
+      "sourceTitle": "Economic Times",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9364472428",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T22:06:41Z",
+    "sourceUrl": "https://coinfomania.com/cryptokaleo-amplifies-concerns-over-saylors-treatment-of-mstr-holders/",
+    "title": "CryptoKaleo Amplifies Concerns Over Saylor's Treatment of MSTR Holders",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3960784313725489,
+      "sourceTitle": "Coinfomania",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9364436101",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T21:10:36Z",
+    "sourceUrl": "https://financefeeds.com/microstrategys-msci-index-seat-hangs/",
+    "title": "MicroStrategy's MSCI Index Seat Hangs in the Balance",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11757473",
+      "sentiment": 0.2156862745098038,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9364093262",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T14:31:24Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/06/19/buy-hold-or-sell-strategy-inc-resumed-its-bitcoin-buying-spree-but-will-warshs-first-fed-meeting-and-severe-tech-compression-crush-mstr-stock-to-65/",
+    "title": "Buy, Hold, or Sell: Strategy Inc. Resumed Its Bitcoin Buying Spree, but Will Warsh's First Fed Meeting and Severe Tech Compression Crush MSTR Stock to $65?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11761618",
+      "sentiment": -0.0980392156862745,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 3
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9364003727",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T13:14:25Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/cryptoquant-ceo-reveals-hidden-risk-123419726.html",
+    "title": "CryptoQuant CEO Reveals the Hidden Risk Behind Bitcoin's Future",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11760308",
+      "sentiment": 0.07450980392156858,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363661714",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T08:22:03Z",
+    "sourceUrl": "https://www.investing.com/analysis/trader-sentiment-reaches-extreme-buy-territory-in-the-ftse-100-200682453",
+    "title": "Trader Sentiment Reaches Extreme Buy Territory in the FTSE 100",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.8745098039215686,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363655432",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-19T08:16:17Z",
+    "sourceUrl": "https://crypto.news/how-will-bitcoin-react-after-the-2-13b-options-expiry/",
+    "title": "How will Bitcoin react after the $2.13B options expiry?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11757117",
+      "sentiment": -0.03529411764705881,
+      "sourceTitle": "crypto.news",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363113334",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T20:16:26Z",
+    "sourceUrl": "https://cryptobriefing.com/strategy-drops-top-250-market-cap-40b/",
+    "title": "Strategy falls out of top 250 US companies as market cap drops to $40B",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11757567",
+      "sentiment": 0.1294117647058823,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363046974",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T18:57:08Z",
+    "sourceUrl": "https://www.cryptopolitan.com/capital-b-board-approves-btc-reserve/",
+    "title": "Capital B looks to reverse stock downtrend as board approves €100B BTC accumulation plan - Cryptopolitan",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11758668",
+      "sentiment": 0.3960784313725489,
+      "sourceTitle": "Cryptopolitan",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9363010729",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-18T18:16:03Z",
+    "sourceUrl": "https://cryptobriefing.com/strategy-strc-preferred-stock-all-time-low/",
+    "title": "Strategy's STRC preferred stock falls to all-time low of $82.53",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11756928",
+      "sentiment": 0.07450980392156858,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 11
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1202874296",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T15:54:37Z",
+    "sourceUrl": "https://www.fa-mag.com/news/the-crypto-treasury-dream-unravels-after-a-90--stock-plunge-87461.html",
+    "title": "The Crypto-Treasury Dream Unravels After A 90% Stock Plunge",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.04313725490196085,
+      "sourceTitle": "FA Magazine",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362755436",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T14:31:04Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/06/18/forget-strategy-why-taiwan-semiconductor-is-the-ultimate-no-nonsense-play-for-a-volatile-market/",
+    "title": "Forget Strategy: Why Taiwan Semiconductor Is the Ultimate No-Nonsense Play for a Volatile Market",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11756133",
+      "sentiment": -0.05098039215686279,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362694676",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T13:44:57Z",
+    "sourceUrl": "https://cryptobriefing.com/digital-asset-treasury-companies-model-weakens/",
+    "title": "Digital asset treasury companies face challenges as public model weakens",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1372549019607843,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1202735497",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T13:38:51Z",
+    "sourceUrl": "https://www.bloomberg.com/news/articles/2026-06-18/the-crypto-treasury-dream-unravels-after-a-90-stock-plunge",
+    "title": "The Crypto-Treasury Dream Unravels After a 90% Stock Plunge",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.04313725490196085,
+      "sourceTitle": "Bloomberg Business",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362602939",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T12:34:11Z",
+    "sourceUrl": "https://it.einnews.com/pr_news/920191650/embedded-analytics-market-size-to-reach-usd-206-8-billion-growing-at-10-4-cagr-by-2035",
+    "title": "Embedded Analytics Market Size to Reach USD 206.8 Billion, Growing at 10.4% CAGR by 2035",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.5372549019607844,
+      "sourceTitle": "EIN News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9362225497",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-18T07:42:42Z",
+    "sourceUrl": "https://www.investing.com/analysis/client-sentiment-shifts-in-the-nikkei-225-as-it-breaches-71000-200682374",
+    "title": "Client Sentiment Shifts in the Nikkei 225 as It Breaches 71,000",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.9764705882352942,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361759333",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-17T21:43:06Z",
+    "sourceUrl": "https://cryptobriefing.com/strive-raises-funds-190-bitcoin-sata/",
+    "title": "Strive raises funds to acquire 190 Bitcoin through its SATA preferred stock offering",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11758712",
+      "sentiment": 0.1607843137254903,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1201985759",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T20:58:57Z",
+    "sourceUrl": "https://www.newstarget.com/2026-06-17-bitcoin-price-crypto-stocks-surge-iran-ceasefire.html",
+    "title": "Bitcoin vs. the fed: How Kevin Warsh's policies could make you a millionaire or trigger a market meltdown",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.07450980392156858,
+      "sourceTitle": "Newstarget.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361638631",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T19:11:56Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/options/articles/bmnr-down-45-yet-options-102412569.html",
+    "title": "BMNR Is Down 45% This Year, Yet Options Traders Favor It Over MSTR",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.1137254901960785,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361585718",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-17T18:14:02Z",
+    "sourceUrl": "https://coinfomania.com/cryptoslate-reports-key-bitcoin-insight-whats-driving-the-conversation/",
+    "title": "CryptoSlate Reports Key Bitcoin Insight -- What's Driving the Conversation?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11758509",
+      "sentiment": 0.1294117647058823,
+      "sourceTitle": "Coinfomania",
+      "clusterSize": 5
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361555868",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T17:44:43Z",
+    "sourceUrl": "https://cryptobriefing.com/spacs-rebound-wall-street-mega-ipo-frenzy/",
+    "title": "SPACs rebound amid Wall Street's mega-IPO frenzy",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11756287",
+      "sentiment": 0.003921568627450966,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361498672",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-17T16:49:55Z",
+    "sourceUrl": "https://filmdaily.co/news/bitcoin-vs-gold-which-investment-wins-now/",
+    "title": "Bitcoin vs. gold: which investment wins now? - Film Daily",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.192156862745098,
+      "sourceTitle": "Film Daily",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361485320",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T16:37:00Z",
+    "sourceUrl": "https://filmdaily.co/news/bitcoin-price-7-factors-moving-the-market-now/",
+    "title": "Bitcoin price: 7 factors moving the market now - Film Daily",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.223529411764706,
+      "sourceTitle": "Film Daily",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9361481690",
+    "entityId": "strategy",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-06-17T16:33:50Z",
+    "sourceUrl": "https://www.analyticsinsight.net/news/bitcoin-news-today-btc-rally-builds-as-etf-inflows-oil-drop-and-strategy-buy-align",
+    "title": "Bitcoin News Today: BTC Rally Builds as ETF Inflows, Oil Drop, and Strategy Buy Align",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.02745098039215677,
+      "sourceTitle": "Analytics Insight",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-9361172424",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T12:33:25Z",
+    "sourceUrl": "https://cryptonews.net/news/bitcoin/33020562/",
+    "title": "Bitcoin price analysis pulls 28x the average -- nothing else comes close",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2784313725490195,
+      "sourceTitle": "cryptonews.net",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9360970246",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T09:59:54Z",
+    "sourceUrl": "https://coinpedia.org/news/michael-saylor-reveals-when-bitcoin-price-might-start-rallying-again/",
+    "title": "Michael Saylor Reveals When Bitcoin Price Might Start Rallying Again",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11753153",
+      "sentiment": 0.2078431372549019,
+      "sourceTitle": "Coinpedia - Fintech & Cryptocurreny News Media| Crypto Guide",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9360781221",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T07:31:12Z",
+    "sourceUrl": "https://www.investing.com/analysis/trader-bias-on-the-verge-of-shifting-in-the-dow-30-200682289",
+    "title": "Trader Bias on the Verge of Shifting in the Dow 30",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.968627450980392,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9360750973",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T07:05:09Z",
+    "sourceUrl": "https://financefeeds.com/coinbase-unleashes-11-backed-tokenized-stocks-in-everything-exchange-push/",
+    "title": "Coinbase Unleashes 1:1-Backed Tokenized Stocks in \"Everything Exchange\" Push - FinanceFeeds",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11749501",
+      "sentiment": 0.3490196078431373,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9360741175",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T06:57:29Z",
+    "sourceUrl": "https://cryptobriefing.com/polymarket-student-bet-goes-to-zero/",
+    "title": "A college student's $35,000 Polymarket bet went to zero because of one day",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.01960784313725494,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9360496545",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T02:11:19Z",
+    "sourceUrl": "https://bitcoinist.com/michael-saylor-rejects-protocol-yield-in-bitcoin-digital-asset-stack/",
+    "title": "Michael Saylor Rejects Protocol Yield In Bitcoin Digital Asset Stack",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11745507",
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "Bitcoinist.com",
+      "clusterSize": 11
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9360411871",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-17T00:01:14Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/economist-predicted-2008-crash-reveals-234752270.html",
+    "title": "Economist who predicted 2008 crash reveals next Bitcoin target",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11748075",
+      "sentiment": -0.1137254901960785,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9360402172",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-16T23:42:11Z",
+    "sourceUrl": "https://en.cryptonomist.ch/2026/06/17/bitcoin-price-analysis-crypto-media/",
+    "title": "Bitcoin price analysis pulls 28x the average -- nothing else comes close",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2784313725490195,
+      "sourceTitle": "The Cryptonomist",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9360242115",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-16T20:01:48Z",
+    "sourceUrl": "https://www.crypto-reporter.com/news/blockdags-0-10-buyback-crosses-1b-coins-mark-while-xrp-expands-with-mastercard-ai-payments-avax-reaches-nasdaq-128015/",
+    "title": "BlockDAG's $0.10 Buyback Crosses 1B Coins Mark While XRP Expands With Mastercard AI Payments & AVAX Reaches Nasdaq",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2392156862745098,
+      "sourceTitle": "Crypto Reporter",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1200764992",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-16T18:34:34Z",
+    "sourceUrl": "https://www.bloomberg.com/opinion/newsletters/2026-06-16/ai-builds-some-pyramids",
+    "title": "AI Builds Some Pyramids",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.05882352941176472,
+      "sourceTitle": "Bloomberg Business",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9360045724",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-16T16:31:29Z",
+    "sourceUrl": "https://filmdaily.co/news/bitcoin-price-from-pennies-to-six-figures-in-one-decade/",
+    "title": "Bitcoin price: From pennies to six figures in one decade - Film Daily",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.03529411764705881,
+      "sourceTitle": "Film Daily",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9359822339",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-16T13:30:56Z",
+    "sourceUrl": "https://cryptobriefing.com/spacex-ipo-market-valuation-bitcoin-treasury/",
+    "title": "SpaceX surpasses Amazon and Microsoft in market valuation race after record-shattering IPO",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11748537",
+      "sentiment": 0.2470588235294118,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9359616510",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-16T10:56:07Z",
+    "sourceUrl": "https://beincrypto.com/mstr-vs-bmnr-options-positioning-analysis/",
+    "title": "BMNR Is Down 45% This Year, Yet Options Traders Favor It Over MSTR",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.1450980392156863,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9359484688",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-16T09:15:24Z",
+    "sourceUrl": "https://inews.zoombangla.com/bitcoin-holds-near-64000-as-crypto-markets-eye-federal-reserve-decision/",
+    "title": "Bitcoin Holds Near $64,000 as Crypto Markets Eye Federal Reserve Decision",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11751076",
+      "sentiment": 0.02745098039215677,
+      "sourceTitle": "Bangla news",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358831072",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-15T19:59:51Z",
+    "sourceUrl": "https://cryptobriefing.com/bitcoin-policy-uk-saylor-strc-criticism/",
+    "title": "Bitcoin Policy UK CEO criticizes Michael Saylor's STRC promotion as dishonest",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.06666666666666665,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358761510",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T18:37:42Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-fall-below-50-000-182000261.html",
+    "title": "Will Bitcoin Fall Below $50,000?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.2313725490196078,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358690247",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T17:25:09Z",
+    "sourceUrl": "https://cryptobriefing.com/spacex-ipo-raises-86-billion-bitcoin-treasury/",
+    "title": "SpaceX raises $85.7B in largest IPO ever, exercises greenshoe option for 83.3M additional shares",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11743932",
+      "sentiment": 0.2078431372549019,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358686047",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-15T17:20:05Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/06/15/mstx-vs-mstu-which-2x-microstrategy-etf-survives-the-volatility/",
+    "title": "MSTX vs. MSTU: Which 2x MicroStrategy ETF Survives the Volatility?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11756912",
+      "sentiment": -0.06666666666666665,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 3
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358582144",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T15:47:20Z",
+    "sourceUrl": "https://cryptobriefing.com/bitmine-buys-eth-second-largest-treasury/",
+    "title": "Bitmine buys 77K more ETH, becomes second-largest crypto treasury firm",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11744482",
+      "sentiment": 0.1764705882352942,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358497753",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T14:39:28Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/06/15/prediction-strategy-has-216-upside-as-bitcoin-buying-accelerates/",
+    "title": "Prediction: Strategy Has 216% Upside as Bitcoin Buying Accelerates",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11742272",
+      "sentiment": 0.1294117647058823,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 3
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358412748",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-15T13:33:55Z",
+    "sourceUrl": "https://beincrypto.com/strategy-bitcoin-buy-stock-sales-reserve/",
+    "title": "MicroStrategy Sells More Stock Than It Buys Bitcoin: A Red Flag?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.003921568627450966,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358361561",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T12:55:24Z",
+    "sourceUrl": "https://protos.com/28000-crypto-wallets-pledged-560m-for-spacex-shares-they-didnt-get/",
+    "title": "28,000 crypto wallets pledged $560M for SpaceX shares they didn't get",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11739327",
+      "sentiment": 0.1372549019607843,
+      "sourceTitle": "Protos",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358287913",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T11:59:26Z",
+    "sourceUrl": "https://www.coindesk.com/research/real-shares-real-scale-binance-s-us-equities-launch-in-numbers",
+    "title": "Real Shares, Real Scale: Binance's US Equities Launch in Numbers",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11739503",
+      "sentiment": 0.0980392156862746,
+      "sourceTitle": "CoinDesk",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358236686",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T11:17:19Z",
+    "sourceUrl": "https://cryptobriefing.com/spacex-ipo-volatility-index-investing-crypto/",
+    "title": "SpaceX IPO adds volatility to index-investing landscape, and crypto markets are feeling the tremors",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11740220",
+      "sentiment": 0.223529411764706,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9358039419",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T08:41:56Z",
+    "sourceUrl": "https://cryptobriefing.com/spacex-ipo-bitcoin-holdings-market-impact/",
+    "title": "SpaceX shares surge after blockbuster IPO, ranks among top public companies",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11735929",
+      "sentiment": 0.3647058823529412,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9357783730",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T04:36:56Z",
+    "sourceUrl": "https://www.tradersmagazine.com/departments/digital-assets/prediction-markets-move-from-niche-to-mainstream/",
+    "title": "Prediction Markets Move from Niche to Mainstream - Traders Magazine",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3490196078431373,
+      "sourceTitle": "Traders Magazine",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9357683267",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T02:07:47Z",
+    "sourceUrl": "https://intellectia.ai/blog/bitcoin-price-bottom-prediction-2026",
+    "title": "Bitcoin Price Bottom Prediction 2026: Galaxy Forecasts $40K-$46K Floor",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11740238",
+      "sentiment": 0.1372549019607843,
+      "sourceTitle": "intellectia.ai",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9357621094",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-15T00:07:48Z",
+    "sourceUrl": "https://www.livetradingnews.com/hong-kongs-tech-resurgence",
+    "title": "Hong Kong's Tech Resurgence",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11743653",
+      "sentiment": 0.411764705882353,
+      "sourceTitle": "Live Trading News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9357542807",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-14T21:29:41Z",
+    "sourceUrl": "https://www.tokenpost.com/news/investing/21302",
+    "title": "Top Crypto Stocks to Watch Before Fed Decision - TokenPost",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1450980392156862,
+      "sourceTitle": "TokenPost",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9357505408",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-14T20:12:44Z",
+    "sourceUrl": "https://cryptobriefing.com/standard-chartered-bitcoin-100k-target/",
+    "title": "Standard Chartered sets Bitcoin year-end price target at $100K, down from earlier $300K forecast",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11743251",
+      "sentiment": -0.07450980392156858,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 28
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9357480064",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-14T19:25:09Z",
+    "sourceUrl": "https://blockonomi.com/strategy-inc-hints-at-more-bitcoin-purchases-as-saylor-posts-cryptic-market-tease/",
+    "title": "Strategy Inc. Hints at More Bitcoin Purchases as Saylor Posts Cryptic Market Tease",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11742987",
+      "sentiment": 0.02745098039215677,
+      "sourceTitle": "Blockonomi",
+      "clusterSize": 6
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9357413226",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-14T17:30:25Z",
+    "sourceUrl": "https://econotimes.com/The-Crypto-Bloodbath-Bitcoin-Crashes-Below-60K-in-Worst-Week-Since-FTX-1744290",
+    "title": "The Crypto Bloodbath: Bitcoin Crashes Below $60K in Worst Week Since FTX",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1058823529411765,
+      "sourceTitle": "EconoTimes",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9354313347",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T18:22:47Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/riches-rags-buying-crypto-etf-181012001.html",
+    "title": "Riches to Rags: Buying This Crypto ETF Lost Investors 98% of Their Money",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1607843137254903,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9354302297",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T18:11:00Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/06/11/riches-to-rags-buying-this-crypto-etf-lost-investors-98-of-their-money/",
+    "title": "Riches to Rags: Buying This Crypto ETF Lost Investors 98% of Their Money",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.02745098039215677,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9353898824",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T12:40:33Z",
+    "sourceUrl": "https://born2invest.com/articles/institutional-bitcoin-buying-liquidchain/",
+    "title": "Institutional Bitcoin Buying and LiquidChain Presale",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.5529411764705883,
+      "sourceTitle": "Born2Invest",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9353843399",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-11T12:02:24Z",
+    "sourceUrl": "https://cryptobriefing.com/saylor-defends-bitcoin-per-share-metrics-mallers/",
+    "title": "Michael Saylor defends Strategy's Bitcoin reporting metrics against Jack Mallers",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11735912",
+      "sentiment": 0.06666666666666665,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9353833384",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T11:55:03Z",
+    "sourceUrl": "https://cryptobriefing.com/american-bitcoin-fortune-crypto-100/",
+    "title": "American Bitcoin Corp. lands spot on Fortune's first-ever Crypto 100 list",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1137254901960785,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9353805345",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T11:33:11Z",
+    "sourceUrl": "https://bitcoinist.com/spacex-ipo-impact-on-bitcoin/",
+    "title": "Will The SpaceX IPO Have A Significant Impact On The Bitcoin And Crypto Market?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11730903",
+      "sentiment": 0.3333333333333333,
+      "sourceTitle": "Bitcoinist.com",
+      "clusterSize": 3
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9353671020",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T09:51:14Z",
+    "sourceUrl": "https://beincrypto.com/microstrategy-stock-smart-money-rebound-analysis/",
+    "title": "MicroStrategy Stock Sees $6 Million in Bullish Bets Despite the 40% Crash",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.08235294117647052,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9353670572",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T09:51:01Z",
+    "sourceUrl": "https://www.investing.com/analysis/gold-buy-bias-drops-as-longs-get-squeezed-200681937",
+    "title": "Gold Buy Bias Drops as Longs Get Squeezed",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.7882352941176471,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9353453852",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T06:54:10Z",
+    "sourceUrl": "https://themerkle.com/pyth-network-launches-24-7-price-indices-for-u-s-equities-oil-and-metals/",
+    "title": "pyth network launches 24/7 price indices for u.s. equities, oil, and metals",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11738487",
+      "sentiment": -0.07450980392156858,
+      "sourceTitle": "The Merkle Hash",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9353292695",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-11T03:59:59Z",
+    "sourceUrl": "https://memeburn.com/we-asked-5-ai-agents-to-predict-btc-price-in-june-2026/",
+    "title": "We Asked 5 AI Agents to Predict BTC Price in June 2026: Here's What They Said - Memeburn",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.192156862745098,
+      "sourceTitle": "Memeburn",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9353105946",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-10T23:08:33Z",
+    "sourceUrl": "https://crypto-economy.com/japanese-gaming-firm-enish-sells-bitcoin-holdings-turns-to-solana-staking-for-yield/",
+    "title": "Japanese Gaming Firm Enish Sells Bitcoin Holdings, Turns to Solana Staking for Yield - Crypto Economy",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1607843137254903,
+      "sourceTitle": "Crypto Economy",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9352825863",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-06-10T17:34:00Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/stocks/articles/microstrategy-cfo-sells-company-shares-172056901.html",
+    "title": "MicroStrategy CFO sells company shares amid stock plunge",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.223529411764706,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9352524405",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-10T13:27:31Z",
+    "sourceUrl": "https://cryptobriefing.com/spacex-ipo-investors-earn-millions/",
+    "title": "Investors earn millions betting on SpaceX before its IPO through crypto futures and secondary markets",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11725132",
+      "sentiment": 0.2392156862745098,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9352506367",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-10T13:13:50Z",
+    "sourceUrl": "https://beincrypto.com/us-may-cpi-bitcoin/",
+    "title": "US CPI Matches Views but Core Inflation Slows, Bitcoin to $60000?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11731615",
+      "sentiment": 0.01960784313725483,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9352341037",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-10T11:10:11Z",
+    "sourceUrl": "https://www.cryptopolitan.com/japanese-game-firm-enish-dumps-bitcoin/",
+    "title": "Japanese game firm Enish dumps Bitcoin, Bets on Solana",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11729458",
+      "sentiment": -0.1450980392156863,
+      "sourceTitle": "Cryptopolitan",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9352050793",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-10T07:23:28Z",
+    "sourceUrl": "https://www.investing.com/analysis/trader-bias-reaches-extreme-buy-in-the-ftse-100-200681850",
+    "title": "Trader Bias Reaches Extreme Buy in the FTSE 100",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.968627450980392,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351776817",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-10T02:15:07Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/strategy-renews-bitcoin-bet-while-021145291.html",
+    "title": "Strategy Renews Bitcoin Bet While Preferred Stock Risks Stay In Focus",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1843137254901961,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351629504",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T22:19:28Z",
+    "sourceUrl": "https://cryptobriefing.com/spacex-ipo-75-billion-valuation/",
+    "title": "SpaceX IPO expected to raise $75B, value company at $1.8T",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11729251",
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351609524",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T21:53:47Z",
+    "sourceUrl": "https://www.cryptopolitan.com/strive-ceo-binance-cz-back-bitcoin/",
+    "title": "Strive CEO, Binance CZ back Bitcoin to return from the 'dead' - Cryptopolitan",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.06666666666666665,
+      "sourceTitle": "Cryptopolitan",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351536650",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T20:20:02Z",
+    "sourceUrl": "https://cryptobriefing.com/sp-nasdaq-fall-tech-shares-bitcoin/",
+    "title": "S&P, Nasdaq fall as tech shares drag markets lower and Bitcoin follows suit",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.1294117647058823,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351512830",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T19:52:49Z",
+    "sourceUrl": "https://cryptobriefing.com/spacex-record-ipo-valuation-concerns/",
+    "title": "SpaceX prepares for potential record-setting IPO amid valuation concerns",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11721727",
+      "sentiment": 0.07450980392156858,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351501193",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T19:37:46Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/strategy-inc-added-1-550-192655635.html",
+    "title": "Strategy Inc. Added 1,550 More Bitcoin to Its $54 Billion Stash. Is MSTR a Buy on the Dip at $127?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1764705882352942,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351493902",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T19:29:20Z",
+    "sourceUrl": "https://nypost.com/2026/06/09/business/bitcoin-sinks-to-61k-as-wall-street-braces-for-spacex-ipo-analysts-fear-crypto-bear-market/",
+    "title": "Bitcoin sinks to $61K as Wall Street braces for SpaceX IPO -- and analysts fear crypto bear market",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11729851",
+      "sentiment": -0.1607843137254902,
+      "sourceTitle": "New York Post",
+      "clusterSize": 9
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351493119",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T19:28:12Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/06/09/strategy-inc-added-1550-more-bitcoin-to-its-54-billion-stash-is-mstr-a-buy-on-the-dip-at-127/",
+    "title": "Strategy Inc. Added 1,550 More Bitcoin to Its $54 Billion Stash. Is MSTR a Buy on the Dip at $127?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.05098039215686279,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351461953",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T18:53:30Z",
+    "sourceUrl": "https://memeburn.com/how-to-use-grok-for-crypto-market-sentiment-analysis/",
+    "title": "How to Use Grok for Crypto Market Sentiment Analysis - Memeburn",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11734043",
+      "sentiment": 0.1529411764705881,
+      "sourceTitle": "Memeburn",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351441129",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T18:30:56Z",
+    "sourceUrl": "https://www.etftrends.com/leveraged-inverse-content-hub/top-performing-leveraged-inverse-etfs-06-07-2026/",
+    "title": "Top Performing Leveraged/Inverse ETFs: 06/07/2026",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.03529411764705892,
+      "sourceTitle": "ETF Trends",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351429831",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T18:19:17Z",
+    "sourceUrl": "https://www.tokenpost.com/news/people/21206",
+    "title": "Adam Back Warns BIP-110 Could Trigger a Bitcoin Minority Fork - TokenPost",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11729035",
+      "sentiment": -0.04313725490196074,
+      "sourceTitle": "TokenPost",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351381145",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-09T17:32:51Z",
+    "sourceUrl": "https://beincrypto.com/cz-bitcoin-bottom-whales-etf-selling/",
+    "title": "Bitcoin's Bottom Isn't In Yet? CZ Stays Calm While Whales Keep Selling",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11730206",
+      "sentiment": 0.04313725490196085,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 3
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351365613",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T17:17:58Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/06/09/both-institutions-and-retail-are-buying-and-holding-crypto-despite-bitcoins-50-pullback/",
+    "title": "Both Institutions and Retail Are Buying and Holding Crypto Despite Bitcoin's 50% Pullback",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11726140",
+      "sentiment": 0.3019607843137255,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351359582",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T17:12:00Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/06/09/top-bitcoin-analyst-predicts-200k-within-two-years-were-either-at-or-within-spitting-distance-of-a-bottom/",
+    "title": "Top Bitcoin Analyst Predicts $200K Within Two Years: 'We're Either At Or Within Spitting Distance Of A Bottom'",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11726987",
+      "sentiment": 0.3647058823529412,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 3
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351284642",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T16:06:02Z",
+    "sourceUrl": "https://advertorial.cryptonews.com/press-releases/saylors-strategy-boosts-bitcoin-treasury-to-845k-btc-as-layer-3-protocols-target-cross-chain-liquidity-bottlenecks/",
+    "title": "Saylor's Strategy Boosts Bitcoin Treasury to 845K BTC as Layer 3 Protocols Target Cross-Chain Liquidity Bottlenecks",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Cryptonews",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351235050",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T15:26:09Z",
+    "sourceUrl": "https://partners.coinspeaker.com/institutional-conviction-meets-cross-chain-innovation-strategys-treasury-growth-and-liquidchains-layer-3-solution",
+    "title": "Strategy's Treasury Growth and LiquidChain's Layer 3 Solution",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3254901960784313,
+      "sourceTitle": "Coinspeaker",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351151905",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T14:22:38Z",
+    "sourceUrl": "https://en.cryptonomist.ch/2026/06/09/jpmorgan-bitcoin-at-the-mercy-of-strategy-and-the-clarity-act-what-does-it-mean/",
+    "title": "JPMorgan: Bitcoin at the mercy of Strategy and the Clarity Act, what does it mean?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11723397",
+      "sentiment": 0.0117647058823529,
+      "sourceTitle": "The Cryptonomist",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9351109978",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T13:51:43Z",
+    "sourceUrl": "https://beincrypto.com/strategy-strc-bitcoin-semi-monthly-dividend/",
+    "title": "MicroStrategy's STRC Tracks Bitcoin Lower Again as Semi-Monthly Dividend Begins",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11724658",
+      "sentiment": 0.07450980392156858,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 3
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350939713",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T11:42:31Z",
+    "sourceUrl": "https://www.zeneca.xyz/p/letter-116-portfolio-update",
+    "title": "Letter 116: Portfolio Update",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.05882352941176472,
+      "sourceTitle": "zeneca.xyz",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350894925",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T11:08:27Z",
+    "sourceUrl": "https://www.crypto-reporter.com/newsfeed/strategy-announces-approval-of-strc-semi-monthly-dividends-127565/",
+    "title": "Strategy Announces Approval of STRC Semi-Monthly Dividends",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.419607843137255,
+      "sourceTitle": "Crypto Reporter",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350666883",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T10:03:57Z",
+    "sourceUrl": "https://www.washingtonexaminer.com/opinion/4598392/whats-next-for-struggling-bitcoin/",
+    "title": "What's next for struggling Bitcoin?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11723966",
+      "sentiment": 0.07450980392156858,
+      "sourceTitle": "Washington Examiner",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350633034",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T09:38:49Z",
+    "sourceUrl": "https://coindoo.com/tom-lee-explains-why-ai-scaling-could-drive-crypto-demand/",
+    "title": "Tom Lee Explains Why AI Scaling Could Drive Crypto Demand",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.05882352941176472,
+      "sourceTitle": "Coindoo",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350439014",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T07:02:41Z",
+    "sourceUrl": "https://en.protothema.gr/2026/06/09/mitsotakis-chania-and-the-decision-for-elections-how-the-mini-cabinet-reshuffle-came-about-billions-quietly-rained-down-at-the-posidonia-the-stock-market-frenzy-of-the-world-cup/",
+    "title": "Mitsotakis, Chania and the decision for elections, how the mini cabinet reshuffle came about, billions quietly rained down at the Posidonia, the stock-market frenzy of the World Cup - ProtoThema English",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11724098",
+      "sentiment": -0.02745098039215688,
+      "sourceTitle": "protothemanews.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350233809",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T03:03:14Z",
+    "sourceUrl": "https://bitcoinist.com/bitcoin-above-63000-ai-models-next-scenarios/",
+    "title": "Bitcoin Above $63,000: Two AI Models Outline Next Scenarios For BTC's Move",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.08235294117647063,
+      "sourceTitle": "Bitcoinist.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350222442",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T02:46:29Z",
+    "sourceUrl": "https://nftplazas.com/bitcoin-etf-statistics-2026-15-key-data-points/",
+    "title": "Bitcoin ETF Statistics 2026: 15 Key Data Points - NFT Plazas",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11725055",
+      "sentiment": -0.003921568627450966,
+      "sourceTitle": "NFT Plazas",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350139723",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-09T00:25:45Z",
+    "sourceUrl": "https://crypto-economy.com/bitcoins-rout-isnt-strategys-fault-follow-the-money-not-the-narrative/",
+    "title": "Bitcoin's Rout Isn't Strategy's Fault - Follow the Money, Not the Narrative - Crypto Economy",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.08235294117647063,
+      "sourceTitle": "Crypto Economy",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9350116882",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T23:43:13Z",
+    "sourceUrl": "https://www.cnbc.com/2026/06/08/tuesdays-big-stock-stories-whats-likely-to-move-the-market.html",
+    "title": "Tuesday's big stock stories: What's likely to move the market in the next trading session",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.0980392156862746,
+      "sourceTitle": "CNBC",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9349972118",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T20:10:22Z",
+    "sourceUrl": "https://finance.yahoo.com/video/bitcoin-dips-michael-saylor-shifts-strategy-165753655.html",
+    "title": "Bitcoin dips, Michael Saylor shifts Strategy",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.03529411764705881,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9349847350",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T17:51:01Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/mind-rather-buy-crypto-now-174304351.html",
+    "title": "'Who in their right mind would rather buy crypto right now?' Bitcoin prices plunge after market turmoil",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.03529411764705892,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9349778772",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T16:42:01Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/options/articles/yieldmax-msty-returned-more-half-163446805.html",
+    "title": "YieldMax MSTY Returned More Than Half Your Capital in a Single Quarter and Most Holders Think It Was Income",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1450980392156862,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9349773571",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T16:36:56Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/06/08/yieldmax-msty-returned-more-than-half-your-capital-in-a-single-quarter-and-most-holders-think-it-was-income/",
+    "title": "YieldMax MSTY Returned More Than Half Your Capital in a Single Quarter and Most Holders Think It Was Income",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.05882352941176472,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9349728926",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T15:56:27Z",
+    "sourceUrl": "https://u.today/why-dave-portnoy-is-begging-michael-saylor-to-buy-more-bitcoin",
+    "title": "Why Dave Portnoy Is Begging Michael Saylor to Buy More Bitcoin - U.Today",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11734116",
+      "sentiment": -0.04313725490196074,
+      "sourceTitle": "u.today",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9349683664",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T15:17:01Z",
+    "sourceUrl": "https://www.forbes.com/sites/tylerroush/2026/06/08/billionaire-saylors-strategy-buys-bitcoin-worth-101-million-after-earlier-sale-sparked-sell-off/",
+    "title": "Billionaire Saylor's Strategy Buys Bitcoin Worth $101 Million -- After Earlier Sale Sparked Sell-Off",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11717306",
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Forbes",
+      "clusterSize": 6
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9349606753",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T14:15:41Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/microstrategy-buys-bitcoin-2-weeks-122701010.html",
+    "title": "MicroStrategy Buys Bitcoin 2 Weeks After Selling",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11724370",
+      "sentiment": 0.08235294117647052,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 19
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9349481275",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T12:38:06Z",
+    "sourceUrl": "https://beincrypto.com/microstrategy-buys-bitcoin-after-sale/",
+    "title": "MicroStrategy Buys Bitcoin 2 Weeks After Selling",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11718993",
+      "sentiment": 0.08235294117647052,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 4
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9349450342",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-08T12:14:12Z",
+    "sourceUrl": "https://cryptorank.io/news/feed/99ce2-saylors-strategy-resumes-bitcoin-accumulation-spree-after-last-weeks-sale",
+    "title": "Saylor's Strategy Resumes Bitcoin Accumulation Spree After Last Week's Sale | Bitcoin Social",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11722242",
+      "sentiment": -0.3411764705882353,
+      "sourceTitle": "CryptoRank",
+      "clusterSize": 4
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9345592857",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T22:11:03Z",
+    "sourceUrl": "https://economictimes.indiatimes.com/news/international/us/how-larry-ellison-masayoshi-son-michael-saylor-ai-crypto-billionaires-reshaping-legacy-wealth-in-2026-markets-shift/articleshow/131513833.cms",
+    "title": "How Larry Ellison, Masayoshi Son, Michael Saylor AI crypto billionaires reshaping legacy wealth in 2026 markets shift?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.08235294117647052,
+      "sourceTitle": "Economic Times",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9345529191",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T20:41:30Z",
+    "sourceUrl": "https://beincrypto.com/strc-falls-below-95-pressure-bitcoin/",
+    "title": "MicroStrategy's STRC Slips Below $95, Adding New Pressure on Bitcoin Amid the Market Sell-Off",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11716626",
+      "sentiment": 0.07450980392156858,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9345319509",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-04T16:51:23Z",
+    "sourceUrl": "https://cryptobriefing.com/apyx-apxusd-stablecoin-depeg-market-volatility/",
+    "title": "Apyx addresses brief depeg of apxUSD stablecoin amid market volatility",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11718932",
+      "sentiment": 0.2156862745098038,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9345277148",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T16:10:24Z",
+    "sourceUrl": "https://coinpedia.org/news/how-low-will-bitcoin-price-go-after-13-crash/",
+    "title": "How Low Will Bitcoin Price Go After 13% Crash?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.09019607843137245,
+      "sourceTitle": "Coinpedia - Fintech & Cryptocurreny News Media| Crypto Guide",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9345238186",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T15:37:54Z",
+    "sourceUrl": "https://www.tekedia.com/peter-schiff-predicts-bitcoin-crash-below-20k/",
+    "title": "Peter Schiff Predicts Bitcoin Crash Below $20K",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11713781",
+      "sentiment": -0.1450980392156863,
+      "sourceTitle": "Tekedia",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9345214302",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T15:16:17Z",
+    "sourceUrl": "https://www.dimsumdaily.hk/bitcoin-slides-under-62000-after-leverage-fuelled-rout/",
+    "title": "Bitcoin slides under $62,000 after leverage-fuelled rout",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.05882352941176472,
+      "sourceTitle": "Dimsum Daily",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9345091763",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T13:40:41Z",
+    "sourceUrl": "https://cryptobriefing.com/bitcoin-tests-62k-amid-middle-east-tensions-market-stress/",
+    "title": "Bitcoin tests $62K amid Middle East tensions, market stress",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.3647058823529412,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9345064130",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T13:19:35Z",
+    "sourceUrl": "https://www.marketscreener.com/news/standard-chartered-s-crypto-bull-sticks-to-100-000-bitcoin-call-despite-painful-week-ce7f5ddcd18df724",
+    "title": "Standard Chartered's crypto bull sticks to $100,000 bitcoin call despite 'painful' week",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1137254901960785,
+      "sourceTitle": "Market Screener",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9345030919",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T12:54:08Z",
+    "sourceUrl": "https://cryptobriefing.com/fg-nexus-85m-ethereum-treasury-loss/",
+    "title": "FG Nexus reports over $85M loss on Ethereum treasury bet",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11714774",
+      "sentiment": -0.1058823529411764,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344958083",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T11:56:56Z",
+    "sourceUrl": "https://cryptobriefing.com/bitcoin-hits-4-month-low-crypto-stocks-slide-amid-geopolitical-tensions/",
+    "title": "Bitcoin hits 4-month low, crypto stocks slide amid geopolitical tensions",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.2,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344929105",
+    "entityId": "strategy",
+    "axis": "jurisdiction",
+    "type": "jurisdiction_change",
+    "date": "2026-06-04T11:33:55Z",
+    "sourceUrl": "https://cryptobriefing.com/bitcoin-drops-50-from-all-time-high-amid-market-downturn/",
+    "title": "Bitcoin drops 50% from all-time high amid market downturn",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.1764705882352942,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344919740",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T11:26:45Z",
+    "sourceUrl": "https://seekingalpha.com/news/4600611-crypto-market-loses-over-2t-from-peak",
+    "title": "Crypto market loses over $2T from peak (BTC-USD:Cryptocurrency)",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2470588235294118,
+      "sourceTitle": "Seeking Alpha",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344916595",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T11:23:54Z",
+    "sourceUrl": "https://www.investing.com/analysis/sp-500-markets-set-to-face-their-first-real-test-in-weeks-200681518",
+    "title": "S&P 500: Markets Set to Face Their First Real Test in Weeks",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.01960784313725483,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344855385",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T10:36:01Z",
+    "sourceUrl": "https://filmdaily.co/news/why-is-the-bitcoin-price-surging-the-real-story-today/",
+    "title": "Why is the bitcoin price surging? The real story today - Film Daily",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.0117647058823529,
+      "sourceTitle": "Film Daily",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344674219",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T08:11:39Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/bitmine-tests-saylor-capital-strategy-042902418.html",
+    "title": "BitMine Tests Saylor's Capital Strategy While Sitting on $8 Billion ETH Loss",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1137254901960785,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344621027",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T07:25:53Z",
+    "sourceUrl": "https://www.investing.com/analysis/majority-sell-bias-climbs-in-usdjpy-as-traders-anticipate-intervention-200681488",
+    "title": "Majority Sell Bias Climbs in USD/JPY as Traders Anticipate Intervention",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.03529411764705881,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344391060",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T03:06:19Z",
+    "sourceUrl": "https://cryptobriefing.com/spacex-75b-ipo-bitcoin-treasury/",
+    "title": "SpaceX seeks $75B IPO that would be the largest in history, filing reveals 18,712 BTC treasury",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11712270",
+      "sentiment": 0.1215686274509804,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344297478",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-04T00:42:32Z",
+    "sourceUrl": "https://www.tokenpost.com/news/business/21063",
+    "title": "BitMine Faces $8.9 Billion Unrealized Loss as Ethereum Price Drops Below $1,800 - TokenPost",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11712781",
+      "sentiment": 0.05882352941176472,
+      "sourceTitle": "TokenPost",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9344091009",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T20:09:41Z",
+    "sourceUrl": "https://cryptobriefing.com/hyperscale-data-bitcoin-holdings-704-btc/",
+    "title": "Hyperscale Data increases Bitcoin holdings by 4.66 BTC to 704.34 BTC",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11714622",
+      "sentiment": 0.2156862745098038,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 14
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343933003",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T17:15:34Z",
+    "sourceUrl": "https://techbullion.com/crypto-news-today-btc-falls-below-67000-but-the-smartest-capital-keeps-moving/",
+    "title": "Crypto News Today: BTC Falls Below $67,000 but the Smartest Capital Keeps Moving",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2078431372549019,
+      "sourceTitle": "TechBullion",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-06-1188322948",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T16:54:26Z",
+    "sourceUrl": "https://techbullion.com/shiba-inu-price-prediction-stays-flat-while-pepeto-presale-quietly-captures-early-capital/",
+    "title": "Shiba Inu Price Prediction Stays Flat While Pepeto Presale Quietly Captures Early Capital",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.05882352941176472,
+      "sourceTitle": "TechBullion",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343863921",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T16:15:46Z",
+    "sourceUrl": "https://techbullion.com/what-is-the-best-crypto-presale-to-buy-in-2026-while-bitcoin-etfs-bleed-3-4-billion/",
+    "title": "What Is the Best Crypto Presale to Buy in 2026 While Bitcoin ETFs Bleed $3.4 Billion?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.01960784313725483,
+      "sourceTitle": "TechBullion",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343860831",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T16:12:59Z",
+    "sourceUrl": "https://www.dimsumdaily.hk/bitcoin-slides-below-70000-as-tether-move-and-etf-outflows-spook-traders/",
+    "title": "Bitcoin slides below $70,000 as Tether move and ETF outflows spook traders",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.03529411764705881,
+      "sourceTitle": "Dimsum Daily",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343808089",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T15:31:51Z",
+    "sourceUrl": "https://cryptobriefing.com/dats-2b-inflows-may-bitcoin/",
+    "title": "Digital asset treasuries pull in $2.19B during May, with Bitcoin leading the charge",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1372549019607843,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343765189",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T14:59:56Z",
+    "sourceUrl": "https://en.protothema.gr/2026/06/03/the-government-reshuffles-by-mitsotakis-nikos-a-the-opekepe-2-fiasco-google-proto-thema-and-ai/",
+    "title": "The government reshuffles by Mitsotakis, Nikos A., the OPEKEPE 2 fiasco, Google, Proto Thema, and AI - ProtoThema English",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.04313725490196074,
+      "sourceTitle": "protothemanews.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343707289",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T14:15:21Z",
+    "sourceUrl": "https://nftplazas.com/mt-gox-moves-739m-bitcoin-during-btc-selloff-could-bitcoin-fall-to-60000/",
+    "title": "Mt. Gox Moves $739M in Bitcoin During BTC Bleed -- Could Prices Crash Back to $60K? - NFT Plazas",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11705301",
+      "sentiment": -0.2392156862745098,
+      "sourceTitle": "NFT Plazas",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343685751",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-03T14:01:37Z",
+    "sourceUrl": "https://www.coininsider.com/news/strategy-btc-sale-sparks-14m-polymarket-dispute/",
+    "title": "Strategy BTC Sale Sparks $14M Polymarket Dispute",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11704809",
+      "sentiment": -0.207843137254902,
+      "sourceTitle": "coininsider.com",
+      "clusterSize": 8
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343565480",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T12:34:03Z",
+    "sourceUrl": "https://www.actionforex.com/contributors/technical-analysis/642668-chart-alert-bitcoin-btc-usd-potential-near-term-bullish-reversal-emerging-from-the-sub-70k-plunge/",
+    "title": "Chart Alert: Bitcoin (BTC/USD) Potential Near-Term Bullish Reversal Emerging from the Sub-$70K Plunge - ActionForex",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.06666666666666665,
+      "sourceTitle": "Action Forex",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343503341",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-03T11:51:29Z",
+    "sourceUrl": "https://beincrypto.com/microstrategy-strc-price-drop-after-bitcoin-sale/",
+    "title": "STRC Falls Below $97 as Latest Bitcoin Sale Challenges MicroStrategy's Capital Turbine",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11710061",
+      "sentiment": 0.1607843137254903,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 18
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343431482",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T10:59:40Z",
+    "sourceUrl": "https://beincrypto.com/coldest-crypto-winter-bloomberg-debate/",
+    "title": "The Coldest Crypto Winter Ever? Bloomberg Analyst Theory Fuels a Heated Debate",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11715163",
+      "sentiment": -0.07450980392156858,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343388299",
+    "entityId": "strategy",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-06-03T10:26:54Z",
+    "sourceUrl": "https://protos.com/jim-chanos-was-right-about-strategy-just-not-patient-enough/",
+    "title": "Jim Chanos was right about Strategy -- just not patient enough",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.192156862745098,
+      "sourceTitle": "Protos",
+      "clusterSize": 1
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-9343347282",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T09:58:41Z",
+    "sourceUrl": "https://www.webpronews.com/spacexs-1-4-billion-bitcoin-stake-signals-a-new-corporate-treasury-play-as-it-prepares-for-ipo/",
+    "title": "SpaceX's $1.4 Billion Bitcoin Stake Signals a New Corporate Treasury Play as It Prepares for IPO",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11702973",
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "WebProNews",
+      "clusterSize": 5
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343341142",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T09:53:21Z",
+    "sourceUrl": "https://finance.yahoo.com/sectors/technology/articles/robostrategy-ceo-explains-why-shifted-094242426.html",
+    "title": "RoboStrategy CEO Explains Why He Shifted Focus From Crypto To Physical AI - Calls RoboStrategy The 'MicroStrategy Of Robotics'",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2313725490196079,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343299204",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T09:21:38Z",
+    "sourceUrl": "https://www.moneyweb.co.za/moneyweb-podcasts/moneyweb-now/crypto-to-stocks-a-digital-revolution/",
+    "title": "Crypto to stocks: A digital revolution",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3960784313725489,
+      "sourceTitle": "Moneyweb",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343283076",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T09:09:15Z",
+    "sourceUrl": "https://en.cryptonomist.ch/2026/06/03/bitmine-unrealized-eth-loss/",
+    "title": "Bitmine unrealized ETH loss hits $9B as Ethereum drops",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11702950",
+      "sentiment": -0.1450980392156863,
+      "sourceTitle": "The Cryptonomist",
+      "clusterSize": 5
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343213816",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T08:14:44Z",
+    "sourceUrl": "https://coinpedia.org/crypto-live-news/bitmine-records-9-billion-unrealized-eth-loss/",
+    "title": "Bitmine Records $9 Billion Unrealized ETH Loss",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.06666666666666665,
+      "sourceTitle": "Coinpedia - Fintech & Cryptocurreny News Media| Crypto Guide",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343157798",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T07:30:01Z",
+    "sourceUrl": "https://www.investing.com/analysis/sentiment-shifts-in-the-nasdaq-100-following-another-record-close-200681404",
+    "title": "Sentiment Shifts in the Nasdaq 100 Following Another Record Close",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.968627450980392,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343124651",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T07:02:40Z",
+    "sourceUrl": "https://cryptodaily.co.uk/2026/06/bitcoin-below-70k-corporate-treasury-demand",
+    "title": "Bitcoin Under $70K Tests Corporate Treasury Nerve",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.01960784313725494,
+      "sourceTitle": "cryptodaily.co.uk",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9343122961",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-03T07:01:34Z",
+    "sourceUrl": "https://financefeeds.com/leveraged-liquidationstrigger-sharp-volatility-for-bitcoin-below-67000/",
+    "title": "Leveraged LiquidationsTrigger Sharp Volatility for Bitcoin Below $67,000 - FinanceFeeds",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.06666666666666665,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9342752688",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-02T23:01:50Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/crypto-volume-skyrockets-microstrategy-bitcoin-145322095.html",
+    "title": "Crypto Volume Skyrockets After MicroStrategy's Bitcoin Sale: What Are Traders Buying and Selling?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.05098039215686279,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9342751466",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-02T23:00:00Z",
+    "sourceUrl": "https://blockchain.news/news/crypto-treasury-inflows-drop-95-percent-may-2026",
+    "title": "Crypto Treasury Inflows Crash 95% as ETFs Pressure DATs",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11708505",
+      "sentiment": -0.02745098039215688,
+      "sourceTitle": "blockchain.news",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9342745583",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-06-02T22:50:45Z",
+    "sourceUrl": "https://www.tekedia.com/microstrategy-sells-bitcoin-for-the-first-time-in-years/",
+    "title": "MicroStrategy Sells Bitcoin for the First Time in Years",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11698940",
+      "sentiment": 0.192156862745098,
+      "sourceTitle": "Tekedia",
+      "clusterSize": 3
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9342725221",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-06-02T22:19:59Z",
+    "sourceUrl": "https://finance.yahoo.com/markets/crypto/articles/microstrategy-saylor-sell-bitcoin-maximalism-220000111.html",
+    "title": "Was MicroStrategy and Saylor Right to Sell Some Bitcoin? The Maximalism Debate",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11707624",
+      "sentiment": 0.04313725490196085,
+      "sourceTitle": "Yahoo! Finance",
+      "clusterSize": 9
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336801007",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T23:02:26Z",
+    "sourceUrl": "https://crypto-economy.com/polymarket-gives-over-80-odds-that-strategy-sells-bitcoin-before-end-of-2026/",
+    "title": "Polymarket Gives Over 80% Odds That Strategy Sells Bitcoin Before End of 2026 - Crypto Economy",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.03529411764705892,
+      "sourceTitle": "Crypto Economy",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336108565",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T17:54:01Z",
+    "sourceUrl": "https://www.mykxlg.com/online_features/press_releases/retail-analytics-industry-trends-share-growth-and-forecast-analysis-through-2032/article_61ac28d2-19b2-5007-a4fe-c5a2af499cd5.html",
+    "title": "Retail Analytics Industry Trends, Share, Growth, and Forecast Analysis Through 2032",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.615686274509804,
+      "sourceTitle": "mykxlg.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336373685",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T15:12:14Z",
+    "sourceUrl": "https://www.oklahomacitysun.com/news/279082288/string-metaverse-rolls-out-tokenization-platform-as-revenue-and-profits-triple",
+    "title": "String Metaverse Rolls Out Tokenization Platform as Revenue and Profits Triple",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Oklahoma City Sun",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336348429",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T14:54:36Z",
+    "sourceUrl": "https://www.sanantoniopost.com/news/279082288/string-metaverse-rolls-out-tokenization-platform-as-revenue-and-profits-triple",
+    "title": "String Metaverse Rolls Out Tokenization Platform as Revenue and Profits Triple",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "San Antonio Post",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336326322",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T14:37:19Z",
+    "sourceUrl": "https://www.cincinnatisun.com/news/279082288/string-metaverse-rolls-out-tokenization-platform-as-revenue-and-profits-triple",
+    "title": "String Metaverse Rolls Out Tokenization Platform as Revenue and Profits Triple",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Cincinnati Sun",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336226918",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T13:20:31Z",
+    "sourceUrl": "https://www.crypto-reporter.com/newsfeed/blockchain-strategic-intelligence-report-2026-technology-macroeconomic-and-regulatory-trends-impacting-growth-over-the-next-12-to-24-months-126994/",
+    "title": "Blockchain Strategic Intelligence Report 2026: Technology, Macroeconomic, and Regulatory Trends Impacting Growth Over the Next 12 to 24 Months",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.1450980392156862,
+      "sourceTitle": "Crypto Reporter",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336220483",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T13:15:23Z",
+    "sourceUrl": "https://www.thestar.com/globenewswire/cycurion-executes-seamless-chief-financial-officer-transition-with-appointment-of-ana-garcia/article_31643005-e74b-58b8-9f97-c58e1e9aac30.html",
+    "title": "Cycurion Executes Seamless Chief Financial Officer Transition with Appointment of Ana Garcia",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2,
+      "sourceTitle": "The Star",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336214803",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T13:11:33Z",
+    "sourceUrl": "https://www.birminghamstar.com/news/279082288/string-metaverse-rolls-out-tokenization-platform-as-revenue-and-profits-triple",
+    "title": "String Metaverse Rolls Out Tokenization Platform as Revenue and Profits Triple",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Birmingham Star",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336214409",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T13:11:08Z",
+    "sourceUrl": "https://www.floridastatesman.com/news/279082288/string-metaverse-rolls-out-tokenization-platform-as-revenue-and-profits-triple",
+    "title": "String Metaverse Rolls Out Tokenization Platform as Revenue and Profits Triple",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Florida Statesman",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336207091",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T13:06:00Z",
+    "sourceUrl": "https://www.manilatimes.net/2026/05/28/tmt-newswire/globenewswire/cycurion-executes-seamless-chief-financial-officer-transition-with-appointment-of-ana-garcia/2353742",
+    "title": "Cycurion Executes Seamless Chief Financial Officer Transition with Appointment of Ana Garcia",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.5137254901960784,
+      "sourceTitle": "The Manila times",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336201625",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T13:02:39Z",
+    "sourceUrl": "https://taiwannews.com.tw/en/news/6372122",
+    "title": "Cycurion Executes Seamless Chief Financial Officer Transition with Appointment of Ana Garcia | Taiwan News | May. 28, 2026 20:50",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4352941176470588,
+      "sourceTitle": "Taiwan News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336200482",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T13:02:36Z",
+    "sourceUrl": "https://www.investing.com/news/company-news/cycurion-names-ana-garcia-as-chief-financial-officer-93CH-4714474",
+    "title": "Cycurion names Ana Garcia as chief financial officer By Investing.com",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336193839",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T12:56:54Z",
+    "sourceUrl": "https://www.wallstreet-online.de/nachricht/20936016-cycurion-executes-seamless-chief-financial-officer-transition-with-appointment-of-ana-garcia",
+    "title": "Cycurion Executes Seamless Chief Financial Officer Transition with Appointment of Ana Garcia",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3411764705882352,
+      "sourceTitle": "wallstreet:online",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336191933",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T12:55:11Z",
+    "sourceUrl": "https://montrealgazette.com/press-releases/globe-newswire/cycurion-executes-seamless-chief-financial-officer-transition-with-appointment-of-ana-garcia/",
+    "title": "Cycurion Executes Seamless Chief Financial Officer Transition with Appointment of Ana Garcia",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11683416",
+      "sentiment": 0.5137254901960784,
+      "sourceTitle": "The Montreal Gazette",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336177005",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T12:43:22Z",
+    "sourceUrl": "https://www.iraqsun.com/news/279082288/string-metaverse-rolls-out-tokenization-platform-as-revenue-and-profits-triple",
+    "title": "String Metaverse Rolls Out Tokenization Platform as Revenue and Profits Triple",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Iraq Sun",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336177111",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T12:43:22Z",
+    "sourceUrl": "https://www.coloradostar.com/news/279082288/string-metaverse-rolls-out-tokenization-platform-as-revenue-and-profits-triple",
+    "title": "String Metaverse Rolls Out Tokenization Platform as Revenue and Profits Triple",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Colorado Star",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1182471601",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T12:10:16Z",
+    "sourceUrl": "https://www.wboc.com/online_features/press_releases/retail-analytics-industry-trends-share-growth-and-forecast-analysis-through-2032/article_8b769db4-1835-5277-9979-49408697d9e8.html",
+    "title": "Retail Analytics Industry Trends, Share, Growth, and Forecast Analysis Through 2032",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4745098039215687,
+      "sourceTitle": "WBOC TV-16",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336073364",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T11:25:41Z",
+    "sourceUrl": "https://www.longbeachstar.com/news/279082288/string-metaverse-rolls-out-tokenization-platform-as-revenue-and-profits-triple",
+    "title": "String Metaverse Rolls Out Tokenization Platform as Revenue and Profits Triple",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11692487",
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "Long Beach Star",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9336046287",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-28T11:03:56Z",
+    "sourceUrl": "https://financefeeds.com/top-5-polymarket-bets-june-2026-edge/",
+    "title": "Top 5 Polymarket Bets for June 2026: Edge Up to 12pp, EV Up to 50% - FinanceFeeds",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.07450980392156858,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1181941178",
+    "entityId": "strategy",
+    "axis": "reputation",
+    "type": "adverse_media",
+    "date": "2026-05-27T23:57:45Z",
+    "sourceUrl": "https://cryptorank.io/news/feed/02a9c-report-why-strc-volatility-matters-more-than-etf-flows-for-bitcoin",
+    "title": "Report: Why STRC Volatility Matters More Than ETF Flows for Bitcoin | MicroStrategy Bitcoin ETF",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11691147",
+      "sentiment": 0.0980392156862746,
+      "sourceTitle": "CryptoRank",
+      "clusterSize": 3
+    },
+    "confidence": 0.35
+  },
+  {
+    "id": "er-2026-05-1181673663",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-27T16:32:06Z",
+    "sourceUrl": "https://etfdb.com/leveraged-inverse-content-hub/top-performing-leveraged-2026-05-24/",
+    "title": "Top Performing Leveraged/Inverse ETFs: 05/24/2026",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11690923",
+      "sentiment": 0.2862745098039217,
+      "sourceTitle": "ETF Database",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9235402603",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-27T14:33:09Z",
+    "sourceUrl": "https://financefeeds.com/strategy-mstr-sells-bitcoin-polymarket-82-cents-deep-dive/",
+    "title": "Polymarket Has Strategy Selling BTC at 82%  --  The Math Says 92% - FinanceFeeds",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.2313725490196079,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9235371945",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-27T14:09:25Z",
+    "sourceUrl": "https://financefeeds.com/top-5-polymarket-bets-may-2026-edge/",
+    "title": "5 Polymarket Bets With 13-22pp Edge Right Now  --  May 2026 Playbook - FinanceFeeds",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.06666666666666665,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9235228398",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-27T12:20:04Z",
+    "sourceUrl": "https://en.cryptonomist.ch/2026/05/27/tom-lee-is-betting-big-on-ethereum-will-the-risk-pay-off/",
+    "title": "Tom Lee is betting big on Ethereum: will the risk pay off?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11686344",
+      "sentiment": 0.1529411764705881,
+      "sourceTitle": "The Cryptonomist",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9234465576",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-27T00:10:59Z",
+    "sourceUrl": "https://www.tokenpost.com/news/investing/20875",
+    "title": "SharpLink Gaming Joins Russell Indexes as Ethereum Treasury Strategy Gains Institutional Attention - TokenPost",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11689898",
+      "sentiment": 0.4352941176470588,
+      "sourceTitle": "TokenPost",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9234126515",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T17:19:27Z",
+    "sourceUrl": "https://uk.investing.com/analysis/bitcoins-74k-floor-looks-stronger-than-its-weak-tape-suggests-200624920",
+    "title": "Bitcoin's $74K Floor Looks Stronger Than Its Weak Tape Suggests | Investing.com UK",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.05882352941176472,
+      "sourceTitle": "Investing.com UK",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9234124145",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T17:16:54Z",
+    "sourceUrl": "https://www.investing.com/analysis/bitcoins-74k-floor-looks-stronger-than-its-weak-tape-suggests-200680957",
+    "title": "Bitcoin's $74K Floor Looks Stronger Than Its Weak Tape Suggests | Investing.com",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11685933",
+      "sentiment": -0.05882352941176472,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9233974376",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T15:11:39Z",
+    "sourceUrl": "https://www.crypto-reporter.com/newsfeed/strategy-provides-capital-structure-update-after-completing-1-5-billion-debt-repurchase-126837/",
+    "title": "Strategy Provides Capital Structure Update after Completing $1.5 Billion Debt Repurchase",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11696522",
+      "sentiment": 0.4509803921568627,
+      "sourceTitle": "Crypto Reporter",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9233880210",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T14:01:22Z",
+    "sourceUrl": "https://coincu.com/sharplink-russell-index-ethereum-treasury-stocks-us-funds/",
+    "title": "SharpLink Gaming Added to Russell Index as Ethereum Treasury Strategy Unlocks U.S. Fund Access",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11682079",
+      "sentiment": 0.3176470588235294,
+      "sourceTitle": "CoinCu News",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9233612453",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-05-26T10:54:22Z",
+    "sourceUrl": "https://capital.com/en-eu/markets/shares/microstrategy-incorporated-share-price",
+    "title": "Strategy Inc (MSTR) Stock Price Quote Today & Current Price Chart | Capital.com EU",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11684159",
+      "sentiment": 0.2313725490196079,
+      "sourceTitle": "capital.com",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9233606152",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T10:38:18Z",
+    "sourceUrl": "https://financefeeds.com/5-ways-crypto-markets-front-running-spacex-1-75t-ipo/",
+    "title": "5 ways crypto markets are front-running SpaceX's $1.75T IPO - FinanceFeeds",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11685298",
+      "sentiment": 0.1137254901960785,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9233222508",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-26T05:23:25Z",
+    "sourceUrl": "https://cryptobriefing.com/jpmorgan-bitcoin-crypto-inflows-130-billion/",
+    "title": "JPMorgan projects Bitcoin and crypto inflows to exceed $130B this year",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.192156862745098,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9232681484",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-25T16:51:43Z",
+    "sourceUrl": "https://financefeeds.com/strategy-opts-to-purchase-bonds/",
+    "title": "Strategy Opts to Purchase Bonds Rather Than Add More Bitcoin This Week",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11684468",
+      "sentiment": 0.1450980392156862,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 19
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9232082353",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-25T08:02:09Z",
+    "sourceUrl": "https://www.investing.com/analysis/sentiment-nears-the-middle-in-the-nikkei-as-it-breaches-65k-200680860",
+    "title": "Sentiment Nears the Middle in the Nikkei as it Breaches 65K | Investing.com",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.9764705882352942,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9231612671",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-05-24T20:40:13Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/05/24/the-2022-bitcoin-pattern-is-back-and-the-second-drop-was-worse-than-the-first/",
+    "title": "The 2022 Bitcoin Pattern Is Back  --  and the Second Drop Was Worse Than the First",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.0980392156862745,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1178858389",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-05-24T18:11:26Z",
+    "sourceUrl": "http://topnews.in/marathon-holdings-coinbase-global-microstrategy-mstr-and-robinhood-stock-price-declines-investors",
+    "title": "Marathon Holdings, Coinbase Global, MicroStrategy (MSTR) and Robinhood Stock Price Declines as Investors Turn Bearish",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.1137254901960785,
+      "sourceTitle": "topnews.in",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9231228339",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-24T12:05:30Z",
+    "sourceUrl": "https://www.benzinga.com/crypto/cryptocurrency/26/05/52763591/weekend-round-up-bitcoins-big-players-xrp-etfs-spacexs-btc-holdings-and-more",
+    "title": "Weekend Round-Up: Bitcoin's Big Players, XRP ETFs, SpaceX's BTC Holdings And More",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.192156862745098,
+      "sourceTitle": "Benzinga",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9231079331",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-24T09:10:16Z",
+    "sourceUrl": "https://crypto.news/bank-of-america-picks-bitcoin-etf-over-ether-and-solana-in-q1/",
+    "title": "Bank of America picks Bitcoin ETF over Ether and Solana in Q1",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11681193",
+      "sentiment": 0.2470588235294118,
+      "sourceTitle": "crypto.news",
+      "clusterSize": 7
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9230318378",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-23T14:00:28Z",
+    "sourceUrl": "https://cryptobriefing.com/eric-trump-metaplanet-bitcoin-advisory-board/",
+    "title": "Eric Trump joins Metaplanet's advisory board to boost Bitcoin strategy",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11676108",
+      "sentiment": 0.05882352941176472,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9230005436",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-23T08:09:14Z",
+    "sourceUrl": "https://www.tokenpost.com/news/business/20807",
+    "title": "Bank of America Reports $53 Million Exposure to Bitcoin ETFs in Q1 Filing - TokenPost",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11669257",
+      "sentiment": 0.2392156862745098,
+      "sourceTitle": "TokenPost",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229970066",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-23T07:29:11Z",
+    "sourceUrl": "https://cryptobriefing.com/bitmine-russell-3000-index-2026/",
+    "title": "Bitmine appears on preliminary Russell 3000 index list for 2026",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11681550",
+      "sentiment": 0.2313725490196079,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 3
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1177749306",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-23T02:33:24Z",
+    "sourceUrl": "https://memeburn.com/goldman-sachs-sells-xrp-and-sol-etf-pivots-to-hyperliquid-in-q1-2026/",
+    "title": "Goldman Sachs Sells XRP and SOL ETF, Pivots to Hyperliquid in Q1 2026 - Memeburn",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11669111",
+      "sentiment": 0.1764705882352942,
+      "sourceTitle": "Memeburn",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9229220711",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T15:16:47Z",
+    "sourceUrl": "https://uk.investing.com/analysis/bitcoin-etf-outflows-signal-a-structural-break-in-institutional-demand-200624864",
+    "title": "Bitcoin ETF Outflows Signal a Structural Break in Institutional Demand | Investing.com UK",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.09019607843137245,
+      "sourceTitle": "Investing.com UK",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9228810974",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T10:07:40Z",
+    "sourceUrl": "https://cryptodaily.co.uk/2026/05/strategys-bitcoin-dilemma-corporate-holder-selling",
+    "title": "Strategy's Bitcoin Dilemma: What Happens If the Biggest Corporate Holder Starts Selling?",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": -0.04313725490196074,
+      "sourceTitle": "cryptodaily.co.uk",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9228724390",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T09:03:53Z",
+    "sourceUrl": "https://cryptobriefing.com/tom-lee-spacex-ipo-liquidity-warning/",
+    "title": "Tom Lee warns SpaceX IPO could flood markets with $2T in new liquidity",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11675090",
+      "sentiment": -0.01960784313725494,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 5
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9228693059",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T08:39:52Z",
+    "sourceUrl": "https://www.analyticsinsight.net/news/bitcoin-pizza-day-how-a-10000-btc-pizza-order-helped-build-the-global-crypto-economy",
+    "title": "Bitcoin Pizza Day: How a 10,000 BTC Pizza Order Helped Build the Global Crypto Economy",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11675386",
+      "sentiment": 0.3019607843137255,
+      "sourceTitle": "Analytics Insight",
+      "clusterSize": 5
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9228684602",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T08:32:49Z",
+    "sourceUrl": "https://www.crypto-reporter.com/newsfeed/moving-beyond-hodl-zoomex-launches-global-pizza-week-campaign-honoring-bitcoins-first-real-world-trade-2-126751/",
+    "title": "Moving Beyond HODL: ZOOMEX Launches Global \"Pizza Week\" Campaign Honoring Bitcoin's First Real-World Trade",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.3725490196078431,
+      "sourceTitle": "Crypto Reporter",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9228608771",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-05-22T07:32:32Z",
+    "sourceUrl": "https://financefeeds.com/microstrategy-architect-outlines-intergenerational-bitcoin-monopoly-strategy/",
+    "title": "MicroStrategy Architect Outlines Intergenerational Bitcoin Monopoly Strategy - FinanceFeeds",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.4823529411764707,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9228569543",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-22T06:59:14Z",
+    "sourceUrl": "https://www.investing.com/analysis/trader-bias-not-far-off-shifting-in-the-dow-30-200680765",
+    "title": "Trader Bias Not Far Off Shifting in the Dow 30 | Investing.com",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.9215686274509804,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1176397954",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-05-21T16:30:31Z",
+    "sourceUrl": "https://beincrypto.com/microstrategy-saylor-bitcoin-miners-credit-price/",
+    "title": "MicroStrategy's Saylor Says Miners No Longer Set Bitcoin Price, Another Force Has Taken Over",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11675350",
+      "sentiment": -0.03529411764705881,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 10
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9227799361",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-21T16:08:40Z",
+    "sourceUrl": "https://cryptobriefing.com/spacex-2t-ipo-bitcoin-hyperliquid/",
+    "title": "SpaceX aims for $2T valuation in unprecedented IPO as crypto markets front-run the listing",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11672596",
+      "sentiment": 0.192156862745098,
+      "sourceTitle": "Crypto Briefing",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9227529086",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-21T12:49:41Z",
+    "sourceUrl": "https://financefeeds.com/dogecoin-doge-25-cents-year-end-2026-etf-utility-case/",
+    "title": "Dogecoin to $0.25 by year-end 2026: the ETF and utility case - FinanceFeeds",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11674149",
+      "sentiment": -0.1764705882352942,
+      "sourceTitle": "FinanceFeeds",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9227402864",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "scale_change",
+    "date": "2026-05-21T11:25:57Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/05/21/amzy-caps-amazons-upside-while-capturing-every-drop-and-the-math-is-brutal/",
+    "title": "AMZY Caps Amazon's Upside While Capturing Every Drop, And the Math Is Brutal",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.192156862745098,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9227083501",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-21T07:20:06Z",
+    "sourceUrl": "https://www.investing.com/analysis/client-sentiment-shifts-in-wti-following-latest-price-pullback-200680681",
+    "title": "Client Sentiment Shifts in WTI Following Latest Price Pullback | Investing.com",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.9372549019607843,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1175734124",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-21T04:49:56Z",
+    "sourceUrl": "https://hedgeco.net/news/05/2026/bitmines-13-billion-stash-tom-lees-ethereum-treasury-bet-signals-a-new-era-for-institutional-crypto-balance-sheets.html",
+    "title": "BitMine's $13 Billion Stash: Tom Lee's Ethereum Treasury Bet Signals a New Era for Institutional Crypto Balance Sheets:",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11668077",
+      "sentiment": 0.03529411764705892,
+      "sourceTitle": "HedgeCo, LLC",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9226431128",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-20T18:24:03Z",
+    "sourceUrl": "https://247wallst.com/investing/2026/05/20/msty-holders-face-a-risk-that-has-nothing-to-do-with-bitcoin-falling/",
+    "title": "MSTY Holders Face a Risk That Has Nothing to Do With Bitcoin Falling",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11671808",
+      "sentiment": 0.1450980392156862,
+      "sourceTitle": "24/7 Wall St.",
+      "clusterSize": 5
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-2026-05-1175081268",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "control_change",
+    "date": "2026-05-20T12:53:57Z",
+    "sourceUrl": "https://beincrypto.com/tether-takes-full-control-of-xxi-after-buying-softbank-stake/",
+    "title": "Tether Takes Full Control of Twenty One Capital (XXI) After Buying SoftBank Stake",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11670793",
+      "sentiment": 0.1137254901960785,
+      "sourceTitle": "BeInCrypto",
+      "clusterSize": 2
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9225608626",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-20T08:04:25Z",
+    "sourceUrl": "https://en.coin-turk.com/eth-etf-inflows-only-recover-33-percent-as-btc-hits-66-percent/",
+    "title": "ETH ETF inflows only recover 33 percent as BTC hits 66 percent",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": "eng-11663612",
+      "sentiment": 0.02745098039215677,
+      "sourceTitle": "COINTURK NEWS",
+      "clusterSize": 4
+    },
+    "confidence": 0.6
+  },
+  {
+    "id": "er-9225540224",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "business_model_change",
+    "date": "2026-05-20T07:11:10Z",
+    "sourceUrl": "https://www.investing.com/analysis/traders-are-extreme-buy-in-nvidia-ahead-of-its-earnings-release-200680607",
+    "title": "Traders are Extreme Buy in Nvidia Ahead of its Earnings Release | Investing.com",
+    "source": "eventregistry",
+    "payload": {
+      "eventUri": null,
+      "sentiment": 0.803921568627451,
+      "sourceTitle": "Investing.com",
+      "clusterSize": 1
+    },
+    "confidence": 0.6
+  }
+]

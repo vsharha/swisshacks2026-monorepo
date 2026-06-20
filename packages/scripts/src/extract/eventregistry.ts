@@ -4,12 +4,14 @@ import {
   fetchArticlesWindowed,
   suggestConcept,
 } from "@kyc/core/connectors";
-import { loadRootEnv, writeData } from "../lib/repo.ts";
+import { loadRootEnv, readData, writeData } from "../lib/repo.ts";
 
 /**
- * Mode 1 offline extractor: pull EventRegistry news for the hero entity over
- * the scenario window, normalize to validated Signals, and write a versioned
- * snapshot into data/signals/. Run with `pnpm --filter @kyc/scripts extract:er`.
+ * Mode 1 offline extractor: pull EventRegistry news for a hero entity over the
+ * scenario window, normalize to validated Signals, and write a versioned
+ * snapshot into data/signals/. The name + concept URI are read from the entity's
+ * baseline; pass an entityId as the first arg (defaults to "smartbird").
+ * Run with `pnpm --filter @kyc/scripts exec tsx src/extract/eventregistry.ts <entityId>`.
  */
 
 loadRootEnv();
@@ -20,10 +22,13 @@ if (!apiKey) {
   process.exit(1);
 }
 
-// Hero entity: Allbirds → NewBird AI → Smartbird. Override the concept URI via
-// ER_CONCEPT_URI if entity resolution picks the wrong concept.
-const entityId = "smartbird";
-const name = "Allbirds";
+// Hero entity config (name + concept URI) comes from its baseline. Override the
+// concept URI via ER_CONCEPT_URI if entity resolution picks the wrong concept.
+const entityId = process.argv[2] ?? "smartbird";
+const baseline = await readData<{ conceptUri?: string; name: string }>(
+  `baselines/${entityId}.json`,
+);
+const name = baseline.name;
 // NOTE: this EventRegistry key only serves ~the last 30 days of news (older
 // windows return 0). EventRegistry therefore supplies recent adverse-media
 // texture; the historical structural spine (2024 delisting, Apr-2026 financing)
@@ -32,7 +37,8 @@ const name = "Allbirds";
 const dateStart = "2026-05-01";
 const dateEnd = "2026-06-20";
 
-const conceptUri = process.env.ER_CONCEPT_URI ?? (await suggestConcept(apiKey, name));
+const conceptUri =
+  process.env.ER_CONCEPT_URI ?? baseline.conceptUri ?? (await suggestConcept(apiKey, name));
 if (!conceptUri) {
   console.error(`Could not resolve an EventRegistry concept URI for "${name}".`);
   process.exit(1);

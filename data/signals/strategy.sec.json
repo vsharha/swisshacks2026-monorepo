@@ -1,0 +1,4394 @@
+[
+  {
+    "id": "sec-0001193125-26-270366",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2026-06-15",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526270366/0001193125-26-270366-index.htm",
+    "title": "8-K items 3.03,5.03,7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "3.03,5.03,7.01,8.01,9.01",
+      "accessionNumber": "0001193125-26-270366",
+      "reportDate": "2026-06-14",
+      "primaryDocument": "d144149d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0001193125-26-270311",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-06-15",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526270311/0001193125-26-270311-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-270311",
+      "reportDate": "2026-05-04",
+      "primaryDocument": "mstr-20260504.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-265108",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-06-10",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526265108/0001193125-26-265108-index.htm",
+    "title": "8-K items 5.07",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.07",
+      "accessionNumber": "0001193125-26-265108",
+      "reportDate": "2026-06-08",
+      "primaryDocument": "d152189d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-261038",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-06-08",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526261038/0001193125-26-261038-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-26-261038",
+      "reportDate": "2026-06-08",
+      "primaryDocument": "d130937d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-260709",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-06-08",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526260709/0001193125-26-260709-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-260709",
+      "reportDate": "2026-05-04",
+      "primaryDocument": "mstr-20260504.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-249768",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-06-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526249768/0001193125-26-249768-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-249768",
+      "reportDate": "2026-05-30",
+      "primaryDocument": "mstr-20260530.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-237907",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-05-26",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526237907/0001193125-26-237907-index.htm",
+    "title": "8-K items 7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01,9.01",
+      "accessionNumber": "0001193125-26-237907",
+      "reportDate": "2026-05-26",
+      "primaryDocument": "mstr-20260526.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-227918",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-05-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526227918/0001193125-26-227918-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-227918",
+      "reportDate": "2026-05-04",
+      "primaryDocument": "mstr-20260504.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-225361",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-05-15",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526225361/0001193125-26-225361-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-26-225361",
+      "reportDate": "2026-05-04",
+      "primaryDocument": "mstr-20260504.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-215754",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-05-11",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526215754/0001193125-26-215754-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-215754",
+      "reportDate": "2026-05-04",
+      "primaryDocument": "mstr-20260504.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001050446-26-000031",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2026-05-06",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000031/0001050446-26-000031-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0001050446-26-000031",
+      "reportDate": "2026-03-31",
+      "primaryDocument": "mstr-20260331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001050446-26-000024",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-05-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000024/0001050446-26-000024-index.htm",
+    "title": "8-K items 2.02,7.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,7.01,9.01",
+      "accessionNumber": "0001050446-26-000024",
+      "reportDate": "2026-05-05",
+      "primaryDocument": "mstr-20260505.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-202611",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-05-04",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526202611/0001193125-26-202611-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-202611",
+      "reportDate": "2026-05-04",
+      "primaryDocument": "mstr-20260504.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-199155",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-05-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526199155/0001193125-26-199155-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-199155",
+      "reportDate": "2025-09-02",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-186895",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "proxy_statement",
+    "date": "2026-04-28",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526186895/0001193125-26-186895-index.htm",
+    "title": "DEF 14A",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "DEF 14A",
+      "items": null,
+      "accessionNumber": "0001193125-26-186895",
+      "reportDate": "2026-06-08",
+      "primaryDocument": "d944734ddef14a.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-178994",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-04-27",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526178994/0001193125-26-178994-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-178994",
+      "reportDate": "2026-04-27",
+      "primaryDocument": "mstr-20260223.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-162756",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-04-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526162756/0001193125-26-162756-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-162756",
+      "reportDate": "2026-04-20",
+      "primaryDocument": "mstr-20260223.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-152015",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-04-13",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526152015/0001193125-26-152015-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-152015",
+      "reportDate": "2026-04-13",
+      "primaryDocument": "mstr-20260223.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-142925",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-04-06",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526142925/0001193125-26-142925-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-142925",
+      "reportDate": "2026-04-06",
+      "primaryDocument": "mstr-20260406.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-135765",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-04-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526135765/0001193125-26-135765-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-135765",
+      "reportDate": "2025-09-02",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-130446",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-03-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526130446/0001193125-26-130446-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-130446",
+      "reportDate": "2026-03-30",
+      "primaryDocument": "mstr-20260223.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-118810",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2026-03-23",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526118810/0001193125-26-118810-index.htm",
+    "title": "8-K items 1.01,1.02,5.03,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,1.02,5.03,8.01,9.01",
+      "accessionNumber": "0001193125-26-118810",
+      "reportDate": "2026-03-23",
+      "primaryDocument": "d93392d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0001193125-26-118584",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-03-23",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526118584/0001193125-26-118584-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-118584",
+      "reportDate": "2026-03-23",
+      "primaryDocument": "mstr-20260223.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-107263",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-03-16",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526107263/0001193125-26-107263-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-107263",
+      "reportDate": "2026-03-16",
+      "primaryDocument": "mstr-20260223.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-097598",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-03-09",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526097598/0001193125-26-097598-index.htm",
+    "title": "8-K items 7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01,9.01",
+      "accessionNumber": "0001193125-26-097598",
+      "reportDate": "2026-03-09",
+      "primaryDocument": "d122015d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-084264",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-03-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526084264/0001193125-26-084264-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-084264",
+      "reportDate": "2026-02-28",
+      "primaryDocument": "mstr-20260228.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-062489",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-02-23",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526062489/0001193125-26-062489-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-062489",
+      "reportDate": "2026-02-23",
+      "primaryDocument": "mstr-20260223.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001050446-26-000020",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "annual_report",
+    "date": "2026-02-19",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000020/0001050446-26-000020-index.htm",
+    "title": "10-K",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-K",
+      "items": null,
+      "accessionNumber": "0001050446-26-000020",
+      "reportDate": "2025-12-31",
+      "primaryDocument": "mstr-20251231.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-053105",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-02-17",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526053105/0001193125-26-053105-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-053105",
+      "reportDate": "2026-02-17",
+      "primaryDocument": "mstr-20260105.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-041944",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-02-09",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526041944/0001193125-26-041944-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-041944",
+      "reportDate": "2026-02-09",
+      "primaryDocument": "mstr-20260105.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001050446-26-000012",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-02-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000012/0001050446-26-000012-index.htm",
+    "title": "8-K items 2.02,7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,7.01,8.01,9.01",
+      "accessionNumber": "0001050446-26-000012",
+      "reportDate": "2026-02-05",
+      "primaryDocument": "mstr-20260205.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-033573",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-02-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526033573/0001193125-26-033573-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-26-033573",
+      "reportDate": "2026-02-02",
+      "primaryDocument": "mstr-20260202.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-032731",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-02-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526032731/0001193125-26-032731-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-032731",
+      "reportDate": "2026-01-31",
+      "primaryDocument": "mstr-20260131.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-021726",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-01-26",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526021726/0001193125-26-021726-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-021726",
+      "reportDate": "2026-01-26",
+      "primaryDocument": "mstr-20260105.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-016002",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-01-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526016002/0001193125-26-016002-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-016002",
+      "reportDate": "2026-01-20",
+      "primaryDocument": "mstr-20260105.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-009811",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-01-12",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526009811/0001193125-26-009811-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-009811",
+      "reportDate": "2026-01-12",
+      "primaryDocument": "mstr-20260105.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-001550",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-01-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526001550/0001193125-26-001550-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-001550",
+      "reportDate": "2026-01-05",
+      "primaryDocument": "mstr-20260105.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-26-000264",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2026-01-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526000264/0001193125-26-000264-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-26-000264",
+      "reportDate": "2025-12-31",
+      "primaryDocument": "mstr-20251117.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-332296",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-12-29",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525332296/0001193125-25-332296-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-332296",
+      "reportDate": "2025-12-29",
+      "primaryDocument": "mstr-20251117.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-327598",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-12-22",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525327598/0001193125-25-327598-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-327598",
+      "reportDate": "2025-12-22",
+      "primaryDocument": "mstr-20251117.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-318468",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-12-15",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525318468/0001193125-25-318468-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-318468",
+      "reportDate": "2025-12-15",
+      "primaryDocument": "mstr-20251117.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-310607",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-12-08",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525310607/0001193125-25-310607-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-310607",
+      "reportDate": "2025-12-08",
+      "primaryDocument": "mstr-20251117.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-303157",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "leadership_change",
+    "date": "2025-12-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525303157/0001193125-25-303157-index.htm",
+    "title": "8-K items 5.02,7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.02,7.01,8.01,9.01",
+      "accessionNumber": "0001193125-25-303157",
+      "reportDate": "2025-11-30",
+      "primaryDocument": "d69948d8k.htm"
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "sec-0001193125-25-283991",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-11-17",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525283991/0001193125-25-283991-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-283991",
+      "reportDate": "2025-11-17",
+      "primaryDocument": "mstr-20251117.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-280178",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2025-11-13",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525280178/0001193125-25-280178-index.htm",
+    "title": "8-K items 3.03,5.03,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "3.03,5.03,9.01",
+      "accessionNumber": "0001193125-25-280178",
+      "reportDate": "2025-11-12",
+      "primaryDocument": "d205736d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0001193125-25-273310",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-11-10",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525273310/0001193125-25-273310-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-273310",
+      "reportDate": "2025-11-10",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-271105",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2025-11-07",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525271105/0001193125-25-271105-index.htm",
+    "title": "8-K items 1.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,8.01,9.01",
+      "accessionNumber": "0001193125-25-271105",
+      "reportDate": "2025-11-06",
+      "primaryDocument": "d78313d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-25-263914",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2025-11-04",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525263914/0001193125-25-263914-index.htm",
+    "title": "8-K items 1.01,1.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,1.02,8.01,9.01",
+      "accessionNumber": "0001193125-25-263914",
+      "reportDate": "2025-11-04",
+      "primaryDocument": "d70243d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-25-262819",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-11-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525262819/0001193125-25-262819-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-25-262819",
+      "reportDate": "2025-11-03",
+      "primaryDocument": "d79833d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-262568",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2025-11-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525262568/0001193125-25-262568-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0001193125-25-262568",
+      "reportDate": "2025-09-30",
+      "primaryDocument": "mstr-20250930.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-261714",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-11-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525261714/0001193125-25-261714-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-261714",
+      "reportDate": "2025-11-03",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-258690",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-10-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525258690/0001193125-25-258690-index.htm",
+    "title": "8-K items 2.02,7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,7.01,8.01,9.01",
+      "accessionNumber": "0001193125-25-258690",
+      "reportDate": "2025-10-30",
+      "primaryDocument": "mstr-20251030.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-250751",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-10-27",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525250751/0001193125-25-250751-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-250751",
+      "reportDate": "2025-10-27",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-243049",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-10-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525243049/0001193125-25-243049-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-243049",
+      "reportDate": "2025-10-20",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-238132",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-10-14",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525238132/0001193125-25-238132-index.htm",
+    "title": "8-K items 7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01,9.01",
+      "accessionNumber": "0001193125-25-238132",
+      "reportDate": "2025-09-02",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-230977",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "leadership_change",
+    "date": "2025-10-06",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525230977/0001193125-25-230977-index.htm",
+    "title": "8-K items 2.02,5.02,7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,5.02,7.01,8.01",
+      "accessionNumber": "0001193125-25-230977",
+      "reportDate": "2025-10-06",
+      "primaryDocument": "d49048d8k.htm"
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "sec-0001193125-25-225904",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-10-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525225904/0001193125-25-225904-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-25-225904",
+      "reportDate": "2025-09-30",
+      "primaryDocument": "d807448d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-225038",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-09-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525225038/0001193125-25-225038-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-225038",
+      "reportDate": "2025-09-30",
+      "primaryDocument": "d939712d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-221772",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-09-29",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525221772/0001193125-25-221772-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-221772",
+      "reportDate": "2025-09-29",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-210048",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-09-22",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525210048/0001193125-25-210048-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-210048",
+      "reportDate": "2025-09-22",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-202827",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-09-15",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525202827/0001193125-25-202827-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-202827",
+      "reportDate": "2025-09-15",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-113360",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-09-08",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025113360/0000950170-25-113360-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-113360",
+      "reportDate": "2025-09-08",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-193487",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-09-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525193487/0001193125-25-193487-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-193487",
+      "reportDate": "2025-08-31",
+      "primaryDocument": "d80677d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001050446-25-000008",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-09-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000105044625000008/0001050446-25-000008-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001050446-25-000008",
+      "reportDate": "2025-09-02",
+      "primaryDocument": "mstr-20250902.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-190363",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-08-28",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525190363/0001193125-25-190363-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-25-190363",
+      "reportDate": "2025-08-28",
+      "primaryDocument": "d18414d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-111093",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-08-25",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025111093/0000950170-25-111093-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-111093",
+      "reportDate": "2025-08-25",
+      "primaryDocument": "mstr-20250818.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-109566",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-08-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025109566/0000950170-25-109566-index.htm",
+    "title": "8-K items 7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01,9.01",
+      "accessionNumber": "0000950170-25-109566",
+      "reportDate": "2025-08-18",
+      "primaryDocument": "mstr-20250818.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-177517",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2025-08-11",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525177517/0001193125-25-177517-index.htm",
+    "title": "8-K items 5.03,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.03,8.01,9.01",
+      "accessionNumber": "0001193125-25-177517",
+      "reportDate": "2025-08-11",
+      "primaryDocument": "d938099d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0000950170-25-106241",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-08-11",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025106241/0000950170-25-106241-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-106241",
+      "reportDate": "2025-08-11",
+      "primaryDocument": "mstr-20250804.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-102209",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2025-08-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025102209/0000950170-25-102209-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0000950170-25-102209",
+      "reportDate": "2025-06-30",
+      "primaryDocument": "mstr-20250630.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-101634",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-08-04",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025101634/0000950170-25-101634-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-101634",
+      "reportDate": "2025-08-04",
+      "primaryDocument": "mstr-20250804.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-170550",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2025-07-31",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525170550/0001193125-25-170550-index.htm",
+    "title": "8-K items 5.03,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.03,8.01,9.01",
+      "accessionNumber": "0001193125-25-170550",
+      "reportDate": "2025-07-31",
+      "primaryDocument": "d83620d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0000950170-25-100916",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-07-31",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025100916/0000950170-25-100916-index.htm",
+    "title": "8-K items 2.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,8.01,9.01",
+      "accessionNumber": "0000950170-25-100916",
+      "reportDate": "2025-07-31",
+      "primaryDocument": "mstr-20250731.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-167987",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2025-07-29",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525167987/0001193125-25-167987-index.htm",
+    "title": "8-K items 3.03,5.03,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "3.03,5.03,8.01,9.01",
+      "accessionNumber": "0001193125-25-167987",
+      "reportDate": "2025-07-29",
+      "primaryDocument": "d43815d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0000950170-25-098938",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-07-28",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025098938/0000950170-25-098938-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-098938",
+      "reportDate": "2025-07-28",
+      "primaryDocument": "mstr-20250616.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-164852",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2025-07-25",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525164852/0001193125-25-164852-index.htm",
+    "title": "8-K items 1.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,8.01,9.01",
+      "accessionNumber": "0001193125-25-164852",
+      "reportDate": "2025-07-24",
+      "primaryDocument": "d65643d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-25-163041",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-07-23",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525163041/0001193125-25-163041-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-25-163041",
+      "reportDate": "2025-07-21",
+      "primaryDocument": "d94615d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-161916",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-07-21",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525161916/0001193125-25-161916-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-25-161916",
+      "reportDate": "2025-07-21",
+      "primaryDocument": "d854047d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-097081",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-07-21",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025097081/0000950170-25-097081-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-097081",
+      "reportDate": "2025-07-21",
+      "primaryDocument": "mstr-20250616.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-095461",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-07-14",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025095461/0000950170-25-095461-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-095461",
+      "reportDate": "2025-07-14",
+      "primaryDocument": "mstr-20250714.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-155918",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2025-07-07",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525155918/0001193125-25-155918-index.htm",
+    "title": "8-K items 5.03,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.03,8.01,9.01",
+      "accessionNumber": "0001193125-25-155918",
+      "reportDate": "2025-07-07",
+      "primaryDocument": "d66905d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0000950170-25-094137",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-07-07",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025094137/0000950170-25-094137-index.htm",
+    "title": "8-K items 2.02,7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,7.01,8.01",
+      "accessionNumber": "0000950170-25-094137",
+      "reportDate": "2025-07-07",
+      "primaryDocument": "mstr-20250707.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-153997",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "leadership_change",
+    "date": "2025-07-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525153997/0001193125-25-153997-index.htm",
+    "title": "8-K items 5.02",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.02",
+      "accessionNumber": "0001193125-25-153997",
+      "reportDate": "2025-07-01",
+      "primaryDocument": "d28197d8k.htm"
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "sec-0000950170-25-091211",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-06-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025091211/0000950170-25-091211-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-091211",
+      "reportDate": "2025-06-30",
+      "primaryDocument": "mstr-20250616.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-088731",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-06-23",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025088731/0000950170-25-088731-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0000950170-25-088731",
+      "reportDate": "2025-06-19",
+      "primaryDocument": "mstr-20250616.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-088711",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-06-23",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025088711/0000950170-25-088711-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-088711",
+      "reportDate": "2025-06-23",
+      "primaryDocument": "mstr-20250616.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-141411",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-06-16",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525141411/0001193125-25-141411-index.htm",
+    "title": "8-K items 5.07",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.07",
+      "accessionNumber": "0001193125-25-141411",
+      "reportDate": "2025-06-12",
+      "primaryDocument": "d77512d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-086545",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-06-16",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025086545/0000950170-25-086545-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-086545",
+      "reportDate": "2025-06-16",
+      "primaryDocument": "mstr-20250616.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-138477",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2025-06-10",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525138477/0001193125-25-138477-index.htm",
+    "title": "8-K items 3.03,5.03,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "3.03,5.03,9.01",
+      "accessionNumber": "0001193125-25-138477",
+      "reportDate": "2025-06-10",
+      "primaryDocument": "d941529d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0000950170-25-083448",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-06-09",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025083448/0000950170-25-083448-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-083448",
+      "reportDate": "2025-06-09",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-136301",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2025-06-06",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525136301/0001193125-25-136301-index.htm",
+    "title": "8-K items 1.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,8.01,9.01",
+      "accessionNumber": "0001193125-25-136301",
+      "reportDate": "2025-06-05",
+      "primaryDocument": "d947335d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-25-133461",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-06-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525133461/0001193125-25-133461-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-25-133461",
+      "reportDate": "2025-06-02",
+      "primaryDocument": "d930042d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-080022",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-06-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025080022/0000950170-25-080022-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-080022",
+      "reportDate": "2025-06-02",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-077387",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-05-27",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025077387/0000950170-25-077387-index.htm",
+    "title": "8-K items 7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01,9.01",
+      "accessionNumber": "0000950170-25-077387",
+      "reportDate": "2025-05-26",
+      "primaryDocument": "mstr-20250526.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-124568",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-05-22",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525124568/0001193125-25-124568-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-25-124568",
+      "reportDate": "2025-05-22",
+      "primaryDocument": "d68716d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-073962",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-05-19",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025073962/0000950170-25-073962-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-073962",
+      "reportDate": "2025-05-19",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-068580",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-05-12",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025068580/0000950170-25-068580-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-068580",
+      "reportDate": "2025-05-12",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-063536",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2025-05-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025063536/0000950170-25-063536-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0000950170-25-063536",
+      "reportDate": "2025-03-31",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-063168",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-05-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025063168/0000950170-25-063168-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-063168",
+      "reportDate": "2025-05-05",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-109959",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2025-05-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525109959/0001193125-25-109959-index.htm",
+    "title": "8-K items 1.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,9.01",
+      "accessionNumber": "0001193125-25-109959",
+      "reportDate": "2025-05-01",
+      "primaryDocument": "d944677d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0000950170-25-061806",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-05-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025061806/0000950170-25-061806-index.htm",
+    "title": "8-K items 2.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,9.01",
+      "accessionNumber": "0000950170-25-061806",
+      "reportDate": "2025-05-01",
+      "primaryDocument": "mstr-20250501.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-100720",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "proxy_statement",
+    "date": "2025-04-28",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525100720/0001193125-25-100720-index.htm",
+    "title": "DEF 14A",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "DEF 14A",
+      "items": null,
+      "accessionNumber": "0001193125-25-100720",
+      "reportDate": "2025-06-12",
+      "primaryDocument": "d908609ddef14a.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-058962",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-04-28",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025058962/0000950170-25-058962-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-058962",
+      "reportDate": "2025-04-28",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-056007",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-04-21",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025056007/0000950170-25-056007-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-056007",
+      "reportDate": "2025-04-21",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-053501",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-04-14",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025053501/0000950170-25-053501-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-053501",
+      "reportDate": "2025-04-14",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-073989",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-04-07",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525073989/0001193125-25-073989-index.htm",
+    "title": "8-K items 2.02,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,8.01",
+      "accessionNumber": "0001193125-25-073989",
+      "reportDate": "2025-04-07",
+      "primaryDocument": "d938485d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-047219",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-03-31",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025047219/0000950170-25-047219-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-047219",
+      "reportDate": "2025-03-31",
+      "primaryDocument": "mstr-20250331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-062523",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2025-03-25",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525062523/0001193125-25-062523-index.htm",
+    "title": "8-K items 3.03,5.03,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "3.03,5.03,9.01",
+      "accessionNumber": "0001193125-25-062523",
+      "reportDate": "2025-03-25",
+      "primaryDocument": "d943742d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0000950170-25-043494",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-03-24",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025043494/0000950170-25-043494-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-043494",
+      "reportDate": "2025-03-24",
+      "primaryDocument": "mstr-20250324.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-059786",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2025-03-21",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525059786/0001193125-25-059786-index.htm",
+    "title": "8-K items 1.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,8.01,9.01",
+      "accessionNumber": "0001193125-25-059786",
+      "reportDate": "2025-03-20",
+      "primaryDocument": "d866395d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-25-056203",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-03-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525056203/0001193125-25-056203-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-25-056203",
+      "reportDate": "2025-03-18",
+      "primaryDocument": "d888756d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-039835",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-03-17",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025039835/0000950170-25-039835-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-039835",
+      "reportDate": "2025-03-17",
+      "primaryDocument": "mstr-20250317.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-050411",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2025-03-10",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525050411/0001193125-25-050411-index.htm",
+    "title": "8-K items 1.01,7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,7.01,8.01,9.01",
+      "accessionNumber": "0001193125-25-050411",
+      "reportDate": "2025-03-10",
+      "primaryDocument": "d872184d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0000950170-25-030406",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-03-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025030406/0000950170-25-030406-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-030406",
+      "reportDate": "2025-03-03",
+      "primaryDocument": "mstr-20250303.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-025233",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-02-24",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025025233/0000950170-25-025233-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0000950170-25-025233",
+      "reportDate": "2025-02-24",
+      "primaryDocument": "mstr-20250224.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-032800",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2025-02-24",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525032800/0001193125-25-032800-index.htm",
+    "title": "8-K items 1.01,2.03,3.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "accessionNumber": "0001193125-25-032800",
+      "reportDate": "2025-02-21",
+      "primaryDocument": "d851880d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-25-030144",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-02-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525030144/0001193125-25-030144-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-25-030144",
+      "reportDate": "2025-02-18",
+      "primaryDocument": "d925229d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-028184",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-02-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525028184/0001193125-25-028184-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-028184",
+      "reportDate": "2025-02-18",
+      "primaryDocument": "d914761d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-25-021814",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "annual_report",
+    "date": "2025-02-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025021814/0000950170-25-021814-index.htm",
+    "title": "10-K",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-K",
+      "items": null,
+      "accessionNumber": "0000950170-25-021814",
+      "reportDate": "2024-12-31",
+      "primaryDocument": "mstr-20241231.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-023183",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-02-10",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525023183/0001193125-25-023183-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-023183",
+      "reportDate": "2025-02-10",
+      "primaryDocument": "d914889d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-020868",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2025-02-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525020868/0001193125-25-020868-index.htm",
+    "title": "8-K items 3.03,5.03,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "3.03,5.03,9.01",
+      "accessionNumber": "0001193125-25-020868",
+      "reportDate": "2025-02-05",
+      "primaryDocument": "d791994d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0000950170-25-014455",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-02-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017025014455/0000950170-25-014455-index.htm",
+    "title": "8-K items 2.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,9.01",
+      "accessionNumber": "0000950170-25-014455",
+      "reportDate": "2025-02-05",
+      "primaryDocument": "mstr-20250205.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-018889",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-02-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525018889/0001193125-25-018889-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-25-018889",
+      "reportDate": "2025-02-03",
+      "primaryDocument": "d752096d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-017726",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2025-01-31",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525017726/0001193125-25-017726-index.htm",
+    "title": "8-K items 1.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,8.01,9.01",
+      "accessionNumber": "0001193125-25-017726",
+      "reportDate": "2025-01-30",
+      "primaryDocument": "d830622d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-25-012671",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-01-27",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525012671/0001193125-25-012671-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-012671",
+      "reportDate": "2025-01-27",
+      "primaryDocument": "d923383d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-011819",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-01-24",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525011819/0001193125-25-011819-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-25-011819",
+      "reportDate": "2025-01-24",
+      "primaryDocument": "d920988d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-011455",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "name_or_charter_change",
+    "date": "2025-01-23",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525011455/0001193125-25-011455-index.htm",
+    "title": "8-K items 5.02,5.03,5.07,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.02,5.03,5.07,9.01",
+      "accessionNumber": "0001193125-25-011455",
+      "reportDate": "2025-01-21",
+      "primaryDocument": "d934980d8k.htm"
+    },
+    "confidence": 0.95
+  },
+  {
+    "id": "sec-0001193125-25-009102",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-01-21",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525009102/0001193125-25-009102-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-009102",
+      "reportDate": "2025-01-21",
+      "primaryDocument": "d853769d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-005000",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-01-13",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525005000/0001193125-25-005000-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-25-005000",
+      "reportDate": "2025-01-13",
+      "primaryDocument": "d884652d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-001854",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-01-06",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525001854/0001193125-25-001854-index.htm",
+    "title": "8-K items 2.02,7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,7.01,8.01",
+      "accessionNumber": "0001193125-25-001854",
+      "reportDate": "2025-01-06",
+      "primaryDocument": "d878544d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001140361-25-000231",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "proxy_statement",
+    "date": "2025-01-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000114036125000231/0001140361-25-000231-index.htm",
+    "title": "DEF 14A",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "DEF 14A",
+      "items": null,
+      "accessionNumber": "0001140361-25-000231",
+      "reportDate": "2025-01-21",
+      "primaryDocument": "ny20039908x2_def14a.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-25-001543",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2025-01-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312525001543/0001193125-25-001543-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-25-001543",
+      "reportDate": "2025-01-03",
+      "primaryDocument": "d882784d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-286217",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-12-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524286217/0001193125-24-286217-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-24-286217",
+      "reportDate": "2024-12-30",
+      "primaryDocument": "d896561d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-283686",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-12-23",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524283686/0001193125-24-283686-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-24-283686",
+      "reportDate": "2024-12-23",
+      "primaryDocument": "d892375d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-283170",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "leadership_change",
+    "date": "2024-12-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524283170/0001193125-24-283170-index.htm",
+    "title": "8-K items 5.02",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.02",
+      "accessionNumber": "0001193125-24-283170",
+      "reportDate": "2024-12-20",
+      "primaryDocument": "d870934d8k.htm"
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "sec-0001193125-24-279044",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-12-16",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524279044/0001193125-24-279044-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-24-279044",
+      "reportDate": "2024-12-16",
+      "primaryDocument": "d843539d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-272923",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-12-09",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524272923/0001193125-24-272923-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-24-272923",
+      "reportDate": "2024-12-09",
+      "primaryDocument": "d873652d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-268429",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-12-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524268429/0001193125-24-268429-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-24-268429",
+      "reportDate": "2024-12-02",
+      "primaryDocument": "d898104d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-264733",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-11-25",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524264733/0001193125-24-264733-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-24-264733",
+      "reportDate": "2024-11-25",
+      "primaryDocument": "d844494d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-263404",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2024-11-21",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524263404/0001193125-24-263404-index.htm",
+    "title": "8-K items 1.01,2.03,3.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "accessionNumber": "0001193125-24-263404",
+      "reportDate": "2024-11-21",
+      "primaryDocument": "d905221d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-24-262151",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-11-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524262151/0001193125-24-262151-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-24-262151",
+      "reportDate": "2024-11-18",
+      "primaryDocument": "d850321d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-260452",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-11-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524260452/0001193125-24-260452-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-24-260452",
+      "reportDate": "2024-11-18",
+      "primaryDocument": "d828461d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001595888-24-000060",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "beneficial_ownership",
+    "date": "2024-11-14",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000159588824000060/0001595888-24-000060-index.htm",
+    "title": "SC 13G — MSTR 13G",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "SC 13G",
+      "items": null,
+      "accessionNumber": "0001595888-24-000060",
+      "reportDate": "",
+      "primaryDocument": "MSTR.txt"
+    },
+    "confidence": 0.7
+  },
+  {
+    "id": "sec-0001193125-24-255184",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-11-12",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524255184/0001193125-24-255184-index.htm",
+    "title": "8-K items 7.01,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01,9.01",
+      "accessionNumber": "0001193125-24-255184",
+      "reportDate": "2024-11-11",
+      "primaryDocument": "d908568d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-24-119263",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2024-10-31",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024119263/0000950170-24-119263-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0000950170-24-119263",
+      "reportDate": "2024-09-30",
+      "primaryDocument": "mstr-20240930.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-247543",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2024-10-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524247543/0001193125-24-247543-index.htm",
+    "title": "8-K items 1.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,9.01",
+      "accessionNumber": "0001193125-24-247543",
+      "reportDate": "2024-10-30",
+      "primaryDocument": "d905175d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0000950170-24-118951",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-10-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024118951/0000950170-24-118951-index.htm",
+    "title": "8-K items 2.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,9.01",
+      "accessionNumber": "0000950170-24-118951",
+      "reportDate": "2024-10-30",
+      "primaryDocument": "mstr-20241030.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-222498",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-09-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524222498/0001193125-24-222498-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-24-222498",
+      "reportDate": "2024-09-20",
+      "primaryDocument": "d822569d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-222462",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2024-09-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524222462/0001193125-24-222462-index.htm",
+    "title": "8-K items 1.01,2.03,3.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "accessionNumber": "0001193125-24-222462",
+      "reportDate": "2024-09-19",
+      "primaryDocument": "d887785d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-24-221085",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-09-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524221085/0001193125-24-221085-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-24-221085",
+      "reportDate": "2024-09-16",
+      "primaryDocument": "d889953d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-218462",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-09-13",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524218462/0001193125-24-218462-index.htm",
+    "title": "8-K items 7.01,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,8.01",
+      "accessionNumber": "0001193125-24-218462",
+      "reportDate": "2024-09-13",
+      "primaryDocument": "d808510d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-24-091778",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2024-08-06",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024091778/0000950170-24-091778-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0000950170-24-091778",
+      "reportDate": "2024-06-30",
+      "primaryDocument": "mstr-20240630.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-24-089243",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-08-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024089243/0000950170-24-089243-index.htm",
+    "title": "8-K items 2.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,9.01",
+      "accessionNumber": "0000950170-24-089243",
+      "reportDate": "2024-08-01",
+      "primaryDocument": "mstr-20240801.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-177515",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-07-11",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524177515/0001193125-24-177515-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-24-177515",
+      "reportDate": "2024-07-11",
+      "primaryDocument": "d858108d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-175343",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-07-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524175343/0001193125-24-175343-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-24-175343",
+      "reportDate": "2024-07-05",
+      "primaryDocument": "d844285d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-164014",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-06-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524164014/0001193125-24-164014-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-24-164014",
+      "reportDate": "2024-06-20",
+      "primaryDocument": "d851818d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-164009",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2024-06-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524164009/0001193125-24-164009-index.htm",
+    "title": "8-K items 1.01,2.03,3.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "accessionNumber": "0001193125-24-164009",
+      "reportDate": "2024-06-17",
+      "primaryDocument": "d857957d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-24-161184",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-06-14",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524161184/0001193125-24-161184-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-24-161184",
+      "reportDate": "2024-06-13",
+      "primaryDocument": "d792626d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-152373",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-06-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524152373/0001193125-24-152373-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-24-152373",
+      "reportDate": "2024-05-31",
+      "primaryDocument": "d831586d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-147023",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-05-24",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524147023/0001193125-24-147023-index.htm",
+    "title": "8-K items 5.07",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.07",
+      "accessionNumber": "0001193125-24-147023",
+      "reportDate": "2024-05-22",
+      "primaryDocument": "d610426d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-24-051230",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2024-05-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024051230/0000950170-24-051230-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0000950170-24-051230",
+      "reportDate": "2024-03-31",
+      "primaryDocument": "mstr-20240331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-24-049829",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-04-29",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024049829/0000950170-24-049829-index.htm",
+    "title": "8-K items 2.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,9.01",
+      "accessionNumber": "0000950170-24-049829",
+      "reportDate": "2024-04-29",
+      "primaryDocument": "mstr-20240429.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-094634",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "proxy_statement",
+    "date": "2024-04-12",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524094634/0001193125-24-094634-index.htm",
+    "title": "DEF 14A",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "DEF 14A",
+      "items": null,
+      "accessionNumber": "0001193125-24-094634",
+      "reportDate": "2024-05-22",
+      "primaryDocument": "d739674ddef14a.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-070801",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-03-19",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524070801/0001193125-24-070801-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-24-070801",
+      "reportDate": "2024-03-19",
+      "primaryDocument": "d805979d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-070793",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2024-03-19",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524070793/0001193125-24-070793-index.htm",
+    "title": "8-K items 1.01,2.03,3.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "accessionNumber": "0001193125-24-070793",
+      "reportDate": "2024-03-18",
+      "primaryDocument": "d792323d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-24-068621",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-03-15",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524068621/0001193125-24-068621-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-24-068621",
+      "reportDate": "2024-03-13",
+      "primaryDocument": "d792611d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-064331",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-03-11",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524064331/0001193125-24-064331-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-24-064331",
+      "reportDate": "2024-03-11",
+      "primaryDocument": "d738431d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-064321",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2024-03-11",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524064321/0001193125-24-064321-index.htm",
+    "title": "8-K items 1.01,2.03,3.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "accessionNumber": "0001193125-24-064321",
+      "reportDate": "2024-03-08",
+      "primaryDocument": "d749312d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-24-060026",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-03-06",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524060026/0001193125-24-060026-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-24-060026",
+      "reportDate": "2024-03-04",
+      "primaryDocument": "d781150d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-24-045396",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-02-26",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312524045396/0001193125-24-045396-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-24-045396",
+      "reportDate": "2024-02-26",
+      "primaryDocument": "d786266d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-24-015847",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "annual_report",
+    "date": "2024-02-15",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024015847/0000950170-24-015847-index.htm",
+    "title": "10-K",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-K",
+      "items": null,
+      "accessionNumber": "0000950170-24-015847",
+      "reportDate": "2023-12-31",
+      "primaryDocument": "mstr-20231231.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000950170-24-011709",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2024-02-06",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017024011709/0000950170-24-011709-index.htm",
+    "title": "8-K items 2.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,9.01",
+      "accessionNumber": "0000950170-24-011709",
+      "reportDate": "2024-02-06",
+      "primaryDocument": "mstr-20240206.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-303488",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2023-12-27",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523303488/0001193125-23-303488-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-23-303488",
+      "reportDate": "2023-12-27",
+      "primaryDocument": "d517550d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-285756",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2023-11-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523285756/0001193125-23-285756-index.htm",
+    "title": "8-K items 1.01,1.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,1.02,8.01,9.01",
+      "accessionNumber": "0001193125-23-285756",
+      "reportDate": "2023-11-29",
+      "primaryDocument": "d618268d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0000950170-23-057418",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2023-11-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017023057418/0000950170-23-057418-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0000950170-23-057418",
+      "reportDate": "2023-09-30",
+      "primaryDocument": "mstr-20230930.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-240932",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2023-09-25",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523240932/0001193125-23-240932-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-23-240932",
+      "reportDate": "2023-09-25",
+      "primaryDocument": "d390258d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-200633",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2023-08-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523200633/0001193125-23-200633-index.htm",
+    "title": "8-K items 1.01,1.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,1.02,9.01",
+      "accessionNumber": "0001193125-23-200633",
+      "reportDate": "2023-08-01",
+      "primaryDocument": "d512066d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0000950170-23-036448",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2023-08-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017023036448/0000950170-23-036448-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0000950170-23-036448",
+      "reportDate": "2023-06-30",
+      "primaryDocument": "mstr-20230630.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-183313",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "leadership_change",
+    "date": "2023-07-07",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523183313/0001193125-23-183313-index.htm",
+    "title": "8-K items 5.02",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.02",
+      "accessionNumber": "0001193125-23-183313",
+      "reportDate": "2023-07-05",
+      "primaryDocument": "d542722d8k.htm"
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "sec-0001193125-23-176793",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2023-06-28",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523176793/0001193125-23-176793-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-23-176793",
+      "reportDate": "2023-06-28",
+      "primaryDocument": "d520680d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-156662",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "leadership_change",
+    "date": "2023-05-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523156662/0001193125-23-156662-index.htm",
+    "title": "8-K items 5.02,5.07,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.02,5.07,9.01",
+      "accessionNumber": "0001193125-23-156662",
+      "reportDate": "2023-05-24",
+      "primaryDocument": "d492817d8k.htm"
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "sec-0001193125-23-130703",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2023-05-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523130703/0001193125-23-130703-index.htm",
+    "title": "8-K items 1.01,1.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,1.02,9.01",
+      "accessionNumber": "0001193125-23-130703",
+      "reportDate": "2023-05-01",
+      "primaryDocument": "d474855d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0000950170-23-016229",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2023-05-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000095017023016229/0000950170-23-016229-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0000950170-23-016229",
+      "reportDate": "2023-03-31",
+      "primaryDocument": "mstr-20230331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-100670",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "proxy_statement",
+    "date": "2023-04-13",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523100670/0001193125-23-100670-index.htm",
+    "title": "DEF 14A",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "DEF 14A",
+      "items": null,
+      "accessionNumber": "0001193125-23-100670",
+      "reportDate": "",
+      "primaryDocument": "d491211ddef14a.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-091616",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2023-04-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523091616/0001193125-23-091616-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-23-091616",
+      "reportDate": "2023-04-05",
+      "primaryDocument": "d486424d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-090347",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "leadership_change",
+    "date": "2023-04-04",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523090347/0001193125-23-090347-index.htm",
+    "title": "8-K items 5.02",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.02",
+      "accessionNumber": "0001193125-23-090347",
+      "reportDate": "2023-03-30",
+      "primaryDocument": "d471178d8k.htm"
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "sec-0001193125-23-079839",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "agreement_termination",
+    "date": "2023-03-27",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523079839/0001193125-23-079839-index.htm",
+    "title": "8-K items 1.02,8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.02,8.01",
+      "accessionNumber": "0001193125-23-079839",
+      "reportDate": "2023-03-24",
+      "primaryDocument": "d467124d8k.htm"
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "sec-0001193125-23-057314",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2023-03-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523057314/0001193125-23-057314-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-23-057314",
+      "reportDate": "2023-02-28",
+      "primaryDocument": "d473928d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001564590-23-002012",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "annual_report",
+    "date": "2023-02-16",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156459023002012/0001564590-23-002012-index.htm",
+    "title": "10-K",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-K",
+      "items": null,
+      "accessionNumber": "0001564590-23-002012",
+      "reportDate": "2022-12-31",
+      "primaryDocument": "mstr-10k_20221231.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001595888-23-000020",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "beneficial_ownership",
+    "date": "2023-02-14",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000159588823000020/0001595888-23-000020-index.htm",
+    "title": "SC 13G",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "SC 13G",
+      "items": null,
+      "accessionNumber": "0001595888-23-000020",
+      "reportDate": "",
+      "primaryDocument": "MSTR.txt"
+    },
+    "confidence": 0.7
+  },
+  {
+    "id": "sec-0001104659-23-021037",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "beneficial_ownership",
+    "date": "2023-02-14",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000110465923021037/0001104659-23-021037-index.htm",
+    "title": "SC 13G",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "SC 13G",
+      "items": null,
+      "accessionNumber": "0001104659-23-021037",
+      "reportDate": "",
+      "primaryDocument": "tm235085d8_sc13g.htm"
+    },
+    "confidence": 0.7
+  },
+  {
+    "id": "sec-0001193125-23-022753",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2023-02-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523022753/0001193125-23-022753-index.htm",
+    "title": "8-K items 2.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,9.01",
+      "accessionNumber": "0001193125-23-022753",
+      "reportDate": "2023-02-02",
+      "primaryDocument": "d455424d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-23-009591",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2023-01-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312523009591/0001193125-23-009591-index.htm",
+    "title": "8-K items 7.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "7.01,9.01",
+      "accessionNumber": "0001193125-23-009591",
+      "reportDate": "2023-01-17",
+      "primaryDocument": "d411935d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000932540-23-000001",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "beneficial_ownership",
+    "date": "2023-01-10",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000093254023000001/0000932540-23-000001-index.htm",
+    "title": "SC 13G — 13G",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "SC 13G",
+      "items": null,
+      "accessionNumber": "0000932540-23-000001",
+      "reportDate": "",
+      "primaryDocument": "MSTR13G.txt"
+    },
+    "confidence": 0.7
+  },
+  {
+    "id": "sec-0001193125-22-313098",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2022-12-28",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522313098/0001193125-22-313098-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-22-313098",
+      "reportDate": "2022-12-28",
+      "primaryDocument": "d398241d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001564590-22-036073",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2022-11-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156459022036073/0001564590-22-036073-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0001564590-22-036073",
+      "reportDate": "2022-09-30",
+      "primaryDocument": "mstr-10q_20220930.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-22-247427",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2022-09-20",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522247427/0001193125-22-247427-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-22-247427",
+      "reportDate": "2022-09-20",
+      "primaryDocument": "d355455d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-22-242015",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2022-09-09",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522242015/0001193125-22-242015-index.htm",
+    "title": "8-K items 1.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,9.01",
+      "accessionNumber": "0001193125-22-242015",
+      "reportDate": "2022-09-09",
+      "primaryDocument": "d359209d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-22-235480",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2022-09-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522235480/0001193125-22-235480-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-22-235480",
+      "reportDate": "2022-08-31",
+      "primaryDocument": "d318438d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001564590-22-027479",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2022-08-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156459022027479/0001564590-22-027479-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0001564590-22-027479",
+      "reportDate": "2022-06-30",
+      "primaryDocument": "mstr-10q_20220630.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-22-184423",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2022-06-29",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522184423/0001193125-22-184423-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-22-184423",
+      "reportDate": "2022-06-29",
+      "primaryDocument": "d374401d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-22-165191",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2022-06-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522165191/0001193125-22-165191-index.htm",
+    "title": "8-K items 5.07",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.07",
+      "accessionNumber": "0001193125-22-165191",
+      "reportDate": "2022-05-25",
+      "primaryDocument": "d311673d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001564590-22-017437",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2022-05-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156459022017437/0001564590-22-017437-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0001564590-22-017437",
+      "reportDate": "2022-03-31",
+      "primaryDocument": "mstr-10q_20220331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-22-105552",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "proxy_statement",
+    "date": "2022-04-14",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522105552/0001193125-22-105552-index.htm",
+    "title": "DEF 14A",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "DEF 14A",
+      "items": null,
+      "accessionNumber": "0001193125-22-105552",
+      "reportDate": "2022-05-25",
+      "primaryDocument": "d319484ddef14a.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-22-095632",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2022-04-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522095632/0001193125-22-095632-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-22-095632",
+      "reportDate": "2022-04-05",
+      "primaryDocument": "d292215d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-22-087494",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2022-03-29",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522087494/0001193125-22-087494-index.htm",
+    "title": "8-K items 1.01,2.03,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,8.01,9.01",
+      "accessionNumber": "0001193125-22-087494",
+      "reportDate": "2022-03-23",
+      "primaryDocument": "d312252d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001564590-22-005287",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "annual_report",
+    "date": "2022-02-16",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156459022005287/0001564590-22-005287-index.htm",
+    "title": "10-K",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-K",
+      "items": null,
+      "accessionNumber": "0001564590-22-005287",
+      "reportDate": "2021-12-31",
+      "primaryDocument": "mstr-10k_20211231.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001422849-22-000117",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "beneficial_ownership",
+    "date": "2022-02-11",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000142284922000117/0001422849-22-000117-index.htm",
+    "title": "SC 13G — SEC SCHEDULE 13G",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "SC 13G",
+      "items": null,
+      "accessionNumber": "0001422849-22-000117",
+      "reportDate": "",
+      "primaryDocument": "SEC13G_Filing.htm"
+    },
+    "confidence": 0.7
+  },
+  {
+    "id": "sec-0001193125-22-024607",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2022-02-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522024607/0001193125-22-024607-index.htm",
+    "title": "8-K items 2.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,9.01",
+      "accessionNumber": "0001193125-22-024607",
+      "reportDate": "2022-02-01",
+      "primaryDocument": "d302790d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-22-024027",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2022-02-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312522024027/0001193125-22-024027-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-22-024027",
+      "reportDate": "2022-02-01",
+      "primaryDocument": "d275576d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-369767",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-12-30",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521369767/0001193125-21-369767-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-369767",
+      "reportDate": "2021-12-30",
+      "primaryDocument": "d261142d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-352140",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-12-09",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521352140/0001193125-21-352140-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-352140",
+      "reportDate": "2021-12-09",
+      "primaryDocument": "d270832d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-341815",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-11-29",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521341815/0001193125-21-341815-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-341815",
+      "reportDate": "2021-11-29",
+      "primaryDocument": "d191335d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-318432",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "leadership_change",
+    "date": "2021-11-03",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521318432/0001193125-21-318432-index.htm",
+    "title": "8-K items 5.02",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.02",
+      "accessionNumber": "0001193125-21-318432",
+      "reportDate": "2021-11-01",
+      "primaryDocument": "d244202d8k.htm"
+    },
+    "confidence": 0.85
+  },
+  {
+    "id": "sec-0001564590-21-052646",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2021-10-28",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156459021052646/0001564590-21-052646-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0001564590-21-052646",
+      "reportDate": "2021-09-30",
+      "primaryDocument": "mstr-10q_20210930.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-270915",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-09-13",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521270915/0001193125-21-270915-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-270915",
+      "reportDate": "2021-09-13",
+      "primaryDocument": "d232429d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-254529",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-08-24",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521254529/0001193125-21-254529-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-254529",
+      "reportDate": "2021-08-24",
+      "primaryDocument": "d384256d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001564590-21-039125",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2021-07-29",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156459021039125/0001564590-21-039125-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0001564590-21-039125",
+      "reportDate": "2021-06-30",
+      "primaryDocument": "mstr-10q_20210630.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001562230-21-000116",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "beneficial_ownership",
+    "date": "2021-07-09",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156223021000116/0001562230-21-000116-index.htm",
+    "title": "SC 13G — SEC SCHEDULE 13G",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "SC 13G",
+      "items": null,
+      "accessionNumber": "0001562230-21-000116",
+      "reportDate": "",
+      "primaryDocument": "SEC13G_Filing.htm"
+    },
+    "confidence": 0.7
+  },
+  {
+    "id": "sec-0001193125-21-189600",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2021-06-14",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521189600/0001193125-21-189600-index.htm",
+    "title": "8-K items 1.01,2.03,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,8.01,9.01",
+      "accessionNumber": "0001193125-21-189600",
+      "reportDate": "2021-06-14",
+      "primaryDocument": "d148411d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-21-185538",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-06-08",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521185538/0001193125-21-185538-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-21-185538",
+      "reportDate": "2021-06-07",
+      "primaryDocument": "d183783d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-183788",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-06-07",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521183788/0001193125-21-183788-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-183788",
+      "reportDate": "2021-06-07",
+      "primaryDocument": "d47054d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-179845",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-06-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521179845/0001193125-21-179845-index.htm",
+    "title": "8-K items 5.07",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "5.07",
+      "accessionNumber": "0001193125-21-179845",
+      "reportDate": "2021-05-26",
+      "primaryDocument": "d779294d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-164617",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-05-18",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521164617/0001193125-21-164617-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-164617",
+      "reportDate": "2021-05-18",
+      "primaryDocument": "d167554d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-159855",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-05-13",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521159855/0001193125-21-159855-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-159855",
+      "reportDate": "2021-05-13",
+      "primaryDocument": "d540617d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001564590-21-021949",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "quarterly_report",
+    "date": "2021-04-29",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156459021021949/0001564590-21-021949-index.htm",
+    "title": "10-Q",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-Q",
+      "items": null,
+      "accessionNumber": "0001564590-21-021949",
+      "reportDate": "2021-03-31",
+      "primaryDocument": "mstr-10q_20210331.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-117745",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "proxy_statement",
+    "date": "2021-04-15",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521117745/0001193125-21-117745-index.htm",
+    "title": "DEF 14A",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "DEF 14A",
+      "items": null,
+      "accessionNumber": "0001193125-21-117745",
+      "reportDate": "2021-05-26",
+      "primaryDocument": "d64521ddef14a.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001104659-21-049198",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "beneficial_ownership",
+    "date": "2021-04-12",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000110465921049198/0001104659-21-049198-index.htm",
+    "title": "SC 13G",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "SC 13G",
+      "items": null,
+      "accessionNumber": "0001104659-21-049198",
+      "reportDate": "",
+      "primaryDocument": "tm2112696d1_sc13g.htm"
+    },
+    "confidence": 0.7
+  },
+  {
+    "id": "sec-0001193125-21-112475",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-04-12",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521112475/0001193125-21-112475-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-112475",
+      "reportDate": "2021-04-11",
+      "primaryDocument": "d148123d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-105625",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-04-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521105625/0001193125-21-105625-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-105625",
+      "reportDate": "2021-04-05",
+      "primaryDocument": "d113059d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-078715",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-03-12",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521078715/0001193125-21-078715-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-078715",
+      "reportDate": "2021-03-12",
+      "primaryDocument": "d154639d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-070446",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-03-05",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521070446/0001193125-21-070446-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-070446",
+      "reportDate": "2021-03-05",
+      "primaryDocument": "d145869d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-062322",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-03-01",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521062322/0001193125-21-062322-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-062322",
+      "reportDate": "2021-03-01",
+      "primaryDocument": "d103788d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-048555",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2021-02-19",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521048555/0001193125-21-048555-index.htm",
+    "title": "8-K items 1.01,2.03,3.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "accessionNumber": "0001193125-21-048555",
+      "reportDate": "2021-02-19",
+      "primaryDocument": "d130600d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-21-045792",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-02-17",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521045792/0001193125-21-045792-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-21-045792",
+      "reportDate": "2021-02-16",
+      "primaryDocument": "d119477d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001104659-21-022048",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "beneficial_ownership",
+    "date": "2021-02-12",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000110465921022048/0001104659-21-022048-index.htm",
+    "title": "SC 13G — SCHEDULE 13G",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "SC 13G",
+      "items": null,
+      "accessionNumber": "0001104659-21-022048",
+      "reportDate": "",
+      "primaryDocument": "tm215669d9_sc13g.htm"
+    },
+    "confidence": 0.7
+  },
+  {
+    "id": "sec-0001564590-21-005783",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "annual_report",
+    "date": "2021-02-12",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000156459021005783/0001564590-21-005783-index.htm",
+    "title": "10-K",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "10-K",
+      "items": null,
+      "accessionNumber": "0001564590-21-005783",
+      "reportDate": "2020-12-31",
+      "primaryDocument": "mstr-10k_20201231.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-025369",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-02-02",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521025369/0001193125-21-025369-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-025369",
+      "reportDate": "2021-02-02",
+      "primaryDocument": "d124926d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-020760",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-01-28",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521020760/0001193125-21-020760-index.htm",
+    "title": "8-K items 2.02,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "2.02,9.01",
+      "accessionNumber": "0001193125-21-020760",
+      "reportDate": "2021-01-28",
+      "primaryDocument": "d92691d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-21-014227",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2021-01-22",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312521014227/0001193125-21-014227-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-21-014227",
+      "reportDate": "2021-01-22",
+      "primaryDocument": "d113711d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0000895421-21-000003",
+    "entityId": "strategy",
+    "axis": "ownership",
+    "type": "beneficial_ownership",
+    "date": "2021-01-08",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000089542121000003/0000895421-21-000003-index.htm",
+    "title": "SC 13G — MS INITIAL",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "SC 13G",
+      "items": null,
+      "accessionNumber": "0000895421-21-000003",
+      "reportDate": "",
+      "primaryDocument": "MicrostrategyInc.txt"
+    },
+    "confidence": 0.7
+  },
+  {
+    "id": "sec-0001193125-20-315971",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "material_agreement",
+    "date": "2020-12-11",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312520315971/0001193125-20-315971-index.htm",
+    "title": "8-K items 1.01,2.03,3.02,8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "accessionNumber": "0001193125-20-315971",
+      "reportDate": "2020-12-11",
+      "primaryDocument": "d225117d8k.htm"
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "sec-0001193125-20-313349",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2020-12-09",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312520313349/0001193125-20-313349-index.htm",
+    "title": "8-K items 8.01,9.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01,9.01",
+      "accessionNumber": "0001193125-20-313349",
+      "reportDate": "2020-12-07",
+      "primaryDocument": "d55072d8k.htm"
+    },
+    "confidence": 0.5
+  },
+  {
+    "id": "sec-0001193125-20-310787",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "material_event",
+    "date": "2020-12-04",
+    "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1050446/000119312520310787/0001193125-20-310787-index.htm",
+    "title": "8-K items 8.01",
+    "source": "sec_edgar",
+    "payload": {
+      "form": "8-K",
+      "items": "8.01",
+      "accessionNumber": "0001193125-20-310787",
+      "reportDate": "2020-12-04",
+      "primaryDocument": "d22733d8k.htm"
+    },
+    "confidence": 0.5
+  }
+]

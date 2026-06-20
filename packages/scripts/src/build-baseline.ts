@@ -29,6 +29,31 @@ const baselines: KYCBaseline[] = [
     domain: "https://www.allbirds.com",
   } satisfies Record<string, unknown>),
 
+  // Second hero: onboarded in 2019 as a low-risk enterprise BI-software vendor,
+  // years before the Bitcoin-treasury pivot drifts it into a leveraged crypto
+  // proxy. A client with assets in crypto — not a crypto-native firm — so the
+  // drift is the crypto *exposure*, caught against a clean software baseline.
+  KYCBaselineSchema.parse({
+    entityId: "strategy",
+    name: "MicroStrategy Inc.",
+    aliases: ["MicroStrategy", "Strategy", "Strategy Inc.", "MSTR"],
+    legalForm: "Delaware C corporation",
+    jurisdiction: "US",
+    businessModel:
+      "Enterprise business-intelligence and analytics software — platform licensing, cloud subscriptions and support for the MicroStrategy analytics suite.",
+    beneficialOwners: [
+      {
+        name: "Michael J. Saylor",
+        role: "Chairman & CEO; controlling Class B super-voting shareholder (at onboarding)",
+      },
+    ],
+    riskRating: "low",
+    onboardedAt: "2019-01-15",
+    conceptUri: "http://en.wikipedia.org/wiki/MicroStrategy",
+    cik: "1050446",
+    domain: "https://www.microstrategy.com",
+  } satisfies Record<string, unknown>),
+
   // Background book — deliberately stable customers. They prove the cheap tiers
   // absorb most of the book for ~$0 (cost story) and that the system has a low
   // false-positive rate (specificity). No signals → they never escalate.

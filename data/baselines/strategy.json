@@ -1,0 +1,24 @@
+{
+  "entityId": "strategy",
+  "name": "MicroStrategy Inc.",
+  "aliases": [
+    "MicroStrategy",
+    "Strategy",
+    "Strategy Inc.",
+    "MSTR"
+  ],
+  "legalForm": "Delaware C corporation",
+  "jurisdiction": "US",
+  "businessModel": "Enterprise business-intelligence and analytics software — platform licensing, cloud subscriptions and support for the MicroStrategy analytics suite.",
+  "beneficialOwners": [
+    {
+      "name": "Michael J. Saylor",
+      "role": "Chairman & CEO; controlling Class B super-voting shareholder (at onboarding)"
+    }
+  ],
+  "riskRating": "low",
+  "onboardedAt": "2019-01-15",
+  "conceptUri": "http://en.wikipedia.org/wiki/MicroStrategy",
+  "cik": "1050446",
+  "domain": "https://www.microstrategy.com"
+}

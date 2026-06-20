@@ -5,11 +5,12 @@ import { readData, writeData } from "./lib/repo.ts";
 /**
  * Compute the current drift vector for the hero from its baseline and the
  * extracted signals (EventRegistry + SEC), and write it to data/drift/. A
- * sanity check for the cheap-tier scorer on real data.
- * Run with `pnpm --filter @kyc/scripts score:drift`.
+ * sanity check for the cheap-tier scorer on real data. Pass an entityId as the
+ * first arg (defaults to "smartbird").
+ * Run with `pnpm --filter @kyc/scripts exec tsx src/score-drift.ts <entityId>`.
  */
 
-const entityId = "smartbird";
+const entityId = process.argv[2] ?? "smartbird";
 
 const baseline = KYCBaselineSchema.parse(await readData(`baselines/${entityId}.json`));
 
