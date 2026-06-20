@@ -2,16 +2,16 @@
 	import { AXES, type Alert } from '@kyc/core';
 	import { scoreDriftVector } from '@kyc/core/drift';
 	import type { SubmitFunction } from '@sveltejs/kit';
-	import DriftRadar from '$lib/components/DriftRadar.svelte';
-	import TimelineScrubber from '$lib/components/TimelineScrubber.svelte';
-	import AuditDrawer from '$lib/components/AuditDrawer.svelte';
-	import TopBar from '$lib/components/TopBar.svelte';
-	import BookList from '$lib/components/BookList.svelte';
-	import CostFunnel from '$lib/components/CostFunnel.svelte';
-	import EntityHeader from '$lib/components/EntityHeader.svelte';
-	import AxisBreakdown from '$lib/components/AxisBreakdown.svelte';
-	import EscalationPanel from '$lib/components/EscalationPanel.svelte';
-	import SignalsRail from '$lib/components/SignalsRail.svelte';
+	import DriftRadar from '$lib/components/app/DriftRadar.svelte';
+	import TimelineScrubber from '$lib/components/app/TimelineScrubber.svelte';
+	import AuditDrawer from '$lib/components/app/AuditDrawer.svelte';
+	import TopBar from '$lib/components/app/TopBar.svelte';
+	import BookList from '$lib/components/app/BookList.svelte';
+	import CostFunnel from '$lib/components/app/CostFunnel.svelte';
+	import EntityHeader from '$lib/components/app/EntityHeader.svelte';
+	import AxisBreakdown from '$lib/components/app/AxisBreakdown.svelte';
+	import EscalationPanel from '$lib/components/app/EscalationPanel.svelte';
+	import SignalsRail from '$lib/components/app/SignalsRail.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
