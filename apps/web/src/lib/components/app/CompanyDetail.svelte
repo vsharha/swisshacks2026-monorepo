@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fmtDate, type BookEntity } from '$lib/view';
+	import { Button } from '$lib/components/ui/button/index.js';
 
 	let { entity, onback }: { entity: BookEntity; onback: () => void } = $props();
 
@@ -7,12 +8,14 @@
 </script>
 
 <div class="flex min-h-0 flex-col gap-3 text-[11px]">
-	<button
-		class="text-muted2 hover:text-text flex items-center gap-1 text-[10px] tracking-widest uppercase transition-colors"
+	<Button
+		variant="ghost"
+		size="xs"
+		class="text-muted2 hover:text-text h-auto w-fit gap-1 px-1 py-0.5 text-[10px] font-normal tracking-widest uppercase"
 		onclick={onback}
 	>
 		← Book
-	</button>
+	</Button>
 
 	<h1 class="font-sans text-base font-semibold tracking-tight">{baseline.name}</h1>
 

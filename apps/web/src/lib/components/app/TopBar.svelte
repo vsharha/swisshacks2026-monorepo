@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Button } from '$lib/components/ui/button/index.js';
+
 	let {
 		bookCount,
 		auditCount,
@@ -17,13 +19,15 @@
 			<span class="text-muted2 tracking-widest">LIVE</span>
 		</span>
 		<span class="text-muted2">book <span class="text-text">{bookCount}</span></span>
-		<button
-			class="text-muted2 hover:text-text transition-colors"
+		<Button
+			variant="ghost"
+			size="xs"
+			class="text-muted2 hover:text-text h-auto px-1.5 py-0.5 text-[11px] font-normal tracking-normal"
 			onclick={onOpenAudit}
 			title="Open the append-only audit trail"
 		>
-			audit <span class="text-text underline-offset-2 hover:underline">{auditCount}</span>
-		</button>
+			audit <span class="text-text">{auditCount}</span>
+		</Button>
 		<span class="text-muted2">cost/day <span class="text-stable">$0.75</span></span>
 	</div>
 </header>

@@ -7,6 +7,8 @@
 		usd: number;
 	};
 
+	import { Separator } from '$lib/components/ui/separator/index.js';
+
 	let { funnel, llmCost }: { funnel: Funnel; llmCost: LlmCost | null } = $props();
 
 	const rows = $derived([
@@ -17,7 +19,8 @@
 	]);
 </script>
 
-<div class="border-line mt-auto border-t pt-2">
+<div class="mt-auto flex flex-col pt-2">
+	<Separator class="bg-line mb-2" />
 	<div class="text-muted2 mb-2 text-[10px] tracking-widest uppercase">Cost funnel</div>
 	<div class="flex flex-col gap-1.5 text-[11px]">
 		{#each rows as row (row.k)}
@@ -28,7 +31,8 @@
 		{/each}
 	</div>
 	{#if llmCost}
-		<div class="border-line mt-2 flex flex-col gap-1 border-t pt-2 text-[11px]">
+		<Separator class="bg-line my-2" />
+		<div class="flex flex-col gap-1 text-[11px]">
 			<div class="flex items-center justify-between">
 				<span class="text-muted2">tokens</span>
 				<span class="text-text"

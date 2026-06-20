@@ -3,6 +3,9 @@
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import { fmtDate } from '$lib/view';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import { Badge } from '$lib/components/ui/badge/index.js';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 
 	export type DisplayCitation = { key: string; sourceUrl: string; label: string };
 
@@ -45,22 +48,33 @@
 		<div class="flex items-center gap-2">
 			<span class="text-[11px] tracking-widest" style="color: var(--alert)">⚠ RE-KYC ALERT</span>
 			{#if llmAlert?.patternMatch}
-				<span
-					class="border-line rounded-full border px-2 py-0.5 text-[10px]"
-					style="color: var(--alert)"
-					title={llmAlert.patternMatch.outcome}
-				>
-					matches {llmAlert.patternMatch.archetypeName} · {(
-						llmAlert.patternMatch.similarity * 100
-					).toFixed(0)}%
-				</span>
+				{@const pm = llmAlert.patternMatch}
+				<Tooltip.Root>
+					<Tooltip.Trigger>
+						{#snippet child({ props }: { props: Record<string, unknown> })}
+							<Badge
+								variant="outline"
+								class="text-alert border-alert/40 rounded-full text-[10px]"
+								{...props}
+							>
+								matches {pm.archetypeName} · {(pm.similarity * 100).toFixed(0)}%
+							</Badge>
+						{/snippet}
+					</Tooltip.Trigger>
+					<Tooltip.Content class="max-w-xs">{pm.outcome}</Tooltip.Content>
+				</Tooltip.Root>
 			{:else if archetype && patternSim >= 0.3}
-				<span
-					class="border-line text-muted2 rounded-full border px-2 py-0.5 text-[10px]"
-					title={archetype.outcome}
-				>
-					matches {archetype.name} · {(patternSim * 100).toFixed(0)}%
-				</span>
+				{@const arch = archetype}
+				<Tooltip.Root>
+					<Tooltip.Trigger>
+						{#snippet child({ props }: { props: Record<string, unknown> })}
+							<Badge variant="outline" class="text-muted2 rounded-full text-[10px]" {...props}>
+								matches {arch.name} · {(patternSim * 100).toFixed(0)}%
+							</Badge>
+						{/snippet}
+					</Tooltip.Trigger>
+					<Tooltip.Content class="max-w-xs">{arch.outcome}</Tooltip.Content>
+				</Tooltip.Root>
 			{/if}
 			{#if llmAlert}
 				<span class="text-muted2 text-[10px]">· {llmAlert.modelVersion}</span>
@@ -82,15 +96,16 @@
 	{#if displayCitations.length}
 		<div class="mt-2 flex flex-wrap gap-1.5">
 			{#each displayCitations as c (c.key)}
-				<a
+				<Badge
 					href={c.sourceUrl}
 					target="_blank"
 					rel="noreferrer"
-					class="border-line text-muted2 hover:text-text hover:border-muted2 max-w-[260px] truncate rounded-sm border px-2 py-0.5 text-[10px] transition-colors"
+					variant="outline"
 					title={c.label}
+					class="text-muted2 hover:text-text hover:border-muted2 max-w-[260px] rounded-sm text-[10px]"
 				>
-					{c.label}
-				</a>
+					<span class="truncate">{c.label}</span>
+				</Badge>
 			{/each}
 		</div>
 	{/if}
@@ -104,31 +119,29 @@
 			<form method="POST" action="?/decide" use:enhance={enhanceDecide}>
 				<input type="hidden" name="entityId" value={entityId} />
 				<input type="hidden" name="decision" value="escalate" />
-				<button
-					type="submit"
-					class="rounded-sm px-3 py-1 text-[11px] font-medium"
-					style="background: var(--alert); color: var(--bg)">Escalate · re-KYC</button
+				<Button type="submit" size="sm" class="bg-alert text-bg hover:bg-alert/90 px-3 text-[11px]"
+					>Escalate · re-KYC</Button
 				>
 			</form>
 			<form method="POST" action="?/decide" use:enhance={enhanceDecide}>
 				<input type="hidden" name="entityId" value={entityId} />
 				<input type="hidden" name="decision" value="dismiss" />
-				<button
-					type="submit"
-					class="border-line text-muted2 hover:text-text rounded-sm border px-3 py-1 text-[11px]"
-					>Dismiss</button
+				<Button type="submit" variant="outline" size="sm" class="text-muted2 px-3 text-[11px]"
+					>Dismiss</Button
 				>
 			</form>
 			<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze}>
 				<input type="hidden" name="entityId" value={entityId} />
 				<input type="hidden" name="asOf" value={asOfIso} />
-				<button
+				<Button
 					type="submit"
+					variant="outline"
+					size="sm"
 					disabled={analyzing}
-					class="border-line text-muted2 hover:text-text rounded-sm border px-3 py-1 text-[11px] disabled:opacity-50"
+					class="text-muted2 px-3 text-[11px]"
 				>
 					{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
-				</button>
+				</Button>
 			</form>
 		{/if}
 	</div>

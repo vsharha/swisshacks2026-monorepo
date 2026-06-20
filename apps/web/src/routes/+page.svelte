@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { untrack } from 'svelte';
 	import { AXES, type Alert } from '@kyc/core';
 	import { scoreDriftVector } from '@kyc/core/drift';
 	import type { SubmitFunction } from '@sveltejs/kit';
@@ -12,11 +13,13 @@
 
 	let { data }: { data: PageData } = $props();
 
-	const startMs = Date.parse(data.timeStart);
-	const endMs = Date.parse(data.timeEnd);
+	const startMs = $derived(Date.parse(data.timeStart));
+	const endMs = $derived(Date.parse(data.timeEnd));
 
-	let asOf = $state(endMs);
-	let selectedId = $state(data.book[0]?.baseline.entityId ?? '');
+	// Seeded once from the initial load, then mutated locally (scrubber / form
+	// actions keep results client-side); untrack marks the initial-only read.
+	let asOf = $state(untrack(() => Date.parse(data.timeEnd)));
+	let selectedId = $state(untrack(() => data.book[0]?.baseline.entityId ?? ''));
 	let decision = $state<'escalate' | 'dismiss' | null>(null);
 
 	// Stage 3 deep analysis — server-side LLM via the `analyze` form action.
@@ -29,9 +32,9 @@
 		outputTokens: number;
 		usd: number;
 	} | null>(null);
-	let auditCount = $state(data.auditCount);
-	let auditEntries = $state(data.audit);
-	let ratings = $state(data.ratings);
+	let auditCount = $state(untrack(() => data.auditCount));
+	let auditEntries = $state(untrack(() => data.audit));
+	let ratings = $state(untrack(() => data.ratings));
 	let showAudit = $state(false);
 
 	type ActionResult = { type: string; data?: Record<string, unknown> };
@@ -149,6 +152,4 @@
 	</footer>
 </div>
 
-{#if showAudit}
-	<AuditDrawer entries={auditEntries} onclose={() => (showAudit = false)} />
-{/if}
+<AuditDrawer bind:open={showAudit} entries={auditEntries} />
