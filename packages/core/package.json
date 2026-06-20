@@ -10,6 +10,7 @@
     "./connectors": "./src/connectors/index.ts",
     "./pipeline": "./src/pipeline/index.ts",
     "./graph": "./src/graph/index.ts",
+    "./util": "./src/util/index.ts",
     "./drift": "./src/drift/index.ts",
     "./llm": "./src/llm/index.ts"
   },
