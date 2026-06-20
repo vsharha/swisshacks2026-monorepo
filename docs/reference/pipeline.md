@@ -1,83 +1,159 @@
 # Algorithm Pipeline
 
-This folder contains a lightweight risk-analysis pipeline that mirrors the flow of a KYC / compliance monitoring system.
+The live risk-analysis pipeline behind the KYC-Drift Monitor. It takes normalized
+public signals about a customer book, scores each customer's drift cheaply and
+deterministically, and escalates to LLM reasoning **only** on the axes — and the
+entities — that actually moved.
 
-## Purpose
+> See `product.md` for the drift model and scenario, `techstack.md` for the cost
+> architecture and the `Signal` seam. This doc describes the implementation in
+> `@kyc/core` and how it's invoked from `apps/web`.
 
-The algorithm package takes raw company, event, signal, and graph data; resolves entities; computes risk signals from multiple domains; aggregates them into a final score; and prepares alert/dashboard outputs.
+This document is split into two parts: **[As built](#as-built)** — the current
+TypeScript cascade — and **[Proposed additions](#proposed-additions)** — enhancements
+that layer onto that base without replacing it.
 
-## Pipeline Overview
+## As built
 
-1. **Data Ingestion**
-   - Normalizes raw records into a consistent input shape.
-   - Handles source metadata and timestamps.
+The pipeline is a **tiered rule → LLM cascade over a 5-axis drift model**. Every
+stage reads and writes the same canonical `Signal` shape, so offline scripts and
+the live app share one code path (see `techstack.md`, "one connector layer, two
+callers").
 
-2. **Entity Resolution**
-   - Converts ingested records into company-like objects.
-   - Ensures each entity has an identifier and basic profile fields.
+### The drift axes
 
-3. **Knowledge Graph**
-   - Builds a graph view from resolved companies.
-   - Captures node information and entity relationships.
+Risk is decomposed by **drift axis**, not by data domain. Five axes, each scored
+independently and combined into a weighted composite:
 
-4. **Risk Models**
-   - Scores each company across multiple dimensions:
-     - entity risk
-     - graph risk
-     - behavioral risk
-     - event risk
-     - regulatory risk
-     - geopolitical risk
+`business_model` · `ownership` · `scale` · `reputation` · `jurisdiction`
 
-5. **Risk Aggregator**
-   - Combines the component model outputs using configured weights.
-   - Produces a final composite risk score.
+### Stages
 
-6. **Confidence Engine**
-   - Evaluates evidence reliability using source, recency, consistency, and citation signals.
+1. **Ingestion → `Signal`** (`packages/core/src/connectors/`)
+   Connectors (EventRegistry, SEC EDGAR, …) normalize raw records into the Zod
+   `Signal` contract: `{ entityId, axis, type, date, sourceUrl, title, payload,
+   confidence }`. This is the canonical seam — every downstream stage consumes it.
 
-7. **Alert Engine**
-   - Determines whether a score change or high-risk outcome should trigger an alert.
+2. **Stage 0 — deterministic axis routing** (`packages/core/src/pipeline/stage0.ts`)
+   `classifyAxis(text)` routes a headline to a drift axis by keyword/regex rules
+   (rename → `business_model`, takeover → `ownership`, financing → `scale`,
+   reincorporation → `jurisdiction`, SEC/litigation → `reputation`). No LLM.
 
-8. **Dashboard / API Output**
-   - Serializes the final results into a structure suitable for dashboards or API responses.
+3. **Stage 1 — cheap-tier drift scoring** (`packages/core/src/drift/score.ts`)
+   `scoreDriftVector(baseline, signals, { asOf })` aggregates the signals on each
+   axis into a `[0,1]` score, deterministically and for ~free:
+   - **recency decay** (365-day half-life), **cluster bonus** for same-event
+     signals, **saturation** so evidence converges to 1.
+   - a weighted **composite** across axes (`AXIS_WEIGHTS`, sums to 1).
+   - `asOf` makes drift a function of time, so the demo clock accumulates drift
+     axis-by-axis. This tier absorbs the ~99% of the book that hasn't moved.
+   - thresholds: composite `>= 0.7` → `alert`, `>= 0.4` → `watch`, else `stable`.
 
-## Core Files
+4. **Stage 2 — per-axis materiality (LLM, cheap)** (`packages/core/src/pipeline/stage2.ts`)
+   `reasonAxisMateriality(...)` fires **only on drifting axes** (status ≠ stable).
+   Claude Haiku judges whether the drift is genuine enough to invalidate the KYC
+   baseline; returns a Zod-validated `{ score, confidence, verdict, reasoning }`.
 
-- `config.py` — risk weights, thresholds, and alert settings
-- `data_ingestion.py` — ingests and normalizes raw data
-- `entity_resolution.py` — resolves records into company entities
-- `knowledge_graph.py` — builds graph structures
-- `orchestrator.py` — runs the main company risk computation flow
-- `pipeline.py` — batch processing entry point
-- `risk_aggregator.py` — combines model outputs
-- `alert_engine.py` — evaluates alert conditions
-- `dashboard_api.py` — formats output for UI/API use
-- `models/` — domain-specific scoring models
+5. **Stage 3 — synthesis + pattern match (LLM, expensive)** (`packages/core/src/pipeline/stage3.ts`)
+   `synthesizeAlert(...)` fires **only if composite crossed the alert threshold**.
+   Claude Sonnet drafts a recommended action, matches the drift signature against
+   the pattern library (e.g. Long Blockchain 2017) for an outcome prior, and emits
+   a Zod `Alert` with ≥1 required citation — citations restricted to supplied
+   evidence (hallucination guardrail).
 
-## Example Flow
+6. **Escalation + cost accounting** (`packages/core/src/pipeline/escalate.ts`)
+   `runEscalation(...)` orchestrates Stage 1 → conditional Stage 2 → conditional
+   Stage 3 and tallies tokens + USD per model, so cost scales with *change*, not
+   book size.
 
-A typical run looks like this:
+7. **Output, audit, HITL** (`apps/web/src/lib/server/analyze.ts`, `routes/+page.*`)
+   The dashboard renders the per-axis drift vector, the alert, citations and the
+   live cost funnel. Stage verdicts, escalation decisions, the alert and the
+   analyst's escalate/dismiss decision all append to the audit log.
 
-1. Ingest raw records.
-2. Resolve entities.
-3. Build a graph.
-4. Compute component scores.
-5. Aggregate into one score.
-6. Calculate confidence.
-7. Trigger alerts if needed.
-8. Return serialized results.
+### Core files
 
-## Judging Criteria Alignment
+- `packages/core/src/schemas/` — Zod contracts: `Signal`, `KYCBaseline`,
+  `DriftVector`/`AxisDrift`, `Alert`, audit entries
+- `packages/core/src/pipeline/stage0.ts` — keyword axis routing
+- `packages/core/src/drift/score.ts` — Stage 1 scoring + `AXIS_WEIGHTS`, thresholds
+- `packages/core/src/pipeline/stage2.ts` — per-axis LLM materiality (Haiku)
+- `packages/core/src/pipeline/stage3.ts` — alert synthesis + pattern match (Sonnet)
+- `packages/core/src/pipeline/escalate.ts` — cascade orchestration + cost tally
+- `packages/core/src/llm/config.ts` — model selection + per-token pricing
+- `apps/web/src/lib/server/analyze.ts` — server-side escalation wrapper + audit log
 
-The pipeline is designed to reflect the judging rubric more explicitly:
+### Example flow
 
-AI Intelligence Quality	Accurate flags, strong reasoning, useful insights	25%
-Cost Efficiency	Smart model usage, efficient pipelines	20%
-UX & Explainability	Clear alerts, intuitive UI, human-readable reasoning	20%
-Compliance & Safety	Guardrails, explainability, auditability	20%
-Engineering & Architecture	Scalable design, modular pipelines, robustness	15%
+Advance the clock → Stage 0 routes the day's signals → Stage 1 rescoring lights up
+the moved axes → Stage 2 reasons on those axes → composite crosses 0.7 → Stage 3
+synthesizes the RE-KYC alert with a pattern match → analyst escalates/dismisses at
+the HITL gate → every step is logged with its token cost.
+
+## Proposed additions
+
+Four enhancements that strengthen the existing cascade. Each is **additive**: it
+reuses the `Signal` seam and the 5-axis model, and slots into a named stage above
+rather than replacing it.
+
+### 1. Confidence engine
+
+**Now:** `scoreAxis` sets an axis's `confidence` to the *max* of its signals'
+confidences — a single-signal proxy with no notion of corroboration.
+
+**Add:** a `confidenceForAxis(signals)` helper that combines **source diversity**
+(distinct `sourceUrl`/connector), **corroboration** (independent signals agreeing),
+**recency**, and **citation count** into the existing `AxisDrift.confidence` field.
+Slots into Stage 1 (`drift/score.ts`); changes no schemas. Directly strengthens
+the "confidence on every claim" guardrail in the compliance story.
+
+### 2. Change-triggered (delta) alerting
+
+**Now:** Stage 3 fires only on an *absolute* composite `>= 0.7`.
+
+**Add:** also escalate when the composite **jumps** by a configured delta since the
+last `drift_evaluated` audit entry, even below the absolute threshold. This makes
+techstack.md's *change-triggered evaluation* thesis literally true in code — a
+stable customer that suddenly moves is caught on the delta, not just the level.
+Slots into the escalation gate (`pipeline/escalate.ts`) reading prior state from
+the audit log. Additive to `statusForScore`, not a replacement.
+
+### 3. Knowledge graph / graph-risk signal
+
+**Now:** baselines list beneficial owners, but nothing walks the relationships;
+the `ownership` axis sees only news about the entity itself.
+
+**Add:** a small relationship layer (beneficial owners, co-mentioned entities,
+shared investors — derivable from baselines + EventRegistry co-mentions) that emits
+an **ownership-axis enricher `Signal`** when risk propagates through a chain (e.g.
+the Wirecard-modeled entity's shadow ownership / offshore investors). Powers a
+dashboard graph view. Output is a normal `Signal`, so Stage 0/1/2 consume it
+unchanged — it enriches the axis, it does not replace signals.
+
+### 4. Geopolitical + regulatory enrichers
+
+**Now:** Stage 0 keyword-routes jurisdiction and reputation signals, but there's no
+country-risk or regulatory-action lookup.
+
+**Add:** cheap deterministic enrichers — a country-risk list feeding the
+`jurisdiction` axis and a sanctions/litigation lookup feeding `reputation` — each
+emitting `Signal`s with their own `confidence`. Pure Stage 0/1, no LLM, reusing the
+canonical seam. Keeps the funnel numbers real without adding LLM cost.
+
+## Judging-criteria alignment
+
+The pipeline is built to hit the rubric, not just a raw score:
+
+| Criterion | Weight | How the pipeline hits it |
+|---|---|---|
+| AI Intelligence Quality | 25% | 5-axis drift reasoning + pattern-match outcome priors; per-axis verdicts |
+| Cost Efficiency | 20% | Tiered cascade; live per-stage token/$ accounting; (proposed) delta-triggered escalation |
+| UX & Explainability | 20% | Per-axis drift vector, citations, human-readable alerts |
+| Compliance & Safety | 20% | Zod guardrails, citations, HITL gate, audit log; (proposed) richer confidence engine |
+| Engineering & Architecture | 15% | Modular stages, one-connector-two-callers seam, shared Zod schemas |
 
 ## Notes
 
-The implementation is intentionally modular so each stage can be improved or replaced independently as the risk model evolves. The added criteria outputs make it clearer how the pipeline is optimized for the judging rubric, not just for a raw numeric score.
+The cascade is intentionally modular so each stage can be improved independently.
+The proposed additions are scoped to land on the existing `Signal` seam and 5-axis
+model — they extend the current implementation rather than fork it.
