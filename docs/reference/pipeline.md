@@ -121,6 +121,7 @@ functions, runtime key).
 |---|---|---|---|
 | **EventRegistry** | `eventRegistry.ts` | Entity-resolved news, sentiment, event-cluster dedup | Provided key reaches **~last 30 days** only; English-first; 100 articles/call |
 | **SEC EDGAR** | `secEdgar.ts` | Ground-truth structural filings (8-K rename/asset-sale/financing, delisting) | **US public companies only**; free + permanent |
+| **SEC enforcement** | `secEnforcement.ts` | Litigation releases + administrative proceedings → regulator-grade `reputation` (named respondents) | Recent feed window; matched by respondent name |
 | **RSS** | `rss.ts` | Curated global feeds (regulators, finance, regional), full-text via Readability, Google-News unwrap | Free, multilingual breadth; **recent-only** (no history); free-text entity match |
 
 EventRegistry is the recent adverse-media texture; SEC EDGAR is the permanent
