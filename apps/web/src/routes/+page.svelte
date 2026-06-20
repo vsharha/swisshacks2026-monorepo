@@ -116,7 +116,7 @@
 </script>
 
 <div class="bg-bg text-text flex h-screen flex-col overflow-hidden px-5 py-4 font-sans text-sm">
-	<TopBar {auditCount} onOpenAudit={() => (showAudit = true)} />
+	<TopBar {auditCount} onOpenAudit={() => (showAudit = true)} onHome={() => (selectedId = '')} />
 
 	<!-- ── Main grid ───────────────────────────────────────────────────── -->
 	<div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5 py-4">

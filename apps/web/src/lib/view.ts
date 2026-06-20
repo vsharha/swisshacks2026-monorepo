@@ -14,6 +14,23 @@ export const statusVar: Record<RiskStatus, string> = {
 	alert: 'var(--alert)'
 };
 
+/**
+ * Per-entity HQ city → coordinates. Entities only carry an ISO-2 jurisdiction;
+ * a city reads as a real place and (on the globe) separates same-country
+ * companies without jitter. Graduate to a baseline field if HQ becomes data.
+ */
+export const HQ: Record<string, { city: string; lat: number; lng: number }> = {
+	'alpine-components': { city: 'Zurich', lat: 47.3769, lng: 8.5417 },
+	'helvetia-trading': { city: 'Geneva', lat: 46.2044, lng: 6.1432 },
+	'nordtrade-holding': { city: 'Frankfurt', lat: 50.1109, lng: 8.6821 },
+	'gulf-bridge-capital': { city: 'Dubai', lat: 25.2048, lng: 55.2708 },
+	smartbird: { city: 'San Francisco', lat: 37.7749, lng: -122.4194 },
+	strategy: { city: 'Tysons, VA', lat: 38.9187, lng: -77.2311 }
+};
+
+/** ISO-2 jurisdiction → flag emoji. */
+export const FLAG: Record<string, string> = { CH: '🇨🇭', DE: '🇩🇪', AE: '🇦🇪', US: '🇺🇸' };
+
 /** Human labels for the five drift axes. */
 export const AXIS_LABEL: Record<DriftAxis, string> = {
 	business_model: 'Business model',

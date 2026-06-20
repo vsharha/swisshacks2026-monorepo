@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { statusVar, type BookEntity } from '$lib/view';
+	import { statusVar, FLAG, HQ, type BookEntity } from '$lib/view';
 
 	let {
 		book,
@@ -27,6 +27,10 @@
 				<span class="font-mono text-[12px] tabular-nums" style="color: {statusVar[st]}"
 					>{e.drift.composite.toFixed(2)}</span
 				>
+			</div>
+			<div class="text-muted2 flex items-center gap-1.5 text-[11px]">
+				<span class="text-[12px] leading-none">{FLAG[e.baseline.jurisdiction] ?? '🏳️'}</span>
+				<span class="truncate">{HQ[e.baseline.entityId]?.city ?? e.baseline.jurisdiction}</span>
 			</div>
 			<div
 				class="bg-panel2 group-hover:bg-line/80 flex h-[3px] w-full overflow-hidden rounded-full"

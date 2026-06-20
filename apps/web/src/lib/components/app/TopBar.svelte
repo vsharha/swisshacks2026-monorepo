@@ -2,15 +2,24 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import ClipboardText from 'phosphor-svelte/lib/ClipboardText';
 
-	let { auditCount, onOpenAudit }: { auditCount: number; onOpenAudit: () => void } = $props();
+	let {
+		auditCount,
+		onOpenAudit,
+		onHome
+	}: { auditCount: number; onOpenAudit: () => void; onHome: () => void } = $props();
 </script>
 
 <header class="border-line flex items-center justify-between border-b pb-3">
-	<div class="flex items-baseline gap-3">
+	<button
+		type="button"
+		onclick={onHome}
+		aria-label="Go to overview"
+		class="flex items-baseline gap-3 rounded-md transition-opacity hover:opacity-70"
+	>
 		<span class="text-galaxy font-sans text-[15px] font-bold tracking-[0.22em]">AMINA</span>
 		<span class="bg-line h-3.5 w-px self-center"></span>
 		<span class="text-muted2 text-[11px] tracking-[0.28em] uppercase">KYC-Drift Monitor</span>
-	</div>
+	</button>
 	<Button
 		size="sm"
 		class="gap-2 rounded-md px-3 text-[11px] font-medium"
