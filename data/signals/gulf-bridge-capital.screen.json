@@ -1,0 +1,66 @@
+[
+  {
+    "id": "screen-gulf-bridge-capital-owner-0-pep",
+    "entityId": "gulf-bridge-capital",
+    "axis": "reputation",
+    "type": "pep_individual",
+    "date": "2026-06-20",
+    "sourceUrl": "https://www.opensanctions.org/",
+    "title": "Beneficial owner \"Hamad Al-Rashed\" matches PEP (pep).",
+    "source": "opensanctions",
+    "payload": {
+      "owner": "Hamad Al-Rashed",
+      "list": "PEP",
+      "matchType": "pep"
+    },
+    "confidence": 0.97
+  },
+  {
+    "id": "screen-gulf-bridge-capital-owner-1-sanction",
+    "entityId": "gulf-bridge-capital",
+    "axis": "ownership",
+    "type": "sanctioned_controller",
+    "date": "2026-06-20",
+    "sourceUrl": "https://sanctionssearch.ofac.treas.gov/",
+    "title": "Beneficial owner \"Viktor Petrov\" matches OFAC SDN (sanction).",
+    "source": "opensanctions",
+    "payload": {
+      "owner": "Viktor Petrov",
+      "list": "OFAC SDN",
+      "matchType": "sanction"
+    },
+    "confidence": 0.97
+  },
+  {
+    "id": "screen-gulf-bridge-capital-owner-2-sanction",
+    "entityId": "gulf-bridge-capital",
+    "axis": "ownership",
+    "type": "sanctioned_controller",
+    "date": "2026-06-20",
+    "sourceUrl": "https://www.sanctionsmap.eu/",
+    "title": "Beneficial owner \"Reza Najafi\" matches EU Consolidated (sanction).",
+    "source": "opensanctions",
+    "payload": {
+      "owner": "Reza Najafi",
+      "list": "EU Consolidated",
+      "matchType": "sanction"
+    },
+    "confidence": 0.97
+  },
+  {
+    "id": "screen-gulf-bridge-capital-owner-2-country",
+    "entityId": "gulf-bridge-capital",
+    "axis": "jurisdiction",
+    "type": "owner_country_risk",
+    "date": "2026-06-20",
+    "sourceUrl": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions.html",
+    "title": "Owner \"Reza Najafi\" nationality IR is high-risk: FATF call-for-action (black list).",
+    "source": "regulator",
+    "payload": {
+      "owner": "Reza Najafi",
+      "country": "IR",
+      "level": "high"
+    },
+    "confidence": 0.92
+  }
+]

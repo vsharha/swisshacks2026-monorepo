@@ -1,0 +1,15 @@
+{
+  "entityId": "gulf-bridge-capital",
+  "name": "Gulf Bridge Capital Ltd",
+  "aliases": ["Gulf Bridge", "GBC"],
+  "legalForm": "ADGM private company limited by shares",
+  "jurisdiction": "AE",
+  "businessModel": "Cross-border trade finance and payments advisory for Gulf and CIS corporate clients.",
+  "beneficialOwners": [
+    { "name": "Hamad Al-Rashed", "role": "Chairman", "nationality": "AE" },
+    { "name": "Viktor Petrov", "share": 0.4, "role": "Investor (via offshore vehicle)", "nationality": "RU" },
+    { "name": "Reza Najafi", "share": 0.15, "role": "Minority investor", "nationality": "IR" }
+  ],
+  "riskRating": "medium",
+  "onboardedAt": "2021-04-12"
+}
