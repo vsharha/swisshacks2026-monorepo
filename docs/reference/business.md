@@ -12,11 +12,13 @@ When a high-risk customer slips through because a news article was missed, or a 
 
 **The core problem:** Customer risk is treated as a point-in-time snapshot, not a continuous signal.
 
+This is especially acute in crypto-banking: the bank's clients are crypto-native companies — exchanges, token issuers, DeFi protocols, Web3 infrastructure providers — whose business models, ownership structures, and regulatory classifications can shift dramatically within weeks. A company that was legitimately registered as a payment processor can pivot to unlicensed crypto exchange activity without any single event triggering a traditional alert.
+
 ---
 
 ## Mission Statement
 
-Help financial institutions prevent regulatory damage detect customer risk by building an AI-powered continuous KYC monitoring platform.
+Help crypto-focused financial institutions continuously detect KYC drift in their client book — where business models, token activities, and ownership structures evolve faster than periodic re-screening can track — before regulatory exposure compounds.
 
 ---
 
@@ -37,6 +39,9 @@ Banks today do not continuously verify who the actors behind their clients are, 
 
 **Our value proposition:** A bank using our system catches these scenarios early. A bank that doesn't is one bad client away from a multi-billion regulatory hit.
 
+**Why crypto-banking is the hardest version of this problem:**
+AMINA Bank's client book consists primarily of crypto-native companies. These entities face uniquely compressed risk timelines: a token issuer can be reclassified by a regulator overnight; a DeFi protocol's main backer can appear on an OFAC list; a Web3 startup can quietly pivot from NFT marketplace to unlicensed money transmission. Standard periodic re-screening — typically quarterly or annual — is structurally unable to catch drift at this speed.
+
 ---
 
 ## Solution Overview
@@ -47,7 +52,9 @@ Banks connect via API. We ingest their existing customer profiles (individuals a
 
 When drift is detected, we recompute the customer's risk score. If the score crosses a threshold, an alert is raised and a compliance officer reviews it. Every AI decision, score change, and human action is persisted in an immutable audit log.
 
-**Users:** Compliance Officers, AML/KYC Analysts, Risk Managers.
+**Platform users (who operates the dashboard):** Compliance, AML, and KYC teams within AMINA Bank, as well as risk officers responsible for ongoing customer due diligence and transaction monitoring.
+
+**Platform clients (who is being monitored):** AMINA Bank's own client book — primarily crypto-native companies: exchanges, custodians, token issuers, DeFi protocol operators, and other Web3-facing entities operating in regulated jurisdictions.
 
 ---
 
@@ -121,6 +128,8 @@ Score is computed **event-driven**: recalculated whenever a monitored field chan
 | Revenue | Entity | Medium |
 | Main shareholders (>25%) | Entity | High |
 | Top management (CEO, CFO, Chairman) | Entity | High |
+| Crypto license / regulatory classification | Entity | High — reclassification from licensed exchange to unlicensed triggers immediate review |
+| Primary token / blockchain activity type | Entity | Medium — pivot in on-chain activity (e.g. payment → DeFi yield, NFT → OTC trading) |
 
 ### Cost-Optimized Processing Cascade
 
@@ -189,7 +198,7 @@ Step-by-step walkthrough for the pitch presentation:
 Show a compliance officer dashboard. A bank has 500 active customers. Manual re-screening takes weeks. We are about to show how the system handles it continuously.
 
 **2. Baseline state (30 seconds)**
-Pick one customer — a mid-size trading company. Score: 2 (low risk). Last reviewed 3 months ago.
+Pick one customer — a mid-size crypto exchange onboarded as a low-risk payment facilitator. Score: 2 (low risk). Last reviewed 3 months ago.
 
 **3. Trigger an event (30 seconds)**
 Behind the scenes: our daily sanctions poll picks up a new entry matching the company's main shareholder. The system detects drift on the "Main shareholders" field.
@@ -226,6 +235,7 @@ Show that 490 of 500 customers passed through the cheap filter. Only 10 triggere
 | **Immutable audit log** | Every AI decision and human action is logged. Regulators can reconstruct the full decision trail. No black-box liability. |
 | **Two-layer architecture** | Separating high-reliability registry data from interpretive news signals means scores are stable and not polluted by noisy sources. |
 | **API-first, bank-agnostic** | We plug into whatever the bank already has. No ripping out core systems. |
+| **Crypto-native drift signals** | Monitors license reclassifications, token-activity pivots, and on-chain ownership shifts that generic corporate registries don't capture — purpose-built for a crypto bank's client book. |
 
 ---
 
