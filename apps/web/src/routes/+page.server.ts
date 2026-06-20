@@ -1,8 +1,10 @@
 import { randomUUID } from 'node:crypto';
-import type { RiskRating } from '@kyc/core';
+import { fail } from '@sveltejs/kit';
+import type { HumanDecision, HumanRole, RiskRating } from '@kyc/core';
+import { governanceCheck } from '@kyc/core/governance';
 import { loadBook, loadPatternLibrary } from '$lib/server/data';
 import { analyzeEntity } from '$lib/server/analyze';
-import { appendAudit, auditCount, currentRating, listAudit } from '$lib/server/audit';
+import { appendAudit, auditCount, caseStateFor, currentRating, listAudit } from '$lib/server/audit';
 import type { Actions, PageServerLoad } from './$types';
 
 const now = () => new Date().toISOString();
@@ -21,12 +23,18 @@ export const load: PageServerLoad = () => {
 	for (const e of book)
 		ratings[e.baseline.entityId] = currentRating(e.baseline.entityId, e.baseline.riskRating);
 
+	// Governance case state per entity, replayed from the audit log.
+	const cases = Object.fromEntries(
+		book.map((e) => [e.baseline.entityId, caseStateFor(e.baseline.entityId)])
+	);
+
 	return {
 		book,
 		patterns,
 		timeStart,
 		timeEnd,
 		ratings,
+		cases,
 		auditCount: auditCount(),
 		audit: listAudit(undefined, 40)
 	};
@@ -43,18 +51,23 @@ export const actions: Actions = {
 		return { ...result, auditCount: auditCount(), audit: listAudit(undefined, 40) };
 	},
 
-	// Human-in-the-loop gate: the analyst's escalate/dismiss decision is written
-	// to the append-only audit log before any risk-rating change. Escalation
-	// then writes the outcome — the actual rating change.
+	// Maker step (analyst): propose an escalation or dismiss. Escalation moves the
+	// case to pending compliance approval — it does NOT change the rating here.
 	decide: async ({ request }) => {
 		const form = await request.formData();
 		const entityId = String(form.get('entityId'));
-		const decision = form.get('decision') === 'escalate' ? 'escalate' : 'dismiss';
+		const role = String(form.get('role')) as HumanRole;
+		const decision = (
+			form.get('decision') === 'escalate' ? 'escalate' : 'dismiss'
+		) as HumanDecision;
 		const rationale =
 			String(form.get('rationale') ?? '').trim() ||
 			(decision === 'escalate'
-				? 'Confirmed structural drift; re-KYC required.'
+				? 'Structural drift observed; escalating for compliance review.'
 				: 'Reviewed; no action.');
+
+		const check = governanceCheck(role, decision, caseStateFor(entityId).status);
+		if (!check.ok) return fail(403, { error: check.reason });
 
 		const baseRating =
 			loadBook().find((e) => e.baseline.entityId === entityId)?.baseline.riskRating ?? 'low';
@@ -70,8 +83,46 @@ export const actions: Actions = {
 			rationale
 		});
 
+		return {
+			case: caseStateFor(entityId),
+			rating: currentRating(entityId, baseRating),
+			auditCount: auditCount(),
+			audit: listAudit(undefined, 40)
+		};
+	},
+
+	// Checker step (compliance officer): approve or reject a pending escalation.
+	// Approval is the checkpoint that writes the actual rating change (outcome).
+	review: async ({ request }) => {
+		const form = await request.formData();
+		const entityId = String(form.get('entityId'));
+		const role = String(form.get('role')) as HumanRole;
+		const decision = (form.get('decision') === 'approve' ? 'approve' : 'reject') as HumanDecision;
+		const rationale =
+			String(form.get('rationale') ?? '').trim() ||
+			(decision === 'approve'
+				? 'Escalation confirmed; re-KYC authorised.'
+				: 'Returned to analyst; insufficient basis.');
+
+		const check = governanceCheck(role, decision, caseStateFor(entityId).status);
+		if (!check.ok) return fail(403, { error: check.reason });
+
+		const baseRating =
+			loadBook().find((e) => e.baseline.entityId === entityId)?.baseline.riskRating ?? 'low';
+
+		appendAudit({
+			id: randomUUID(),
+			ts: now(),
+			entityId,
+			kind: 'human_action',
+			actor: 'mlro@amina',
+			role: 'compliance_officer',
+			decision,
+			rationale
+		});
+
 		let rating = currentRating(entityId, baseRating);
-		if (decision === 'escalate' && rating !== 'high') {
+		if (decision === 'approve' && rating !== 'high') {
 			appendAudit({
 				id: randomUUID(),
 				ts: now(),
@@ -84,6 +135,11 @@ export const actions: Actions = {
 			rating = 'high';
 		}
 
-		return { decided: decision, rating, auditCount: auditCount(), audit: listAudit(undefined, 40) };
+		return {
+			case: caseStateFor(entityId),
+			rating,
+			auditCount: auditCount(),
+			audit: listAudit(undefined, 40)
+		};
 	}
 };
