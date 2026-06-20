@@ -27,22 +27,29 @@ sample fixtures with a documented key seam (no live credentials in the repo).
 - [x] **4. Geopolitical + regulatory enrichers** — Phase 2a (merged)
 - [x] **5. Graph propagation as a re-trigger** — Phase 2b (merged)
 - [x] **6. Static screening (owner/management sanctions + country risk)** — Phase 2a (merged)
-- [ ] **7. RSS news connector** — Phase 3
-- [ ] **8. Cheap local NER as a Stage-0 entity filter** — Phase 4 (default normalized-form matcher; heavy model opt-in)
+- [x] **7. RSS news connector** — Phase 3 (merged)
+- [~] **8. Cheap local NER as a Stage-0 entity filter** — Phase 4 (default normalized-form matcher **merged** with proposal 7; heavy GLiNER model still deferred)
 - [x] **9. Cross-source dedup + a fingerprint key** — Phase 1 (merged)
-- [ ] **10. Stateful, incremental ingestion** — Phase 3
-- [ ] **11. Ingestion hardening** — Phase 3
+- [x] **10. Stateful, incremental ingestion** — Phase 3 (merged)
+- [x] **11. Ingestion hardening** — Phase 3 (merged)
 - [ ] **12. Regulatory, sanctions, registry & market source connectors** — Phase 4 (scaffolds)
 - [ ] **13. Internal / MCP intelligence — the outcome-feedback loop** — Phase 4 (scaffold)
 - [ ] **14. Blockchain / crypto-asset intelligence** — Phase 4 (scaffold)
 
-**Done: 7 / 14** (proposals 1, 2, 3, 4, 5, 6, 9). Foundations also landed: a Vitest
-test runner, `SOURCE_QUALITY` priors, the `regulator` + `graph` sources, a
-FATF-modelled country-risk reference, the `opensanctions` matcher + sample fixture,
-the Gulf Bridge Capital (ADGM/UAE) demo entity, and — Phase 2b — a `@kyc/core/graph`
-relationship layer (`buildGraph` + walk), the graph-risk enricher and risk
-propagation, `Alert.relationshipPaths`, and the NordTrade → Caspian Holdings →
-sanctioned-controller hidden-ownership demo.
+**Done: 10 / 14** (proposals 1, 2, 3, 4, 5, 6, 7, 9, 10, 11; proposal 8's cheap
+matcher landed, its model deferred). Foundations also landed: a Vitest test runner,
+`SOURCE_QUALITY` priors, the `regulator` + `graph` + `rss` sources, a FATF-modelled
+country-risk reference, the `opensanctions` matcher + sample fixture, the Gulf
+Bridge Capital (ADGM/UAE) demo entity, the `@kyc/core/graph` relationship layer
+(`buildGraph` + walk), the graph-risk enricher and risk propagation,
+`Alert.relationshipPaths`, the NordTrade and Baltic Pay graph demos, and — Phase 3
+— the live RSS connector (`jsdom` + `@mozilla/readability`, Google-News unwrap,
+normalized-form entity matcher), a `@kyc/core/util` concurrency pool + retry/backoff,
+incremental-ingestion watermark state, and multilingual Stage-0 routing.
+
+Remaining (Phase 4, tier-D scaffolds): proposal 8's heavy NER model, and the
+source connectors in proposals 12 (regulator/registry/market), 13 (internal MCP)
+and 14 (blockchain) — to ship as typed scaffolds over fixtures, no live creds.
 
 ### 1. Confidence engine
 

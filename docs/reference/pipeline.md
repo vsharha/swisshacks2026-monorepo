@@ -121,6 +121,7 @@ functions, runtime key).
 |---|---|---|---|
 | **EventRegistry** | `eventRegistry.ts` | Entity-resolved news, sentiment, event-cluster dedup | Provided key reaches **~last 30 days** only; English-first; 100 articles/call |
 | **SEC EDGAR** | `secEdgar.ts` | Ground-truth structural filings (8-K rename/asset-sale/financing, delisting) | **US public companies only**; free + permanent |
+| **RSS** | `rss.ts` | Curated global feeds (regulators, finance, regional), full-text via Readability, Google-News unwrap | Free, multilingual breadth; **recent-only** (no history); free-text entity match |
 
 EventRegistry is the recent adverse-media texture; SEC EDGAR is the permanent
 structural spine (the split exists because the provided ER key can't reach
@@ -140,12 +141,16 @@ knowing:
    highest-confidence representative. `dedupeByEvent` is retained as a back-compat
    alias that delegates to it.
 
-**Current ingestion gaps** (these motivate the ingestion proposals in
-`pipeline-proposals.md`): structural coverage is **US-public-only**; there are
-**no sanctions / registry / ownership sources**; dedup is **intra-EventRegistry
-only** (an 8-K and the news reporting it don't collapse); and ingestion is
-**stateless** — every run is a full re-pull rather than an incremental, watermarked
-fetch.
+**Ingestion status** (tracked in `pipeline-proposals.md`): the early gaps are now
+largely closed — dedup clusters **across** sources (proposal 9), sanctions/PEP +
+country screening feed the cascade (proposals 4/6), RSS adds **free multilingual
+breadth** (proposal 7), ingestion is **incremental/watermarked** with bounded
+concurrency + retry/backoff (proposals 10/11), and Stage-0 routing handles a few
+non-English structural terms. What remains: the heavy NER entity filter (proposal
+8) and the registry/regulator/market, internal-MCP and on-chain **source**
+connectors (proposals 12–14), to land as typed scaffolds over fixtures. Note RSS,
+like EventRegistry, is **recent-only** — historical depth comes from filings and
+registries, not free news.
 
 ### Core files
 
