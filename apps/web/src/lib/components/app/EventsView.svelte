@@ -54,13 +54,10 @@
 							href={s.sourceUrl}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="text-text2 group inline-flex items-start gap-1 leading-snug hover:underline"
+							class="text-text2 inline-flex items-start gap-1 leading-snug underline decoration-dotted decoration-1 underline-offset-2 hover:decoration-solid"
 						>
 							<span class="min-w-0">{s.title}</span>
-							<ArrowSquareOut
-								class="text-muted2 mt-0.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100"
-								size={11}
-							/>
+							<ArrowSquareOut class="text-muted2 mt-0.5 shrink-0" size={11} />
 						</a>
 					{:else}
 						<span class="text-text2 leading-snug">{s.title}</span>
