@@ -1,0 +1,38 @@
+[
+  {
+    "entityId": "strategy",
+    "kind": "hiring_pivot",
+    "focus": "Bitcoin treasury & on-chain custody",
+    "openRoles": 18,
+    "date": "2026-04-28",
+    "sourceUrl": "https://www.linkedin.com/company/microstrategy/jobs/",
+    "title": "Hiring shift toward digital-asset custody, on-chain ops and treasury engineering roles."
+  },
+  {
+    "entityId": "strategy",
+    "kind": "hiring_surge",
+    "headcount": 410,
+    "changePct": 22,
+    "openRoles": 35,
+    "date": "2026-05-12",
+    "sourceUrl": "https://www.linkedin.com/company/microstrategy/jobs/",
+    "title": "Headcount up ~22% year-on-year, concentrated in crypto and finance functions."
+  },
+  {
+    "entityId": "smartbird",
+    "kind": "headcount_drop",
+    "headcount": 240,
+    "changePct": -18,
+    "date": "2026-03-25",
+    "sourceUrl": "https://www.linkedin.com/company/allbirds/jobs/",
+    "title": "Headcount down ~18% year-on-year amid restructuring."
+  },
+  {
+    "entityId": "smartbird",
+    "kind": "hiring_freeze",
+    "openRoles": 2,
+    "date": "2026-04-02",
+    "sourceUrl": "https://www.linkedin.com/company/allbirds/jobs/",
+    "title": "Open roles collapse to near-zero — effective hiring freeze."
+  }
+]
