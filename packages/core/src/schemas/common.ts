@@ -32,6 +32,7 @@ export type PipelineStage = z.infer<typeof PipelineStageSchema>;
 /** Provenance: which connector produced a signal. */
 export const SourceSchema = z.enum([
   "eventregistry",
+  "rss",
   "sec_edgar",
   "wayback",
   "opensanctions",

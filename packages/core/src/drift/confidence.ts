@@ -16,6 +16,7 @@ export const SOURCE_QUALITY: Record<Source, number> = {
   graph: 0.7,
   wayback: 0.7,
   eventregistry: 0.7,
+  rss: 0.65,
   manual: 0.6,
 };
 
