@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { AuditEntrySchema, type AuditEntry, type RiskRating } from '@kyc/core';
+import { deriveCaseState, type CaseState } from '@kyc/core/governance';
 
 /**
  * Append-only audit log — the regulatory record of the drift-detection →
@@ -49,4 +50,9 @@ export function currentRating(entityId: string, fallback: RiskRating): RiskRatin
 		if (e.kind === 'outcome' && e.entityId === entityId) rating = e.toRating;
 	}
 	return rating;
+}
+
+/** Current governance case state for an entity, replayed from the log (chronological). */
+export function caseStateFor(entityId: string): CaseState {
+	return deriveCaseState(entries.filter((e) => e.entityId === entityId));
 }
