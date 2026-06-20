@@ -13,15 +13,33 @@
 	>
 		← Book
 	</button>
-	<div>
-		<h1 class="font-sans text-base font-semibold tracking-tight">{baseline.name}</h1>
-		<p class="text-muted2 mt-0.5 text-[11px]">
-			{baseline.jurisdiction} · onboarded {fmtDate(baseline.onboardedAt)}
-		</p>
-		<p class="text-muted2 text-[11px]">
-			baseline <span class="uppercase">{baseline.riskRating}</span>
-		</p>
-	</div>
+
+	<h1 class="font-sans text-base font-semibold tracking-tight">{baseline.name}</h1>
+
+	<dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1">
+		<dt class="text-muted2">Country</dt>
+		<dd>{baseline.jurisdiction}</dd>
+
+		<dt class="text-muted2">Domain</dt>
+		<dd class="truncate">{baseline.domain ? baseline.domain.replace('https://', '') : '—'}</dd>
+
+		<dt class="text-muted2">Onboarded</dt>
+		<dd>{fmtDate(baseline.onboardedAt)}</dd>
+
+		<dt class="text-muted2">Baseline</dt>
+		<dd class="uppercase">{baseline.riskRating}</dd>
+
+		{#if baseline.legalForm}
+			<dt class="text-muted2">Legal form</dt>
+			<dd>{baseline.legalForm}</dd>
+		{/if}
+
+		{#if baseline.cik}
+			<dt class="text-muted2">SEC CIK</dt>
+			<dd>{baseline.cik}</dd>
+		{/if}
+	</dl>
+
 	<div>
 		<div class="text-muted2 mb-1 text-[10px] tracking-widest uppercase">Business model</div>
 		<p class="text-text leading-relaxed">{baseline.businessModel}</p>
