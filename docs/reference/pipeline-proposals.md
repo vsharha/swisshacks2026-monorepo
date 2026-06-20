@@ -15,6 +15,32 @@ escalation path, 7–14 on the ingestion layer (the gaps noted in `pipeline.md`)
 Each reuses the `Signal` seam and the 5-axis model, and slots into a named stage
 rather than replacing it.
 
+### Implementation status
+
+Tracked against the phased delivery plans in `docs/superpowers/plans/`. Phases land
+on the `Signal` seam additively; tier-D connectors ship as typed scaffolds over
+sample fixtures with a documented key seam (no live credentials in the repo).
+
+- [x] **1. Confidence engine** — Phase 1 (merged)
+- [x] **2. Change-triggered (delta) alerting** — Phase 1 (merged)
+- [ ] **3. Knowledge graph / graph-risk signal** — Phase 2b (planned / in progress)
+- [x] **4. Geopolitical + regulatory enrichers** — Phase 2a (merged)
+- [ ] **5. Graph propagation as a re-trigger** — Phase 2b (planned / in progress)
+- [x] **6. Static screening (owner/management sanctions + country risk)** — Phase 2a (merged)
+- [ ] **7. RSS news connector** — Phase 3
+- [ ] **8. Cheap local NER as a Stage-0 entity filter** — Phase 4 (default normalized-form matcher; heavy model opt-in)
+- [x] **9. Cross-source dedup + a fingerprint key** — Phase 1 (merged)
+- [ ] **10. Stateful, incremental ingestion** — Phase 3
+- [ ] **11. Ingestion hardening** — Phase 3
+- [ ] **12. Regulatory, sanctions, registry & market source connectors** — Phase 4 (scaffolds)
+- [ ] **13. Internal / MCP intelligence — the outcome-feedback loop** — Phase 4 (scaffold)
+- [ ] **14. Blockchain / crypto-asset intelligence** — Phase 4 (scaffold)
+
+**Done: 5 / 14** (proposals 1, 2, 4, 6, 9). Foundations also landed: a Vitest test
+runner, `SOURCE_QUALITY` priors, the `regulator` source, a FATF-modelled
+country-risk reference, the `opensanctions` matcher + sample fixture, and the
+Gulf Bridge Capital (ADGM/UAE) demo entity.
+
 ### 1. Confidence engine
 
 **Now:** `scoreAxis` sets an axis's `confidence` to the *max* of its signals'
