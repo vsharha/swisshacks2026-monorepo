@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { fmtDate, statusVar, type BookEntity } from '$lib/view';
+	import { fmtDate, secFilingDescription, statusVar, type BookEntity } from '$lib/view';
+	import ArrowSquareOut from 'phosphor-svelte/lib/ArrowSquareOut';
 
 	let { entity, asOfIso }: { entity: BookEntity; asOfIso: string } = $props();
 
@@ -30,6 +31,7 @@
 	>
 		{#each events as s (s.id)}
 			{@const relevant = s.confidence >= 0.85}
+			{@const filing = secFilingDescription(s)}
 			<div class="flex items-start gap-2.5 py-2 text-[11px]">
 				<span
 					class="mt-1.5 h-2 w-2 shrink-0 rounded-full border"
@@ -47,7 +49,25 @@
 							>{s.confidence.toFixed(2)}</span
 						>
 					</div>
-					<span class="text-text2 leading-snug">{s.title}</span>
+					{#if s.sourceUrl}
+						<a
+							href={s.sourceUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-text2 group inline-flex items-start gap-1 leading-snug hover:underline"
+						>
+							<span class="min-w-0">{s.title}</span>
+							<ArrowSquareOut
+								class="text-muted2 mt-0.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-100"
+								size={11}
+							/>
+						</a>
+					{:else}
+						<span class="text-text2 leading-snug">{s.title}</span>
+					{/if}
+					{#if filing}
+						<span class="text-muted2 leading-snug">{filing}</span>
+					{/if}
 					<span class="text-muted2 text-[10px]">type: {s.type.replace(/_/g, ' ')}</span>
 				</div>
 			</div>
