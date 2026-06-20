@@ -88,19 +88,26 @@ Walking it (`graph/walk.ts`) yields two products, both emitted as **ordinary
   `graph_exposure` signal with the relationship path. One-hop reach is the static
   screen's job (proposal 6); this is the hidden-controller case it cannot see.
 - **Propagation** (`pipeline/propagate.ts`, proposal 5): when a drift is
-  *confirmed* on entity A, emit cheap `propagated_risk` re-trigger signals on A's
-  customer neighbours, so a sanctioned shared owner moves every entity it touches.
+  *confirmed* on entity A (e.g. a direct sanctioned owner), emit cheap
+  `propagated_risk` re-trigger signals on A's customer neighbours, reaching
+  entities **beyond** the static window — so a confirmed entity moves the
+  customers it shares an owner or director with, even ones with no risk of their
+  own. The static enricher is deliberately bounded to 1st/2nd-degree; propagation
+  is what carries a *confirmed* drift further.
 
 Graph signals carry the `RelationshipPath` in their payload; Stage 3 lifts those
 onto the `Alert.relationshipPaths` field as citable, first-class explainability.
 Graph-derived signals use the `graph` source (a deliberately softer
 `SOURCE_QUALITY` prior of 0.70 — inference, not a primary list hit), with
 per-hop confidence decay. The offline `@kyc/scripts/graph.ts` builds the book
-graph and writes `data/signals/<entity>.graph.json`; `loadBook` picks them up like
-any source. Demo: NordTrade Holding's nominee parent (Caspian Holdings) is
-controlled by the same OFAC-sanctioned investor behind Gulf Bridge Capital, so
+graph, runs **both** passes and writes `data/signals/<entity>.graph.json`;
+`loadBook` picks them up like any source. Two demo threads off Gulf Bridge
+Capital (which has a directly OFAC-sanctioned investor): **NordTrade Holding**'s
+nominee parent (Caspian Holdings) is controlled by that same investor, so
 NordTrade inherits ownership exposure through a two-hop chain with no adverse news
-of its own.
+of its own (proposal 3); and **Baltic Pay**, which shares only a *clean* director
+with Gulf Bridge, receives a propagated re-trigger once Gulf Bridge's drift is
+confirmed (proposal 5) — risk the static scan deliberately doesn't reach.
 
 ### Sources & ingestion
 
