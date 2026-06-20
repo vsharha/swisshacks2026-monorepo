@@ -2,6 +2,8 @@
 	import { untrack } from 'svelte';
 	import { AXES } from '@kyc/core';
 	import { scoreDriftVector } from '@kyc/core/drift';
+	import type { HumanRole } from '@kyc/core';
+	import type { CaseState } from '@kyc/core/governance';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import TimelineScrubber from '$lib/components/app/TimelineScrubber.svelte';
 	import AuditDrawer from '$lib/components/app/AuditDrawer.svelte';
@@ -21,7 +23,8 @@
 	// actions keep results client-side); untrack marks the initial-only read.
 	let asOf = $state(untrack(() => Date.parse(data.timeEnd)));
 	let selectedId = $state(untrack(() => data.book[0]?.baseline.entityId ?? ''));
-	let decision = $state<'escalate' | 'dismiss' | null>(null);
+	let role = $state<HumanRole>('analyst');
+	let cases = $state<Record<string, CaseState>>(untrack(() => data.cases));
 
 	// Stage 3 deep analysis — server-side LLM via the `analyze` form action.
 	let analyzing = $state(false);
@@ -62,12 +65,12 @@
 		};
 	};
 
-	// HITL decision → append-only audit log (+ rating outcome on escalate).
-	const enhanceDecide: SubmitFunction = () => {
+	// Governance action (decide/review) → audit log + updated case state + rating.
+	const enhanceGov: SubmitFunction = () => {
 		return async ({ result }: { result: ActionResult }) => {
 			if (result.type !== 'success') return;
 			const body = result.data ?? {};
-			if (body.decided === 'escalate' || body.decided === 'dismiss') decision = body.decided;
+			if (body.case) cases = { ...cases, [selectedId]: body.case as CaseState };
 			if (typeof body.auditCount === 'number') auditCount = body.auditCount;
 			if (Array.isArray(body.audit)) auditEntries = body.audit as typeof auditEntries;
 			if (typeof body.rating === 'string')
@@ -110,7 +113,6 @@
 	$effect(() => {
 		void selectedId;
 		void asOf;
-		decision = null;
 		llmNote = null;
 		llmCost = null;
 	});
@@ -146,7 +148,13 @@
 </script>
 
 <div class="bg-bg text-text flex h-screen flex-col overflow-hidden px-5 py-4 font-sans text-sm">
-	<TopBar {auditCount} onOpenAudit={() => (showAudit = true)} onHome={() => (selectedId = '')} />
+	<TopBar
+		{auditCount}
+		{role}
+		onRoleChange={(r) => (role = r)}
+		onOpenAudit={() => (showAudit = true)}
+		onHome={() => (selectedId = '')}
+	/>
 
 	<!-- ── Main grid ───────────────────────────────────────────────────── -->
 	<div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5 py-4">
@@ -170,11 +178,12 @@
 				entity={selected}
 				{archetype}
 				{asOfIso}
-				{decision}
+				{role}
+				caseState={cases[selectedId]}
 				{auditCount}
 				{llmNote}
 				{analyzing}
-				{enhanceDecide}
+				{enhanceGov}
 				{enhanceAnalyze}
 			/>
 		{:else}

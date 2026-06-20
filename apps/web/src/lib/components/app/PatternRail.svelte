@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { AXES, type DriftAxis, type PatternArchetype } from '@kyc/core';
+	import { AXES, type DriftAxis, type HumanRole, type PatternArchetype } from '@kyc/core';
+	import type { CaseState } from '@kyc/core/governance';
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import { fmtDate, type BookEntity } from '$lib/view';
@@ -10,23 +11,28 @@
 		entity,
 		archetype,
 		asOfIso,
-		decision,
+		role,
+		caseState,
 		auditCount,
 		llmNote,
 		analyzing,
-		enhanceDecide,
+		enhanceGov,
 		enhanceAnalyze
 	}: {
 		entity: BookEntity;
 		archetype: PatternArchetype | undefined;
 		asOfIso: string;
-		decision: 'escalate' | 'dismiss' | null;
+		role: HumanRole;
+		caseState: CaseState | undefined;
 		auditCount: number;
 		llmNote: string | null;
 		analyzing: boolean;
-		enhanceDecide: SubmitFunction;
+		enhanceGov: SubmitFunction;
 		enhanceAnalyze: SubmitFunction;
 	} = $props();
+
+	const status = $derived(caseState?.status ?? 'open');
+	const last = $derived(caseState?.last);
 
 	const SHORT: Record<DriftAxis, string> = {
 		business_model: 'Business',
@@ -127,49 +133,116 @@
 		{/if}
 	</div>
 
-	<!-- The human-in-the-loop gate — shown only when the composite has crossed. -->
+	<!-- Maker-checker governance gate — shown only when the composite has crossed. -->
 	{#if isAlert}
 		<div class="border-line shrink-0 border-t pt-3">
-			<div class="text-muted2 mb-2 text-[10px] tracking-[0.16em] uppercase">Re-KYC action</div>
-			{#if decision}
+			<div class="mb-2 flex items-center justify-between">
+				<span class="text-muted2 text-[10px] tracking-[0.16em] uppercase">Re-KYC approval</span>
+				<span class="text-muted2 font-mono text-[10px]">
+					<span style={status !== 'open' ? 'color: var(--text)' : ''}>Maker</span>
+					▸
+					<span style={status === 'approved' ? 'color: var(--text)' : ''}>Checker</span>
+				</span>
+			</div>
+
+			{#if status === 'open'}
+				{#if role === 'analyst'}
+					<div class="flex flex-col gap-2">
+						{#if last?.decision === 'reject'}
+							<p class="text-[10px] leading-relaxed" style="color: var(--watch)">
+								Returned by compliance: {last.rationale}
+							</p>
+						{/if}
+						<form method="POST" action="?/decide" use:enhance={enhanceGov}>
+							<input type="hidden" name="entityId" value={entityId} />
+							<input type="hidden" name="role" value={role} />
+							<input type="hidden" name="decision" value="escalate" />
+							<Button type="submit" size="sm" class="w-full rounded-md text-[12px] font-medium">
+								Escalate to compliance
+							</Button>
+						</form>
+						<form method="POST" action="?/decide" use:enhance={enhanceGov}>
+							<input type="hidden" name="entityId" value={entityId} />
+							<input type="hidden" name="role" value={role} />
+							<input type="hidden" name="decision" value="dismiss" />
+							<Button
+								type="submit"
+								variant="outline"
+								size="sm"
+								class="w-full rounded-md text-[12px]"
+							>
+								Dismiss
+							</Button>
+						</form>
+					</div>
+				{:else}
+					<p class="text-muted2 text-[11px] leading-relaxed">Awaiting analyst review.</p>
+				{/if}
+			{:else if status === 'pending_approval'}
+				<div
+					class="mb-2 rounded-md px-2.5 py-1.5 text-[11px]"
+					style="background: color-mix(in oklab, var(--watch) 10%, transparent); color: var(--watch)"
+				>
+					Pending compliance approval{last ? ` · raised by ${last.actor}` : ''}
+				</div>
+				{#if role === 'compliance_officer'}
+					<div class="flex flex-col gap-2">
+						<form method="POST" action="?/review" use:enhance={enhanceGov}>
+							<input type="hidden" name="entityId" value={entityId} />
+							<input type="hidden" name="role" value={role} />
+							<input type="hidden" name="decision" value="approve" />
+							<Button type="submit" size="sm" class="w-full rounded-md text-[12px] font-medium">
+								Approve · re-KYC
+							</Button>
+						</form>
+						<form method="POST" action="?/review" use:enhance={enhanceGov}>
+							<input type="hidden" name="entityId" value={entityId} />
+							<input type="hidden" name="role" value={role} />
+							<input type="hidden" name="decision" value="reject" />
+							<Button
+								type="submit"
+								variant="outline"
+								size="sm"
+								class="w-full rounded-md text-[12px]"
+							>
+								Reject · return to analyst
+							</Button>
+						</form>
+					</div>
+				{:else}
+					<p class="text-muted2 text-[11px] leading-relaxed">
+						Awaiting compliance — you raised this; a second person must approve.
+					</p>
+				{/if}
+			{:else if status === 'approved'}
 				<div class="flex items-center gap-1.5 text-[11px]">
 					<span style="color: var(--brand)">✓</span>
-					<span class="text-text"
-						>{decision === 'escalate' ? 'Escalated to MLRO' : 'Dismissed'}</span
-					>
+					<span class="text-text">Approved · rating → High{last ? ` by ${last.actor}` : ''}</span>
 					<span class="text-muted2 font-mono">· audit #{auditCount}</span>
 				</div>
-			{:else}
-				<div class="flex flex-col gap-2">
-					<form method="POST" action="?/decide" use:enhance={enhanceDecide}>
-						<input type="hidden" name="entityId" value={entityId} />
-						<input type="hidden" name="decision" value="escalate" />
-						<Button type="submit" size="sm" class="w-full rounded-md text-[12px] font-medium">
-							Escalate · re-KYC
-						</Button>
-					</form>
-					<form method="POST" action="?/decide" use:enhance={enhanceDecide}>
-						<input type="hidden" name="entityId" value={entityId} />
-						<input type="hidden" name="decision" value="dismiss" />
-						<Button type="submit" variant="outline" size="sm" class="w-full rounded-md text-[12px]">
-							Dismiss
-						</Button>
-					</form>
-					<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze}>
-						<input type="hidden" name="entityId" value={entityId} />
-						<input type="hidden" name="asOf" value={asOfIso} />
-						<Button
-							type="submit"
-							variant="ghost"
-							size="sm"
-							disabled={analyzing}
-							class="text-muted2 hover:text-text hover:bg-panel2 w-full rounded-md text-[11px]"
-						>
-							{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
-						</Button>
-					</form>
+			{:else if status === 'dismissed'}
+				<div class="flex items-center gap-1.5 text-[11px]">
+					<span class="text-muted2">○</span>
+					<span class="text-text">Dismissed{last ? ` by ${last.actor}` : ''}</span>
 				</div>
 			{/if}
+
+			{#if status === 'open' || status === 'pending_approval'}
+				<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze} class="mt-2">
+					<input type="hidden" name="entityId" value={entityId} />
+					<input type="hidden" name="asOf" value={asOfIso} />
+					<Button
+						type="submit"
+						variant="ghost"
+						size="sm"
+						disabled={analyzing}
+						class="text-muted2 hover:text-text hover:bg-panel2 w-full rounded-md text-[11px]"
+					>
+						{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
+					</Button>
+				</form>
+			{/if}
+
 			{#if llmNote}
 				<p class="text-muted2 mt-2 text-[10px] leading-relaxed">{llmNote}</p>
 			{/if}
