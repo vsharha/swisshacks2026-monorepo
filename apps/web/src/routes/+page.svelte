@@ -8,7 +8,7 @@
 	import TopBar from '$lib/components/app/TopBar.svelte';
 	import LeftRail from '$lib/components/app/LeftRail.svelte';
 	import EntityView from '$lib/components/app/EntityView.svelte';
-	import SignalsRail from '$lib/components/app/SignalsRail.svelte';
+	import PatternRail from '$lib/components/app/PatternRail.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -112,7 +112,7 @@
 	<TopBar {auditCount} onOpenAudit={() => (showAudit = true)} />
 
 	<!-- ── Main grid ───────────────────────────────────────────────────── -->
-	<div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_232px] gap-5 py-4">
+	<div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5 py-4">
 		<!-- Left rail · company selection / selected company detail -->
 		<LeftRail
 			{book}
@@ -125,22 +125,21 @@
 			onclear={() => (selectedId = '')}
 		/>
 
-		<!-- Center · selected entity + right rail · signals -->
+		<!-- Center · selected entity · right rail · pattern match + action -->
 		{#if selected}
-			<EntityView
+			<EntityView entity={selected} {asOfIso} {llmAlert} />
+
+			<PatternRail
 				entity={selected}
-				{asOfIso}
 				{archetype}
+				{asOfIso}
 				{decision}
 				{auditCount}
-				{llmAlert}
 				{llmNote}
 				{analyzing}
 				{enhanceDecide}
 				{enhanceAnalyze}
 			/>
-
-			<SignalsRail entity={selected} {asOfIso} />
 		{/if}
 	</div>
 

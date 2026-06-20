@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { AXES, type Alert, type PatternArchetype } from '@kyc/core';
-	import type { SubmitFunction } from '@sveltejs/kit';
+	import { AXES, type Alert } from '@kyc/core';
 	import DriftRadar from './DriftRadar.svelte';
 	import AxisBreakdown from './AxisBreakdown.svelte';
 	import EventsView from './EventsView.svelte';
@@ -10,37 +9,14 @@
 	let {
 		entity,
 		asOfIso,
-		archetype,
-		decision,
-		auditCount,
-		llmAlert,
-		llmNote,
-		analyzing,
-		enhanceDecide,
-		enhanceAnalyze
+		llmAlert
 	}: {
 		entity: BookEntity;
 		asOfIso: string;
-		archetype: PatternArchetype | undefined;
-		decision: 'escalate' | 'dismiss' | null;
-		auditCount: number;
 		llmAlert: Alert | null;
-		llmNote: string | null;
-		analyzing: boolean;
-		enhanceDecide: SubmitFunction;
-		enhanceAnalyze: SubmitFunction;
 	} = $props();
 
 	const alertingAxes = $derived(AXES.filter((a) => entity.drift.axes[a].status !== 'stable'));
-
-	// Pattern-library match (reasoning by analogy).
-	const patternSim = $derived.by(() => {
-		if (!archetype || alertingAxes.length === 0) return 0;
-		const set = new Set(archetype.axes);
-		const overlap = alertingAxes.filter((a) => set.has(a)).length;
-		const union = new Set([...alertingAxes, ...archetype.axes]).size;
-		return overlap / union;
-	});
 
 	// Top citations from the axes that moved.
 	const citations = $derived.by(() =>
@@ -77,8 +53,8 @@
 <main class="flex min-h-0 min-w-0 flex-col gap-4">
 	<div class="border-line bg-panel flex shrink-0 flex-col gap-3 rounded-lg border p-4">
 		<div class="text-muted2 text-[10px] tracking-[0.16em] uppercase">Drift vector · 5 axes</div>
-		<div class="grid h-[244px] grid-cols-[280px_1fr] gap-5">
-			<div class="border-line/70 flex items-center justify-center border-r pr-2">
+		<div class="grid h-[244px] grid-cols-[280px_1fr] gap-6">
+			<div class="flex items-center justify-center">
 				<DriftRadar axes={entity.drift.axes} status={entity.drift.status} />
 			</div>
 			<AxisBreakdown axes={entity.drift.axes} />
@@ -87,22 +63,8 @@
 
 	<EventsView {entity} {asOfIso} />
 
-	<!-- Escalation flare / RE-KYC alert -->
+	<!-- Escalation flare / RE-KYC alert verdict -->
 	{#if entity.drift.status === 'alert'}
-		<EscalationPanel
-			entityId={entity.baseline.entityId}
-			{asOfIso}
-			{decision}
-			{auditCount}
-			{llmAlert}
-			{llmNote}
-			{analyzing}
-			{archetype}
-			{patternSim}
-			{recommendedAction}
-			{displayCitations}
-			{enhanceDecide}
-			{enhanceAnalyze}
-		/>
+		<EscalationPanel {asOfIso} {llmAlert} {recommendedAction} {displayCitations} />
 	{/if}
 </main>

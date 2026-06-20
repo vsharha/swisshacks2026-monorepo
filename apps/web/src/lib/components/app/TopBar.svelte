@@ -12,16 +12,15 @@
 		<span class="text-muted2 text-[11px] tracking-[0.28em] uppercase">KYC-Drift Monitor</span>
 	</div>
 	<Button
-		variant="outline"
 		size="sm"
-		class="border-line2 text-text2 hover:text-text hover:border-muted2 gap-2 rounded-md px-3 text-[11px] font-normal"
+		class="gap-2 rounded-md px-3 text-[11px] font-medium"
 		onclick={onOpenAudit}
 		title="Open the append-only audit trail"
 	>
 		<ClipboardText weight="bold" />
 		Audit log
 		<span
-			class="bg-panel2 text-text ml-0.5 rounded px-1.5 py-0.5 font-mono text-[10px] tabular-nums"
+			class="ml-0.5 rounded bg-white/20 px-1.5 py-0.5 font-mono text-[10px] tabular-nums text-white"
 			>{auditCount}</span
 		>
 	</Button>
