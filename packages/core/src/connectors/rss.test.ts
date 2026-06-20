@@ -87,6 +87,13 @@ describe("matchEntities", () => {
     ]);
     expect(matchEntities("nothing relevant here", book)).toEqual([]);
   });
+
+  it("does not match a generic common-word alias (e.g. 'strategy')", () => {
+    const ambiguous = [{ entityId: "strategy", name: "MicroStrategy Inc.", aliases: ["Strategy", "MSTR"] }];
+    expect(matchEntities("the company revealed its growth strategy today", ambiguous)).toEqual([]);
+    // ...but a distinctive alias still matches.
+    expect(matchEntities("MSTR added to the index", ambiguous)).toEqual(["strategy"]);
+  });
 });
 
 describe("rssItemsToSignals", () => {

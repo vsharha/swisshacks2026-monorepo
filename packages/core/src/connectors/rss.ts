@@ -169,15 +169,49 @@ export interface EntityMatcher {
 const escapeRegExp = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 /**
+ * Generic single words that collide with brand names (e.g. a company that
+ * renamed itself "Strategy"). On free text a lone common-word alias produces
+ * mostly false positives, so it is not treated as distinctive. This is a
+ * deliberately small heuristic; robust disambiguation of an ambiguous name needs
+ * entity-resolution context (a conceptUri or the NER model of proposal 8).
+ */
+const COMMON_WORD_ALIASES = new Set([
+  "strategy",
+  "capital",
+  "bridge",
+  "holding",
+  "holdings",
+  "trading",
+  "group",
+  "partners",
+  "global",
+  "payments",
+  "pay",
+  "national",
+  "components",
+  "exchange",
+  "securities",
+]);
+
+/** A needle distinctive enough to match safely on noisy free text. */
+function isDistinctive(needle: string): boolean {
+  const n = needle.trim();
+  if (n.includes(" ")) return true; // multi-word names are specific enough
+  if (/^[A-Z0-9][A-Z0-9.&-]{1,7}$/.test(n)) return true; // ticker / acronym (MSTR, GBC)
+  return n.length >= 5 && !COMMON_WORD_ALIASES.has(n.toLowerCase());
+}
+
+/**
  * Cheap normalized-form entity matcher (the Stage-0 default; the heavy NER model
  * of proposal 8 is an opt-in upgrade). Returns the ids of entities whose name or
- * any alias appears as a whole token in `text`. Word-boundary matching avoids an
- * alias firing inside a larger word.
+ * a *distinctive* alias appears as a whole token in `text`. Word-boundary
+ * matching avoids an alias firing inside a larger word; the distinctiveness gate
+ * drops lone common-word aliases that would otherwise match generic prose.
  */
 export function matchEntities(text: string, entities: EntityMatcher[]): string[] {
   const matched: string[] = [];
   for (const e of entities) {
-    const needles = [e.name, ...(e.aliases ?? [])].filter((n) => n.trim().length >= 2);
+    const needles = [e.name, ...(e.aliases ?? [])].filter(isDistinctive);
     const hit = needles.some((n) => new RegExp(`\\b${escapeRegExp(n)}\\b`, "i").test(text));
     if (hit) matched.push(e.entityId);
   }
