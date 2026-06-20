@@ -9,6 +9,7 @@
     "./schemas": "./src/schemas/index.ts",
     "./connectors": "./src/connectors/index.ts",
     "./pipeline": "./src/pipeline/index.ts",
+    "./graph": "./src/graph/index.ts",
     "./drift": "./src/drift/index.ts",
     "./llm": "./src/llm/index.ts"
   },
