@@ -8,26 +8,33 @@
 	}: { bookCount: number; auditCount: number; onOpenAudit: () => void } = $props();
 </script>
 
-<header class="border-line flex items-center justify-between border-b pb-2">
+<header class="border-line flex items-center justify-between border-b pb-3">
 	<div class="flex items-baseline gap-3">
-		<span class="font-sans text-[13px] font-semibold tracking-[0.2em]">AMINA</span>
-		<span class="text-muted2 text-[11px] tracking-[0.3em]">DRIFT MONITOR</span>
+		<span class="text-galaxy font-sans text-[15px] font-bold tracking-[0.22em]">AMINA</span>
+		<span class="bg-line h-3.5 w-px self-center"></span>
+		<span class="text-muted2 text-[11px] tracking-[0.28em] uppercase">KYC-Drift Monitor</span>
 	</div>
-	<div class="flex items-center gap-5 text-[11px]">
+	<div class="text-muted2 flex items-center gap-6 text-[11px]">
 		<span class="flex items-center gap-1.5">
-			<span class="h-1.5 w-1.5 animate-pulse rounded-full" style="background: var(--stable)"></span>
-			<span class="text-muted2 tracking-widest">LIVE</span>
+			<span class="bg-brand h-1.5 w-1.5 animate-pulse rounded-full"></span>
+			<span class="tracking-widest uppercase">Live</span>
 		</span>
-		<span class="text-muted2">book <span class="text-text">{bookCount}</span></span>
+		<span class="flex items-center gap-1.5">
+			<span class="tracking-wide">Book</span>
+			<span class="text-text font-mono">{bookCount}</span>
+		</span>
 		<Button
 			variant="ghost"
 			size="xs"
-			class="text-muted2 hover:text-text h-auto px-1.5 py-0.5 text-[11px] font-normal tracking-normal"
+			class="text-muted2 hover:text-text hover:bg-panel2 h-auto gap-1.5 rounded-md px-2 py-1 text-[11px] font-normal tracking-wide"
 			onclick={onOpenAudit}
 			title="Open the append-only audit trail"
 		>
-			audit <span class="text-text">{auditCount}</span>
+			Audit <span class="text-text font-mono">{auditCount}</span>
 		</Button>
-		<span class="text-muted2">cost/day <span class="text-stable">$0.75</span></span>
+		<span class="flex items-center gap-1.5">
+			<span class="tracking-wide">Cost / day</span>
+			<span class="text-text font-mono">$0.75</span>
+		</span>
 	</div>
 </header>

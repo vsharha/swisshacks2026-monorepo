@@ -7,7 +7,7 @@ export interface BookEntity {
 	drift: DriftVector;
 }
 
-/** RiskStatus → CSS custom property in the Risk Control Room palette. */
+/** RiskStatus → CSS custom property in the risk signal channel (see layout.css). */
 export const statusVar: Record<RiskStatus, string> = {
 	stable: 'var(--stable)',
 	watch: 'var(--watch)',

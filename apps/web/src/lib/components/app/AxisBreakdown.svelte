@@ -5,13 +5,16 @@
 	let { axes }: { axes: DriftVector['axes'] } = $props();
 </script>
 
-<div class="flex flex-col justify-center gap-2.5">
+<div class="flex min-w-0 flex-col justify-center gap-2.5">
 	{#each AXES as axis (axis)}
 		{@const a = axes[axis]}
-		<div class="flex flex-col gap-1">
-			<div class="flex items-baseline justify-between">
-				<span class="font-sans text-[12px]">{AXIS_LABEL[axis]}</span>
-				<span class="text-[11px]" style="color: {statusVar[a.status]}">
+		<div class="flex min-w-0 flex-col gap-1">
+			<div class="flex items-baseline justify-between gap-2">
+				<span class="text-text2 truncate text-[12px]">{AXIS_LABEL[axis]}</span>
+				<span
+					class="shrink-0 font-mono text-[11px] tabular-nums"
+					style="color: {statusVar[a.status]}"
+				>
 					{a.score.toFixed(2)}
 					<span class="text-muted2">· conf {a.confidence.toFixed(2)}</span>
 				</span>

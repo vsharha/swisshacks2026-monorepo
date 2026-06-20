@@ -3,6 +3,8 @@
 @import 'shadcn-svelte/tailwind.css';
 @import '@fontsource-variable/jetbrains-mono';
 @import '@fontsource-variable/hanken-grotesk';
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
 
 @plugin 'tailwind-scrollbar' {
 	nocompatible: true;
@@ -10,23 +12,41 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ── Risk Control Room ─────────────────────────────────────────────────────
-   A dark instrumentation terminal. Greyscale everywhere; risk is the only
-   saturated colour. See docs/reference/amina-design-system.md. */
+/* ── AMINA "Supervisory" ────────────────────────────────────────────────────
+   A light, Swiss-modern supervisory dashboard in AMINA's own brand language.
+   Three rules, from docs/reference/amina-design-system.md:
+     1. The brand colour (teal) is interactive ONLY — never a risk verdict.
+     2. Risk lives in its own channel; stable is colourless (no attention).
+     3. Calm by default; the galaxy card is the only place the UI raises its voice. */
 :root {
-	color-scheme: dark;
+	color-scheme: light;
 
-	--bg: #0a0b0d; /* canvas  */
-	--panel: #121417; /* panels  */
-	--panel-2: #0e1013; /* nested  */
-	--line: #1f2329; /* hairline */
-	--text: #e6e8eb;
-	--muted: #6b7280;
+	/* Surfaces */
+	--bg: #f9fafb; /* canvas / book register      */
+	--panel: #ffffff; /* cards above the canvas      */
+	--panel-2: #f3f4f6; /* nested / inset fills        */
+	--line: #e5e7eb; /* hairlines                   */
+	--line-2: #d1d5db; /* stronger rules              */
 
-	/* Signal channel — the ONLY saturated colours in the UI. */
-	--stable: #2dd4a7;
-	--watch: #ffb000;
-	--alert: #ff3b30;
+	/* Ink */
+	--text: #111827; /* primary ink (gray-900)      */
+	--text-2: #374151; /* body                        */
+	--muted: #6b7280; /* captions / labels           */
+
+	/* Brand — interactive ONLY (logo, selection, links, primary action) */
+	--brand: #14b8a6; /* AMINA teal                  */
+	--brand-ink: #0f766e; /* teal text on light          */
+	--brand-tint: #e6f5f2; /* pale-teal inset rows / soft bands */
+	--galaxy: #0d2936; /* deep petrol — the signature dark device */
+	--galaxy-2: #003d4c;
+
+	/* Risk signal channel — escalation only; stable has no colour */
+	--stable: #6b7280; /* quiet neutral = no attention */
+	--watch: #f59e0b; /* amber                        */
+	--alert: #fa4616; /* AMINA orange-red — the pop   */
+	--alert-deep: #c2410c;
+
+	--radius: 0.5rem; /* AMINA's soft 8px corners */
 
 	/* shadcn token mapping → palette */
 	--background: var(--bg);
@@ -35,23 +55,47 @@
 	--card-foreground: var(--text);
 	--popover: var(--panel);
 	--popover-foreground: var(--text);
-	--primary: var(--text);
-	--primary-foreground: var(--bg);
-	--secondary: #1a1d22;
+	--primary: var(--brand); /* primary action = AMINA teal */
+	--primary-foreground: #ffffff;
+	--secondary: var(--panel-2);
 	--secondary-foreground: var(--text);
-	--muted-color: #1a1d22;
+	--muted-color: var(--panel-2);
 	--muted-foreground: var(--muted);
-	--accent: #1a1d22;
-	--accent-foreground: var(--text);
+	--accent: var(--brand-tint);
+	--accent-foreground: var(--brand-ink);
 	--destructive: var(--alert);
 	--border: var(--line);
 	--input: var(--line);
-	--ring: #2a2f37;
-	--radius: 0.25rem;
+	--ring: var(--brand);
+}
+
+/* The galaxy escalation scope — the one dark device. Flip surfaces to deep
+   petrol; brand + risk channel keep their hues and pop harder on galaxy. */
+.galaxy {
+	color-scheme: dark;
+
+	--bg: #0d2936;
+	--panel: #102a33;
+	--panel-2: #0c2229;
+	--line: rgba(255, 255, 255, 0.1);
+	--line-2: rgba(255, 255, 255, 0.18);
+	--text: #f1f5f7;
+	--text-2: #cddde1;
+	--muted: #7fa3ab;
+
+	--background: var(--bg);
+	--foreground: var(--text);
+	--card: var(--panel);
+	--card-foreground: var(--text);
+	--secondary: rgba(255, 255, 255, 0.06);
+	--secondary-foreground: var(--text);
+	--border: var(--line);
+	--input: var(--line);
 }
 
 @theme inline {
-	--font-sans: 'Hanken Grotesk Variable', 'Archivo', sans-serif;
+	--font-display: 'Bitter', Georgia, 'Times New Roman', serif;
+	--font-sans: 'Satoshi', 'Hanken Grotesk Variable', sans-serif;
 	--font-mono: 'JetBrains Mono Variable', monospace;
 
 	--color-background: var(--background);
@@ -73,19 +117,28 @@
 	--color-input: var(--input);
 	--color-ring: var(--ring);
 
-	/* Signal colours as utilities (text-stable, bg-alert, …). */
+	/* Palette colours as utilities (text-stable, bg-panel, border-line, …).
+	   Names kept stable so component classes don't churn on a reskin. */
 	--color-bg: var(--bg);
 	--color-panel: var(--panel);
 	--color-panel2: var(--panel-2);
 	--color-line: var(--line);
+	--color-line2: var(--line-2);
 	--color-text: var(--text);
+	--color-text2: var(--text-2);
 	--color-muted2: var(--muted);
+	--color-brand: var(--brand);
+	--color-brand-ink: var(--brand-ink);
+	--color-brand-tint: var(--brand-tint);
+	--color-galaxy: var(--galaxy);
+	--color-galaxy2: var(--galaxy-2);
 	--color-stable: var(--stable);
 	--color-watch: var(--watch);
 	--color-alert: var(--alert);
+	--color-alert-deep: var(--alert-deep);
 
-	--radius-sm: calc(var(--radius) * 0.6);
-	--radius-md: calc(var(--radius) * 0.8);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);
 }
 
@@ -104,22 +157,9 @@
 		@apply bg-background font-sans text-foreground;
 		font-feature-settings: 'tnum' 1; /* tabular numerals everywhere */
 		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
 	}
 	html {
 		background: var(--bg);
-	}
-	/* Subtle CRT scanline atmosphere — texture, not decoration (~3%). */
-	body::after {
-		content: '';
-		position: fixed;
-		inset: 0;
-		pointer-events: none;
-		z-index: 50;
-		background: repeating-linear-gradient(
-			0deg,
-			transparent 0,
-			transparent 2px,
-			rgba(255, 255, 255, 0.015) 3px
-		);
 	}
 }

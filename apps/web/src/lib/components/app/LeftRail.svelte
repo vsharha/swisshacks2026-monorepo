@@ -32,7 +32,7 @@
 	let panelView = $state<'list' | 'detail'>('detail');
 </script>
 
-<aside class="border-line flex min-h-0 flex-col gap-1 border-r pr-3">
+<aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-r pr-4">
 	{#if panelView === 'detail' && selected}
 		<CompanyDetail
 			entity={selected}

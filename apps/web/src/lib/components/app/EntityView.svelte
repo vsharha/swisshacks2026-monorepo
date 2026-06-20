@@ -77,11 +77,13 @@
 	);
 </script>
 
-<main class="flex min-h-0 flex-col gap-3">
+<main class="flex min-h-0 min-w-0 flex-col gap-4">
 	<EntityHeader {entity} {rating} />
 
-	<div class="grid h-[280px] shrink-0 grid-cols-[280px_1fr] gap-4">
-		<div class="flex items-center justify-center">
+	<div
+		class="border-line bg-panel grid h-[284px] shrink-0 grid-cols-[280px_1fr] gap-5 rounded-lg border p-4"
+	>
+		<div class="border-line/70 flex items-center justify-center border-r pr-2">
 			<DriftRadar axes={entity.drift.axes} status={entity.drift.status} />
 		</div>
 		<AxisBreakdown axes={entity.drift.axes} />

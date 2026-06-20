@@ -37,7 +37,7 @@
 <Sheet.Root bind:open>
 	<Sheet.Content
 		class="bg-panel w-[420px] gap-0 sm:max-w-[420px]"
-		style="box-shadow: -16px 0 40px rgba(0,0,0,0.4)"
+		style="box-shadow: -16px 0 48px rgba(13,41,54,0.12)"
 	>
 		<Sheet.Header class="border-line gap-2 border-b">
 			<Sheet.Title class="font-sans text-[12px] font-semibold tracking-widest uppercase"

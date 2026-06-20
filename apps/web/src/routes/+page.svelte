@@ -108,11 +108,11 @@
 	});
 </script>
 
-<div class="bg-bg text-text flex h-screen flex-col overflow-hidden p-3 font-mono text-sm">
+<div class="bg-bg text-text flex h-screen flex-col overflow-hidden px-5 py-4 font-sans text-sm">
 	<TopBar bookCount={data.book.length} {auditCount} onOpenAudit={() => (showAudit = true)} />
 
 	<!-- ── Main grid ───────────────────────────────────────────────────── -->
-	<div class="grid min-h-0 flex-1 grid-cols-[220px_1fr_220px] gap-3 py-3">
+	<div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_232px] gap-5 py-4">
 		<!-- Left rail · company selection / selected company detail -->
 		<LeftRail
 			{book}
@@ -145,7 +145,7 @@
 	</div>
 
 	<!-- ── Bottom · timeline scrubber ──────────────────────────────────── -->
-	<footer class="border-line border-t pt-2">
+	<footer class="border-line border-t pt-3">
 		{#if selected}
 			<TimelineScrubber signals={selected.signals} start={startMs} end={endMs} bind:value={asOf} />
 		{/if}

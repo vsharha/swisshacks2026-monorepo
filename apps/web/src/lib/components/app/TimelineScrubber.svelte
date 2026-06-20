@@ -29,15 +29,20 @@
 		new Date(t).toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: '2-digit' });
 </script>
 
-<div class="flex flex-col gap-1">
+<div class="flex flex-col gap-1.5">
 	<div class="flex items-baseline justify-between">
-		<span class="text-muted2 text-[10px] tracking-widest uppercase">Timeline · chart recorder</span>
-		<span class="text-text font-mono text-xs">{fmt(value)}</span>
+		<span class="text-muted2 text-[10px] tracking-[0.16em] uppercase">Timeline · event replay</span>
+		<span class="text-text font-mono text-xs tabular-nums">{fmt(value)}</span>
 	</div>
 
 	<div class="relative h-12">
 		<!-- baseline track -->
-		<div class="bg-line absolute top-6 right-0 left-0 h-px"></div>
+		<div class="bg-line absolute top-6 right-0 left-0 h-[3px] -translate-y-1/2 rounded-full"></div>
+		<!-- teal filled track up to the playhead -->
+		<div
+			class="bg-brand absolute top-6 left-0 h-[3px] -translate-y-1/2 rounded-full"
+			style="width: {pct(value)}%"
+		></div>
 
 		<!-- event dots -->
 		{#each events as e (e.s.id)}
@@ -49,24 +54,19 @@
 				<div
 					class="h-2 w-2 rounded-full border"
 					class:opacity-100={e.t <= value}
-					class:opacity-30={e.t > value}
+					class:opacity-40={e.t > value}
 					style="border-color: var(--watch); background: {e.t <= value
 						? 'var(--watch)'
-						: 'transparent'}"
+						: 'var(--panel)'}"
 				></div>
 			</div>
 		{/each}
 
 		<!-- playhead -->
 		<div
-			class="pointer-events-none absolute top-0 bottom-0 w-px"
-			style="left: {pct(value)}%; background: var(--text)"
-		>
-			<div
-				class="absolute -top-0.5 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rotate-45"
-				style="background: var(--text)"
-			></div>
-		</div>
+			class="pointer-events-none absolute top-2 bottom-2 w-px"
+			style="left: {pct(value)}%; background: color-mix(in oklab, var(--brand) 45%, transparent)"
+		></div>
 
 		<input
 			type="range"
@@ -79,7 +79,7 @@
 		/>
 	</div>
 
-	<div class="text-muted2 flex justify-between font-mono text-[10px]">
+	<div class="text-muted2 flex justify-between font-mono text-[10px] tabular-nums">
 		<span>{fmt(start)}</span>
 		<span>{fmt(end)}</span>
 	</div>
@@ -88,19 +88,24 @@
 <style>
 	input[type='range']::-webkit-slider-thumb {
 		appearance: none;
-		width: 14px;
-		height: 14px;
+		width: 16px;
+		height: 16px;
 		border-radius: 9999px;
-		background: var(--text);
-		border: 2px solid var(--bg);
+		background: var(--brand);
+		border: 3px solid var(--panel);
+		box-shadow: 0 1px 3px rgba(13, 41, 54, 0.25);
 		cursor: grab;
 	}
+	input[type='range']:active::-webkit-slider-thumb {
+		cursor: grabbing;
+	}
 	input[type='range']::-moz-range-thumb {
-		width: 14px;
-		height: 14px;
+		width: 16px;
+		height: 16px;
 		border-radius: 9999px;
-		background: var(--text);
-		border: 2px solid var(--bg);
+		background: var(--brand);
+		border: 3px solid var(--panel);
+		box-shadow: 0 1px 3px rgba(13, 41, 54, 0.25);
 		cursor: grab;
 	}
 </style>
