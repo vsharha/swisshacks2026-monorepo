@@ -1,397 +1,119 @@
-# Ingestion & Risk Intelligence Layer
+# Risk Intelligence Extensions
 
-> How structured and unstructured risk signals enter the platform, feed the knowledge graph, and drive continuous KYB/KYC reassessment.
->
-> The objective is not only data collection, but risk detection, confidence scoring, explainable alerts, and action recommendations across a Three Lines of Defense operating model.
+The current architecture is optimized for detecting customer drift. To support a crypto-bank KYC/KYB operating model, the drift engine is extended with a continuous risk-intelligence layer that enriches, rather than replaces, the existing 5-axis framework.
 
----
+The drift axes remain the primary mechanism for change detection:
 
-# Unified Risk Signal Model
-
-Every source normalizes into a single validated `Signal`:
-
-```ts
-{
-  id,
-  entityId,
-  signalType,
-  riskDimension,
-  source,
-  sourceUrl,
-  title,
-  timestamp,
-  confidence,
-  severity,
-  payload,
-  relationships,
-  metadata
-}
+```text
+business_model
+ownership
+scale
+reputation
+jurisdiction
 ```
 
-The signal model allows all ingestion pipelines to feed:
+Additional intelligence sources generate risk signals that can either:
 
-* Knowledge Graph
-* Risk Engine
-* Alert Engine
-* Explainability Layer
-* Audit Trail
-
-without requiring source-specific downstream logic.
+1. Enrich existing drift axes
+2. Be surfaced as standalone risk dimensions
+3. Feed explainable alerts and recommendations
 
 ---
 
-# Risk Dimensions
+## Expanded Risk Dimensions
 
-All incoming signals are mapped to one or more risk dimensions:
+The platform continuously evaluates the following risk dimensions:
 
-| Dimension          | Description                                    |
-| ------------------ | ---------------------------------------------- |
-| Regulatory Risk    | Licensing, enforcement actions, legal exposure |
-| AML Risk           | Money laundering indicators                    |
-| Sanctions Risk     | Direct and indirect sanctions exposure         |
-| Geopolitical Risk  | Country instability and political events       |
-| Market Risk        | Financial stress indicators                    |
-| Operational Risk   | Governance and operational failures            |
-| Ownership Risk     | UBO, shareholder and control concerns          |
-| Reputation Risk    | Adverse media and sentiment                    |
-| Crypto Native Risk | Wallet exposure, mixers, darknet links         |
+| Risk Dimension     | Description                                                      |
+| ------------------ | ---------------------------------------------------------------- |
+| Regulatory Risk    | Licensing status, enforcement actions, legal proceedings         |
+| AML Risk           | Suspicious activity indicators, transaction anomalies            |
+| Sanctions Risk     | Direct and indirect sanctions exposure                           |
+| Geopolitical Risk  | Country instability, FATF status, political events               |
+| Market Risk        | Liquidity stress, funding deterioration, insolvency indicators   |
+| Operational Risk   | Governance failures, executive turnover, control weaknesses      |
+| Ownership Risk     | UBO changes, concentration of control, hidden influence          |
+| Reputation Risk    | Adverse media, investigations, litigation                        |
+| Crypto Native Risk | Wallet exposure, mixers, darknet links, high-risk counterparties |
 
 ---
 
-# Intelligence Sources
+## Additional Intelligence Sources
 
-## MCP Server Intelligence
+The ingestion layer expands beyond news and SEC filings to include:
 
-Provides:
+### MCP Server Intelligence
 
-* Customer records
-* KYB/KYC profiles
-* Internal investigations
+* Historical KYC decisions
+* Previous investigations
+* Internal risk assessments
 * Transaction monitoring outputs
-* Previous risk decisions
-* Historical alerts
+* Customer profile changes
 
-Risk Dimensions:
-
-* AML
-* Operational
-* Ownership
-* Reputation
-
-Confidence:
-
-95-100%
-
----
-
-## Regulatory Intelligence
-
-Sources:
+### Regulatory Intelligence
 
 * SEC
-* FINRA
 * FCA
-* MAS
 * DFSA
 * ADGM
 * FINMA
 * FATF
 * Enforcement databases
 
-Signals:
+### Market Intelligence
 
-* License revocation
-* Enforcement action
-* Regulatory investigation
-* Registration changes
-
-Risk Dimensions:
-
-* Regulatory
-* Reputation
-
-Confidence:
-
-95-100%
-
----
-
-## Market Intelligence
-
-Sources:
-
-* Exchange data
-* Liquidity providers
-* Market data vendors
-* Funding rounds
+* Funding announcements
+* Liquidity events
 * Valuation changes
+* Exchange performance indicators
 
-Signals:
-
-* Liquidity stress
-* Insolvency indicators
-* Funding decline
-* Revenue deterioration
-
-Risk Dimensions:
-
-* Market
-* Operational
-
-Confidence:
-
-70-90%
-
----
-
-## Geopolitical Intelligence
-
-Sources:
-
-* Government advisories
-* FATF country lists
-* Political risk feeds
-* Sanctions updates
-
-Signals:
-
-* Conflict escalation
-* Political instability
-* Regulatory crackdowns
-* FATF status changes
-
-Risk Dimensions:
-
-* Geopolitical
-* Regulatory
-
-Confidence:
-
-80-95%
-
----
-
-## Sanctions & Watchlists
-
-Sources:
+### Sanctions Intelligence
 
 * OFAC
-* UN
-* EU
-* UK HMT
 * OpenSanctions
+* UN sanctions
+* EU sanctions
+* UK HMT sanctions
 
-Signals:
-
-* Direct sanctions matches
-* Indirect exposure
-* Beneficial owner sanctions
-* Connected party sanctions
-
-Risk Dimensions:
-
-* Sanctions
-* Ownership
-
-Confidence:
-
-95-100%
-
----
-
-## Corporate Ownership Structures
-
-Sources:
+### Corporate Registry Intelligence
 
 * Companies House
 * GLEIF
 * ZEFIX
-* Corporate registries
-* Shareholder databases
+* Commercial registries
 
-Signals:
+### Blockchain Intelligence
 
-* Ownership changes
-* New UBOs
-* Hidden control relationships
-* Shell company structures
-
-Risk Dimensions:
-
-* Ownership
-* AML
-
-Confidence:
-
-85-100%
-
----
-
-## Investment & Funding Intelligence
-
-Sources:
-
-* Venture databases
-* Investment announcements
-* Funding disclosures
-
-Signals:
-
-* New investors
-* Distressed funding
-* Strategic acquisitions
-* Ownership concentration
-
-Risk Dimensions:
-
-* Ownership
-* Market
-
-Confidence:
-
-80-95%
-
----
-
-## Blockchain Intelligence
-
-Sources:
-
-* Chain analytics providers
-* Wallet intelligence
-* Exchange monitoring
-
-Signals:
-
+* Wallet screening
 * Mixer exposure
 * Darknet exposure
-* Scam wallet interactions
-* High-risk transaction flows
+* High-risk counterparty exposure
 
-Risk Dimensions:
+### Social & Strategic Intelligence
 
-* Crypto Native
-* AML
-
-Confidence:
-
-80-100%
-
----
-
-## Adverse Media Intelligence
-
-Sources:
-
-* Event Registry
-* RSS
-* Reuters
-* Bloomberg
-* Financial media
-
-Signals:
-
-* Fraud allegations
-* Litigation
-* Executive misconduct
-* Financial distress
-
-Risk Dimensions:
-
-* Reputation
-* Regulatory
-
-Confidence:
-
-60-90%
-
----
-
-## Social & Strategic Intelligence
-
-Sources:
-
-* LinkedIn
-* Company websites
-* Hiring portals
-* Press releases
-
-Signals:
-
+* LinkedIn hiring trends
 * Executive departures
-* Hiring spikes
-* Expansion plans
+* Expansion announcements
 * Strategic pivots
 
-Risk Dimensions:
-
-* Operational
-* Market
-* Reputation
-
-Confidence:
-
-50-80%
-
 ---
 
-## Country Relationship Intelligence
+## Knowledge Graph Intelligence
 
-Tracks:
+A graph layer is introduced between ingestion and scoring.
 
-* Country sanctions relationships
-* Diplomatic tensions
-* FATF relationships
-* Trade restrictions
-
-Example:
-
-Entity operates in Country A
-Country A has exposure to Country B
-Country B enters sanctions regime
-
-Risk propagates through relationship graph.
-
-Risk Dimensions:
-
-* Geopolitical
-* Sanctions
-
----
-
-## Company Relationship Intelligence
-
-Tracks:
-
-* Partnerships
-* Investors
-* Subsidiaries
-* Suppliers
-* Joint ventures
-* Board relationships
-
-Risk Dimensions:
-
-* Ownership
-* Operational
-* AML
-
----
-
-# Knowledge Graph Layer
-
-All entities become nodes:
+### Graph Nodes
 
 * Companies
 * Individuals
+* Beneficial Owners
+* Investors
 * Wallets
 * Countries
-* Investors
 * Exchanges
 * Regulators
-* Funds
 
-Relationships:
+### Graph Relationships
 
 * OWNS
 * CONTROLS
@@ -403,108 +125,106 @@ Relationships:
 
 The graph enables:
 
-* 1st degree exposure
-* 2nd degree exposure
-* 3rd degree exposure
-* Hidden controller detection
+* First-degree exposure analysis
+* Second-degree exposure analysis
+* Third-degree exposure analysis
+* Hidden beneficial ownership discovery
+* Influence mapping
 * Risk propagation
-* Beneficial ownership analysis
+
+Graph-derived findings are emitted as normal Signals and therefore reuse the existing drift and escalation pipeline.
 
 ---
 
-# Confidence Scoring
+## Risk Propagation
 
-Risk and confidence are separate.
+Risk is no longer evaluated solely at the entity level.
 
-Confidence is calculated using:
+Exposure can be inherited through:
+
+* Ownership structures
+* Investor relationships
+* Shared directors
+* Strategic partnerships
+* High-risk counterparties
+* Country relationships
+
+Example:
+
+Company A
+→ Owned by Holding B
+→ Funded by Investor C
+→ Investor C sanctioned
+
+This creates an ownership and sanctions enrichment signal even if Company A itself is not sanctioned.
+
+---
+
+## Confidence Engine
+
+Every signal, drift score, and alert receives an independent confidence score.
+
+Confidence is derived from:
 
 ```text
-Confidence Score
-
-=
 40% Source Quality
-+
 25% Corroboration
-+
 20% Freshness
-+
 15% Historical Accuracy
 ```
 
 Examples:
 
-* OFAC Match → 99%
-* Corporate Registry Change → 95%
-* Reuters Investigation → 85%
-* LinkedIn Hiring Trend → 65%
-* Social Media Rumor → 35%
+* OFAC match: 99%
+* Regulatory filing: 95%
+* Corporate registry update: 90%
+* Reuters article: 85%
+* LinkedIn hiring signal: 65%
+* Social media discussion: 35%
+
+Confidence is displayed alongside every alert and recommendation.
 
 ---
 
-# Explainable Alert Generation
+## Action Recommendation Engine
 
-Platform runs twice daily:
+Stage 3 is extended from alert generation to action recommendation.
 
-* 08:00 UTC
-* 20:00 UTC
+Recommended actions include:
 
-Alerts are triggered when:
+* No Action
+* Monitor
+* Watchlist
+* Enhanced Due Diligence
+* Senior Compliance Review
+* Restrict Services
+* Offboarding Review
 
-* Risk score changes significantly
-* New sanctions exposure discovered
-* Ownership structure changes
-* Regulatory actions detected
-* Significant geopolitical events occur
-* Blockchain exposure increases
-* Strategic company behavior changes
+Recommendations are generated using:
 
-Every alert contains:
-
-* Risk Score
-* Confidence Score
-* Evidence Sources
-* Relationship Path
-* Trigger Reason
-* Recommended Action
-
-Example:
-
-Risk Increased +18
-
-Reason:
-
-* New sanctioned beneficial owner
-* Regulatory investigation announced
-* Exposure to high-risk jurisdiction
-
-Confidence:
-92%
-
-Action:
-Enhanced Due Diligence
+* Drift score
+* Risk dimensions
+* Confidence score
+* Historical outcomes
+* Pattern matching
 
 ---
 
-# Three Lines of Defense Workflow
+## Three Lines of Defense Integration
 
-## First Line
-
-Operations / Relationship Managers
+### First Line — Operations
 
 Actions:
 
 * Review alert
-* Validate evidence
-* Contact client
+* Validate information
+* Contact customer
 
-SLA:
+Target SLA:
+
 24 Hours
 
----
-
-## Second Line
-
-Compliance
+### Second Line — Compliance
 
 Actions:
 
@@ -512,35 +232,52 @@ Actions:
 * Risk reassessment
 * Escalation review
 
-SLA:
+Target SLA:
+
 48 Hours
 
----
-
-## Third Line
-
-Risk Committee / Audit
+### Third Line — Risk Committee / Audit
 
 Actions:
 
-* Restrict services
+* Restrict products
 * Approve remediation
-* Approve client offboarding
+* Approve offboarding
 
-SLA:
+Target SLA:
+
 7 Days
 
 ---
 
-# Future Enhancements
+## Continuous Monitoring
 
-1. OpenSanctions integration
-2. GLEIF and LEI ownership intelligence
-3. Global registry coverage
-4. Cross-source event clustering
-5. Incremental ingestion with watermarks
-6. LLM-powered event extraction
-7. Network centrality and influence scoring
-8. Behavioral anomaly detection
-9. Predictive risk forecasting
-10. Continuous graph-based risk propagation
+The platform performs reassessment twice daily:
+
+* 08:00 UTC
+* 20:00 UTC
+
+Reassessment includes:
+
+* New signals
+* Relationship changes
+* Ownership changes
+* Regulatory updates
+* Blockchain exposure updates
+* Geopolitical developments
+* Market intelligence updates
+
+Alert generation becomes event-driven and delta-driven, ensuring risk evaluation scales with change rather than customer volume.
+
+---
+
+## Future Enhancements
+
+* OpenSanctions integration
+* GLEIF ownership enrichment
+* Predictive risk forecasting
+* Graph centrality and influence scoring
+* Behavioral anomaly detection
+* LLM-based event extraction
+* Cross-source event clustering
+* Continuous graph-based risk propagation
