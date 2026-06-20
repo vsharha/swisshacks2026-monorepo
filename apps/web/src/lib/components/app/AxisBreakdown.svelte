@@ -5,10 +5,10 @@
 	let { axes }: { axes: DriftVector['axes'] } = $props();
 </script>
 
-<div class="flex min-w-0 flex-col justify-center gap-2.5">
+<div class="grid min-w-0 grid-cols-2 content-between gap-x-6 gap-y-3">
 	{#each AXES as axis (axis)}
 		{@const a = axes[axis]}
-		<div class="flex min-w-0 flex-col gap-1">
+		<div class="flex min-h-[68px] min-w-0 flex-col gap-1">
 			<div class="flex items-baseline justify-between gap-2">
 				<span class="text-text2 truncate text-[12px]">{AXIS_LABEL[axis]}</span>
 				<span
@@ -28,7 +28,7 @@
 				></div>
 			</div>
 			{#if a.reasoning}
-				<p class="text-muted2 truncate text-[10px]">{a.reasoning}</p>
+				<p class="text-muted2 text-[10px] leading-snug">{a.reasoning}</p>
 			{/if}
 		</div>
 	{/each}

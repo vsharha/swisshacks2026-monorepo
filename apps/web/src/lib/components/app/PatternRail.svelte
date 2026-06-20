@@ -6,6 +6,7 @@
 	import { fmtDate, type BookEntity } from '$lib/view';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
+	import MagnifyingGlass from 'phosphor-svelte/lib/MagnifyingGlass';
 
 	let {
 		entity,
@@ -153,27 +154,57 @@
 								Returned by compliance: {last.rationale}
 							</p>
 						{/if}
-						<form method="POST" action="?/decide" use:enhance={enhanceGov}>
+						<!-- Investigate first: Stage 3 is the tool you use to make the call. -->
+						<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze}>
 							<input type="hidden" name="entityId" value={entityId} />
-							<input type="hidden" name="role" value={role} />
-							<input type="hidden" name="decision" value="escalate" />
-							<Button type="submit" size="sm" class="w-full rounded-md text-[12px] font-medium">
-								Escalate to compliance
-							</Button>
-						</form>
-						<form method="POST" action="?/decide" use:enhance={enhanceGov}>
-							<input type="hidden" name="entityId" value={entityId} />
-							<input type="hidden" name="role" value={role} />
-							<input type="hidden" name="decision" value="dismiss" />
+							<input type="hidden" name="asOf" value={asOfIso} />
 							<Button
 								type="submit"
-								variant="outline"
 								size="sm"
-								class="w-full rounded-md text-[12px]"
+								disabled={analyzing}
+								class="w-full rounded-md text-[12px] font-medium"
 							>
-								Dismiss
+								<MagnifyingGlass size={13} weight="bold" class="mr-1.5" />
+								{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
 							</Button>
 						</form>
+
+						<!-- The decision lives below the tool you use to make it. -->
+						<div
+							class="text-muted2 my-0.5 flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase"
+						>
+							<span class="bg-line h-px flex-1"></span>
+							decide
+							<span class="bg-line h-px flex-1"></span>
+						</div>
+						<div class="flex gap-2">
+							<form method="POST" action="?/decide" use:enhance={enhanceGov} class="flex-1">
+								<input type="hidden" name="entityId" value={entityId} />
+								<input type="hidden" name="role" value={role} />
+								<input type="hidden" name="decision" value="escalate" />
+								<Button
+									type="submit"
+									variant="destructive"
+									size="sm"
+									class="w-full rounded-md text-[12px] font-medium"
+								>
+									Escalate
+								</Button>
+							</form>
+							<form method="POST" action="?/decide" use:enhance={enhanceGov} class="flex-1">
+								<input type="hidden" name="entityId" value={entityId} />
+								<input type="hidden" name="role" value={role} />
+								<input type="hidden" name="decision" value="dismiss" />
+								<Button
+									type="submit"
+									variant="outline"
+									size="sm"
+									class="w-full rounded-md text-[12px]"
+								>
+									Dismiss
+								</Button>
+							</form>
+						</div>
 					</div>
 				{:else}
 					<p class="text-muted2 text-[11px] leading-relaxed">Awaiting analyst review.</p>
@@ -187,27 +218,52 @@
 				</div>
 				{#if role === 'compliance_officer'}
 					<div class="flex flex-col gap-2">
-						<form method="POST" action="?/review" use:enhance={enhanceGov}>
+						<!-- Investigate first: review the Stage 3 synthesis before the checkpoint. -->
+						<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze}>
 							<input type="hidden" name="entityId" value={entityId} />
-							<input type="hidden" name="role" value={role} />
-							<input type="hidden" name="decision" value="approve" />
-							<Button type="submit" size="sm" class="w-full rounded-md text-[12px] font-medium">
-								Approve · re-KYC
-							</Button>
-						</form>
-						<form method="POST" action="?/review" use:enhance={enhanceGov}>
-							<input type="hidden" name="entityId" value={entityId} />
-							<input type="hidden" name="role" value={role} />
-							<input type="hidden" name="decision" value="reject" />
+							<input type="hidden" name="asOf" value={asOfIso} />
 							<Button
 								type="submit"
-								variant="outline"
+								variant="ghost"
 								size="sm"
-								class="w-full rounded-md text-[12px]"
+								disabled={analyzing}
+								class="text-muted2 hover:text-text hover:bg-panel2 w-full rounded-md text-[11px]"
 							>
-								Reject · return to analyst
+								<MagnifyingGlass size={13} weight="bold" class="mr-1.5" />
+								{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
 							</Button>
 						</form>
+
+						<div
+							class="text-muted2 my-0.5 flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase"
+						>
+							<span class="bg-line h-px flex-1"></span>
+							decide
+							<span class="bg-line h-px flex-1"></span>
+						</div>
+						<div class="flex gap-2">
+							<form method="POST" action="?/review" use:enhance={enhanceGov} class="flex-1">
+								<input type="hidden" name="entityId" value={entityId} />
+								<input type="hidden" name="role" value={role} />
+								<input type="hidden" name="decision" value="approve" />
+								<Button type="submit" size="sm" class="w-full rounded-md text-[12px] font-medium">
+									Approve
+								</Button>
+							</form>
+							<form method="POST" action="?/review" use:enhance={enhanceGov} class="flex-1">
+								<input type="hidden" name="entityId" value={entityId} />
+								<input type="hidden" name="role" value={role} />
+								<input type="hidden" name="decision" value="reject" />
+								<Button
+									type="submit"
+									variant="outline"
+									size="sm"
+									class="w-full rounded-md text-[12px]"
+								>
+									Reject
+								</Button>
+							</form>
+						</div>
 					</div>
 				{:else}
 					<p class="text-muted2 text-[11px] leading-relaxed">
@@ -225,22 +281,6 @@
 					<span class="text-muted2">○</span>
 					<span class="text-text">Dismissed{last ? ` by ${last.actor}` : ''}</span>
 				</div>
-			{/if}
-
-			{#if status === 'open' || status === 'pending_approval'}
-				<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze} class="mt-2">
-					<input type="hidden" name="entityId" value={entityId} />
-					<input type="hidden" name="asOf" value={asOfIso} />
-					<Button
-						type="submit"
-						variant="ghost"
-						size="sm"
-						disabled={analyzing}
-						class="text-muted2 hover:text-text hover:bg-panel2 w-full rounded-md text-[11px]"
-					>
-						{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
-					</Button>
-				</form>
 			{/if}
 
 			{#if llmNote}

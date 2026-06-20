@@ -10,7 +10,7 @@
 <main class="flex min-h-0 min-w-0 flex-col gap-4">
 	<div class="border-line bg-panel flex shrink-0 flex-col gap-3 rounded-lg border p-4">
 		<div class="text-muted2 text-[10px] tracking-[0.16em] uppercase">Drift vector · 5 axes</div>
-		<div class="grid h-[244px] grid-cols-[280px_1fr] gap-6">
+		<div class="grid min-h-[244px] grid-cols-[280px_1fr] items-center gap-6">
 			<div class="flex items-center justify-center">
 				<DriftRadar axes={entity.drift.axes} status={entity.drift.status} />
 			</div>
