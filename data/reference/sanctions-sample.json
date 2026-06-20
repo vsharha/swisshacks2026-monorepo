@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Viktor Petrov",
+    "aliases": ["V. Petrov", "Viktor Petrow"],
+    "list": "OFAC SDN",
+    "type": "sanction",
+    "country": "RU",
+    "sourceUrl": "https://sanctionssearch.ofac.treas.gov/"
+  },
+  {
+    "name": "Reza Najafi",
+    "aliases": [],
+    "list": "EU Consolidated",
+    "type": "sanction",
+    "country": "IR",
+    "sourceUrl": "https://www.sanctionsmap.eu/"
+  },
+  {
+    "name": "Hamad Al-Rashed",
+    "aliases": ["H. Al Rashed"],
+    "list": "PEP",
+    "type": "pep",
+    "country": "AE",
+    "sourceUrl": "https://www.opensanctions.org/"
+  }
+]

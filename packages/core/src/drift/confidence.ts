@@ -10,6 +10,7 @@ import { type Signal, type Source } from "../schemas/index.ts";
 export const SOURCE_QUALITY: Record<Source, number> = {
   opensanctions: 0.97,
   gleif: 0.95,
+  regulator: 0.92,
   sec_edgar: 0.95,
   opencorporates: 0.85,
   wayback: 0.7,

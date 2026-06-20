@@ -36,6 +36,7 @@ export const SourceSchema = z.enum([
   "wayback",
   "opensanctions",
   "gleif",
+  "regulator",
   "opencorporates",
   "manual",
 ]);

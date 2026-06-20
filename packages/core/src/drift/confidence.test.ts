@@ -14,6 +14,11 @@ describe("SOURCE_QUALITY", () => {
     expect(sourceQuality("sec_edgar")).toBeGreaterThan(sourceQuality("eventregistry"));
     expect(sourceQuality("opensanctions")).toBeGreaterThan(sourceQuality("manual"));
   });
+
+  it("includes the regulator source with a high prior", () => {
+    expect(sourceQuality("regulator")).toBeGreaterThanOrEqual(0.9);
+    expect(sourceQuality("regulator")).toBeLessThan(sourceQuality("opensanctions"));
+  });
 });
 
 describe("recencyWeight", () => {
