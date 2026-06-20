@@ -1,6 +1,8 @@
 # Frontend — "Risk Control Room"
 
 > See `product.md` for what the UI presents and `techstack.md` for the engine behind it.
+>
+> **Alternative direction:** `amina-design-system.md` reskins this in AMINA Bank's real brand language (light, teal, Bitter + Satoshi) — a calm supervisory dashboard rather than a dark terminal. The drift radar, 5-axis model, and mono data are shared; only chrome, palette, and type differ.
 
 ## Direction
 
