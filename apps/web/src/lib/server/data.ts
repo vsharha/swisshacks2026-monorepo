@@ -39,10 +39,12 @@ export function loadBook(): EntityData[] {
 		const baseline = KYCBaselineSchema.parse(readJson(`baselines/${file}`));
 		const signals: Signal[] = [];
 		const sigDir = join(dataDir, 'signals');
-		for (const source of ['eventregistry', 'sec']) {
-			const rel = `signals/${baseline.entityId}.${source}.json`;
-			if (existsSync(join(sigDir, `${baseline.entityId}.${source}.json`))) {
-				signals.push(...SignalArraySchema.parse(readJson(rel)));
+		// Load every signal file for this entity, regardless of source suffix
+		// (eventregistry, sec, screen, …) — one connector layer, many sources.
+		const prefix = `${baseline.entityId}.`;
+		for (const file of readdirSync(sigDir)) {
+			if (file.startsWith(prefix) && file.endsWith('.json')) {
+				signals.push(...SignalArraySchema.parse(readJson(`signals/${file}`)));
 			}
 		}
 		book.push({ baseline, signals });
