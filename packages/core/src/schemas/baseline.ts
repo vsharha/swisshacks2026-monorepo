@@ -12,6 +12,11 @@ export const BeneficialOwnerSchema = z.object({
   /** Ownership fraction in [0, 1], when known. */
   share: Score.optional(),
   role: z.string().optional(),
+  /** Country of origin — ISO 3166-1 alpha-2 (e.g. "IR"), when known. */
+  nationality: z
+    .string()
+    .regex(/^[A-Z]{2}$/, "nationality must be an ISO 3166-1 alpha-2 code")
+    .optional(),
 });
 export type BeneficialOwner = z.infer<typeof BeneficialOwnerSchema>;
 
