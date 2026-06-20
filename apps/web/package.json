@@ -48,6 +48,7 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/bitter": "^5.2.10",
-		"@kyc/core": "workspace:*"
+		"@kyc/core": "workspace:*",
+		"cobe": "^2.0.1"
 	}
 }

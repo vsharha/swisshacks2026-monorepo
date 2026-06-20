@@ -9,6 +9,7 @@
 	import LeftRail from '$lib/components/app/LeftRail.svelte';
 	import EntityView from '$lib/components/app/EntityView.svelte';
 	import PatternRail from '$lib/components/app/PatternRail.svelte';
+	import BookGlobe from '$lib/components/app/BookGlobe.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -147,6 +148,11 @@
 				{enhanceDecide}
 				{enhanceAnalyze}
 			/>
+		{:else}
+			<!-- Home / empty state · client-book globe spans the center + right rail -->
+			<div class="col-span-2 min-h-0 self-stretch">
+				<BookGlobe {book} onselect={(id) => (selectedId = id)} />
+			</div>
 		{/if}
 	</div>
 
