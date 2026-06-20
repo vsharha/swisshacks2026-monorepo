@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
-	import { AXES, type Alert } from '@kyc/core';
+	import { AXES } from '@kyc/core';
 	import { scoreDriftVector } from '@kyc/core/drift';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import TimelineScrubber from '$lib/components/app/TimelineScrubber.svelte';
@@ -24,7 +24,6 @@
 
 	// Stage 3 deep analysis — server-side LLM via the `analyze` form action.
 	let analyzing = $state(false);
-	let llmAlert = $state<Alert | null>(null);
 	let llmNote = $state<string | null>(null);
 	let llmCost = $state<{
 		stage2Calls: number;
@@ -44,7 +43,6 @@
 	const enhanceAnalyze: SubmitFunction = () => {
 		analyzing = true;
 		llmNote = null;
-		llmAlert = null;
 		llmCost = null;
 		return async ({ result }: { result: ActionResult }) => {
 			analyzing = false;
@@ -56,9 +54,9 @@
 			if (typeof body.auditCount === 'number') auditCount = body.auditCount;
 			if (Array.isArray(body.audit)) auditEntries = body.audit as typeof auditEntries;
 			llmCost = (body.cost as typeof llmCost) ?? null;
-			if (body.llm && body.alert) llmAlert = body.alert as Alert;
-			else if (!body.llm)
-				llmNote = 'No ANTHROPIC_API_KEY configured — showing the rule-based recommendation.';
+			if (body.llm && body.alert)
+				llmNote = 'Stage 3 synthesis complete — written to the audit log.';
+			else if (!body.llm) llmNote = 'No ANTHROPIC_API_KEY configured — deep synthesis skipped.';
 			else llmNote = 'Composite below the alert threshold — no Stage 3 synthesis.';
 		};
 	};
@@ -77,14 +75,24 @@
 	};
 
 	const asOfIso = $derived(new Date(asOf).toISOString());
+	const nowIso = $derived(new Date(endMs).toISOString());
 
+	// Book register shows each customer's CURRENT drift — independent of the
+	// timeline scrubber, which only replays the selected customer below.
 	const book = $derived(
 		data.book.map((e) => ({
 			...e,
-			drift: scoreDriftVector(e.baseline, e.signals, { asOf: asOfIso })
+			drift: scoreDriftVector(e.baseline, e.signals, { asOf: nowIso })
 		}))
 	);
-	const selected = $derived(book.find((e) => e.baseline.entityId === selectedId));
+
+	// The selected customer is scored at the scrubber clock (the timeline replays it).
+	const selected = $derived.by(() => {
+		const e = data.book.find((x) => x.baseline.entityId === selectedId);
+		return e
+			? { ...e, drift: scoreDriftVector(e.baseline, e.signals, { asOf: asOfIso }) }
+			: undefined;
+	});
 
 	// Cost cascade for the selected entity at the current clock.
 	const funnel = $derived.by(() => {
@@ -102,7 +110,6 @@
 		void selectedId;
 		void asOf;
 		decision = null;
-		llmAlert = null;
 		llmNote = null;
 		llmCost = null;
 	});
@@ -127,7 +134,7 @@
 
 		<!-- Center · selected entity · right rail · pattern match + action -->
 		{#if selected}
-			<EntityView entity={selected} {asOfIso} {llmAlert} />
+			<EntityView entity={selected} {asOfIso} />
 
 			<PatternRail
 				entity={selected}
