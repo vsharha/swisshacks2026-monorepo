@@ -63,4 +63,14 @@ describe("governanceCheck (separation of duties)", () => {
   it("blocks a second escalate while pending", () => {
     expect(governanceCheck("analyst", "escalate", "pending_approval").ok).toBe(false);
   });
+  it("lets an analyst dismiss an open case", () => {
+    expect(governanceCheck("analyst", "dismiss", "open").ok).toBe(true);
+  });
+  it("blocks any analyst action on a dismissed (terminal) case", () => {
+    expect(governanceCheck("analyst", "dismiss", "dismissed").ok).toBe(false);
+    expect(governanceCheck("analyst", "escalate", "dismissed").ok).toBe(false);
+  });
+  it("lets compliance reject a pending case", () => {
+    expect(governanceCheck("compliance_officer", "reject", "pending_approval").ok).toBe(true);
+  });
 });

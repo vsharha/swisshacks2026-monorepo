@@ -57,9 +57,7 @@ export function governanceCheck(
 ): { ok: boolean; reason?: string } {
   if (decision === "escalate" || decision === "dismiss") {
     if (role !== "analyst") return { ok: false, reason: "Only an analyst may escalate or dismiss." };
-    if (status === "pending_approval")
-      return { ok: false, reason: "Case already pending compliance approval." };
-    if (status === "approved") return { ok: false, reason: "Case already approved." };
+    if (status !== "open") return { ok: false, reason: `Case is ${status}; no analyst action available.` };
     return { ok: true };
   }
   // approve / reject
