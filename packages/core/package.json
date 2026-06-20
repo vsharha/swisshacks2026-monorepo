@@ -12,6 +12,7 @@
     "./graph": "./src/graph/index.ts",
     "./util": "./src/util/index.ts",
     "./drift": "./src/drift/index.ts",
+    "./governance": "./src/governance/index.ts",
     "./llm": "./src/llm/index.ts"
   },
   "scripts": {
