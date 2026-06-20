@@ -266,9 +266,13 @@ canonical seam; transaction-monitoring anomalies route to the existing `reputati
 and `datastructure.md`'s "crypto-native risk" sat parked as a standalone dimension
 the 5-axis model had no room for.
 
-**Add:** wire crypto as **another asset class, not a special case** (AMINA's
-framing — "another asset type, not something scary"): on-chain exposure enriches the
-*existing* axes rather than forking a new one.
+**Add:** treat crypto as **an asset-exposure lens on ordinary clients, not a client
+type** (AMINA's framing — "another asset type, not something scary"; AMINA manages
+clients who *hold* assets in crypto, most of them not crypto-native firms). Crypto
+exposure on any customer enriches the *existing* axes rather than forking a new one.
+The book's `strategy` hero is exactly this case: an enterprise-software company whose
+risk profile drifted because it moved its treasury into Bitcoin — caught on
+`business_model` + `scale`, no crypto-specific axis required.
 
 1. **Wallet & counterparty screening** — a `connectors/chain.ts` (or a screening
    provider) resolves an entity's disclosed wallets and scores mixer, darknet and
