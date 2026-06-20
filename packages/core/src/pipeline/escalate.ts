@@ -1,12 +1,14 @@
 import { scoreDriftVector } from "../drift/score.ts";
 import {
   AXES,
+  RelationshipPathSchema,
   type Alert,
   type AuditEntry,
   type DriftAxis,
   type DriftVector,
   type KYCBaseline,
   type PatternArchetype,
+  type RelationshipPath,
   type RiskStatus,
   type Signal,
 } from "../schemas/index.ts";
@@ -47,6 +49,20 @@ export interface Stage3Outcome {
 
 /** Minimum composite jump since the last evaluation that escalates on its own. */
 export const ESCALATION_DELTA = 0.15;
+
+/**
+ * Pull the relationship paths carried by graph-derived signals (proposal 3) so
+ * Stage 3 can attach them to the alert as citable explainability. Signals
+ * without a valid `payload.path` are ignored.
+ */
+export function relationshipPathsFromSignals(signals: Signal[]): RelationshipPath[] {
+  const paths: RelationshipPath[] = [];
+  for (const s of signals) {
+    const parsed = RelationshipPathSchema.safeParse(s.payload.path);
+    if (parsed.success) paths.push(parsed.data);
+  }
+  return paths;
+}
 
 export interface EscalationGate {
   escalated: boolean;
@@ -168,6 +184,7 @@ export async function runEscalation(params: RunEscalationParams): Promise<Escala
     signals,
     archetypes,
     alertId,
+    relationshipPaths: relationshipPathsFromSignals(evidence),
   });
   tally(model, usage);
 

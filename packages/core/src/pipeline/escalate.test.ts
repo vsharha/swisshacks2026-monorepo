@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { ESCALATION_DELTA, escalationGate, priorComposite } from "./escalate.ts";
-import type { AuditEntry } from "../schemas/index.ts";
+import {
+  ESCALATION_DELTA,
+  escalationGate,
+  priorComposite,
+  relationshipPathsFromSignals,
+} from "./escalate.ts";
+import { SignalSchema, type AuditEntry, type Signal } from "../schemas/index.ts";
 
 describe("escalationGate", () => {
   it("escalates on an absolute alert regardless of prior", () => {
@@ -48,5 +53,34 @@ describe("priorComposite", () => {
 
   it("ignores other entities and returns undefined when none", () => {
     expect(priorComposite([entry({ entityId: "other" })], "e1")).toBeUndefined();
+  });
+});
+
+describe("relationshipPathsFromSignals", () => {
+  const path = {
+    nodes: [
+      { id: "org:e1", label: "E1", type: "entity" },
+      { id: "person:p", label: "P", type: "individual" },
+    ],
+    edges: ["CONTROLS"],
+  };
+  const signal = (payload: Record<string, unknown>): Signal =>
+    SignalSchema.parse({
+      id: "s1",
+      entityId: "e1",
+      axis: "ownership",
+      type: "graph_exposure",
+      date: "2026-06-20",
+      sourceUrl: "https://example.com/x",
+      title: "t",
+      source: "graph",
+      payload,
+      confidence: 0.5,
+    });
+
+  it("extracts paths from graph signals and ignores signals without one", () => {
+    const paths = relationshipPathsFromSignals([signal({ path }), signal({ other: 1 })]);
+    expect(paths).toHaveLength(1);
+    expect(paths[0]!.edges).toEqual(["CONTROLS"]);
   });
 });

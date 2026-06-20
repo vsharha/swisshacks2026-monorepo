@@ -10,6 +10,7 @@ import {
   type DriftVector,
   type KYCBaseline,
   type PatternArchetype,
+  type RelationshipPath,
   type Signal,
 } from "../schemas/index.ts";
 import {
@@ -57,6 +58,8 @@ export interface SynthesizeAlertParams {
   archetypes: PatternArchetype[];
   /** Stable id for the produced alert. */
   alertId: string;
+  /** Relationship chains (proposal 3) to attach to the alert as explainability. */
+  relationshipPaths?: RelationshipPath[];
 }
 
 function renderArchetypes(archetypes: PatternArchetype[]): string {
@@ -150,6 +153,7 @@ export async function synthesizeAlert(
     reasoning: draft.reasoning,
     citations,
     patternMatch,
+    relationshipPaths: params.relationshipPaths ?? [],
     confidence: draft.confidence,
     modelVersion: model,
   } satisfies Record<string, unknown>);
