@@ -6,6 +6,7 @@ import {
   Score,
   Timestamp,
 } from "./common.ts";
+import { RelationshipPathSchema } from "./graph.ts";
 
 /**
  * A match against the pattern library (reasoning by analogy). Lets an alert
@@ -48,6 +49,8 @@ export const AlertSchema = z.object({
   reasoning: z.string().min(1),
   citations: z.array(CitationSchema).min(1),
   patternMatch: PatternMatchSchema.optional(),
+  /** Relationship chains that produced graph-derived risk (proposal 3). */
+  relationshipPaths: z.array(RelationshipPathSchema).default([]),
   confidence: Confidence,
   /** Model that produced this synthesis (audit trail). */
   modelVersion: z.string().min(1),

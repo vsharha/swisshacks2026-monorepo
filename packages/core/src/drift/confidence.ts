@@ -13,6 +13,7 @@ export const SOURCE_QUALITY: Record<Source, number> = {
   regulator: 0.92,
   sec_edgar: 0.95,
   opencorporates: 0.85,
+  graph: 0.7,
   wayback: 0.7,
   eventregistry: 0.7,
   manual: 0.6,
