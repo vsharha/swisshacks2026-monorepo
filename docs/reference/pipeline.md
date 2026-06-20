@@ -122,6 +122,10 @@ functions, runtime key).
 | **EventRegistry** | `eventRegistry.ts` | Entity-resolved news, sentiment, event-cluster dedup | Provided key reaches **~last 30 days** only; English-first; 100 articles/call |
 | **SEC EDGAR** | `secEdgar.ts` | Ground-truth structural filings (8-K rename/asset-sale/financing, delisting) | **US public companies only**; free + permanent |
 | **SEC enforcement** | `secEnforcement.ts` | Litigation releases + administrative proceedings → regulator-grade `reputation` (named respondents) | Recent feed window; matched by respondent name |
+| **GLEIF** | `gleif.ts` | LEI parent/child consolidation → `ownership` graph edges (control structure) | Scaffold fetch; feeds `buildGraph` extraEdges |
+| **Market** | `market.ts` | Funding rounds, valuation/liquidity events → structured `scale` | Scaffold fetch over sample fixture |
+| **Chain** | `chain.ts` | Wallet screening → `reputation`/`ownership`; on-chain treasury → `business_model`/`scale`; wallet graph nodes | Scaffold fetch; crypto as an asset lens, not a new axis |
+| **Internal / MCP** | `internal.ts` | Bank's own KYC/investigation/txn-monitoring history → `reputation`/`ownership` + `Outcome` entries (historical-accuracy term) | Scaffold MCP fetch; regulator-grade confidence |
 | **RSS** | `rss.ts` | Curated global feeds (regulators, finance, regional), full-text via Readability, Google-News unwrap | Free, multilingual breadth; **recent-only** (no history); free-text entity match |
 
 EventRegistry is the recent adverse-media texture; SEC EDGAR is the permanent
@@ -142,16 +146,18 @@ knowing:
    highest-confidence representative. `dedupeByEvent` is retained as a back-compat
    alias that delegates to it.
 
-**Ingestion status** (tracked in `pipeline-proposals.md`): the early gaps are now
-largely closed — dedup clusters **across** sources (proposal 9), sanctions/PEP +
-country screening feed the cascade (proposals 4/6), RSS adds **free multilingual
-breadth** (proposal 7), ingestion is **incremental/watermarked** with bounded
-concurrency + retry/backoff (proposals 10/11), and Stage-0 routing handles a few
-non-English structural terms. What remains: the heavy NER entity filter (proposal
-8) and the registry/regulator/market, internal-MCP and on-chain **source**
-connectors (proposals 12–14), to land as typed scaffolds over fixtures. Note RSS,
-like EventRegistry, is **recent-only** — historical depth comes from filings and
-registries, not free news.
+**Ingestion status** (tracked in `pipeline-proposals.md`): all 14 proposals have
+landed. Dedup clusters **across** sources (9); sanctions/PEP + country screening
+feed the cascade (4/6); RSS adds **free multilingual breadth** (7); ingestion is
+**incremental/watermarked** with bounded concurrency + retry/backoff (10/11); the
+graph layer surfaces hidden controllers and propagates confirmed drift (3/5); and
+the source layer spans SEC enforcement, GLEIF, market, on-chain and the bank's own
+internal history (12/13/14), the last closing the confidence engine's
+historical-accuracy term. Entity resolution defaults to the cheap normalized-form
+matcher with an opt-in NER seam (8). Credentialed sources ship as typed scaffolds
+over fixtures; SEC (filings + enforcement) and RSS run live. Note RSS, like
+EventRegistry, is **recent-only** — historical depth comes from filings/registries,
+not free news.
 
 ### Core files
 
