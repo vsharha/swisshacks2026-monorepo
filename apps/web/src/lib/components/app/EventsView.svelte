@@ -40,10 +40,10 @@
 							>{s.confidence.toFixed(2)}</span
 						>
 					</div>
-					<span>{s.type}</span>
 					{#if s.source === 'eventregistry'}
-						<span class="text-muted2 truncate">{s.title}</span>
+						<span class="text-text">{s.title}</span>
 					{/if}
+					<span class="text-muted2 text-[10px]">type: {s.type.replace(/_/g, ' ')}</span>
 				</div>
 			</div>
 		{/each}
