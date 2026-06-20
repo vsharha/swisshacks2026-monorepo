@@ -92,7 +92,7 @@ the HITL gate → every step is logged with its token cost.
 
 ## Proposed additions
 
-Four enhancements that strengthen the existing cascade. Each is **additive**: it
+Five enhancements that strengthen the existing cascade. Each is **additive**: it
 reuses the `Signal` seam and the 5-axis model, and slots into a named stage above
 rather than replacing it.
 
@@ -101,11 +101,22 @@ rather than replacing it.
 **Now:** `scoreAxis` sets an axis's `confidence` to the *max* of its signals'
 confidences — a single-signal proxy with no notion of corroboration.
 
-**Add:** a `confidenceForAxis(signals)` helper that combines **source diversity**
-(distinct `sourceUrl`/connector), **corroboration** (independent signals agreeing),
-**recency**, and **citation count** into the existing `AxisDrift.confidence` field.
-Slots into Stage 1 (`drift/score.ts`); changes no schemas. Directly strengthens
-the "confidence on every claim" guardrail in the compliance story.
+**Add:** a `confidenceForAxis(signals)` helper that scores confidence as an
+explicit weighted blend (formula from `datastructure.md`):
+
+```text
+confidence = 0.40 · source quality
+           + 0.25 · corroboration       (independent sources agreeing)
+           + 0.20 · freshness           (recency of the evidence)
+           + 0.15 · historical accuracy
+```
+
+**Source quality** is a per-connector prior keyed on the `source` field the
+connectors already set — e.g. `opensanctions`/`sec_edgar`/`gleif` ≈ 0.95+,
+EventRegistry adverse media ≈ 0.6–0.9, `manual`/social ≈ 0.5–0.8. Writes the
+existing `AxisDrift.confidence` field; changes no schemas. Keeps risk and
+confidence separate (a high-confidence signal can still be low-risk) and directly
+strengthens the "confidence on every claim" guardrail.
 
 ### 2. Change-triggered (delta) alerting
 
@@ -123,12 +134,19 @@ the audit log. Additive to `statusForScore`, not a replacement.
 **Now:** baselines list beneficial owners, but nothing walks the relationships;
 the `ownership` axis sees only news about the entity itself.
 
-**Add:** a small relationship layer (beneficial owners, co-mentioned entities,
-shared investors — derivable from baselines + EventRegistry co-mentions) that emits
-an **ownership-axis enricher `Signal`** when risk propagates through a chain (e.g.
-the Wirecard-modeled entity's shadow ownership / offshore investors). Powers a
-dashboard graph view. Output is a normal `Signal`, so Stage 0/1/2 consume it
-unchanged — it enriches the axis, it does not replace signals.
+**Add:** a small relationship layer (derivable from baselines + EventRegistry
+co-mentions) where entities, individuals, investors and countries are **nodes** and
+edges are typed — `OWNS`, `CONTROLS`, `INVESTED_IN`, `OPERATES_IN`,
+`BOARD_MEMBER_OF` (vocabulary from `datastructure.md`). Walking it yields
+1st/2nd/3rd-degree exposure and **hidden-controller detection**, emitting an
+**ownership-axis enricher `Signal`** when risk reaches an entity through a chain
+(e.g. the Wirecard-modeled entity's shadow ownership / offshore investors). Output
+is a normal `Signal`, so Stage 0/1/2 consume it unchanged — it enriches the axis,
+it does not replace signals.
+
+The graph also lets **Stage 3 attach a relationship path** to the `Alert` — the
+edge chain that produced the risk (`entity → UBO → sanctioned party`) — as
+first-class, citable explainability, and powers a dashboard graph view.
 
 ### 4. Geopolitical + regulatory enrichers
 
@@ -139,6 +157,20 @@ country-risk or regulatory-action lookup.
 `jurisdiction` axis and a sanctions/litigation lookup feeding `reputation` — each
 emitting `Signal`s with their own `confidence`. Pure Stage 0/1, no LLM, reusing the
 canonical seam. Keeps the funnel numbers real without adding LLM cost.
+
+### 5. Graph propagation as a re-trigger
+
+**Now:** each entity is scored as an isolated linear pass; a drift on one customer
+never touches another.
+
+**Add:** when Stage 2/3 *confirms* a drift on entity A, enqueue cheap Stage 1
+re-scoring of A's graph neighbours (proposal 3). This is the one change that alters
+the pipeline's *shape* rather than enriching a stage: risk propagates along
+relationships, so a sanctioned new owner moves every entity that owner controls —
+even those with no news of their own. It extends, rather than replaces, the
+change-triggered model: a confirmed drift simply becomes a propagation trigger. The
+neighbour re-scores stay in the cheap tier, so propagation is near-free; only a
+neighbour that itself crosses a threshold escalates.
 
 ## Judging-criteria alignment
 
@@ -151,6 +183,35 @@ The pipeline is built to hit the rubric, not just a raw score:
 | UX & Explainability | 20% | Per-axis drift vector, citations, human-readable alerts |
 | Compliance & Safety | 20% | Zod guardrails, citations, HITL gate, audit log; (proposed) richer confidence engine |
 | Engineering & Architecture | 15% | Modular stages, one-connector-two-callers seam, shared Zod schemas |
+
+## Rejected / out of scope
+
+Ideas weighed from the source material and deliberately **not** folded into the
+cascade, with the reason.
+
+**From the original generic-batch pipeline draft:**
+
+- **Six parallel domain risk models** (entity / graph / behavioral / event /
+  regulatory / geopolitical) as the organizing *structure* — the cascade organizes
+  risk by **drift axis**, which fits the change-from-baseline thesis. Only graph,
+  geo and regulatory survived, and only as *evidence feeding existing axes*.
+- **A single composite `final_score` per company** as the primary output — the
+  per-axis drift vector is the intelligence *and* the dashboard; collapsing it to
+  one number loses the explainability.
+- **Self-reported "judging-criteria scores" computed inside the pipeline** — a
+  presentation artifact, not a risk signal; it belongs in the pitch, not the engine.
+
+**From `datastructure.md` (the intelligence-layer vision):**
+
+- **The 9 static risk *dimensions*** replacing the 5 drift axes — a different mental
+  model (static risk vs. change-from-baseline), not a superset. Kept the axes.
+- **The reshaped `Signal`** (`signalType` / `riskDimension` / `timestamp` /
+  `severity` / `metadata`) — renaming the canonical seam is a breaking change that
+  ripples through every stage; the additions above need none of it.
+- **Twice-daily batch schedule (08:00 / 20:00 UTC)** — *more* rigid than the
+  change-triggered + time-scrubber runtime; adopting it would undercut the cost story.
+- **Crypto-native / blockchain and social (LinkedIn) intelligence** — beyond the
+  hero-entity demo scope, with no source wired for them.
 
 ## Notes
 
