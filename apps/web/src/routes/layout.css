@@ -12,7 +12,7 @@
 
 /* ── Risk Control Room ─────────────────────────────────────────────────────
    A dark instrumentation terminal. Greyscale everywhere; risk is the only
-   saturated colour. See docs/reference/frontend.md. */
+   saturated colour. See docs/reference/amina-design-system.md. */
 :root {
 	color-scheme: dark;
 

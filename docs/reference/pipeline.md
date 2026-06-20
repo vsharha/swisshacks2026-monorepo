@@ -7,11 +7,8 @@ entities — that actually moved.
 
 > See `product.md` for the drift model and scenario, `techstack.md` for the cost
 > architecture and the `Signal` seam. This doc describes the implementation in
-> `@kyc/core` and how it's invoked from `apps/web`.
-
-This document is split into two parts: **[As built](#as-built)** — the current
-TypeScript cascade — and **[Proposed additions](#proposed-additions)** — enhancements
-that layer onto that base without replacing it.
+> `@kyc/core` and how it's invoked from `apps/web`. Candidate enhancements —
+> accepted and refused — live in `pipeline-proposals.md`.
 
 ## As built
 
@@ -31,8 +28,9 @@ independently and combined into a weighted composite:
 
 1. **Ingestion → `Signal`** (`packages/core/src/connectors/`)
    Connectors (EventRegistry, SEC EDGAR, …) normalize raw records into the Zod
-   `Signal` contract: `{ entityId, axis, type, date, sourceUrl, title, payload,
-   confidence }`. This is the canonical seam — every downstream stage consumes it.
+   `Signal` contract: `{ id, entityId, axis, type, date, sourceUrl, title, source,
+   payload, confidence }`. This is the canonical seam — every downstream stage
+   consumes it. See [Sources & ingestion](#sources--ingestion) below.
 
 2. **Stage 0 — deterministic axis routing** (`packages/core/src/pipeline/stage0.ts`)
    `classifyAxis(text)` routes a headline to a drift axis by keyword/regex rules
@@ -71,6 +69,41 @@ independently and combined into a weighted composite:
    live cost funnel. Stage verdicts, escalation decisions, the alert and the
    analyst's escalate/dismiss decision all append to the audit log.
 
+### Sources & ingestion
+
+The connectors are framework-agnostic: they take `apiKey` / `userAgent` as
+arguments and never read `process.env`, so the **same code powers two callers
+without leaking each other's config** — offline extraction (`@kyc/scripts`,
+`extract/*.ts` → versioned JSON in `data/`) and the live SvelteKit routes (same
+functions, runtime key).
+
+| Source | Connector | Covers | Limits |
+|---|---|---|---|
+| **EventRegistry** | `eventRegistry.ts` | Entity-resolved news, sentiment, event-cluster dedup | Provided key reaches **~last 30 days** only; English-first; 100 articles/call |
+| **SEC EDGAR** | `secEdgar.ts` | Ground-truth structural filings (8-K rename/asset-sale/financing, delisting) | **US public companies only**; free + permanent |
+
+EventRegistry is the recent adverse-media texture; SEC EDGAR is the permanent
+structural spine (the split exists because the provided ER key can't reach
+history). A signal is built in five steps, with two non-obvious behaviors worth
+knowing:
+
+1. **Resolve** — ER `suggestConcept` maps a name → `conceptUri`; SEC uses a CIK.
+2. **Fetch** — `fetchArticlesWindowed` splits the range into day-windows (so the
+   100-article-per-call cap never silently truncates older events).
+3. **Classify** — `stage0.classifyAxis` (news regex) or `classifyFiling` (8-K
+   item-code → axis map) routes each item to an axis with a confidence.
+4. **Normalize + validate** — records are `safeParse`d; **failures are dropped,
+   not thrown**, so one bad URL never aborts a batch.
+5. **Dedup** — `dedupeByEvent` collapses ER articles sharing an `eventUri` into
+   one event and records `clusterSize` (the native ER cost lever).
+
+**Current ingestion gaps** (these motivate the ingestion proposals in
+`pipeline-proposals.md`): structural coverage is **US-public-only**; there are
+**no sanctions / registry / ownership sources**; dedup is **intra-EventRegistry
+only** (an 8-K and the news reporting it don't collapse); and ingestion is
+**stateless** — every run is a full re-pull rather than an incremental, watermarked
+fetch.
+
 ### Core files
 
 - `packages/core/src/schemas/` — Zod contracts: `Signal`, `KYCBaseline`,
@@ -90,88 +123,6 @@ the moved axes → Stage 2 reasons on those axes → composite crosses 0.7 → S
 synthesizes the RE-KYC alert with a pattern match → analyst escalates/dismisses at
 the HITL gate → every step is logged with its token cost.
 
-## Proposed additions
-
-Five enhancements that strengthen the existing cascade. Each is **additive**: it
-reuses the `Signal` seam and the 5-axis model, and slots into a named stage above
-rather than replacing it.
-
-### 1. Confidence engine
-
-**Now:** `scoreAxis` sets an axis's `confidence` to the *max* of its signals'
-confidences — a single-signal proxy with no notion of corroboration.
-
-**Add:** a `confidenceForAxis(signals)` helper that scores confidence as an
-explicit weighted blend (formula from `datastructure.md`):
-
-```text
-confidence = 0.40 · source quality
-           + 0.25 · corroboration       (independent sources agreeing)
-           + 0.20 · freshness           (recency of the evidence)
-           + 0.15 · historical accuracy
-```
-
-**Source quality** is a per-connector prior keyed on the `source` field the
-connectors already set — e.g. `opensanctions`/`sec_edgar`/`gleif` ≈ 0.95+,
-EventRegistry adverse media ≈ 0.6–0.9, `manual`/social ≈ 0.5–0.8. Writes the
-existing `AxisDrift.confidence` field; changes no schemas. Keeps risk and
-confidence separate (a high-confidence signal can still be low-risk) and directly
-strengthens the "confidence on every claim" guardrail.
-
-### 2. Change-triggered (delta) alerting
-
-**Now:** Stage 3 fires only on an *absolute* composite `>= 0.7`.
-
-**Add:** also escalate when the composite **jumps** by a configured delta since the
-last `drift_evaluated` audit entry, even below the absolute threshold. This makes
-techstack.md's *change-triggered evaluation* thesis literally true in code — a
-stable customer that suddenly moves is caught on the delta, not just the level.
-Slots into the escalation gate (`pipeline/escalate.ts`) reading prior state from
-the audit log. Additive to `statusForScore`, not a replacement.
-
-### 3. Knowledge graph / graph-risk signal
-
-**Now:** baselines list beneficial owners, but nothing walks the relationships;
-the `ownership` axis sees only news about the entity itself.
-
-**Add:** a small relationship layer (derivable from baselines + EventRegistry
-co-mentions) where entities, individuals, investors and countries are **nodes** and
-edges are typed — `OWNS`, `CONTROLS`, `INVESTED_IN`, `OPERATES_IN`,
-`BOARD_MEMBER_OF` (vocabulary from `datastructure.md`). Walking it yields
-1st/2nd/3rd-degree exposure and **hidden-controller detection**, emitting an
-**ownership-axis enricher `Signal`** when risk reaches an entity through a chain
-(e.g. the Wirecard-modeled entity's shadow ownership / offshore investors). Output
-is a normal `Signal`, so Stage 0/1/2 consume it unchanged — it enriches the axis,
-it does not replace signals.
-
-The graph also lets **Stage 3 attach a relationship path** to the `Alert` — the
-edge chain that produced the risk (`entity → UBO → sanctioned party`) — as
-first-class, citable explainability, and powers a dashboard graph view.
-
-### 4. Geopolitical + regulatory enrichers
-
-**Now:** Stage 0 keyword-routes jurisdiction and reputation signals, but there's no
-country-risk or regulatory-action lookup.
-
-**Add:** cheap deterministic enrichers — a country-risk list feeding the
-`jurisdiction` axis and a sanctions/litigation lookup feeding `reputation` — each
-emitting `Signal`s with their own `confidence`. Pure Stage 0/1, no LLM, reusing the
-canonical seam. Keeps the funnel numbers real without adding LLM cost.
-
-### 5. Graph propagation as a re-trigger
-
-**Now:** each entity is scored as an isolated linear pass; a drift on one customer
-never touches another.
-
-**Add:** when Stage 2/3 *confirms* a drift on entity A, enqueue cheap Stage 1
-re-scoring of A's graph neighbours (proposal 3). This is the one change that alters
-the pipeline's *shape* rather than enriching a stage: risk propagates along
-relationships, so a sanctioned new owner moves every entity that owner controls —
-even those with no news of their own. It extends, rather than replaces, the
-change-triggered model: a confirmed drift simply becomes a propagation trigger. The
-neighbour re-scores stay in the cheap tier, so propagation is near-free; only a
-neighbour that itself crosses a threshold escalates.
-
 ## Judging-criteria alignment
 
 The pipeline is built to hit the rubric, not just a raw score:
@@ -184,37 +135,8 @@ The pipeline is built to hit the rubric, not just a raw score:
 | Compliance & Safety | 20% | Zod guardrails, citations, HITL gate, audit log; (proposed) richer confidence engine |
 | Engineering & Architecture | 15% | Modular stages, one-connector-two-callers seam, shared Zod schemas |
 
-## Rejected / out of scope
-
-Ideas weighed from the source material and deliberately **not** folded into the
-cascade, with the reason.
-
-**From the original generic-batch pipeline draft:**
-
-- **Six parallel domain risk models** (entity / graph / behavioral / event /
-  regulatory / geopolitical) as the organizing *structure* — the cascade organizes
-  risk by **drift axis**, which fits the change-from-baseline thesis. Only graph,
-  geo and regulatory survived, and only as *evidence feeding existing axes*.
-- **A single composite `final_score` per company** as the primary output — the
-  per-axis drift vector is the intelligence *and* the dashboard; collapsing it to
-  one number loses the explainability.
-- **Self-reported "judging-criteria scores" computed inside the pipeline** — a
-  presentation artifact, not a risk signal; it belongs in the pitch, not the engine.
-
-**From `datastructure.md` (the intelligence-layer vision):**
-
-- **The 9 static risk *dimensions*** replacing the 5 drift axes — a different mental
-  model (static risk vs. change-from-baseline), not a superset. Kept the axes.
-- **The reshaped `Signal`** (`signalType` / `riskDimension` / `timestamp` /
-  `severity` / `metadata`) — renaming the canonical seam is a breaking change that
-  ripples through every stage; the additions above need none of it.
-- **Twice-daily batch schedule (08:00 / 20:00 UTC)** — *more* rigid than the
-  change-triggered + time-scrubber runtime; adopting it would undercut the cost story.
-- **Crypto-native / blockchain and social (LinkedIn) intelligence** — beyond the
-  hero-entity demo scope, with no source wired for them.
-
 ## Notes
 
 The cascade is intentionally modular so each stage can be improved independently.
-The proposed additions are scoped to land on the existing `Signal` seam and 5-axis
-model — they extend the current implementation rather than fork it.
+Candidate enhancements — accepted and refused, all scoped to land on the existing
+`Signal` seam and 5-axis model — are tracked in `pipeline-proposals.md`.

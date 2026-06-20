@@ -12,7 +12,7 @@ The `@kyc/web` app uses shadcn-svelte (lyra preset) for UI primitives. **Always 
 
 Hand-rolled markup is only acceptable for genuinely bespoke, app-specific visualisations with no shadcn equivalent (e.g. the drift radar, the register list, the cost funnel). Everything else composes shadcn primitives.
 
-Token reference: the "Risk Control Room" dark palette in `docs/reference/frontend.md`, or the AMINA light reskin in `docs/reference/amina-design-system.md` — both drive shadcn via the same CSS vars.
+Token reference: the AMINA design system in `docs/reference/amina-design-system.md` — it drives shadcn via the CSS vars in `layout.css`.
 
 ## Docs
 
@@ -20,8 +20,7 @@ The `docs/` directory holds relevant background and reference material — consu
 
 - `docs/reference/product.md` — concept, drift model, scenario, scope
 - `docs/reference/techstack.md` — stack, cost architecture, extraction
-- `docs/reference/frontend.md` — "Risk Control Room" design system (original dark terminal)
-- `docs/reference/amina-design-system.md` — "Supervisory" light reskin in AMINA's real brand language
+- `docs/reference/amina-design-system.md` — "Supervisory" design system in AMINA's brand language
 - `docs/brief/challenge.md`, `docs/brief/description.md` — the original challenge brief
 
 ## Provided APIs

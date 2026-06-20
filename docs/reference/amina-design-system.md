@@ -1,6 +1,6 @@
 # AMINA Design System — "Supervisory"
 
-> The dashboard reskinned in AMINA Bank's own visual language, adapted for a risk/compliance instrument. Supersedes the dark "Risk Control Room" terminal in `frontend.md` for chrome, palette, and type; the drift radar, 5-axis rigor, and mono data carry over unchanged.
+> The dashboard in AMINA Bank's own visual language, adapted for a risk/compliance instrument. Replaces the earlier dark "Risk Control Room" terminal direction for chrome, palette, and type; the drift radar, 5-axis rigor, and mono data carry over unchanged.
 
 Tokens here are **measured from aminagroup.com** (captured 2026-06-20), not invented. The goal: a compliance officer should believe AMINA's own team shipped this.
 

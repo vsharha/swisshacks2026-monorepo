@@ -1,6 +1,6 @@
 # Tech Stack & Architecture
 
-> See `product.md` for the product concept and `frontend.md` for the design system.
+> See `product.md` for the product concept and `amina-design-system.md` for the design system.
 
 ## Stack
 

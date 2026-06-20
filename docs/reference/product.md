@@ -30,11 +30,7 @@ We decompose each customer's KYC baseline into a **5-axis drift vector**:
 | Scale / activity | Size, volume, funding, tempo | Scale Risk Change; Dormancy Break |
 | Reputation / adverse media | How it's perceived | High Reputational Risk |
 
-Each axis is scored by a **rule → LLM cascade**:
-- **Cheap tier** — deterministic rules + embeddings catch discrete, unambiguous changes (legal rename, new owner, jurisdiction/legal-form change, domain switch) and produce a first-pass drift score from metadata alone.
-- **Escalation** — only *fuzzy* axes (gradual pivot, adverse-media tone) get sent to an LLM to reason about materiality.
-
-A weighted **composite** across axes produces an overall KYC-drift status. Crossing a threshold fires **Stage 3** deep synthesis: recommended action + citations + human-in-the-loop.
+Each axis is scored independently and combined into a weighted **composite** KYC-drift status; crossing a threshold escalates to deep synthesis with a recommended action, citations, and a human-in-the-loop gate. How that scoring and escalation works — the cheap rule tier through the LLM tiers — is described in `pipeline.md`.
 
 The drift vector is both the intelligence and the dashboard — it makes every alert explainable ("the ownership axis broke, here is why").
 
@@ -68,7 +64,7 @@ The demo is a **book of ~3–4 customers**, depth concentrated on the hero. The 
 
 ## Demo flow
 
-A "Risk Control Room" dashboard (see `frontend.md`) showing the customer book and a **time-scrubber**. Drag the clock and:
+A "Risk Control Room" dashboard (see `amina-design-system.md`) showing the customer book and a **time-scrubber**. Drag the clock and:
 1. The hero's **drift vector lights up axis-by-axis** with real citations as real events replay.
 2. The **cost funnel ticks live** — thousands of signals collapse to a handful of LLM calls; `$/day` stays near $0.75.
 3. Composite crosses threshold → **escalation flare**: the "matches Long Blockchain 2017" badge snaps in, a **RE-KYC alert** card appears with citations, and a **human escalate/dismiss action** writes to the audit log.
