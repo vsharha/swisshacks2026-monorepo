@@ -30,31 +30,17 @@
 		onclear: () => void;
 	} = $props();
 
-	// Sidebar mode: the book ('list') or the selected company's detail.
-	// A company is selected on load, so open straight to its detail.
-	let panelView = $state<'list' | 'detail'>('detail');
+	// Sidebar mode follows the selection: a selected company shows its detail,
+	// otherwise the book list. Derived (not local state) so picking a company
+	// anywhere — book list or globe — keeps the rail in sync.
 </script>
 
 <aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-r pr-4">
-	{#if panelView === 'detail' && selected}
-		<CompanyDetail
-			entity={selected}
-			{rating}
-			onback={() => {
-				panelView = 'list';
-				onclear();
-			}}
-		/>
+	{#if selected}
+		<CompanyDetail entity={selected} {rating} onback={onclear} />
 	{:else}
 		<div class="flex min-h-0 flex-col gap-1 overflow-y-auto">
-			<BookList
-				{book}
-				{selectedId}
-				onselect={(id) => {
-					panelView = 'detail';
-					onselect(id);
-				}}
-			/>
+			<BookList {book} {selectedId} {onselect} />
 		</div>
 	{/if}
 	{#if selected}
