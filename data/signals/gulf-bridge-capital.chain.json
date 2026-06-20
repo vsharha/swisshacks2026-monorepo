@@ -1,0 +1,39 @@
+[
+  {
+    "id": "chain-gulf-bridge-capital-bc1qexamplegbc0treasurywallet-illicit",
+    "entityId": "gulf-bridge-capital",
+    "axis": "reputation",
+    "type": "illicit_flow_exposure",
+    "date": "2026-06-20",
+    "sourceUrl": "https://www.opensanctions.org/",
+    "title": "Wallet bc1qexamplegbc0treasurywallet shows illicit-flow proximity (mixer 0.42, darknet 0.18).",
+    "source": "chain",
+    "payload": {
+      "address": "bc1qexamplegbc0treasurywallet",
+      "chain": "bitcoin",
+      "exposure": {
+        "mixer": 0.42,
+        "darknet": 0.18
+      }
+    },
+    "confidence": 0.726
+  },
+  {
+    "id": "chain-gulf-bridge-capital-bc1qexamplegbc0treasurywallet-sanctioned",
+    "entityId": "gulf-bridge-capital",
+    "axis": "ownership",
+    "type": "sanctioned_wallet",
+    "date": "2026-06-20",
+    "sourceUrl": "https://www.opensanctions.org/",
+    "title": "Disclosed wallet bc1qexamplegbc0treasurywallet transacted with sanctioned counterpart(y/ies): OFAC-listed mixing service.",
+    "source": "chain",
+    "payload": {
+      "address": "bc1qexamplegbc0treasurywallet",
+      "chain": "bitcoin",
+      "counterparties": [
+        "OFAC-listed mixing service"
+      ]
+    },
+    "confidence": 0.95
+  }
+]

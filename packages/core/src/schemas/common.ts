@@ -40,6 +40,9 @@ export const SourceSchema = z.enum([
   "regulator",
   "opencorporates",
   "graph",
+  "market",
+  "chain",
+  "internal",
   "manual",
 ]);
 export type Source = z.infer<typeof SourceSchema>;

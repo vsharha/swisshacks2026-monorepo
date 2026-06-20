@@ -12,7 +12,10 @@ export const SOURCE_QUALITY: Record<Source, number> = {
   gleif: 0.95,
   regulator: 0.92,
   sec_edgar: 0.95,
+  internal: 0.9, // the bank's own verified records (proposal 13)
   opencorporates: 0.85,
+  market: 0.8, // structured market-event feeds (proposal 12)
+  chain: 0.78, // on-chain / wallet-screening providers (proposal 14)
   graph: 0.7,
   wayback: 0.7,
   eventregistry: 0.7,

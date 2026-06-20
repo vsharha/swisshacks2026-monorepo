@@ -1,0 +1,24 @@
+{
+  "treasury": [
+    {
+      "entityId": "strategy",
+      "asset": "BTC",
+      "kind": "shift_to",
+      "magnitudeUsd": 250000000,
+      "share": 0.6,
+      "date": "2026-05-08",
+      "sourceUrl": "https://www.blockchain.com/explorer",
+      "title": "On-chain: ~$250M of corporate treasury moved into Bitcoin (≈60% of reserves)."
+    }
+  ],
+  "wallets": [
+    {
+      "entityId": "gulf-bridge-capital",
+      "address": "bc1qexamplegbc0treasurywallet",
+      "chain": "bitcoin",
+      "exposure": { "mixer": 0.42, "darknet": 0.18 },
+      "sanctionedCounterparties": ["OFAC-listed mixing service"],
+      "sourceUrl": "https://www.opensanctions.org/"
+    }
+  ]
+}
