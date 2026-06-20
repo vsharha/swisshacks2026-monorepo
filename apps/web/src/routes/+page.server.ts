@@ -1,5 +1,6 @@
 import { loadBook, loadPatternLibrary } from '$lib/server/data';
-import type { PageServerLoad } from './$types';
+import { analyzeEntity } from '$lib/server/analyze';
+import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = () => {
 	const book = loadBook();
@@ -11,4 +12,15 @@ export const load: PageServerLoad = () => {
 	const timeEnd = dates.at(-1) ?? new Date().toISOString();
 
 	return { book, patterns, timeStart, timeEnd };
+};
+
+export const actions: Actions = {
+	// On-demand Stage 2/3 escalation — fires only when an analyst clicks, never
+	// per page load (that would defeat the cost story).
+	analyze: async ({ request }) => {
+		const form = await request.formData();
+		const entityId = String(form.get('entityId'));
+		const asOf = String(form.get('asOf'));
+		return analyzeEntity(entityId, asOf);
+	}
 };

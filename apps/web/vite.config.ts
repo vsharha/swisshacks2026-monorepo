@@ -4,6 +4,8 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+	// Read the single source-of-truth .env at the repo root.
+	envDir: '../../',
 	// @kyc/core ships TypeScript source (no build step); bundle it for SSR so
 	// Node never tries to import raw .ts.
 	ssr: {

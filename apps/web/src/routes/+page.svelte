@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { AXES, type DriftAxis, type RiskStatus } from '@kyc/core';
+	import { AXES, type Alert, type DriftAxis, type RiskStatus } from '@kyc/core';
 	import { scoreDriftVector } from '@kyc/core/drift';
+	import { enhance } from '$app/forms';
 	import DriftRadar from '$lib/components/DriftRadar.svelte';
 	import TimelineScrubber from '$lib/components/TimelineScrubber.svelte';
 	import type { PageData } from './$types';
@@ -13,6 +14,31 @@
 	let asOf = $state(endMs);
 	let selectedId = $state(data.book[0]?.baseline.entityId ?? '');
 	let decision = $state<'escalate' | 'dismiss' | null>(null);
+
+	// Stage 3 deep analysis — server-side LLM via the `analyze` form action.
+	let analyzing = $state(false);
+	let llmAlert = $state<Alert | null>(null);
+	let llmNote = $state<string | null>(null);
+
+	// `use:enhance` handler: keep the result in local state instead of a full
+	// page reload, so the radar/scrubber context is preserved.
+	const enhanceAnalyze = () => {
+		analyzing = true;
+		llmNote = null;
+		llmAlert = null;
+		return async ({ result }: { result: { type: string; data?: Record<string, unknown> } }) => {
+			analyzing = false;
+			if (result.type !== 'success') {
+				llmNote = 'Analysis failed.';
+				return;
+			}
+			const data = result.data ?? {};
+			if (data.llm && data.alert) llmAlert = data.alert as Alert;
+			else if (!data.llm)
+				llmNote = 'No ANTHROPIC_API_KEY configured — showing the rule-based recommendation.';
+			else llmNote = 'Composite below the alert threshold — no Stage 3 synthesis.';
+		};
+	};
 
 	const asOfIso = $derived(new Date(asOf).toISOString());
 
@@ -77,6 +103,21 @@
 				: 'No action: baseline intact, absorbed by Stage 0/1 at ~$0.'
 	);
 
+	// Citations to render: the LLM's chosen ones when present, else rule-based.
+	const displayCitations = $derived(
+		llmAlert
+			? llmAlert.citations.map((c, i) => ({
+					key: c.signalId ?? `cite-${i}`,
+					sourceUrl: c.sourceUrl,
+					label: c.title
+				}))
+			: citations.map((s) => ({
+					key: s.id,
+					sourceUrl: s.sourceUrl,
+					label: `${s.source} · ${s.title}`
+				}))
+	);
+
 	function fmtDate(d: string) {
 		return d.slice(0, 10);
 	}
@@ -84,6 +125,8 @@
 		void selectedId;
 		void asOf;
 		decision = null;
+		llmAlert = null;
+		llmNote = null;
 	});
 </script>
 
@@ -227,7 +270,17 @@
 								<span class="text-[11px] tracking-widest" style="color: var(--alert)"
 									>⚠ RE-KYC ALERT</span
 								>
-								{#if archetype && patternSim >= 0.3}
+								{#if llmAlert?.patternMatch}
+									<span
+										class="border-line rounded-full border px-2 py-0.5 text-[10px]"
+										style="color: var(--alert)"
+										title={llmAlert.patternMatch.outcome}
+									>
+										matches {llmAlert.patternMatch.archetypeName} · {(
+											llmAlert.patternMatch.similarity * 100
+										).toFixed(0)}%
+									</span>
+								{:else if archetype && patternSim >= 0.3}
 									<span
 										class="border-line text-muted2 rounded-full border px-2 py-0.5 text-[10px]"
 										title={archetype.outcome}
@@ -235,23 +288,34 @@
 										matches {archetype.name} · {(patternSim * 100).toFixed(0)}%
 									</span>
 								{/if}
+								{#if llmAlert}
+									<span class="text-muted2 text-[10px]">· {llmAlert.modelVersion}</span>
+								{/if}
 							</div>
 							<span class="text-muted2 text-[10px]">{fmtDate(asOfIso)}</span>
 						</div>
 
-						<p class="text-text mt-2 text-[12px] leading-relaxed">{recommendedAction}</p>
+						{#if llmAlert}
+							<p class="text-text mt-2 text-[12px] leading-relaxed">{llmAlert.reasoning}</p>
+							<p class="text-text mt-1 text-[12px] leading-relaxed">
+								<span class="text-muted2">Recommended:</span>
+								{llmAlert.recommendedAction}
+							</p>
+						{:else}
+							<p class="text-text mt-2 text-[12px] leading-relaxed">{recommendedAction}</p>
+						{/if}
 
-						{#if citations.length}
+						{#if displayCitations.length}
 							<div class="mt-2 flex flex-wrap gap-1.5">
-								{#each citations as c (c.id)}
+								{#each displayCitations as c (c.key)}
 									<a
 										href={c.sourceUrl}
 										target="_blank"
 										rel="noreferrer"
 										class="border-line text-muted2 hover:text-text hover:border-muted2 max-w-[260px] truncate rounded-sm border px-2 py-0.5 text-[10px] transition-colors"
-										title={c.title}
+										title={c.label}
 									>
-										{c.source} · {c.title}
+										{c.label}
 									</a>
 								{/each}
 							</div>
@@ -272,8 +336,23 @@
 									class="border-line text-muted2 hover:text-text rounded-sm border px-3 py-1 text-[11px]"
 									onclick={() => (decision = 'dismiss')}>Dismiss</button
 								>
+								<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze}>
+									<input type="hidden" name="entityId" value={selected.baseline.entityId} />
+									<input type="hidden" name="asOf" value={asOfIso} />
+									<button
+										type="submit"
+										disabled={analyzing}
+										class="border-line text-muted2 hover:text-text rounded-sm border px-3 py-1 text-[11px] disabled:opacity-50"
+									>
+										{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
+									</button>
+								</form>
 							{/if}
 						</div>
+
+						{#if llmNote}
+							<p class="text-muted2 mt-2 text-[10px]">{llmNote}</p>
+						{/if}
 					</div>
 				{/if}
 			</main>
