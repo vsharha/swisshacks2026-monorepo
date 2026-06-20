@@ -94,8 +94,11 @@ knowing:
    item-code → axis map) routes each item to an axis with a confidence.
 4. **Normalize + validate** — records are `safeParse`d; **failures are dropped,
    not thrown**, so one bad URL never aborts a batch.
-5. **Dedup** — `dedupeByEvent` collapses ER articles sharing an `eventUri` into
-   one event and records `clusterSize` (the native ER cost lever).
+5. **Dedup** — `dedupeSignals` collapses signals describing the same event into
+   one and records `clusterSize` (the cost lever), clustering **across** sources
+   by `eventUri`, `sourceUrl` or a normalized-title fingerprint and keeping the
+   highest-confidence representative. `dedupeByEvent` is retained as a back-compat
+   alias that delegates to it.
 
 **Current ingestion gaps** (these motivate the ingestion proposals in
 `pipeline-proposals.md`): structural coverage is **US-public-only**; there are
