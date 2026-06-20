@@ -66,7 +66,7 @@ Fires 4 of 5 axes (business model, entity identity/ownership, scale/activity, re
 
 The demo is a **book of ~3–4 customers**, depth concentrated on the hero. The contrast across the book is what sells both cost efficiency and precision — a single-company demo would undercut the pitch.
 
-## Demo narrative
+## Demo flow
 
 A "Risk Control Room" dashboard (see `frontend.md`) showing the customer book and a **time-scrubber**. Drag the clock and:
 1. The hero's **drift vector lights up axis-by-axis** with real citations as real events replay.
