@@ -24,3 +24,45 @@ describe("recencyWeight", () => {
     expect(oneYear).toBeLessThan(0.55); // ~0.5 at the 365-day half-life
   });
 });
+
+import { confidenceForAxis } from "./confidence.ts";
+import type { Signal } from "../schemas/index.ts";
+
+function sig(over: Partial<Signal>): Signal {
+  return {
+    id: "s1",
+    entityId: "e1",
+    axis: "reputation",
+    type: "adverse_media",
+    date: "2026-01-01",
+    sourceUrl: "https://example.com/a",
+    title: "t",
+    source: "eventregistry",
+    payload: {},
+    confidence: 0.6,
+    ...over,
+  };
+}
+
+describe("confidenceForAxis", () => {
+  it("is 0 for no signals", () => {
+    expect(confidenceForAxis([], "2026-01-01")).toBe(0);
+  });
+
+  it("rises with independent corroboration from distinct sources", () => {
+    const asOf = "2026-01-01";
+    const one = confidenceForAxis([sig({ source: "eventregistry" })], asOf);
+    const two = confidenceForAxis(
+      [sig({ id: "a", source: "eventregistry" }), sig({ id: "b", source: "sec_edgar" })],
+      asOf,
+    );
+    expect(two).toBeGreaterThan(one);
+  });
+
+  it("weights a regulator-grade source above a news source", () => {
+    const asOf = "2026-01-01";
+    const news = confidenceForAxis([sig({ source: "eventregistry" })], asOf);
+    const reg = confidenceForAxis([sig({ source: "sec_edgar" })], asOf);
+    expect(reg).toBeGreaterThan(news);
+  });
+});
