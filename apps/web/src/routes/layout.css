@@ -4,6 +4,10 @@
 @import '@fontsource-variable/jetbrains-mono';
 @import '@fontsource-variable/hanken-grotesk';
 
+@plugin 'tailwind-scrollbar' {
+	nocompatible: true;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /* ── Risk Control Room ─────────────────────────────────────────────────────
@@ -88,6 +92,7 @@
 @layer base {
 	* {
 		@apply border-border;
+		@apply scrollbar-thin scrollbar-thumb-line scrollbar-track-transparent hover:scrollbar-thumb-muted2;
 	}
 	body {
 		@apply bg-background font-sans text-foreground;
