@@ -2,6 +2,7 @@ import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { AuditEntrySchema, type AuditEntry, type RiskRating } from '@kyc/core';
+import { deriveCaseState, type CaseState } from '@kyc/core/governance';
 import { dataDir } from './data';
 
 /**
@@ -62,4 +63,12 @@ export function currentRating(entityId: string, fallback: RiskRating): RiskRatin
 		if (e.kind === 'outcome' && e.entityId === entityId) rating = e.toRating;
 	}
 	return rating;
+}
+
+/** Current governance case state for an entity, replayed from the log (chronological). */
+export function caseStateFor(entityId: string): CaseState {
+	const entries = readLines()
+		.map((l) => AuditEntrySchema.parse(JSON.parse(l)))
+		.filter((e) => e.entityId === entityId);
+	return deriveCaseState(entries);
 }

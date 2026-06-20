@@ -16,7 +16,7 @@
 			case 'alert_raised':
 				return `alert raised · ${e.modelVersion}`;
 			case 'human_action':
-				return `${e.decision} · ${e.analyst} · ${e.rationale}`;
+				return `${e.decision} · ${e.role} · ${e.actor} · ${e.rationale}`;
 			case 'outcome':
 				return `rating ${e.fromRating} → ${e.toRating}`;
 		}

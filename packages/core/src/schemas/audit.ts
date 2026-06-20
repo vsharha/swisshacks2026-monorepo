@@ -2,6 +2,8 @@ import { z } from "zod";
 import {
   Confidence,
   DriftAxisSchema,
+  HumanDecisionSchema,
+  HumanRoleSchema,
   PipelineStageSchema,
   RiskRatingSchema,
   RiskStatusSchema,
@@ -66,12 +68,15 @@ export const AlertRaisedSchema = z.object({
   modelVersion: z.string().min(1),
 });
 
-/** A human acted at the HITL gate. */
+/** A human acted in the maker-checker workflow (analyst or compliance). */
 export const HumanActionSchema = z.object({
   ...auditBase,
   kind: z.literal("human_action"),
-  analyst: z.string().min(1),
-  decision: z.enum(["escalate", "dismiss"]),
+  /** Who acted, e.g. "analyst@amina" / "mlro@amina". */
+  actor: z.string().min(1),
+  /** Line-of-defence role — drives separation of duties. */
+  role: HumanRoleSchema,
+  decision: HumanDecisionSchema,
   rationale: z.string().min(1),
   alertId: z.string().optional(),
 });
