@@ -2,6 +2,7 @@
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import { Toaster } from '$lib/components/ui/sonner/index.js';
 
 	let { children } = $props();
 </script>
@@ -10,3 +11,4 @@
 <Tooltip.Provider delayDuration={150}>
 	{@render children()}
 </Tooltip.Provider>
+<Toaster position="bottom-right" closeButton />

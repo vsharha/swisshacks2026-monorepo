@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { env } from '$env/dynamic/private';
-import type { Alert, DriftAxis } from '@kyc/core';
+import type { Alert, AuditEntry, DriftAxis } from '@kyc/core';
 import { AXES } from '@kyc/core';
 import {
 	priorComposite,
@@ -30,6 +30,8 @@ export interface AnalyzeResult {
 	materiality?: Partial<Record<DriftAxis, AxisMateriality>>;
 	alert?: Alert | null;
 	cost?: RunCost;
+	/** Priority audit entries appended this run, for client-side toasts. */
+	events?: AuditEntry[];
 }
 
 const now = () => new Date().toISOString();
@@ -89,27 +91,34 @@ export async function analyzeEntity(entityId: string, asOf: string): Promise<Ana
 		});
 	}
 
-	appendAudit({
-		id: randomUUID(),
-		ts: now(),
-		entityId,
-		kind: 'escalation_decision',
-		composite: result.drift.composite,
-		escalated: result.escalated,
-		reason: result.escalationReason
-	});
+	// Priority audit entries surfaced to the client as toasts.
+	const events: AuditEntry[] = [];
 
-	if (!result.stage3) return { llm: true, materiality, alert: null, cost: result.cost };
+	events.push(
+		appendAudit({
+			id: randomUUID(),
+			ts: now(),
+			entityId,
+			kind: 'escalation_decision',
+			composite: result.drift.composite,
+			escalated: result.escalated,
+			reason: result.escalationReason
+		})
+	);
+
+	if (!result.stage3) return { llm: true, materiality, alert: null, cost: result.cost, events };
 
 	// Stage 3 — the synthesized RE-KYC alert.
-	appendAudit({
-		id: randomUUID(),
-		ts: now(),
-		entityId,
-		kind: 'alert_raised',
-		alertId: result.stage3.alert.id,
-		modelVersion: result.stage3.alert.modelVersion
-	});
+	events.push(
+		appendAudit({
+			id: randomUUID(),
+			ts: now(),
+			entityId,
+			kind: 'alert_raised',
+			alertId: result.stage3.alert.id,
+			modelVersion: result.stage3.alert.modelVersion
+		})
+	);
 
-	return { llm: true, materiality, alert: result.stage3.alert, cost: result.cost };
+	return { llm: true, materiality, alert: result.stage3.alert, cost: result.cost, events };
 }

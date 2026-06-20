@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import type { RiskRating } from '@kyc/core';
+import type { AuditEntry, RiskRating } from '@kyc/core';
 import { loadBook, loadPatternLibrary } from '$lib/server/data';
 import { analyzeEntity } from '$lib/server/analyze';
 import { appendAudit, auditCount, currentRating, listAudit } from '$lib/server/audit';
@@ -69,20 +69,31 @@ export const actions: Actions = {
 			rationale
 		});
 
+		// Priority audit entries surfaced to the client as toasts.
+		const events: AuditEntry[] = [];
+
 		let rating = currentRating(entityId, baseRating);
 		if (decision === 'escalate' && rating !== 'high') {
-			appendAudit({
-				id: randomUUID(),
-				ts: now(),
-				entityId,
-				kind: 'outcome',
-				fromRating: rating,
-				toRating: 'high',
-				newStatus: 'alert'
-			});
+			events.push(
+				appendAudit({
+					id: randomUUID(),
+					ts: now(),
+					entityId,
+					kind: 'outcome',
+					fromRating: rating,
+					toRating: 'high',
+					newStatus: 'alert'
+				})
+			);
 			rating = 'high';
 		}
 
-		return { decided: decision, rating, auditCount: auditCount(), audit: listAudit(undefined, 40) };
+		return {
+			decided: decision,
+			rating,
+			events,
+			auditCount: auditCount(),
+			audit: listAudit(undefined, 40)
+		};
 	}
 };
