@@ -11,7 +11,7 @@ replace or conflict with the architecture, or fall outside the demo scope.
 ## Accepted proposals
 
 Enhancements that strengthen the existing cascade — proposals 1–6 on the scoring &
-escalation path, 7–11 on the ingestion layer (the gaps noted in `pipeline.md`).
+escalation path, 7–14 on the ingestion layer (the gaps noted in `pipeline.md`).
 Each reuses the `Signal` seam and the 5-axis model, and slots into a named stage
 rather than replacing it.
 
@@ -146,11 +146,11 @@ trigger (proposal 5).
 
 ### Ingestion-layer proposals
 
-The next five widen and cheapen the connector layer to close the ingestion gaps in
-`pipeline.md`. Proposals 7 and 8 are directly liftable from the sibling
-`Amina-BANK` Python prototype. (The missing sanctions/registry/ownership *sources*
-— OpenSanctions, GLEIF, ZEFIX, Companies House — are the ingestion side of
-proposals 4 and 6 and aren't repeated here.)
+The next seven widen and cheapen the connector layer to close the ingestion gaps in
+`pipeline.md`. Proposals 12 and 13 enumerate the concrete sanctions, registry,
+regulator, market and internal *sources* — OpenSanctions, GLEIF, ZEFIX, Companies
+House, the non-US regulators, and the bank's own MCP history — as the ingestion side
+of proposals 1, 4 and 6.
 
 ### 7. RSS news connector (breadth, free, multilingual)
 
@@ -159,21 +159,19 @@ non-English entities.
 
 **Add:** a `connectors/rss.ts` emitting the same `Signal[]` from ~40 curated global
 feeds (FINMA, CNBC, Guardian, SCMP, DW…) at zero API cost, reaching the **non-US /
-non-English** entities ER and EDGAR miss (the `Amina-BANK` `rss_sources.txt` list
-is ready to lift). Each entry routes through the **existing** `classifyAxis` and
-`SignalSchema` — no new normalization path. Because RSS gives only title + summary,
-pair it with **full-text scraping** (`@mozilla/readability` + `jsdom`, the TS
-analogue of `trafilatura`) before classification, and port the Google News
-`batchexecute` URL-unwrapper so redirect-obfuscated links resolve to a real
-`sourceUrl` (citation target).
+non-English** entities ER and EDGAR miss. Each entry routes through the **existing**
+`classifyAxis` and `SignalSchema` — no new normalization path. Because RSS gives only
+title + summary, pair it with **full-text scraping** (`@mozilla/readability` +
+`jsdom`) before classification, and unwrap Google News `batchexecute` redirect links
+so obfuscated URLs resolve to a real `sourceUrl` (citation target).
 
 ### 8. Cheap local NER as a Stage-0 entity filter
 
 **Now:** RSS entries have no `conceptUri`, so entity resolution must happen on free
 text.
 
-**Add:** a local NER pass (GLiNER `company` label, as in `Amina-BANK`
-`entity_extractor.py`) to tag company mentions, then match against the book by
+**Add:** a local NER pass (GLiNER `company` label) to tag company mentions, then
+match against the book by
 normalized form ("Apple" = "Apple Inc."). The Stage-0 move: **zero token cost**,
 runs locally, strengthens the cost-efficiency story.
 
@@ -212,6 +210,84 @@ contact `User-Agent`; retry on 429/503), and multilingual classification once RS
 lands — gate by detected language or lean on the NER/embedding stage for non-English
 routing.
 
+### 12. Regulatory, sanctions, registry & market source connectors
+
+**Now:** ingestion is two connectors — EventRegistry (news) and SEC EDGAR (US
+filings). The `reputation` axis sees sanctions only as an adverse-media keyword
+(`stage0.ts:51`); the `jurisdiction` axis has no regulator or FATF feed; funding,
+liquidity and valuation events arrive only when a news outlet happens to report
+them; and `ownership` has no registry of record.
+
+**Add:** a family of deterministic connectors (Stage 0, no LLM), each normalising
+to the canonical `Signal[]` and mapped to the axis it feeds — the concrete
+ingestion side of proposals 4 and 6:
+
+1. **Multi-regulator filings & enforcement** — FCA (UK), FINMA (CH), DFSA & ADGM
+   (UAE), plus FATF status and enforcement databases — the non-US analogue of
+   `secEdgar.ts`, feeding `reputation` (enforcement actions, licensing) and
+   `jurisdiction` (FATF / country status).
+2. **Sanctions lists** — OFAC, UN, EU and UK HMT, aggregated through the
+   `opensanctions` connector (one connector covers all four lists) — feeding the
+   owner / director / entity screen on `ownership` and `reputation` (proposal 6).
+3. **Corporate registries** — Companies House (UK), GLEIF (LEI + ownership), ZEFIX
+   (CH) — feeding `ownership` (UBO and control structure) and supplying the
+   `nationality` / domicile inputs proposal 6 screens against.
+4. **Market intelligence** — funding rounds, liquidity events, valuation changes
+   and exchange-performance indicators — feeding `scale` with structured events
+   rather than second-hand news mentions.
+
+Each reuses the existing classify → normalize → validate path, so Stage 1/2/3
+consume the output unchanged. The only additive cost is a `SOURCE_QUALITY` prior
+per connector (proposal 1) and a `source` enum value — `opensanctions` and `gleif`
+already exist in `SourceSchema`; the regulator, registry and market sources are
+new, additive enum entries.
+
+### 13. Internal / MCP intelligence — the outcome-feedback loop
+
+**Now:** the confidence engine's *historical-accuracy* term (proposal 1) is a
+stubbed constant because there is no track record of past predictions to score
+against, and the pattern library and audit log have no internal-decision input —
+every signal is external.
+
+**Add:** an MCP-server connector surfacing the bank's *own* history — past KYC
+decisions, prior investigations, internal risk assessments, transaction-monitoring
+outputs and customer-profile changes — as `Signal`s and as `Outcome` audit entries.
+This is the one source that closes the confidence engine's fourth term: realized
+outcomes versus past drift verdicts finally populate *historical accuracy*, and
+confirmed investigations seed the `PatternArchetype` library Stage 3 already matches
+against. Internal records carry `manual`, regulator-grade confidence and reuse the
+canonical seam; transaction-monitoring anomalies route to the existing `reputation`
+/ `ownership` axes — no new AML axis, the 5-axis model holds (per the refused
+9-dimension reshape below).
+
+### 14. Blockchain / crypto-asset intelligence
+
+**Now:** the cascade treats crypto as out of scope — no on-chain source is wired,
+and `datastructure.md`'s "crypto-native risk" sat parked as a standalone dimension
+the 5-axis model had no room for.
+
+**Add:** wire crypto as **another asset class, not a special case** (AMINA's
+framing — "another asset type, not something scary"): on-chain exposure enriches the
+*existing* axes rather than forking a new one.
+
+1. **Wallet & counterparty screening** — a `connectors/chain.ts` (or a screening
+   provider) resolves an entity's disclosed wallets and scores mixer, darknet and
+   high-risk / sanctioned-counterparty exposure — emitting `reputation` (illicit-flow
+   proximity) and `ownership` (a sanctioned wallet *is* a sanctions hit, composing
+   with proposal 6) `Signal`s.
+2. **On-chain treasury & flow as scale / business-model evidence** — a material
+   shift of treasury into digital assets, or a jump in on-chain volume, is ordinary
+   `business_model` (what the company holds and does) and `scale` (volume, tempo)
+   drift — the same axes a fiat funding round moves.
+3. **Graph integration** — extend the proposal 3 vocabulary with **Wallet** nodes
+   and a **TRANSACTS_WITH** edge, so on-chain exposure propagates (proposal 5): risk
+   reaches an entity through a sanctioned wallet exactly as it does through a
+   sanctioned UBO.
+
+Because every output is a normal `Signal` on an existing axis, Stage 0/1/2/3 consume
+it unchanged — crypto becomes one more evidence source in the funnel, with its own
+`SOURCE_QUALITY` prior (proposal 1) and `source` enum value, not a bolt-on engine.
+
 ## Refused proposals
 
 Ideas weighed from the source material and deliberately **not** folded into the
@@ -238,5 +314,10 @@ cascade, with the reason.
   ripples through every stage; the additions above need none of it.
 - **Twice-daily batch schedule (08:00 / 20:00 UTC)** — *more* rigid than the
   change-triggered + time-scrubber runtime; adopting it would undercut the cost story.
-- **Crypto-native / blockchain and social (LinkedIn) intelligence** — beyond the
-  hero-entity demo scope, with no source wired for them.
+- **Social & strategic intelligence** (LinkedIn hiring trends, executive
+  departures, expansion announcements, strategic pivots) — the one
+  `datastructure.md` source family left out: beyond the hero-entity demo scope, with
+  no source wired, and largely a low-confidence adverse-media proxy the news
+  connectors already approximate. (Blockchain intelligence, once parked here, is now
+  **accepted** as proposal 14 — at AMINA's steer crypto is treated as another asset
+  class enriching the existing axes, not a standalone risk dimension.)

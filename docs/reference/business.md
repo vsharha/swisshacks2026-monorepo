@@ -164,17 +164,18 @@ Low risk   High risk / uncertain
 | Layer | Technology | Notes |
 |-------|-----------|-------|
 | **Frontend** | SvelteKit | UI for compliance officer dashboard and alert cards |
-| **Backend** | Python + FastAPI | API layer, drift detection logic, scoring engine — runs alongside SvelteKit |
+| **Backend** | TypeScript | Drift-detection logic and scoring engine live in `packages/core`, consumed by SvelteKit server routes |
 | **LLM layer** | Vercel AI SDK | Provider-agnostic — switch between OpenAI, Claude, Gemini during the hackathon to find the best fit per use case |
 | **Database** | Drizzle ORM | Clean, simple DB operations |
 | **Containerization** | Docker | Consistent dev and deploy environment |
-| **Python package manager** | uv (inside Docker) | Fast dependency installs inside containers |
-| **Repository** | Monorepo | `frontend/` and `backend/` folders — clean separation, one place to manage |
+| **Package manager** | pnpm | Workspace-aware installs across the monorepo |
+| **Repository** | Monorepo | `apps/` and `packages/` workspaces — clean separation, one place to manage |
 
 ```
 repo/
-  frontend/    ← SvelteKit app
-  backend/     ← Python + FastAPI
+  apps/web/         ← SvelteKit app
+  packages/core/    ← drift engine + scoring (TypeScript)
+  packages/scripts/ ← offline extraction & baseline build
   docker-compose.yml
 ```
 
