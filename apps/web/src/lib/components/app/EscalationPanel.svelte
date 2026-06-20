@@ -179,31 +179,30 @@
 		}
 	}
 
-	/* The "matches Long Blockchain 2017" stamp — pressed in on arrival. */
+	/* The "matches Long Blockchain 2017" pattern-match badge — snaps in level. */
 	.stamp {
 		display: inline-flex;
 		align-items: center;
 		border: 1.5px solid color-mix(in oklab, var(--alert) 55%, transparent);
 		color: var(--alert);
 		border-radius: 0.375rem;
-		padding: 0.05rem 0.4rem;
+		padding: 0.1rem 0.45rem;
 		font-size: 10px;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
-		transform: rotate(-2.2deg);
-		animation: stamp-in 420ms cubic-bezier(0.2, 0, 0, 1) 140ms both;
+		animation: stamp-in 360ms cubic-bezier(0.2, 0, 0, 1) 140ms both;
 	}
 	@keyframes stamp-in {
 		0% {
 			opacity: 0;
-			transform: rotate(-2.2deg) scale(1.5);
+			transform: scale(1.35);
 		}
 		60% {
 			opacity: 1;
-			transform: rotate(-2.2deg) scale(0.94);
+			transform: scale(0.96);
 		}
 		100% {
-			transform: rotate(-2.2deg) scale(1);
+			transform: scale(1);
 		}
 	}
 
