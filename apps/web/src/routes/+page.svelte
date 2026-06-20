@@ -127,7 +127,7 @@
 			asOf = to;
 			return;
 		}
-		const duration = 1500;
+		const duration = 3000;
 		const ease = (t: number) => 1 - Math.pow(1 - t, 3); // cubic ease-out
 		let started: number | null = null;
 		const tick = (now: number) => {
