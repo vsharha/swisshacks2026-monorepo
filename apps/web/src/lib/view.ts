@@ -76,3 +76,9 @@ export function secFilingDescription(s: Signal): string | null {
 	}
 	return SEC_FORM_LABEL[form] ?? null;
 }
+
+/** Raw SEC form code for a filing signal (e.g. "10-Q", "8-K"), or null for non-SEC signals. */
+export function secFormCode(s: Signal): string | null {
+	if (s.source !== 'sec_edgar') return null;
+	return typeof s.payload.form === 'string' ? s.payload.form : null;
+}

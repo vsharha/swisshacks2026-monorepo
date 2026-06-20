@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { fmtDate, secFilingDescription, statusVar, type BookEntity } from '$lib/view';
+	import {
+		fmtDate,
+		secFilingDescription,
+		secFormCode,
+		statusVar,
+		type BookEntity
+	} from '$lib/view';
 	import ArrowSquareOut from 'phosphor-svelte/lib/ArrowSquareOut';
 
 	let { entity, asOfIso }: { entity: BookEntity; asOfIso: string } = $props();
@@ -32,6 +38,8 @@
 		{#each events as s (s.id)}
 			{@const relevant = s.confidence >= 0.85}
 			{@const filing = secFilingDescription(s)}
+			{@const code = secFormCode(s)}
+			{@const titleText = filing ?? s.title}
 			<div class="flex items-start gap-2.5 py-2 text-[11px]">
 				<span
 					class="mt-1.5 h-2 w-2 shrink-0 rounded-full border"
@@ -49,22 +57,27 @@
 							>{s.confidence.toFixed(2)}</span
 						>
 					</div>
-					{#if s.sourceUrl}
-						<a
-							href={s.sourceUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="text-text2 inline-flex items-start gap-1 leading-snug underline decoration-dotted decoration-1 underline-offset-2 hover:decoration-solid"
-						>
-							<span class="min-w-0">{s.title}</span>
-							<ArrowSquareOut class="text-muted2 mt-0.5 shrink-0" size={11} />
-						</a>
-					{:else}
-						<span class="text-text2 leading-snug">{s.title}</span>
-					{/if}
-					{#if filing}
-						<span class="text-muted2 leading-snug">{filing}</span>
-					{/if}
+					<div class="flex items-start gap-1.5">
+						{#if code}
+							<span
+								class="border-line text-muted2 mt-px shrink-0 rounded border px-1 font-mono text-[9px] tracking-wide tabular-nums"
+								title="SEC form {code}">{code}</span
+							>
+						{/if}
+						{#if s.sourceUrl}
+							<a
+								href={s.sourceUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-text2 inline-flex min-w-0 items-start gap-1 leading-snug underline decoration-dotted decoration-1 underline-offset-2 hover:decoration-solid"
+							>
+								<span class="min-w-0">{titleText}</span>
+								<ArrowSquareOut class="text-muted2 mt-0.5 shrink-0" size={11} />
+							</a>
+						{:else}
+							<span class="text-text2 leading-snug">{titleText}</span>
+						{/if}
+					</div>
 					<span class="text-muted2 text-[10px]">type: {s.type.replace(/_/g, ' ')}</span>
 				</div>
 			</div>
