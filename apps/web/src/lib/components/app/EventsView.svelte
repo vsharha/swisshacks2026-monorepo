@@ -6,6 +6,7 @@
 		statusVar,
 		type BookEntity
 	} from '$lib/view';
+	import * as Table from '$lib/components/ui/table';
 	import ArrowSquareOut from 'phosphor-svelte/lib/ArrowSquareOut';
 
 	let { entity, asOfIso }: { entity: BookEntity; asOfIso: string } = $props();
@@ -33,54 +34,96 @@
 	</div>
 	<div
 		bind:this={scroller}
-		class="divide-line/70 flex min-h-0 flex-1 flex-col divide-y overflow-y-auto pr-1"
+		class="min-h-0 flex-1 overflow-y-auto pr-1 [&>[data-slot=table-container]]:overflow-x-visible"
 	>
-		{#each events as s (s.id)}
-			{@const relevant = s.confidence >= 0.85}
-			{@const filing = secFilingDescription(s)}
-			{@const code = secFormCode(s)}
-			{@const titleText = filing ?? s.title}
-			<div class="flex items-start gap-2.5 py-2 text-[11px]">
-				<span
-					class="mt-1.5 h-2 w-2 shrink-0 rounded-full border"
-					style="border-color: {relevant ? 'var(--watch)' : 'var(--line-2)'}; background: {relevant
-						? 'var(--watch)'
-						: 'transparent'}"
-					title={relevant ? 'High-relevance event' : ''}
-				></span>
-				<div class="flex min-w-0 flex-1 flex-col gap-0.5">
-					<div class="flex justify-between gap-2">
-						<span class="text-muted2 font-mono text-[10px]">{fmtDate(s.date)} · {s.axis}</span>
-						<span
-							class="shrink-0 font-mono text-[10px] tabular-nums"
-							style="color: {statusVar[entity.drift.axes[s.axis].status]}"
-							>{s.confidence.toFixed(2)}</span
-						>
-					</div>
-					<div class="flex items-start gap-1.5">
-						{#if code}
+		<Table.Root class="text-[11px]">
+			<Table.Header>
+				<Table.Row class="border-line hover:bg-transparent">
+					<Table.Head
+						class="text-muted2 bg-panel sticky top-0 z-10 h-auto py-1.5 text-[10px] tracking-[0.12em] uppercase"
+						>Event</Table.Head
+					>
+					<Table.Head
+						class="text-muted2 bg-panel sticky top-0 z-10 h-auto py-1.5 text-[10px] tracking-[0.12em] uppercase"
+						>Market research</Table.Head
+					>
+					<Table.Head
+						class="text-muted2 bg-panel sticky top-0 z-10 h-auto py-1.5 text-right text-[10px] tracking-[0.12em] uppercase"
+						>Confidence</Table.Head
+					>
+					<Table.Head
+						class="text-muted2 bg-panel sticky top-0 z-10 h-auto py-1.5 text-[10px] tracking-[0.12em] uppercase"
+						>Signal inference</Table.Head
+					>
+				</Table.Row>
+			</Table.Header>
+			<Table.Body>
+				{#each events as s (s.id)}
+					{@const relevant = s.confidence >= 0.85}
+					{@const filing = secFilingDescription(s)}
+					{@const code = secFormCode(s)}
+					{@const titleText = filing ?? s.title}
+					<Table.Row class="divide-line/70 border-line align-top">
+						<!-- Event -->
+						<Table.Cell class="py-2 align-top whitespace-normal">
+							<div class="flex items-start gap-2.5">
+								<span
+									class="mt-1.5 h-2 w-2 shrink-0 rounded-full border"
+									style="border-color: {relevant
+										? 'var(--watch)'
+										: 'var(--line-2)'}; background: {relevant ? 'var(--watch)' : 'transparent'}"
+									title={relevant ? 'High-relevance event' : ''}
+								></span>
+								<div class="flex min-w-0 flex-col gap-0.5">
+									<span class="text-muted2 font-mono text-[10px]">{fmtDate(s.date)} · {s.axis}</span
+									>
+									<div class="flex items-start gap-1.5">
+										{#if code}
+											<span
+												class="border-line text-muted2 mt-px shrink-0 rounded border px-1 font-mono text-[9px] tracking-wide tabular-nums"
+												title="SEC form {code}">{code}</span
+											>
+										{/if}
+										{#if s.sourceUrl}
+											<a
+												href={s.sourceUrl}
+												target="_blank"
+												rel="noopener noreferrer"
+												class="text-text2 inline-flex min-w-0 items-start gap-1 leading-snug underline decoration-dotted decoration-1 underline-offset-2 hover:decoration-solid"
+											>
+												<span class="min-w-0">{titleText}</span>
+												<ArrowSquareOut class="text-muted2 mt-0.5 shrink-0" size={11} />
+											</a>
+										{:else}
+											<span class="text-text2 leading-snug">{titleText}</span>
+										{/if}
+									</div>
+									<span class="text-muted2 text-[10px]">type: {s.type.replace(/_/g, ' ')}</span>
+								</div>
+							</div>
+						</Table.Cell>
+
+						<!-- Market research (placeholder, pending data) -->
+						<Table.Cell class="text-muted2 py-2 align-top whitespace-normal">
+							<span class="text-muted2/60">—</span>
+						</Table.Cell>
+
+						<!-- Confidence -->
+						<Table.Cell class="py-2 text-right align-top">
 							<span
-								class="border-line text-muted2 mt-px shrink-0 rounded border px-1 font-mono text-[9px] tracking-wide tabular-nums"
-								title="SEC form {code}">{code}</span
+								class="font-mono text-[11px] tabular-nums"
+								style="color: {statusVar[entity.drift.axes[s.axis].status]}"
+								>{s.confidence.toFixed(2)}</span
 							>
-						{/if}
-						{#if s.sourceUrl}
-							<a
-								href={s.sourceUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="text-text2 inline-flex min-w-0 items-start gap-1 leading-snug underline decoration-dotted decoration-1 underline-offset-2 hover:decoration-solid"
-							>
-								<span class="min-w-0">{titleText}</span>
-								<ArrowSquareOut class="text-muted2 mt-0.5 shrink-0" size={11} />
-							</a>
-						{:else}
-							<span class="text-text2 leading-snug">{titleText}</span>
-						{/if}
-					</div>
-					<span class="text-muted2 text-[10px]">type: {s.type.replace(/_/g, ' ')}</span>
-				</div>
-			</div>
-		{/each}
+						</Table.Cell>
+
+						<!-- Signal inference (placeholder, pending data) -->
+						<Table.Cell class="text-muted2 py-2 align-top whitespace-normal">
+							<span class="text-muted2/60">—</span>
+						</Table.Cell>
+					</Table.Row>
+				{/each}
+			</Table.Body>
+		</Table.Root>
 	</div>
 </div>
