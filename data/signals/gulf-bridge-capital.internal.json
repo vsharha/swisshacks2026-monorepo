@@ -1,0 +1,32 @@
+[
+  {
+    "id": "internal-gulf-bridge-capital-txn_anomaly-2026-06-05",
+    "entityId": "gulf-bridge-capital",
+    "axis": "reputation",
+    "type": "txn_anomaly",
+    "date": "2026-06-05",
+    "sourceUrl": "https://internal.amina.example/cases/2026-0613",
+    "title": "Internal txn anomaly: Transaction monitoring flagged unusual high-value transfers to newly-onboarded counterparties.",
+    "source": "internal",
+    "payload": {
+      "kind": "txn_anomaly",
+      "hasOutcome": false
+    },
+    "confidence": 0.9
+  },
+  {
+    "id": "internal-gulf-bridge-capital-investigation-2024-11-02",
+    "entityId": "gulf-bridge-capital",
+    "axis": "reputation",
+    "type": "investigation",
+    "date": "2024-11-02",
+    "sourceUrl": "https://internal.amina.example/cases/2024-1180",
+    "title": "Internal investigation: Prior enhanced-due-diligence review of the offshore investor structure; escalated.",
+    "source": "internal",
+    "payload": {
+      "kind": "investigation",
+      "hasOutcome": true
+    },
+    "confidence": 0.9
+  }
+]

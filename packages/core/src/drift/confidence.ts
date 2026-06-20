@@ -49,12 +49,18 @@ export function recencyWeight(signalDate: string, asOf: string): number {
  *
  *   0.40·source quality + 0.25·corroboration + 0.20·freshness + 0.15·historical
  *
- * `historical accuracy` has no live track record in demo scope, so it is stubbed
- * as the source-quality prior (a second source-quality term) until the
- * outcome-feedback loop (proposal 13) supplies realized outcomes. Risk and
- * confidence stay separate: this writes AxisDrift.confidence only.
+ * `historical accuracy` has no live track record in demo scope, so it falls back
+ * to the source-quality prior (a second source-quality term) UNTIL the
+ * outcome-feedback loop (proposal 13) supplies realized outcomes — pass
+ * `historicalAccuracy` (e.g. from `historicalAccuracyFromOutcomes`) to make the
+ * fourth term live. Risk and confidence stay separate: this writes
+ * AxisDrift.confidence only.
  */
-export function confidenceForAxis(signals: Signal[], asOf: string): number {
+export function confidenceForAxis(
+  signals: Signal[],
+  asOf: string,
+  historicalAccuracy?: number,
+): number {
   if (signals.length === 0) return 0;
   let quality = 0;
   let freshness = 0;
@@ -66,6 +72,18 @@ export function confidenceForAxis(signals: Signal[], asOf: string): number {
   }
   // Independent corroboration: 1 source → 0, 2 → 0.5, 3+ → 1.
   const corroboration = Math.min(1, (sources.size - 1) / 2);
-  const historical = quality; // stub; populated by proposal 13.
+  // Live track record when supplied (proposal 13), else the source-quality stub.
+  const historical = historicalAccuracy ?? quality;
   return 0.4 * quality + 0.25 * corroboration + 0.2 * freshness + 0.15 * historical;
+}
+
+/**
+ * Historical-accuracy term for the confidence engine (proposal 13): the fraction
+ * of past drift verdicts on this entity that the bank's realized outcomes
+ * confirmed. With no track record yet, returns a cautious neutral prior rather
+ * than a confident 0 or 1.
+ */
+export function historicalAccuracyFromOutcomes(correct: number, total: number): number {
+  if (total <= 0) return 0.6;
+  return Math.max(0, Math.min(1, correct / total));
 }
