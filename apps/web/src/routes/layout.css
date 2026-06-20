@@ -89,10 +89,16 @@
 	--radius-lg: var(--radius);
 }
 
+/* Global thin instrumentation scrollbar. Kept OUT of @layer base on purpose:
+   tailwind-scrollbar injects `* { scrollbar-color: initial; scrollbar-width: initial }`
+   into the base layer, so a base-layer @apply gets clobbered. Unlayered wins. */
+* {
+	@apply scrollbar-thin scrollbar-thumb-line scrollbar-track-transparent hover:scrollbar-thumb-muted2;
+}
+
 @layer base {
 	* {
 		@apply border-border;
-		@apply scrollbar-thin scrollbar-thumb-line scrollbar-track-transparent hover:scrollbar-thumb-muted2;
 	}
 	body {
 		@apply bg-background font-sans text-foreground;
