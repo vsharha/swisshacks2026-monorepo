@@ -8,7 +8,8 @@
   "beneficialOwners": [
     { "name": "Hamad Al-Rashed", "role": "Chairman", "nationality": "AE" },
     { "name": "Viktor Petrov", "share": 0.4, "role": "Investor (via offshore vehicle)", "nationality": "RU" },
-    { "name": "Reza Najafi", "share": 0.15, "role": "Minority investor", "nationality": "IR" }
+    { "name": "Reza Najafi", "share": 0.15, "role": "Minority investor", "nationality": "IR" },
+    { "name": "Sara Lindqvist", "role": "Non-executive director", "nationality": "SE" }
   ],
   "riskRating": "medium",
   "onboardedAt": "2021-04-12"

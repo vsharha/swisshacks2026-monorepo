@@ -1,0 +1,40 @@
+[
+  {
+    "id": "graph-prop-baltic-pay-from-org-gulf-bridge-capital-ltd",
+    "entityId": "baltic-pay",
+    "axis": "ownership",
+    "type": "propagated_risk",
+    "date": "2026-06-20",
+    "sourceUrl": "https://www.opensanctions.org/",
+    "title": "Risk propagated to Baltic Pay UAB from a confirmed drift on Gulf Bridge Capital Ltd via Sara Lindqvist (2 hops).",
+    "source": "graph",
+    "payload": {
+      "path": {
+        "nodes": [
+          {
+            "id": "org:gulf bridge capital ltd",
+            "label": "Gulf Bridge Capital Ltd",
+            "type": "entity"
+          },
+          {
+            "id": "person:sara lindqvist",
+            "label": "Sara Lindqvist",
+            "type": "individual"
+          },
+          {
+            "id": "org:baltic pay uab",
+            "label": "Baltic Pay UAB",
+            "type": "entity"
+          }
+        ],
+        "edges": [
+          "BOARD_MEMBER_OF",
+          "BOARD_MEMBER_OF"
+        ]
+      },
+      "hops": 2,
+      "from": "org:gulf bridge capital ltd"
+    },
+    "confidence": 0.582
+  }
+]

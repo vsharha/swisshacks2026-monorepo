@@ -1,0 +1,13 @@
+{
+  "entityId": "baltic-pay",
+  "name": "Baltic Pay UAB",
+  "aliases": ["Baltic Pay"],
+  "legalForm": "Lithuanian UAB (e-money institution)",
+  "jurisdiction": "LT",
+  "businessModel": "Licensed e-money and payment services for Baltic and Nordic SMEs.",
+  "beneficialOwners": [
+    { "name": "Sara Lindqvist", "share": 0.6, "role": "Founder & director", "nationality": "SE" }
+  ],
+  "riskRating": "low",
+  "onboardedAt": "2022-02-18"
+}

@@ -13,11 +13,13 @@ import {
 /**
  * Graph-risk enricher (proposal 3): walk the relationship graph from the entity
  * to any node that *bears* risk (a sanctioned person/vehicle, a high-risk
- * country) and, when the risk is reached through a **chain** (≥2 hops), emit an
+ * country) and, when the risk is reached through a **chain** (≥2 hops, up to
+ * `maxDepth` — default 2, i.e. 1st/2nd-degree standing exposure), emit an
  * `ownership` `Signal` carrying the relationship path. One-hop reach is the
- * static screen's job (proposal 6) — this enricher exists for the indirect,
- * hidden-controller case the screen cannot see. Output is a normal `Signal`, so
- * Stage 0/1/2/3 consume it unchanged.
+ * static screen's job (proposal 6); reach beyond the cheap static window is
+ * extended from *confirmed* drifts by propagation (proposal 5, `propagate.ts`).
+ * This enricher exists for the indirect, hidden-controller case the screen
+ * cannot see. Output is a normal `Signal`, so Stage 0/1/2/3 consume it unchanged.
  */
 
 /** What a risk-bearing node contributes to a graph signal. */
@@ -75,9 +77,10 @@ export function graphRiskSignals(
   graph: RiskGraph,
   riskIds: Map<string, RiskOrigin>,
   asOf: string,
+  maxDepth = 2,
 ): Signal[] {
   const startId = nodeIdFor(baseline.name, "entity");
-  const paths = findPaths(graph, startId, (n) => riskIds.has(n.id));
+  const paths = findPaths(graph, startId, (n) => riskIds.has(n.id), maxDepth);
 
   const signals: Signal[] = [];
   for (const path of paths) {
