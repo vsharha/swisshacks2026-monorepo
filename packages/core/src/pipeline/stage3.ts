@@ -2,9 +2,8 @@ import { z } from "zod";
 import { generateObject } from "ai";
 import {
   AlertSchema,
-  Confidence,
+  ClampedUnit,
   DriftAxisSchema,
-  Score,
   type Alert,
   type Citation,
   type DriftVector,
@@ -35,12 +34,12 @@ const SynthesisDraftSchema = z.object({
   recommendedAction: z.string().min(1),
   reasoning: z.string().min(1),
   triggeringAxes: z.array(DriftAxisSchema).min(1),
-  confidence: Confidence,
+  confidence: ClampedUnit,
   /** Best matching archetype from the supplied library, or null if none fits. */
   patternMatch: z
     .object({
       archetypeId: z.string().min(1),
-      similarity: Score,
+      similarity: ClampedUnit,
       rationale: z.string().min(1),
     })
     .nullable(),
@@ -71,8 +70,18 @@ function renderArchetypes(archetypes: PatternArchetype[]): string {
     .join("\n");
 }
 
+/**
+ * Cap the evidence sent to Stage 3. Apertus' context window is 20k tokens, so a
+ * book with hundreds of signals would overflow it. Send the most recent N — the
+ * model cites from these, and citations resolve against the full evidence set, so
+ * trimming the prompt doesn't break the ≥1-citation guardrail.
+ */
+const MAX_STAGE3_EVIDENCE = 50;
+
 function renderSignals(signals: Signal[]): string {
-  return signals
+  return [...signals]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, MAX_STAGE3_EVIDENCE)
     .map((s) => `- ${s.id} [${s.date.slice(0, 10)}] (${s.axis}) ${s.title}`)
     .join("\n");
 }
@@ -98,6 +107,9 @@ export async function synthesizeAlert(
   const { object: draft, usage } = await generateObject({
     model: languageModel(config, model),
     schema: SynthesisDraftSchema,
+    // Apertus tops out at a 20k context; reserve a bounded output budget so the
+    // prompt + completion stay under it (the SDK otherwise reserves ~8k).
+    maxOutputTokens: 2048,
     system:
       "You are a senior KYC/AML analyst writing a re-KYC recommendation for a human reviewer. " +
       "Decide and justify a recommended action, match the drift signature against the known archetypes to give an outcome prior, " +

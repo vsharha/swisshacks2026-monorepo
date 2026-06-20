@@ -39,12 +39,7 @@ const archetypes: PatternArchetype[] = [
   PatternArchetypeSchema.parse(await readData("pattern-library/long-blockchain-2017.json")),
 ];
 
-const config = {
-  apiKey,
-  baseURL: process.env.PUBLICAI_BASE_URL || undefined,
-  stage2Model: process.env.PUBLICAI_STAGE2_MODEL || undefined,
-  stage3Model: process.env.PUBLICAI_STAGE3_MODEL || undefined,
-};
+const config = { apiKey };
 const result = await runEscalation({ config, baseline, signals, archetypes, asOf });
 
 const { drift } = result;

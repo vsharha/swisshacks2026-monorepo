@@ -51,6 +51,14 @@ export type Source = z.infer<typeof SourceSchema>;
 export const Confidence = z.number().min(0).max(1);
 export const Score = z.number().min(0).max(1);
 
+/**
+ * A [0, 1] value tolerant of LLM outputs that overshoot the range. Open-weight
+ * models (Apertus) honour a json_schema's *shape* but not its numeric bounds,
+ * so a Stage 2/3 model occasionally returns e.g. 1.1 — clamp rather than hard-
+ * fail the whole escalation. Deterministic tiers use the strict Score/Confidence.
+ */
+export const ClampedUnit = z.number().transform((n) => Math.max(0, Math.min(1, n)));
+
 /** An observation date: ISO date (YYYY-MM-DD) or a full ISO datetime. */
 export const EventDate = z.union([z.iso.date(), z.iso.datetime({ offset: true })]);
 

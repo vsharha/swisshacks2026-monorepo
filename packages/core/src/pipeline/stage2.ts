@@ -1,8 +1,7 @@
 import { z } from "zod";
 import { generateObject } from "ai";
 import {
-  Confidence,
-  Score,
+  ClampedUnit,
   type AxisDrift,
   type DriftAxis,
   type KYCBaseline,
@@ -26,9 +25,9 @@ import {
 
 export const AxisMaterialitySchema = z.object({
   /** Refined drift score for this axis after reasoning, [0, 1]. */
-  score: Score,
+  score: ClampedUnit,
   /** How confident the model is in this verdict, [0, 1]. */
-  confidence: Confidence,
+  confidence: ClampedUnit,
   verdict: z.enum(["material", "immaterial", "uncertain"]),
   /** One or two sentences on why the drift is (or isn't) material. */
   reasoning: z.string().min(1),
@@ -79,6 +78,9 @@ export async function reasonAxisMateriality(
   const { object, usage } = await generateObject({
     model: languageModel(config, model),
     schema: AxisMaterialitySchema,
+    // Materiality is a short verdict; keep the output budget small so prompt +
+    // completion stay within Apertus' 20k context window.
+    maxOutputTokens: 768,
     system:
       "You are a KYC analyst assessing whether a customer's risk profile has structurally drifted on ONE axis. " +
       "Be precise and conservative: only call drift 'material' when the evidence genuinely invalidates the onboarding assumptions. " +

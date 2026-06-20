@@ -44,12 +44,7 @@ export async function analyzeEntity(entityId: string, asOf: string): Promise<Ana
 	const prior = priorComposite(listAudit(entityId, 500), entityId);
 
 	const result = await runEscalation({
-		config: {
-			apiKey,
-			baseURL: env.PUBLICAI_BASE_URL || undefined,
-			stage2Model: env.PUBLICAI_STAGE2_MODEL || undefined,
-			stage3Model: env.PUBLICAI_STAGE3_MODEL || undefined
-		},
+		config: { apiKey },
 		baseline: entity.baseline,
 		signals: entity.signals,
 		archetypes: loadPatternLibrary(),

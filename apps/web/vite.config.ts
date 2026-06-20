@@ -14,6 +14,10 @@ export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		sveltekit({
+			// SvelteKit's $env loader has its own dir (default: this app folder) — Vite's
+			// envDir above does NOT cover it. Point it at the same repo-root .env so
+			// $env/dynamic/private (e.g. PUBLICAI_API_KEY) resolves the single source of truth.
+			env: { dir: '../../' },
 			compilerOptions: {
 				// Force runes mode for the project, except for libraries. Can be removed in svelte 6.
 				runes: ({ filename }) =>
