@@ -83,6 +83,34 @@ The real Allbirds timeline is already compressed into ~2 months, so the scripted
 - **Append-only audit log** — the regulatory record of the drift-detection → human-decision loop. Captures: signal ingested (provenance), drift evaluation (tier, confidence, token cost), escalation decision (why Stage 3 fired *or didn't*), alert (reasoning + citations + model version), human action (analyst, decision, rationale, timestamp), outcome (risk-rating change). It doubles as documentation of the cost decisions. Optional hash-chain for tamper-evidence if time allows.
 - **Data separation** between public (Layer 1) and internal (Layer 2) enforced architecturally (separate modules/stores).
 
+## User workflows (three lines of defence)
+
+The monitor maps onto the bank's **three lines of defence**, so each role gets exactly the slice it needs — and the **trail of actions** one line produces becomes the evidence the next line consumes. One drift event flows 1st → 2nd → 3rd line, gaining a decision and an audit record at each step.
+
+### 1st line — Relationship Manager (front office)
+
+Owns the customer relationship and is accountable for the risk on it. Lives in the Risk Control Room book view.
+
+- Watches the live **drift vector** per customer; the cheap tiers absorb the stable book at ~$0, so attention only goes where a baseline is actually moving.
+- When a composite crosses the threshold, receives the **RE-KYC alert** with per-axis reasoning, the "matches Long Blockchain 2017" outcome prior, and citations.
+- Acts at the **human-in-the-loop gate**: *escalate* (hand off to the 2nd line for re-KYC) or *dismiss* (with a rationale). Both write to the append-only log — the start of the **trail of actions**.
+
+### 2nd line — Risk & Compliance / MLRO (independent oversight)
+
+Independent of the front office. Owns screening and is where escalations land.
+
+- Receives 1st-line escalations and drills from the drift signature into the underlying signals and the **beneficial-owner / investor screening** — the ownership axis hooks the drift to the people behind the entity (shadow ownership, offshore investors).
+- Confirms materiality from the Stage 2/3 outputs, weighs the pattern-library outcome prior, and owns the **risk-rating change** (the `outcome` audit event).
+- **Influences strategy**: tunes the detection knobs — axis weights, composite/watch thresholds, escalation policy — that decide what the cheap tiers send up. This is where the bank's risk appetite is encoded, and every change is itself logged.
+
+### 3rd line — Internal Audit / Compliance assurance (independent assurance)
+
+Reads the system end-to-end; never operates it.
+
+- Consumes the **append-only, hash-chained audit log** as a complete chain: signal ingested (provenance) → drift evaluated (tier, confidence, token cost) → escalation decision (why Stage 3 fired *or didn't*) → alert (reasoning, citations, model version) → human action (analyst, decision, rationale) → outcome (rating change).
+- Verifies the **trail of actions** is complete and tamper-evident, and can reconstruct any rating change from first principles — who decided what, on which evidence, at what cost.
+- Reviews the cost decisions and the false-positive / false-negative profile across the book to assure the 2nd line's strategy is sound.
+
 ## Judging-criteria alignment
 
 | Criterion | Weight | How we hit it |
