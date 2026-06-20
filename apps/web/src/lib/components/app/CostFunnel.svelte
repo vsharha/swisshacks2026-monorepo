@@ -43,12 +43,4 @@
 			</div>
 		</div>
 	{/if}
-
-	<div
-		class="bg-brand-tint mt-3 flex items-baseline justify-between rounded-md px-2.5 py-2"
-		title="vs running deep LLM reasoning on every customer, every day"
-	>
-		<span class="text-brand-ink/80 text-[10px] leading-tight">vs LLM<br />on everything</span>
-		<span class="text-brand-ink font-mono text-lg font-medium tabular-nums">~99%</span>
-	</div>
 </div>
