@@ -2,6 +2,7 @@
 	import {
 		deriveMarketResearch,
 		deriveSignalInference,
+		deriveSignalInferenceShort,
 		fmtDate,
 		secFilingDescription,
 		secFormCode,
@@ -46,12 +47,12 @@
 						>Event</Table.Head
 					>
 					<Table.Head
-						class="text-muted2 bg-panel sticky top-0 z-10 h-auto w-[27%] py-1.5 text-[10px] tracking-[0.12em] uppercase"
-						>Market research</Table.Head
+						class="text-muted2 bg-panel sticky top-0 z-10 h-auto w-[64px] py-1.5 text-[10px] tracking-[0.12em] uppercase"
+						>Confidence</Table.Head
 					>
 					<Table.Head
-						class="text-muted2 bg-panel sticky top-0 z-10 h-auto w-[64px] py-1.5 text-right text-[10px] tracking-[0.12em] uppercase"
-						>Confidence</Table.Head
+						class="text-muted2 bg-panel sticky top-0 z-10 h-auto w-[30%] py-1.5 text-[10px] tracking-[0.12em] uppercase"
+						>Market research</Table.Head
 					>
 					<Table.Head
 						class="text-muted2 bg-panel sticky top-0 z-10 h-auto py-1.5 text-[10px] tracking-[0.12em] uppercase"
@@ -105,13 +106,8 @@
 							</div>
 						</Table.Cell>
 
-						<!-- Market research -->
-						<Table.Cell class="text-muted2 py-2 align-top leading-snug whitespace-normal">
-							{deriveMarketResearch(s)}
-						</Table.Cell>
-
 						<!-- Confidence -->
-						<Table.Cell class="py-2 text-right align-top">
+						<Table.Cell class="py-2 align-top">
 							<span
 								class="font-mono text-[11px] tabular-nums"
 								style="color: {statusVar[entity.drift.axes[s.axis].status]}"
@@ -119,9 +115,14 @@
 							>
 						</Table.Cell>
 
-						<!-- Signal inference -->
-						<Table.Cell class="text-text2 py-2 align-top leading-snug whitespace-normal">
-							{deriveSignalInference(s)}
+						<!-- Market research -->
+						<Table.Cell class="text-muted2 py-2 align-top leading-snug whitespace-normal">
+							{deriveMarketResearch(s)}
+						</Table.Cell>
+
+						<!-- Signal inference (short; full read on hover) -->
+						<Table.Cell class="text-text2 py-2 align-top leading-snug whitespace-nowrap">
+							<span title={deriveSignalInference(s)}>{deriveSignalInferenceShort(s)}</span>
 						</Table.Cell>
 					</Table.Row>
 				{/each}

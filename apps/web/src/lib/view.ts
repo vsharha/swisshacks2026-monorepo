@@ -237,3 +237,22 @@ export function deriveSignalInference(s: Signal): string {
 	}
 	return `${band} ${axis} drift signal (${typeText})${nuance}.`;
 }
+
+/**
+ * Two-word inference for a compact column: confidence band + direction
+ * (`adverse` / `favourable` / `contraction` / `expansion`, else `drift`). Use
+ * `deriveSignalInference` for the full sentence (e.g. as a tooltip).
+ */
+export function deriveSignalInferenceShort(s: Signal): string {
+	const band = s.confidence >= 0.85 ? 'Strong' : s.confidence >= 0.6 ? 'Moderate' : 'Weak';
+	const sentiment = num(s.payload.sentiment);
+	const changePct = num(s.payload.changePct);
+	let direction = 'drift';
+	if (s.axis === 'reputation' && sentiment !== null) {
+		if (sentiment < -0.15) direction = 'adverse';
+		else if (sentiment > 0.15) direction = 'favourable';
+	} else if (s.axis === 'scale' && changePct !== null) {
+		direction = changePct < 0 ? 'contraction' : 'expansion';
+	}
+	return `${band} ${direction}`;
+}
