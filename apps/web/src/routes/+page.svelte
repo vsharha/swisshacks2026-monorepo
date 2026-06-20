@@ -114,6 +114,35 @@
 		llmNote = null;
 		llmCost = null;
 	});
+
+	// Fast-forward replay: opening a customer sweeps the timeline clock from the
+	// first signal up to "now", so the radar, events and cost funnel animate into
+	// place instead of snapping. Re-runs whenever a different customer is opened.
+	let rafId: number | null = null;
+	$effect(() => {
+		if (!selectedId) return;
+		const from = untrack(() => startMs);
+		const to = untrack(() => endMs);
+		if (!(to > from)) {
+			asOf = to;
+			return;
+		}
+		const duration = 1500;
+		const ease = (t: number) => 1 - Math.pow(1 - t, 3); // cubic ease-out
+		let started: number | null = null;
+		const tick = (now: number) => {
+			started ??= now;
+			const t = Math.min(1, (now - started) / duration);
+			asOf = from + (to - from) * ease(t);
+			rafId = t < 1 ? requestAnimationFrame(tick) : null;
+		};
+		asOf = from;
+		rafId = requestAnimationFrame(tick);
+		return () => {
+			if (rafId !== null) cancelAnimationFrame(rafId);
+			rafId = null;
+		};
+	});
 </script>
 
 <div class="bg-bg text-text flex h-screen flex-col overflow-hidden px-5 py-4 font-sans text-sm">
