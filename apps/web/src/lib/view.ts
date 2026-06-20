@@ -212,6 +212,18 @@ export function deriveMarketResearch(s: Signal): string {
 			const owner = str(p.owner);
 			return `Regulator notice${level ? ` — ${level}` : ''}${country ? ` (${country})` : ''}${owner ? ` re ${owner}` : ''}`;
 		}
+		case 'linkedin': {
+			const focus = str(p.focus);
+			if (focus) return `Hiring pivot → ${focus}`;
+			const parts: string[] = [];
+			const changePct = num(p.changePct);
+			const headcount = num(p.headcount);
+			const openRoles = num(p.openRoles);
+			if (changePct !== null) parts.push(`${changePct > 0 ? '+' : ''}${changePct}% headcount`);
+			if (headcount !== null) parts.push(`${headcount} staff`);
+			if (openRoles !== null) parts.push(`${openRoles} open roles`);
+			return parts.length ? `Hiring · ${parts.join(' · ')}` : 'Hiring signal';
+		}
 		default:
 			return `${s.source.replace(/_/g, ' ')} record`;
 	}

@@ -5,6 +5,7 @@ export * from "./chain.ts";
 export * from "./gleif.ts";
 export * from "./internal.ts";
 export * from "./market.ts";
+export * from "./linkedin.ts";
 export * from "./ner.ts";
 export * from "./rss.ts";
 export * from "./secEnforcement.ts";

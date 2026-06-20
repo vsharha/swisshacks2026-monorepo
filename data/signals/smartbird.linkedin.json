@@ -1,0 +1,36 @@
+[
+  {
+    "id": "linkedin-smartbird-hiring_freeze-2026-04-02",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "hiring_freeze",
+    "date": "2026-04-02",
+    "sourceUrl": "https://www.linkedin.com/company/allbirds/jobs/",
+    "title": "Open roles collapse to near-zero — effective hiring freeze.",
+    "source": "linkedin",
+    "payload": {
+      "headcount": null,
+      "changePct": null,
+      "openRoles": 2,
+      "focus": null
+    },
+    "confidence": 0.72
+  },
+  {
+    "id": "linkedin-smartbird-headcount_drop-2026-03-25",
+    "entityId": "smartbird",
+    "axis": "scale",
+    "type": "headcount_drop",
+    "date": "2026-03-25",
+    "sourceUrl": "https://www.linkedin.com/company/allbirds/jobs/",
+    "title": "Headcount down ~18% year-on-year amid restructuring.",
+    "source": "linkedin",
+    "payload": {
+      "headcount": 240,
+      "changePct": -18,
+      "openRoles": null,
+      "focus": null
+    },
+    "confidence": 0.72
+  }
+]

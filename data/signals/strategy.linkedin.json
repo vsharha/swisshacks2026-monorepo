@@ -1,0 +1,36 @@
+[
+  {
+    "id": "linkedin-strategy-hiring_surge-2026-05-12",
+    "entityId": "strategy",
+    "axis": "scale",
+    "type": "hiring_surge",
+    "date": "2026-05-12",
+    "sourceUrl": "https://www.linkedin.com/company/microstrategy/jobs/",
+    "title": "Headcount up ~22% year-on-year, concentrated in crypto and finance functions.",
+    "source": "linkedin",
+    "payload": {
+      "headcount": 410,
+      "changePct": 22,
+      "openRoles": 35,
+      "focus": null
+    },
+    "confidence": 0.72
+  },
+  {
+    "id": "linkedin-strategy-hiring_pivot-2026-04-28",
+    "entityId": "strategy",
+    "axis": "business_model",
+    "type": "hiring_pivot",
+    "date": "2026-04-28",
+    "sourceUrl": "https://www.linkedin.com/company/microstrategy/jobs/",
+    "title": "Hiring shift toward digital-asset custody, on-chain ops and treasury engineering roles.",
+    "source": "linkedin",
+    "payload": {
+      "headcount": null,
+      "changePct": null,
+      "openRoles": 18,
+      "focus": "Bitcoin treasury & on-chain custody"
+    },
+    "confidence": 0.6
+  }
+]

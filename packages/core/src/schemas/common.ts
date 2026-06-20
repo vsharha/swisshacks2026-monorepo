@@ -49,6 +49,7 @@ export const SourceSchema = z.enum([
   "opencorporates",
   "graph",
   "market",
+  "linkedin",
   "chain",
   "internal",
   "manual",
