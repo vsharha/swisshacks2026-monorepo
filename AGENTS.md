@@ -23,14 +23,14 @@ The `docs/` directory holds relevant background and reference material — consu
 
 Access to the EventRegistry API is provided.
 
-## Git
+## Commtting guidance
 
 - Commit after each meaningful change with a short title describing what was done
 - No description block
 - Commit as the user, not as yourself
 - Match the style of previous commit messages
 
-## Before handing off code changes to the user
+## Before committing
 
 Run in order when code was affected:
 
