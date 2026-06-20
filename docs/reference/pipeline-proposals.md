@@ -32,10 +32,18 @@ confidence = 0.40 · source quality
 
 **Source quality** is a per-connector prior keyed on the `source` field the
 connectors already set — e.g. `opensanctions`/`sec_edgar`/`gleif` ≈ 0.95+,
-EventRegistry adverse media ≈ 0.6–0.9, `manual`/social ≈ 0.5–0.8. Writes the
-existing `AxisDrift.confidence` field; changes no schemas. Keeps risk and
-confidence separate (a high-confidence signal can still be low-risk) and directly
-strengthens the "confidence on every claim" guardrail.
+EventRegistry adverse media ≈ 0.6–0.9, `manual`/social ≈ 0.5–0.8.
+
+**Historical accuracy** has no live input in demo scope — there is no track record
+of past predictions to score against yet — so it is a **fixed per-source prior**
+(degenerating into a second source-quality term) until an outcome-feedback loop
+exists to populate it. The first three terms carry the signal; the fourth is a
+deliberately stubbed constant, not a live input. (Drop-and-renormalise to three
+terms is the alternative; keeping the slot named documents the intended shape.)
+
+Writes the existing `AxisDrift.confidence` field; **this proposal changes no
+schemas** (a high-confidence signal can still be low-risk — risk and confidence
+stay separate), and directly strengthens the "confidence on every claim" guardrail.
 
 ### 2. Change-triggered (delta) alerting
 
@@ -45,8 +53,16 @@ strengthens the "confidence on every claim" guardrail.
 last `drift_evaluated` audit entry, even below the absolute threshold. This makes
 techstack.md's *change-triggered evaluation* thesis literally true in code — a
 stable customer that suddenly moves is caught on the delta, not just the level.
-Slots into the escalation gate (`pipeline/escalate.ts`) reading prior state from
-the audit log. Additive to `statusForScore`, not a replacement.
+
+Kept **truly additive** via an **optional `priorComposite?` on `RunEscalationParams`**:
+the *caller* owns the audit log (`analyze.ts`), so it reads the previous
+`drift_evaluated` composite and passes it in; `runEscalation` stays side-effect-free
+and never touches the log itself. The escalation gate then widens from
+`drift.status === "alert"` to *that **or** `priorComposite !== undefined &&
+drift.composite - priorComposite >= DELTA`*. When the field is omitted the gate is
+byte-for-byte the current behaviour, so every existing call site compiles and runs
+unchanged. `statusForScore` and `scoreDriftVector` are untouched — the delta is a
+gate-level OR, not a new status.
 
 ### 3. Knowledge graph / graph-risk signal
 
@@ -158,9 +174,14 @@ text.
 
 **Add:** a local NER pass (GLiNER `company` label, as in `Amina-BANK`
 `entity_extractor.py`) to tag company mentions, then match against the book by
-normalized form ("Apple" = "Apple Inc."). The ideal Stage-0 move: **zero token
-cost**, runs locally, strengthens the cost-efficiency story. Keep it lazy-loaded
-(the model is ~1.5 GB).
+normalized form ("Apple" = "Apple Inc."). The Stage-0 move: **zero token cost**,
+runs locally, strengthens the cost-efficiency story.
+
+The tradeoff is **infra, not tokens** — a ~1.5 GB lazy-loaded model carries real
+disk and cold-start latency the rest of the cascade doesn't, and it only earns its
+place once RSS (proposal 7) brings in free-text entries without a `conceptUri`. So
+it is **deferred until proposal 7 lands**; before that, ER's entity resolution
+already covers the book and the model is pure overhead.
 
 ### 9. Cross-source dedup + a fingerprint key
 

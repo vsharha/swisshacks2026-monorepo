@@ -10,3 +10,6 @@ dist
 
 # Runtime audit log (append-only write state, not seed data)
 data/audit.jsonl
+
+# Visual brainstorming companion
+.superpowers/
