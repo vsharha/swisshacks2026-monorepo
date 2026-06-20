@@ -1,30 +1,20 @@
-import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { join } from 'node:path';
 import { AuditEntrySchema, type AuditEntry, type RiskRating } from '@kyc/core';
 import { deriveCaseState, type CaseState } from '@kyc/core/governance';
-import { dataDir } from './data';
 
 /**
  * Append-only audit log — the regulatory record of the drift-detection →
- * human-decision loop. Stored as hash-chained JSON Lines (`data/audit.jsonl`):
- * each entry's hash covers the previous hash, so any tampering with an earlier
- * line breaks every hash after it (tamper-evidence without a DB dependency).
- * Server-only by virtue of living in $lib/server.
+ * human-decision loop. Held in memory only (a module-level array): entries
+ * accumulate for the lifetime of the server process and reset clean on restart,
+ * so a demo never starts from stale, polluted state. Each entry is hash-chained
+ * (its hash covers the previous hash), giving tamper-evidence within a session
+ * without a DB or file dependency. Server-only by virtue of living in $lib/server.
  */
 
-const auditFile = join(dataDir, 'audit.jsonl');
-
-function readLines(): string[] {
-	if (!existsSync(auditFile)) return [];
-	return readFileSync(auditFile, 'utf8').split('\n').filter(Boolean);
-}
+const entries: AuditEntry[] = [];
 
 function lastHash(): string | null {
-	const lines = readLines();
-	if (lines.length === 0) return null;
-	const last = JSON.parse(lines[lines.length - 1]!) as AuditEntry;
-	return last.hash ?? null;
+	return entries.at(-1)?.hash ?? null;
 }
 
 /** Append one entry, chaining it to the previous entry's hash. */
@@ -39,27 +29,24 @@ export function appendAudit(entry: AuditEntry): AuditEntry {
 		.update((prevHash ?? '') + JSON.stringify(base))
 		.digest('hex');
 	const full = AuditEntrySchema.parse({ ...base, hash });
-	mkdirSync(dataDir, { recursive: true });
-	appendFileSync(auditFile, JSON.stringify(full) + '\n', 'utf8');
+	entries.push(full);
 	return full;
 }
 
 /** Most-recent entries first, optionally filtered to one entity. */
 export function listAudit(entityId?: string, limit = 50): AuditEntry[] {
-	let entries = readLines().map((l) => AuditEntrySchema.parse(JSON.parse(l)));
-	if (entityId) entries = entries.filter((e) => e.entityId === entityId);
-	return entries.slice(-limit).reverse();
+	const filtered = entityId ? entries.filter((e) => e.entityId === entityId) : entries;
+	return filtered.slice(-limit).reverse();
 }
 
 export function auditCount(): number {
-	return readLines().length;
+	return entries.length;
 }
 
 /** Effective current rating: the most recent `outcome` for the entity, else the baseline. */
 export function currentRating(entityId: string, fallback: RiskRating): RiskRating {
 	let rating = fallback;
-	for (const line of readLines()) {
-		const e = JSON.parse(line) as AuditEntry;
+	for (const e of entries) {
 		if (e.kind === 'outcome' && e.entityId === entityId) rating = e.toRating;
 	}
 	return rating;
@@ -67,8 +54,5 @@ export function currentRating(entityId: string, fallback: RiskRating): RiskRatin
 
 /** Current governance case state for an entity, replayed from the log (chronological). */
 export function caseStateFor(entityId: string): CaseState {
-	const entries = readLines()
-		.map((l) => AuditEntrySchema.parse(JSON.parse(l)))
-		.filter((e) => e.entityId === entityId);
-	return deriveCaseState(entries);
+	return deriveCaseState(entries.filter((e) => e.entityId === entityId));
 }

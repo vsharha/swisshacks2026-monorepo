@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
-	import { AXES } from '@kyc/core';
+	import { toast } from 'svelte-sonner';
+	import { AXES, type Alert, type AuditEntry, type RiskRating } from '@kyc/core';
 	import { scoreDriftVector } from '@kyc/core/drift';
 	import type { HumanRole } from '@kyc/core';
 	import type { CaseState } from '@kyc/core/governance';
@@ -11,6 +12,7 @@
 	import LeftRail from '$lib/components/app/LeftRail.svelte';
 	import EntityView from '$lib/components/app/EntityView.svelte';
 	import PatternRail from '$lib/components/app/PatternRail.svelte';
+	import Stage3Detail from '$lib/components/app/Stage3Detail.svelte';
 	import BookGlobe from '$lib/components/app/BookGlobe.svelte';
 	import type { PageData } from './$types';
 
@@ -40,7 +42,35 @@
 	let ratings = $state(untrack(() => data.ratings));
 	let showAudit = $state(false);
 
+	// Last Stage 3 synthesis, surfaced via toast action + persistent panel button.
+	let lastAlert = $state<Alert | null>(null);
+	let showStage3 = $state(false);
+
 	type ActionResult = { type: string; data?: Record<string, unknown> };
+
+	const ratingLabel = (r: RiskRating) => r.charAt(0).toUpperCase() + r.slice(1);
+
+	// Map the priority audit entries an action appended into toasts.
+	function toastEvents(events: AuditEntry[]) {
+		for (const e of events) {
+			if (e.kind === 'escalation_decision') {
+				const msg = e.escalated
+					? `Escalated to Stage 3 — composite ${e.composite.toFixed(2)}`
+					: `No escalation — composite ${e.composite.toFixed(2)}`;
+				toast.info(msg, { description: e.reason });
+			} else if (e.kind === 'outcome') {
+				toast.warning(`Risk rating ${ratingLabel(e.fromRating)} → ${ratingLabel(e.toRating)}`, {
+					description: 'Re-KYC outcome written to the audit log.'
+				});
+			} else if (e.kind === 'alert_raised') {
+				toast.success('Stage 3 re-KYC alert raised', {
+					description: 'Deep synthesis complete — recommendation, reasoning and citations ready.',
+					duration: Number.POSITIVE_INFINITY,
+					action: { label: 'View detail', onClick: () => (showStage3 = true) }
+				});
+			}
+		}
+	}
 
 	// `use:enhance` handler: keep the result in local state instead of a full
 	// page reload, so the radar/scrubber context is preserved.
@@ -58,10 +88,12 @@
 			if (typeof body.auditCount === 'number') auditCount = body.auditCount;
 			if (Array.isArray(body.audit)) auditEntries = body.audit as typeof auditEntries;
 			llmCost = (body.cost as typeof llmCost) ?? null;
+			lastAlert = (body.alert as Alert | null) ?? null;
 			if (body.llm && body.alert)
 				llmNote = 'Stage 3 synthesis complete — written to the audit log.';
 			else if (!body.llm) llmNote = 'No PUBLICAI_API_KEY configured — deep synthesis skipped.';
 			else llmNote = 'Composite below the alert threshold — no Stage 3 synthesis.';
+			if (Array.isArray(body.events)) toastEvents(body.events as AuditEntry[]);
 		};
 	};
 
@@ -75,6 +107,7 @@
 			if (Array.isArray(body.audit)) auditEntries = body.audit as typeof auditEntries;
 			if (typeof body.rating === 'string')
 				ratings = { ...ratings, [selectedId]: body.rating as (typeof ratings)[string] };
+			if (Array.isArray(body.events)) toastEvents(body.events as AuditEntry[]);
 		};
 	};
 
@@ -115,6 +148,8 @@
 		void asOf;
 		llmNote = null;
 		llmCost = null;
+		lastAlert = null;
+		showStage3 = false;
 	});
 
 	// Fast-forward replay: opening a customer sweeps the timeline clock from the
@@ -183,6 +218,8 @@
 				{auditCount}
 				{llmNote}
 				{analyzing}
+				hasAlert={!!lastAlert}
+				onViewStage3={() => (showStage3 = true)}
 				{enhanceGov}
 				{enhanceAnalyze}
 			/>
@@ -203,3 +240,4 @@
 </div>
 
 <AuditDrawer bind:open={showAudit} entries={auditEntries} />
+<Stage3Detail bind:open={showStage3} alert={lastAlert} />

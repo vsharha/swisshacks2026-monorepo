@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { fail } from '@sveltejs/kit';
-import type { HumanDecision, HumanRole, RiskRating } from '@kyc/core';
+import type { AuditEntry, HumanDecision, HumanRole, RiskRating } from '@kyc/core';
 import { governanceCheck } from '@kyc/core/governance';
 import { loadBook, loadPatternLibrary } from '$lib/server/data';
 import { analyzeEntity } from '$lib/server/analyze';
@@ -121,23 +121,29 @@ export const actions: Actions = {
 			rationale
 		});
 
+		// Priority audit entries surfaced to the client as toasts.
+		const events: AuditEntry[] = [];
+
 		let rating = currentRating(entityId, baseRating);
 		if (decision === 'approve' && rating !== 'high') {
-			appendAudit({
-				id: randomUUID(),
-				ts: now(),
-				entityId,
-				kind: 'outcome',
-				fromRating: rating,
-				toRating: 'high',
-				newStatus: 'alert'
-			});
+			events.push(
+				appendAudit({
+					id: randomUUID(),
+					ts: now(),
+					entityId,
+					kind: 'outcome',
+					fromRating: rating,
+					toRating: 'high',
+					newStatus: 'alert'
+				})
+			);
 			rating = 'high';
 		}
 
 		return {
 			case: caseStateFor(entityId),
 			rating,
+			events,
 			auditCount: auditCount(),
 			audit: listAudit(undefined, 40)
 		};

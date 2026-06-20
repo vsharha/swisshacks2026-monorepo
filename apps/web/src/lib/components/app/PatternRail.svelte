@@ -17,6 +17,8 @@
 		auditCount,
 		llmNote,
 		analyzing,
+		hasAlert,
+		onViewStage3,
 		enhanceGov,
 		enhanceAnalyze
 	}: {
@@ -28,6 +30,8 @@
 		auditCount: number;
 		llmNote: string | null;
 		analyzing: boolean;
+		hasAlert: boolean;
+		onViewStage3: () => void;
 		enhanceGov: SubmitFunction;
 		enhanceAnalyze: SubmitFunction;
 	} = $props();
@@ -282,8 +286,16 @@
 					<span class="text-text">Dismissed{last ? ` by ${last.actor}` : ''}</span>
 				</div>
 			{/if}
-
-			{#if llmNote}
+			{#if hasAlert}
+				<Button
+					variant="link"
+					size="sm"
+					onclick={onViewStage3}
+					class="text-brand mt-1.5 h-auto p-0 text-[11px] font-medium"
+				>
+					View Stage 3 detail →
+				</Button>
+			{:else if llmNote}
 				<p class="text-muted2 mt-2 text-[10px] leading-relaxed">{llmNote}</p>
 			{/if}
 		</div>
