@@ -69,6 +69,39 @@ independently and combined into a weighted composite:
    live cost funnel. Stage verdicts, escalation decisions, the alert and the
    analyst's escalate/dismiss decision all append to the audit log.
 
+### Relationship graph & propagation
+
+A small relationship layer (`packages/core/src/graph/`) sits beside the cascade
+(proposals 3 + 5). `buildGraph` derives a typed graph from the book — entities,
+the people and vehicles that own or control them, and the countries they touch as
+**nodes**; `OWNS` / `CONTROLS` / `INVESTED_IN` / `BOARD_MEMBER_OF` / `OPERATES_IN`
+as **edges** — plus registry-style links the baselines can't express on their own
+(`data/reference/ownership-links.json`). Because a shared owner appears once, two
+entities with a common controller are connected.
+
+Walking it (`graph/walk.ts`) yields two products, both emitted as **ordinary
+`Signal`s** so Stage 0/1/2/3 consume them unchanged:
+
+- **Graph-risk enricher** (`pipeline/enrichers/graph.ts`, proposal 3): from an
+  entity, find risk reached through a **chain** of ≥2 hops (a sanctioned
+  controller behind a nominee, a high-risk affiliate) and emit an `ownership`
+  `graph_exposure` signal with the relationship path. One-hop reach is the static
+  screen's job (proposal 6); this is the hidden-controller case it cannot see.
+- **Propagation** (`pipeline/propagate.ts`, proposal 5): when a drift is
+  *confirmed* on entity A, emit cheap `propagated_risk` re-trigger signals on A's
+  customer neighbours, so a sanctioned shared owner moves every entity it touches.
+
+Graph signals carry the `RelationshipPath` in their payload; Stage 3 lifts those
+onto the `Alert.relationshipPaths` field as citable, first-class explainability.
+Graph-derived signals use the `graph` source (a deliberately softer
+`SOURCE_QUALITY` prior of 0.70 — inference, not a primary list hit), with
+per-hop confidence decay. The offline `@kyc/scripts/graph.ts` builds the book
+graph and writes `data/signals/<entity>.graph.json`; `loadBook` picks them up like
+any source. Demo: NordTrade Holding's nominee parent (Caspian Holdings) is
+controlled by the same OFAC-sanctioned investor behind Gulf Bridge Capital, so
+NordTrade inherits ownership exposure through a two-hop chain with no adverse news
+of its own.
+
 ### Sources & ingestion
 
 The connectors are framework-agnostic: they take `apiKey` / `userAgent` as
@@ -113,6 +146,9 @@ fetch.
   `DriftVector`/`AxisDrift`, `Alert`, audit entries
 - `packages/core/src/pipeline/stage0.ts` — keyword axis routing
 - `packages/core/src/drift/score.ts` — Stage 1 scoring + `AXIS_WEIGHTS`, thresholds
+- `packages/core/src/graph/` — relationship graph: `buildGraph`, walk, hidden-controller paths
+- `packages/core/src/pipeline/enrichers/graph.ts` — graph-risk enricher (proposal 3)
+- `packages/core/src/pipeline/propagate.ts` — risk propagation re-trigger (proposal 5)
 - `packages/core/src/pipeline/stage2.ts` — per-axis LLM materiality (Haiku)
 - `packages/core/src/pipeline/stage3.ts` — alert synthesis + pattern match (Sonnet)
 - `packages/core/src/pipeline/escalate.ts` — cascade orchestration + cost tally

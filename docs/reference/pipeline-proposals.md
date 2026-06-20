@@ -23,9 +23,9 @@ sample fixtures with a documented key seam (no live credentials in the repo).
 
 - [x] **1. Confidence engine** — Phase 1 (merged)
 - [x] **2. Change-triggered (delta) alerting** — Phase 1 (merged)
-- [ ] **3. Knowledge graph / graph-risk signal** — Phase 2b (planned / in progress)
+- [x] **3. Knowledge graph / graph-risk signal** — Phase 2b (merged)
 - [x] **4. Geopolitical + regulatory enrichers** — Phase 2a (merged)
-- [ ] **5. Graph propagation as a re-trigger** — Phase 2b (planned / in progress)
+- [x] **5. Graph propagation as a re-trigger** — Phase 2b (merged)
 - [x] **6. Static screening (owner/management sanctions + country risk)** — Phase 2a (merged)
 - [ ] **7. RSS news connector** — Phase 3
 - [ ] **8. Cheap local NER as a Stage-0 entity filter** — Phase 4 (default normalized-form matcher; heavy model opt-in)
@@ -36,10 +36,13 @@ sample fixtures with a documented key seam (no live credentials in the repo).
 - [ ] **13. Internal / MCP intelligence — the outcome-feedback loop** — Phase 4 (scaffold)
 - [ ] **14. Blockchain / crypto-asset intelligence** — Phase 4 (scaffold)
 
-**Done: 5 / 14** (proposals 1, 2, 4, 6, 9). Foundations also landed: a Vitest test
-runner, `SOURCE_QUALITY` priors, the `regulator` source, a FATF-modelled
-country-risk reference, the `opensanctions` matcher + sample fixture, and the
-Gulf Bridge Capital (ADGM/UAE) demo entity.
+**Done: 7 / 14** (proposals 1, 2, 3, 4, 5, 6, 9). Foundations also landed: a Vitest
+test runner, `SOURCE_QUALITY` priors, the `regulator` + `graph` sources, a
+FATF-modelled country-risk reference, the `opensanctions` matcher + sample fixture,
+the Gulf Bridge Capital (ADGM/UAE) demo entity, and — Phase 2b — a `@kyc/core/graph`
+relationship layer (`buildGraph` + walk), the graph-risk enricher and risk
+propagation, `Alert.relationshipPaths`, and the NordTrade → Caspian Holdings →
+sanctioned-controller hidden-ownership demo.
 
 ### 1. Confidence engine
 
