@@ -83,7 +83,10 @@
 								<Button
 									variant="link"
 									size="sm"
-									onclick={() => action?.onClick()}
+									onclick={() => {
+										open = false;
+										action?.onClick();
+									}}
 									class="text-brand mt-0.5 h-auto justify-start p-0 text-[11px] font-medium"
 								>
 									{action?.label}
