@@ -14,6 +14,7 @@
 	import PatternRail from '$lib/components/app/PatternRail.svelte';
 	import Stage3Detail from '$lib/components/app/Stage3Detail.svelte';
 	import BookGlobe from '$lib/components/app/BookGlobe.svelte';
+	import NewsFeedPanel from '$lib/components/app/NewsFeedPanel.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -186,6 +187,7 @@
 	<TopBar
 		{auditCount}
 		{role}
+		selected={!!selected}
 		onRoleChange={(r) => (role = r)}
 		onOpenAudit={() => (showAudit = true)}
 		onHome={() => (selectedId = '')}
@@ -224,10 +226,12 @@
 				{enhanceAnalyze}
 			/>
 		{:else}
-			<!-- Home / empty state · client-book globe spans the center + right rail -->
-			<div class="col-span-2 min-h-0 self-stretch">
+			<!-- Home / empty state · client-book globe in the center, news feed in the rail -->
+			<div class="min-h-0 self-stretch">
 				<BookGlobe {book} onselect={(id) => (selectedId = id)} />
 			</div>
+
+			<NewsFeedPanel {book} asOfIso={nowIso} onselect={(id) => (selectedId = id)} />
 		{/if}
 	</div>
 

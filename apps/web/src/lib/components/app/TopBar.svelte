@@ -7,12 +7,14 @@
 	let {
 		auditCount,
 		role,
+		selected,
 		onRoleChange,
 		onOpenAudit,
 		onHome
 	}: {
 		auditCount: number;
 		role: HumanRole;
+		selected: boolean;
 		onRoleChange: (r: HumanRole) => void;
 		onOpenAudit: () => void;
 		onHome: () => void;
@@ -37,25 +39,27 @@
 	</button>
 
 	<div class="flex items-center gap-3">
-		<div
-			class="border-line flex items-center gap-0.5 rounded-md border p-0.5"
-			role="group"
-			aria-label="Active role"
-		>
-			{#each roles as r (r.id)}
-				<button
-					type="button"
-					onclick={() => onRoleChange(r.id)}
-					class={cn(
-						'rounded px-2.5 py-1 text-[11px] font-medium transition-colors',
-						role === r.id ? 'bg-panel2 text-text' : 'text-muted2 hover:text-text'
-					)}
-					aria-pressed={role === r.id}
-				>
-					{r.label}
-				</button>
-			{/each}
-		</div>
+		{#if selected}
+			<div
+				class="border-line flex items-center gap-0.5 rounded-md border p-0.5"
+				role="group"
+				aria-label="Active role"
+			>
+				{#each roles as r (r.id)}
+					<button
+						type="button"
+						onclick={() => onRoleChange(r.id)}
+						class={cn(
+							'rounded px-2.5 py-1 text-[11px] font-medium transition-colors',
+							role === r.id ? 'bg-panel2 text-text' : 'text-muted2 hover:text-text'
+						)}
+						aria-pressed={role === r.id}
+					>
+						{r.label}
+					</button>
+				{/each}
+			</div>
+		{/if}
 
 		<Button
 			size="sm"
