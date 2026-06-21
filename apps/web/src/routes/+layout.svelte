@@ -34,7 +34,7 @@
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <Tooltip.Provider delayDuration={150}>
-	<div class="bg-bg text-text flex h-screen flex-col overflow-hidden px-5 py-4 font-sans text-sm">
+	<div class="bg-bg text-text flex h-screen flex-col overflow-hidden px-5 pb-4 font-sans text-sm">
 		<TopBar
 			auditCount={data.auditCount}
 			role={ui.role}

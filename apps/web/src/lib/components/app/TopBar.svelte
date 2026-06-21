@@ -26,7 +26,7 @@
 	];
 </script>
 
-<header class="border-line flex h-12 shrink-0 items-center justify-between border-b">
+<header class="border-line flex h-16 shrink-0 items-center justify-between border-b">
 	<button
 		type="button"
 		onclick={onHome}
