@@ -26,12 +26,12 @@
 	];
 </script>
 
-<header class="border-line flex items-center justify-between border-b pb-3">
+<header class="border-line flex h-12 shrink-0 items-center justify-between border-b">
 	<button
 		type="button"
 		onclick={onHome}
 		aria-label="Go to overview"
-		class="flex items-baseline gap-3 rounded-md transition-opacity hover:opacity-70"
+		class="flex items-center gap-3 rounded-md transition-opacity hover:opacity-70"
 	>
 		<span class="text-galaxy font-sans text-[15px] font-bold tracking-[0.22em]">SENTINEL</span>
 		<span class="bg-line h-3.5 w-px self-center"></span>
