@@ -224,7 +224,7 @@
 	});
 </script>
 
-<div class="border-line bg-panel flex shrink-0 flex-col gap-2 rounded-lg border p-4">
+<div class="border-line bg-panel flex min-h-0 flex-1 flex-col gap-2 rounded-lg border p-4">
 	<div class="flex items-center justify-between gap-3">
 		<div class="text-muted2 text-[10px] tracking-[0.16em] uppercase">
 			Ownership &amp; control graph
@@ -258,198 +258,203 @@
 	</div>
 
 	{#if model}
-		<div class="relative">
-			<svg
-				viewBox="0 0 {model.d.W} {model.d.H}"
-				width="100%"
-				height={model.d.H}
-				class="block"
-				role="img"
-				aria-label="Ownership and control graph for {entity.baseline.name}"
-			>
-				<!-- direct edges (thickness ∝ ownership share) -->
-				{#each model.placed as p (p.node.id + '-edge')}
-					<line
-						x1={model.d.CX}
-						y1={model.d.CY}
-						x2={p.x}
-						y2={p.y}
-						stroke={edgeStroke(p)}
-						stroke-width={strokeWidth(p.weight)}
-						stroke-linecap="round"
-						opacity={hovered && hovered !== p.node.id ? 0.2 : 0.85}
-					/>
-				{/each}
-
-				<!-- 2-hop risk edges (conduit → origin) -->
-				{#each model.outer as o (o.id + '-edge')}
-					<line
-						x1={o.ax}
-						y1={o.ay}
-						x2={o.x}
-						y2={o.y}
-						stroke="var(--alert)"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-dasharray="4 3"
-						opacity={hovered && hovered !== o.id ? 0.25 : 0.9}
-					/>
-				{/each}
-
-				<!-- relationship labels -->
-				{#each model.placed as p (p.node.id + '-rel')}
-					<text
-						x={model.d.CX + (p.x - model.d.CX) * 0.56}
-						y={model.d.CY + (p.y - model.d.CY) * 0.56}
-						fill="var(--muted)"
-						font-size="8.5"
-						font-family="var(--font-mono)"
-						text-anchor="middle"
-						dominant-baseline="middle"
-						letter-spacing="0.04em"
-						class="pointer-events-none select-none"
-						opacity={hovered && hovered !== p.node.id ? 0.2 : 1}
-					>
-						{REL_LABEL[p.rel]}{p.weight !== undefined ? ` · ${Math.round(p.weight * 100)}%` : ''}
-					</text>
-				{/each}
-				{#each model.outer as o (o.id + '-rel')}
-					<text
-						x={o.ax + (o.x - o.ax) * 0.5}
-						y={o.ay + (o.y - o.ay) * 0.5}
-						fill="var(--alert-deep)"
-						font-size="8"
-						font-family="var(--font-mono)"
-						text-anchor="middle"
-						dominant-baseline="middle"
-						letter-spacing="0.04em"
-						class="pointer-events-none select-none"
-						opacity={hovered && hovered !== o.id ? 0.25 : 1}>{REL_LABEL[o.edge]}</text
-					>
-				{/each}
-
-				<!-- direct neighbour nodes -->
-				{#each model.placed as p (p.node.id)}
-					{@const isCountry = p.node.type === 'country'}
-					<g
-						role="listitem"
-						aria-label={p.node.label}
-						onpointerenter={() => (hovered = p.node.id)}
-						onpointerleave={() => (hovered = hovered === p.node.id ? null : hovered)}
-					>
-						<circle
-							cx={p.x}
-							cy={p.y}
-							r={isCountry ? 11 : 9}
-							fill={nodeFill(p.flag?.kind, p.node.type)}
-							stroke="var(--panel)"
-							stroke-width="2"
-							class:animate-pulse={p.flag?.kind === 'sanction'}
+		<div class="flex min-h-0 flex-1 items-center">
+			<div class="relative w-full">
+				<svg
+					viewBox="0 0 {model.d.W} {model.d.H}"
+					width="100%"
+					height={model.d.H}
+					class="block"
+					role="img"
+					aria-label="Ownership and control graph for {entity.baseline.name}"
+				>
+					<!-- direct edges (thickness ∝ ownership share) -->
+					{#each model.placed as p (p.node.id + '-edge')}
+						<line
+							x1={model.d.CX}
+							y1={model.d.CY}
+							x2={p.x}
+							y2={p.y}
+							stroke={edgeStroke(p)}
+							stroke-width={strokeWidth(p.weight)}
+							stroke-linecap="round"
+							opacity={hovered && hovered !== p.node.id ? 0.2 : 0.85}
 						/>
+					{/each}
+
+					<!-- 2-hop risk edges (conduit → origin) -->
+					{#each model.outer as o (o.id + '-edge')}
+						<line
+							x1={o.ax}
+							y1={o.ay}
+							x2={o.x}
+							y2={o.y}
+							stroke="var(--alert)"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-dasharray="4 3"
+							opacity={hovered && hovered !== o.id ? 0.25 : 0.9}
+						/>
+					{/each}
+
+					<!-- relationship labels -->
+					{#each model.placed as p (p.node.id + '-rel')}
 						<text
-							x={p.x}
-							y={p.y + (isCountry ? 23 : 21)}
-							fill="var(--text-2)"
-							font-size="9.5"
+							x={model.d.CX + (p.x - model.d.CX) * 0.56}
+							y={model.d.CY + (p.y - model.d.CY) * 0.56}
+							fill="var(--muted)"
+							font-size="8.5"
+							font-family="var(--font-mono)"
 							text-anchor="middle"
 							dominant-baseline="middle"
-							class="pointer-events-none select-none">{p.node.label}</text
+							letter-spacing="0.04em"
+							class="pointer-events-none select-none"
+							opacity={hovered && hovered !== p.node.id ? 0.2 : 1}
 						>
-					</g>
-				{/each}
-
-				<!-- outer risk nodes -->
-				{#each model.outer as o (o.id)}
-					<g
-						role="listitem"
-						aria-label={o.label}
-						onpointerenter={() => (hovered = o.id)}
-						onpointerleave={() => (hovered = hovered === o.id ? null : hovered)}
-					>
-						<circle
-							cx={o.x}
-							cy={o.y}
-							r="8"
-							fill="var(--alert)"
-							stroke="var(--panel)"
-							stroke-width="2"
-							class="animate-pulse"
-						/>
+							{REL_LABEL[p.rel]}{p.weight !== undefined ? ` · ${Math.round(p.weight * 100)}%` : ''}
+						</text>
+					{/each}
+					{#each model.outer as o (o.id + '-rel')}
 						<text
-							x={o.x}
-							y={o.y + 20}
+							x={o.ax + (o.x - o.ax) * 0.5}
+							y={o.ay + (o.y - o.ay) * 0.5}
 							fill="var(--alert-deep)"
-							font-size="9.5"
+							font-size="8"
+							font-family="var(--font-mono)"
 							text-anchor="middle"
 							dominant-baseline="middle"
-							class="pointer-events-none select-none">{o.label}</text
+							letter-spacing="0.04em"
+							class="pointer-events-none select-none"
+							opacity={hovered && hovered !== o.id ? 0.25 : 1}>{REL_LABEL[o.edge]}</text
 						>
-					</g>
-				{/each}
+					{/each}
 
-				<!-- centre entity -->
-				<circle
-					cx={model.d.CX}
-					cy={model.d.CY}
-					r="13"
-					fill={statusVar[entity.drift.status]}
-					stroke="var(--panel)"
-					stroke-width="2.5"
-					class="animate-pulse"
-				/>
-				<text
-					x={model.d.CX}
-					y={model.d.CY + 29}
-					fill="var(--text)"
-					font-size="10.5"
-					font-weight="600"
-					text-anchor="middle"
-					dominant-baseline="middle"
-					class="pointer-events-none select-none">{entity.baseline.name}</text
-				>
-			</svg>
-
-			{#if active}
-				{@const a =
-					active.kind === 'direct'
-						? { x: active.p.x, y: active.p.y }
-						: { x: active.o.x, y: active.o.y }}
-				<div
-					class="border-line bg-panel2 text-text2 pointer-events-none absolute z-10 max-w-[240px] -translate-x-1/2 -translate-y-full rounded-md border px-2.5 py-1.5 text-[10px] shadow-lg"
-					style="left: {(a.x / model.d.W) * 100}%; top: calc({(a.y / model.d.H) * 100}% - 14px)"
-				>
-					{#if active.kind === 'direct'}
-						<div class="text-text font-medium">{active.p.node.label}</div>
-						<div class="text-muted2">
-							{TYPE_LABEL[active.p.node.type]}{active.p.node.country
-								? ` · ${active.p.node.country}`
-								: ''}
-						</div>
-						<div class="text-muted2">
-							{#if active.p.node.type === 'country'}
-								Domicile of {entity.baseline.name}
-							{:else}
-								{REL_LABEL[active.p.rel]}
-								{entity.baseline.name}{active.p.weight !== undefined
-									? ` · ${Math.round(active.p.weight * 100)}% share`
-									: ''}
-							{/if}
-						</div>
-						{#if active.p.flag}
-							<div
-								style="color: {active.p.flag.kind === 'sanction' ? 'var(--alert)' : 'var(--watch)'}"
+					<!-- direct neighbour nodes -->
+					{#each model.placed as p (p.node.id)}
+						{@const isCountry = p.node.type === 'country'}
+						<g
+							role="listitem"
+							aria-label={p.node.label}
+							onpointerenter={() => (hovered = p.node.id)}
+							onpointerleave={() => (hovered = hovered === p.node.id ? null : hovered)}
+						>
+							<circle
+								cx={p.x}
+								cy={p.y}
+								r={isCountry ? 11 : 9}
+								fill={nodeFill(p.flag?.kind, p.node.type)}
+								stroke="var(--panel)"
+								stroke-width="2"
+								class:animate-pulse={p.flag?.kind === 'sanction'}
+							/>
+							<text
+								x={p.x}
+								y={p.y + (isCountry ? 23 : 21)}
+								fill="var(--text-2)"
+								font-size="9.5"
+								text-anchor="middle"
+								dominant-baseline="middle"
+								class="pointer-events-none select-none">{p.node.label}</text
 							>
-								{active.p.flag.kind === 'sanction' ? 'Sanctions hit' : 'PEP'} · {active.p.flag.list}
+						</g>
+					{/each}
+
+					<!-- outer risk nodes -->
+					{#each model.outer as o (o.id)}
+						<g
+							role="listitem"
+							aria-label={o.label}
+							onpointerenter={() => (hovered = o.id)}
+							onpointerleave={() => (hovered = hovered === o.id ? null : hovered)}
+						>
+							<circle
+								cx={o.x}
+								cy={o.y}
+								r="8"
+								fill="var(--alert)"
+								stroke="var(--panel)"
+								stroke-width="2"
+								class="animate-pulse"
+							/>
+							<text
+								x={o.x}
+								y={o.y + 20}
+								fill="var(--alert-deep)"
+								font-size="9.5"
+								text-anchor="middle"
+								dominant-baseline="middle"
+								class="pointer-events-none select-none">{o.label}</text
+							>
+						</g>
+					{/each}
+
+					<!-- centre entity -->
+					<circle
+						cx={model.d.CX}
+						cy={model.d.CY}
+						r="13"
+						fill={statusVar[entity.drift.status]}
+						stroke="var(--panel)"
+						stroke-width="2.5"
+						class="animate-pulse"
+					/>
+					<text
+						x={model.d.CX}
+						y={model.d.CY + 29}
+						fill="var(--text)"
+						font-size="10.5"
+						font-weight="600"
+						text-anchor="middle"
+						dominant-baseline="middle"
+						class="pointer-events-none select-none">{entity.baseline.name}</text
+					>
+				</svg>
+
+				{#if active}
+					{@const a =
+						active.kind === 'direct'
+							? { x: active.p.x, y: active.p.y }
+							: { x: active.o.x, y: active.o.y }}
+					<div
+						class="border-line bg-panel2 text-text2 pointer-events-none absolute z-10 max-w-[240px] -translate-x-1/2 -translate-y-full rounded-md border px-2.5 py-1.5 text-[10px] shadow-lg"
+						style="left: {(a.x / model.d.W) * 100}%; top: calc({(a.y / model.d.H) * 100}% - 14px)"
+					>
+						{#if active.kind === 'direct'}
+							<div class="text-text font-medium">{active.p.node.label}</div>
+							<div class="text-muted2">
+								{TYPE_LABEL[active.p.node.type]}{active.p.node.country
+									? ` · ${active.p.node.country}`
+									: ''}
 							</div>
+							<div class="text-muted2">
+								{#if active.p.node.type === 'country'}
+									Domicile of {entity.baseline.name}
+								{:else}
+									{REL_LABEL[active.p.rel]}
+									{entity.baseline.name}{active.p.weight !== undefined
+										? ` · ${Math.round(active.p.weight * 100)}% share`
+										: ''}
+								{/if}
+							</div>
+							{#if active.p.flag}
+								<div
+									style="color: {active.p.flag.kind === 'sanction'
+										? 'var(--alert)'
+										: 'var(--watch)'}"
+								>
+									{active.p.flag.kind === 'sanction' ? 'Sanctions hit' : 'PEP'} · {active.p.flag
+										.list}
+								</div>
+							{/if}
+						{:else}
+							<div class="text-text font-medium">{active.o.label}</div>
+							<div class="text-muted2">{TYPE_LABEL[active.o.type]}</div>
+							<div style="color: var(--alert)">2-hop risk path</div>
+							<div class="text-muted2 leading-snug">{active.o.reason}</div>
 						{/if}
-					{:else}
-						<div class="text-text font-medium">{active.o.label}</div>
-						<div class="text-muted2">{TYPE_LABEL[active.o.type]}</div>
-						<div style="color: var(--alert)">2-hop risk path</div>
-						<div class="text-muted2 leading-snug">{active.o.reason}</div>
-					{/if}
-				</div>
-			{/if}
+					</div>
+				{/if}
+			</div>
 		</div>
 	{:else}
 		<div class="text-muted2 py-8 text-center text-[11px]">
