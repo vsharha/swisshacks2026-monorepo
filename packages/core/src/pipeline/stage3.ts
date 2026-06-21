@@ -107,9 +107,6 @@ export async function synthesizeAlert(
   const { object: draft, usage } = await generateObject({
     model: languageModel(config, model),
     schema: SynthesisDraftSchema,
-    // Apertus tops out at a 20k context; reserve a bounded output budget so the
-    // prompt + completion stay under it (the SDK otherwise reserves ~8k).
-    maxOutputTokens: 2048,
     system:
       "You are a senior KYC/AML analyst writing a re-KYC recommendation for a human reviewer. " +
       "Decide and justify a recommended action, match the drift signature against the known archetypes to give an outcome prior, " +

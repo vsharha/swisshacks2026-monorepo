@@ -78,9 +78,6 @@ export async function reasonAxisMateriality(
   const { object, usage } = await generateObject({
     model: languageModel(config, model),
     schema: AxisMaterialitySchema,
-    // Materiality is a short verdict; keep the output budget small so prompt +
-    // completion stay within Apertus' 20k context window.
-    maxOutputTokens: 768,
     system:
       "You are a KYC analyst assessing whether a customer's risk profile has structurally drifted on ONE axis. " +
       "Be precise and conservative: only call drift 'material' when the evidence genuinely invalidates the onboarding assumptions. " +
