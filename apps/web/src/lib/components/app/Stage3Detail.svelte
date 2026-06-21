@@ -8,6 +8,16 @@
 	let { alert = null, open = $bindable(false) }: { alert?: Alert | null; open?: boolean } =
 		$props();
 
+	// Reset the scroll position when the dialog opens. bits-ui auto-focuses a
+	// focusable element on open, which scrolls the container down to it; prevent
+	// that, focus the container itself without scrolling, and pin to the top.
+	let content = $state<HTMLElement | null>(null);
+	function resetScroll(e: Event) {
+		e.preventDefault();
+		content?.focus({ preventScroll: true });
+		if (content) content.scrollTop = 0;
+	}
+
 	const AXIS_LABEL: Record<DriftAxis, string> = {
 		business_model: 'Business model',
 		ownership: 'Ownership',
@@ -20,7 +30,11 @@
 </script>
 
 <Dialog.Root bind:open>
-	<Dialog.Content class="max-h-[85vh] max-w-xl overflow-y-auto">
+	<Dialog.Content
+		bind:ref={content}
+		onOpenAutoFocus={resetScroll}
+		class="max-h-[85vh] max-w-xl overflow-y-auto"
+	>
 		{#if alert}
 			<Dialog.Header>
 				<div class="text-muted2 text-[10px] tracking-[0.16em] uppercase">

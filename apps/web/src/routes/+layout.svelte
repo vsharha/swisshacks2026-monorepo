@@ -8,7 +8,7 @@
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 	import TopBar from '$lib/components/app/TopBar.svelte';
 	import AuditDrawer from '$lib/components/app/AuditDrawer.svelte';
-	import { ui } from '$lib/ui.svelte';
+	import { auditActions, ui } from '$lib/ui.svelte';
 	import type { LayoutData } from './$types';
 
 	let { data, children }: { data: LayoutData; children: Snippet } = $props();
@@ -48,5 +48,5 @@
 	</div>
 </Tooltip.Provider>
 
-<AuditDrawer bind:open={showAudit} entries={data.audit} />
+<AuditDrawer bind:open={showAudit} entries={data.audit} actions={auditActions} />
 <Toaster position="bottom-right" closeButton />

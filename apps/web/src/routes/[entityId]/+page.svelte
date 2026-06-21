@@ -11,7 +11,7 @@
 	import PatternRail from '$lib/components/app/PatternRail.svelte';
 	import TimelineScrubber from '$lib/components/app/TimelineScrubber.svelte';
 	import Stage3Detail from '$lib/components/app/Stage3Detail.svelte';
-	import { ui } from '$lib/ui.svelte';
+	import { auditActions, ui } from '$lib/ui.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -34,8 +34,6 @@
 		outputTokens: number;
 		usd: number;
 	} | null>(null);
-	let lastAlert = $state<Alert | null>(null);
-	let showStage3 = $state(false);
 
 	type ActionResult = { type: string; data?: Record<string, unknown> };
 
@@ -57,7 +55,7 @@
 				toast.success('Stage 3 re-KYC alert raised', {
 					description: 'Deep synthesis complete — recommendation, reasoning and citations ready.',
 					duration: Number.POSITIVE_INFINITY,
-					action: { label: 'View detail', onClick: () => (showStage3 = true) }
+					action: auditActions[e.kind]
 				});
 			}
 		}
@@ -77,7 +75,7 @@
 			}
 			const body = result.data ?? {};
 			llmCost = (body.cost as typeof llmCost) ?? null;
-			lastAlert = (body.alert as Alert | null) ?? null;
+			ui.stage3.alert = (body.alert as Alert | null) ?? null;
 			if (body.llm && body.alert)
 				llmNote = 'Stage 3 synthesis complete — written to the audit log.';
 			else if (!body.llm) llmNote = 'No LLM_API_KEY configured — deep synthesis skipped.';
@@ -119,8 +117,8 @@
 		void entityId;
 		llmNote = null;
 		llmCost = null;
-		lastAlert = null;
-		showStage3 = false;
+		ui.stage3.alert = null;
+		ui.stage3.open = false;
 	});
 
 	// Fast-forward replay: opening a customer sweeps the timeline clock from the
@@ -173,8 +171,8 @@
 		auditCount={data.auditCount}
 		{llmNote}
 		{analyzing}
-		hasAlert={!!lastAlert}
-		onViewStage3={() => (showStage3 = true)}
+		hasAlert={!!ui.stage3.alert}
+		onViewStage3={() => (ui.stage3.open = true)}
 		{enhanceGov}
 		{enhanceAnalyze}
 	/>
@@ -185,4 +183,4 @@
 	<TimelineScrubber signals={selected.signals} start={startMs} end={endMs} bind:value={asOf} />
 </footer>
 
-<Stage3Detail bind:open={showStage3} alert={lastAlert} />
+<Stage3Detail bind:open={ui.stage3.open} alert={ui.stage3.alert} />
