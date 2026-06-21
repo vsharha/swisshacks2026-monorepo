@@ -2,22 +2,24 @@ import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import type { LanguageModel } from "ai";
 
 /**
- * LLM tier configuration. Framework-agnostic — the apiKey is injected by the
- * caller (SvelteKit route or offline script), never read from process.env here.
+ * LLM tier configuration. Framework-agnostic — the caller (SvelteKit route or
+ * offline script) injects the apiKey and any overrides, never reading the env
+ * here (SvelteKit needs $env/dynamic/private, scripts use process.env).
  *
- * Reasoning runs on Apertus — Switzerland's fully-open sovereign LLM (EPFL /
- * ETH Zurich / CSCS) — served over Public AI's OpenAI-compatible endpoint
- * (Apertus inference sponsored by CSCS, free during the hackathon → $0 marginal).
- * Swiss-hosted + open-weight reasoning is a real data-residency / auditability
- * story for the AMINA KYC use case. See docs/reference/techstack.md.
+ * Defaults run on Apertus — Switzerland's fully-open sovereign LLM (EPFL / ETH
+ * Zurich / CSCS) — served over Public AI's OpenAI-compatible endpoint: the
+ * cheaper Apertus-8B reasons per-axis (Stage 2), the stronger Apertus-70B
+ * synthesizes the final alert (Stage 3). Swiss-hosted + open-weight reasoning is
+ * a real data-residency / auditability story for the AMINA KYC use case.
  *
- * Model tiering IS the cost story: the cheaper Apertus-8B reasons per-axis
- * (Stage 2), the stronger Apertus-70B synthesizes the final alert (Stage 3) —
- * both served by Public AI. Model ids are lowercase on Public AI.
+ * Everything here is overridable per-call via LLMConfig (baseURL / per-stage
+ * model), so the same code points at any OpenAI-compatible provider — e.g. set
+ * LLM_BASE_URL + LLM_STAGE{2,3}_MODEL in .env to run OpenAI instead. Model ids
+ * are lowercase on Public AI. See docs/reference/techstack.md.
  */
 
-/** Public AI inference — OpenAI-compatible base URL, serves Apertus. */
-export const PUBLICAI_BASE_URL = "https://api.publicai.co/v1";
+/** Default inference endpoint — Public AI, OpenAI-compatible, serves Apertus. */
+export const DEFAULT_BASE_URL = "https://api.publicai.co/v1";
 
 /** Stage 2 — per-axis materiality reasoning (cheap tier). */
 export const STAGE2_MODEL = "swiss-ai/apertus-8b-instruct";
@@ -27,22 +29,30 @@ export const STAGE3_MODEL = "swiss-ai/apertus-70b-instruct";
 
 export interface LLMConfig {
   apiKey: string;
+  /** Override the inference endpoint (default: Public AI / Apertus). */
+  baseURL?: string;
+  /** Override the Stage 2 model id (default: Apertus-8B). */
+  stage2Model?: string;
+  /** Override the Stage 3 model id (default: Apertus-70B). */
+  stage3Model?: string;
 }
 
-/** The model id for a stage. */
-export function stageModel(_config: LLMConfig, stage: 2 | 3): string {
-  return stage === 2 ? STAGE2_MODEL : STAGE3_MODEL;
+/** The model id for a stage, honouring any per-stage override. */
+export function stageModel(config: LLMConfig, stage: 2 | 3): string {
+  return stage === 2
+    ? (config.stage2Model ?? STAGE2_MODEL)
+    : (config.stage3Model ?? STAGE3_MODEL);
 }
 
-/** Resolve an AI SDK language model bound to the caller-supplied Public AI key. */
+/** Resolve an AI SDK language model bound to the caller-supplied key + endpoint. */
 export function languageModel(config: LLMConfig, model: string): LanguageModel {
   const provider = createOpenAICompatible({
-    name: "publicai",
-    baseURL: PUBLICAI_BASE_URL,
+    name: "llm",
+    baseURL: config.baseURL ?? DEFAULT_BASE_URL,
     apiKey: config.apiKey,
-    // Public AI/Apertus honour OpenAI's response_format: json_schema. Without
-    // this the AI SDK falls back to prompt-only JSON, which Apertus doesn't
-    // emit schema-cleanly → AI_NoObjectGeneratedError. See stage2/stage3.
+    // Apertus/OpenAI both honour response_format: json_schema. Without this the
+    // AI SDK falls back to prompt-only JSON, which Apertus doesn't emit
+    // schema-cleanly → AI_NoObjectGeneratedError. See stage2/stage3.
     supportsStructuredOutputs: true,
   });
   return provider(model);

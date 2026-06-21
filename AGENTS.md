@@ -30,7 +30,6 @@ Access to the EventRegistry API is provided.
 ## Commtting guidance
 
 - Commit after each meaningful change with a short title describing what was done
-- Commit all unstaged changes, not just your additions — review any changes you didn't make before including them, and flag anything that looks unintended rather than committing it blindly
 - No description block
 - Commit as the user, not as yourself
 - Match the style of previous commit messages

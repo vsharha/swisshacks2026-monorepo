@@ -11,18 +11,19 @@ import { loadRootEnv, readData, writeData } from "./lib/repo.ts";
 /**
  * Run the escalation tiers (Stage 2 per-axis reasoning + Stage 3 synthesis) on
  * the hero, the same way the live SvelteKit route does — both call the shared
- * @kyc/core `runEscalation`. Reasoning runs on Apertus over Public AI; requires
- * PUBLICAI_API_KEY in the repo-root .env. Writes the alert to data/alerts/.
- * Run with `pnpm --filter @kyc/scripts analyze`.
+ * @kyc/core `runEscalation`. Reasoning defaults to Apertus over Public AI;
+ * requires LLM_API_KEY in the repo-root .env (override the endpoint + per-stage
+ * models with LLM_BASE_URL + LLM_STAGE{2,3}_MODEL, e.g. to run OpenAI). Writes
+ * the alert to data/alerts/. Run with `pnpm --filter @kyc/scripts analyze`.
  */
 
 loadRootEnv();
 
-const apiKey = process.env.PUBLICAI_API_KEY;
+const apiKey = process.env.LLM_API_KEY;
 if (!apiKey) {
   console.log(
-    "No PUBLICAI_API_KEY set — the cheap tiers run without it, but Stage 2/3 LLM\n" +
-      "reasoning is skipped. Add PUBLICAI_API_KEY (Apertus) to the repo-root .env to enable it.",
+    "No LLM_API_KEY set — the cheap tiers run without it, but Stage 2/3 LLM\n" +
+      "reasoning is skipped. Add LLM_API_KEY to the repo-root .env to enable it.",
   );
   process.exit(0);
 }
@@ -39,7 +40,12 @@ const archetypes: PatternArchetype[] = [
   PatternArchetypeSchema.parse(await readData("pattern-library/long-blockchain-2017.json")),
 ];
 
-const config = { apiKey };
+const config = {
+  apiKey,
+  baseURL: process.env.LLM_BASE_URL || undefined,
+  stage2Model: process.env.LLM_STAGE2_MODEL || undefined,
+  stage3Model: process.env.LLM_STAGE3_MODEL || undefined,
+};
 const result = await runEscalation({ config, baseline, signals, archetypes, asOf });
 
 const { drift } = result;
