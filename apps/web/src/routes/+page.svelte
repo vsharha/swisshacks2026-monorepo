@@ -1,122 +1,16 @@
 <script lang="ts">
-	import { untrack } from 'svelte';
-	import { toast } from 'svelte-sonner';
-	import { AXES, type Alert, type AuditEntry, type RiskRating } from '@kyc/core';
+	import { goto } from '$app/navigation';
 	import { scoreDriftVector } from '@kyc/core/drift';
-	import type { HumanRole } from '@kyc/core';
-	import type { CaseState } from '@kyc/core/governance';
-	import type { SubmitFunction } from '@sveltejs/kit';
-	import TimelineScrubber from '$lib/components/app/TimelineScrubber.svelte';
-	import AuditDrawer from '$lib/components/app/AuditDrawer.svelte';
-	import TopBar from '$lib/components/app/TopBar.svelte';
-	import LeftRail from '$lib/components/app/LeftRail.svelte';
-	import EntityView from '$lib/components/app/EntityView.svelte';
-	import PatternRail from '$lib/components/app/PatternRail.svelte';
-	import Stage3Detail from '$lib/components/app/Stage3Detail.svelte';
+	import BookList from '$lib/components/app/BookList.svelte';
 	import BookGlobe from '$lib/components/app/BookGlobe.svelte';
 	import EventFeedPanel from '$lib/components/app/EventFeedPanel.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
 
-	const startMs = $derived(Date.parse(data.timeStart));
-	const endMs = $derived(Date.parse(data.timeEnd));
+	const nowIso = $derived(new Date(Date.parse(data.timeEnd)).toISOString());
 
-	// Seeded once from the initial load, then mutated locally (scrubber / form
-	// actions keep results client-side); untrack marks the initial-only read.
-	let asOf = $state(untrack(() => Date.parse(data.timeEnd)));
-	let selectedId = $state(untrack(() => data.book[0]?.baseline.entityId ?? ''));
-	let role = $state<HumanRole>('analyst');
-	let cases = $state<Record<string, CaseState>>(untrack(() => data.cases));
-
-	// Stage 3 deep analysis — server-side LLM via the `analyze` form action.
-	let analyzing = $state(false);
-	let llmNote = $state<string | null>(null);
-	let llmCost = $state<{
-		stage2Calls: number;
-		inputTokens: number;
-		outputTokens: number;
-		usd: number;
-	} | null>(null);
-	let auditCount = $state(untrack(() => data.auditCount));
-	let auditEntries = $state(untrack(() => data.audit));
-	let ratings = $state(untrack(() => data.ratings));
-	let showAudit = $state(false);
-
-	// Last Stage 3 synthesis, surfaced via toast action + persistent panel button.
-	let lastAlert = $state<Alert | null>(null);
-	let showStage3 = $state(false);
-
-	type ActionResult = { type: string; data?: Record<string, unknown> };
-
-	const ratingLabel = (r: RiskRating) => r.charAt(0).toUpperCase() + r.slice(1);
-
-	// Map the priority audit entries an action appended into toasts.
-	function toastEvents(events: AuditEntry[]) {
-		for (const e of events) {
-			if (e.kind === 'escalation_decision') {
-				const msg = e.escalated
-					? `Escalated to Stage 3 — composite ${e.composite.toFixed(2)}`
-					: `No escalation — composite ${e.composite.toFixed(2)}`;
-				toast.info(msg, { description: e.reason });
-			} else if (e.kind === 'outcome') {
-				toast.warning(`Risk rating ${ratingLabel(e.fromRating)} → ${ratingLabel(e.toRating)}`, {
-					description: 'Re-KYC outcome written to the audit log.'
-				});
-			} else if (e.kind === 'alert_raised') {
-				toast.success('Stage 3 re-KYC alert raised', {
-					description: 'Deep synthesis complete — recommendation, reasoning and citations ready.',
-					duration: Number.POSITIVE_INFINITY,
-					action: { label: 'View detail', onClick: () => (showStage3 = true) }
-				});
-			}
-		}
-	}
-
-	// `use:enhance` handler: keep the result in local state instead of a full
-	// page reload, so the radar/scrubber context is preserved.
-	const enhanceAnalyze: SubmitFunction = () => {
-		analyzing = true;
-		llmNote = null;
-		llmCost = null;
-		return async ({ result }: { result: ActionResult }) => {
-			analyzing = false;
-			if (result.type !== 'success') {
-				llmNote = 'Analysis failed.';
-				return;
-			}
-			const body = result.data ?? {};
-			if (typeof body.auditCount === 'number') auditCount = body.auditCount;
-			if (Array.isArray(body.audit)) auditEntries = body.audit as typeof auditEntries;
-			llmCost = (body.cost as typeof llmCost) ?? null;
-			lastAlert = (body.alert as Alert | null) ?? null;
-			if (body.llm && body.alert)
-				llmNote = 'Stage 3 synthesis complete — written to the audit log.';
-			else if (!body.llm) llmNote = 'No PUBLICAI_API_KEY configured — deep synthesis skipped.';
-			else llmNote = 'Composite below the alert threshold — no Stage 3 synthesis.';
-			if (Array.isArray(body.events)) toastEvents(body.events as AuditEntry[]);
-		};
-	};
-
-	// Governance action (decide/review) → audit log + updated case state + rating.
-	const enhanceGov: SubmitFunction = () => {
-		return async ({ result }: { result: ActionResult }) => {
-			if (result.type !== 'success') return;
-			const body = result.data ?? {};
-			if (body.case) cases = { ...cases, [selectedId]: body.case as CaseState };
-			if (typeof body.auditCount === 'number') auditCount = body.auditCount;
-			if (Array.isArray(body.audit)) auditEntries = body.audit as typeof auditEntries;
-			if (typeof body.rating === 'string')
-				ratings = { ...ratings, [selectedId]: body.rating as (typeof ratings)[string] };
-			if (Array.isArray(body.events)) toastEvents(body.events as AuditEntry[]);
-		};
-	};
-
-	const asOfIso = $derived(new Date(asOf).toISOString());
-	const nowIso = $derived(new Date(endMs).toISOString());
-
-	// Book register shows each customer's CURRENT drift — independent of the
-	// timeline scrubber, which only replays the selected customer below.
+	// Each customer's current drift, independent of any per-customer replay.
 	const book = $derived(
 		data.book.map((e) => ({
 			...e,
@@ -124,124 +18,22 @@
 		}))
 	);
 
-	// The selected customer is scored at the scrubber clock (the timeline replays it).
-	const selected = $derived.by(() => {
-		const e = data.book.find((x) => x.baseline.entityId === selectedId);
-		return e
-			? { ...e, drift: scoreDriftVector(e.baseline, e.signals, { asOf: asOfIso }) }
-			: undefined;
-	});
-
-	// Cost cascade for the selected entity at the current clock.
-	const funnel = $derived.by(() => {
-		const sel = selected;
-		if (!sel) return { s0: 0, s1: 5, s2: 0, s3: 0 };
-		const s0 = sel.signals.filter((s) => s.date <= asOfIso).length;
-		const s2 = AXES.filter((a) => sel.drift.axes[a].status !== 'stable').length;
-		const s3 = sel.drift.status === 'alert' ? 1 : 0;
-		return { s0, s1: 5, s2, s3 };
-	});
-
-	const archetype = $derived(data.patterns[0]);
-
-	$effect(() => {
-		void selectedId;
-		void asOf;
-		llmNote = null;
-		llmCost = null;
-		lastAlert = null;
-		showStage3 = false;
-	});
-
-	// Fast-forward replay: opening a customer sweeps the timeline clock from the
-	// first signal up to "now", so the radar, events and cost funnel animate into
-	// place instead of snapping. Re-runs whenever a different customer is opened.
-	let rafId: number | null = null;
-	$effect(() => {
-		if (!selectedId) return;
-		const from = untrack(() => startMs);
-		const to = untrack(() => endMs);
-		if (!(to > from)) {
-			asOf = to;
-			return;
-		}
-		const duration = 3000;
-		const ease = (t: number) => 1 - Math.pow(1 - t, 3); // cubic ease-out
-		let started: number | null = null;
-		const tick = (now: number) => {
-			started ??= now;
-			const t = Math.min(1, (now - started) / duration);
-			asOf = from + (to - from) * ease(t);
-			rafId = t < 1 ? requestAnimationFrame(tick) : null;
-		};
-		asOf = from;
-		rafId = requestAnimationFrame(tick);
-		return () => {
-			if (rafId !== null) cancelAnimationFrame(rafId);
-			rafId = null;
-		};
-	});
+	const open = (id: string) => goto(`/${id}`);
 </script>
 
-<div class="bg-bg text-text flex h-screen flex-col overflow-hidden px-5 py-4 font-sans text-sm">
-	<TopBar
-		{auditCount}
-		{role}
-		selected={!!selected}
-		onRoleChange={(r) => (role = r)}
-		onOpenAudit={() => (showAudit = true)}
-		onHome={() => (selectedId = '')}
-	/>
+<div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5 py-4">
+	<!-- Left · customer register -->
+	<aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-r pr-4">
+		<div class="flex min-h-0 flex-col gap-1 overflow-y-auto">
+			<BookList {book} selectedId="" onselect={open} />
+		</div>
+	</aside>
 
-	<!-- ── Main grid ───────────────────────────────────────────────────── -->
-	<div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5 py-4">
-		<!-- Left rail · company selection / selected company detail -->
-		<LeftRail
-			{book}
-			{selectedId}
-			{selected}
-			rating={ratings[selectedId]}
-			{funnel}
-			{llmCost}
-			onselect={(id) => (selectedId = id)}
-			onclear={() => (selectedId = '')}
-		/>
-
-		<!-- Center · selected entity · right rail · pattern match + action -->
-		{#if selected}
-			<EntityView entity={selected} graph={data.graph} {asOfIso} />
-
-			<PatternRail
-				entity={selected}
-				{archetype}
-				{asOfIso}
-				{role}
-				caseState={cases[selectedId]}
-				{auditCount}
-				{llmNote}
-				{analyzing}
-				hasAlert={!!lastAlert}
-				onViewStage3={() => (showStage3 = true)}
-				{enhanceGov}
-				{enhanceAnalyze}
-			/>
-		{:else}
-			<!-- Home / empty state · client-book globe in the center, news feed in the rail -->
-			<div class="min-h-0 self-stretch">
-				<BookGlobe {book} onselect={(id) => (selectedId = id)} />
-			</div>
-
-			<EventFeedPanel {book} asOfIso={nowIso} onselect={(id) => (selectedId = id)} />
-		{/if}
+	<!-- Centre · book globe -->
+	<div class="min-h-0 self-stretch">
+		<BookGlobe {book} onselect={open} />
 	</div>
 
-	<!-- ── Bottom · timeline scrubber ──────────────────────────────────── -->
-	<footer class="border-line border-t pt-3">
-		{#if selected}
-			<TimelineScrubber signals={selected.signals} start={startMs} end={endMs} bind:value={asOf} />
-		{/if}
-	</footer>
+	<!-- Right · cross-book event feed -->
+	<EventFeedPanel {book} asOfIso={nowIso} onselect={open} />
 </div>
-
-<AuditDrawer bind:open={showAudit} entries={auditEntries} />
-<Stage3Detail bind:open={showStage3} alert={lastAlert} />
