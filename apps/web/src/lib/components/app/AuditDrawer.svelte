@@ -2,8 +2,18 @@
 	import type { AuditEntry } from '@kyc/core';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
+	import type { UiAction } from '$lib/ui.svelte';
 
-	let { open = $bindable(false), entries }: { open?: boolean; entries: AuditEntry[] } = $props();
+	let {
+		open = $bindable(false),
+		entries,
+		actions = {}
+	}: {
+		open?: boolean;
+		entries: AuditEntry[];
+		actions?: Partial<Record<AuditEntry['kind'], UiAction>>;
+	} = $props();
 
 	function summary(e: AuditEntry): string {
 		switch (e.kind) {
@@ -68,6 +78,17 @@
 								<span>{e.entityId}</span>
 								{#if e.hash}<span title={e.hash}>#{e.hash.slice(0, 10)}</span>{/if}
 							</div>
+							{#if actions[e.kind]}
+								{@const action = actions[e.kind]}
+								<Button
+									variant="link"
+									size="sm"
+									onclick={() => action?.onClick()}
+									class="text-brand mt-0.5 h-auto justify-start p-0 text-[11px] font-medium"
+								>
+									{action?.label}
+								</Button>
+							{/if}
 						</li>
 					{/each}
 				</ol>
