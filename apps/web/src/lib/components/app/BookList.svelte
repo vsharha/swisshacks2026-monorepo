@@ -11,14 +11,23 @@
 
 	let query = $state('');
 
+	// Riskiest first, then by composite within a status.
+	const RISK_RANK = { alert: 0, watch: 1, stable: 2 } as const;
+
 	const filtered = $derived.by(() => {
 		const q = query.trim().toLowerCase();
-		if (!q) return book;
-		return book.filter((e) => {
-			const b = e.baseline;
-			const haystack = [b.name, b.jurisdiction, HQ[b.entityId]?.city, ...(b.aliases ?? [])];
-			return haystack.some((s) => s?.toLowerCase().includes(q));
-		});
+		const matches = !q
+			? book
+			: book.filter((e) => {
+					const b = e.baseline;
+					const haystack = [b.name, b.jurisdiction, HQ[b.entityId]?.city, ...(b.aliases ?? [])];
+					return haystack.some((s) => s?.toLowerCase().includes(q));
+				});
+		return [...matches].sort(
+			(a, b) =>
+				RISK_RANK[a.drift.status] - RISK_RANK[b.drift.status] ||
+				b.drift.composite - a.drift.composite
+		);
 	});
 </script>
 
