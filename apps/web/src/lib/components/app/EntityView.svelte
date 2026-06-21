@@ -1,10 +1,13 @@
 <script lang="ts">
+	import type { RiskGraph } from '@kyc/core';
 	import DriftRadar from './DriftRadar.svelte';
 	import AxisBreakdown from './AxisBreakdown.svelte';
 	import EventsView from './EventsView.svelte';
+	import KnowledgeGraph from './KnowledgeGraph.svelte';
 	import type { BookEntity } from '$lib/view';
 
-	let { entity, asOfIso }: { entity: BookEntity; asOfIso: string } = $props();
+	let { entity, graph, asOfIso }: { entity: BookEntity; graph: RiskGraph; asOfIso: string } =
+		$props();
 </script>
 
 <main class="flex min-h-0 min-w-0 flex-col gap-4">
@@ -17,6 +20,8 @@
 			<AxisBreakdown axes={entity.drift.axes} />
 		</div>
 	</div>
+
+	<KnowledgeGraph {entity} {graph} {asOfIso} />
 
 	<EventsView {entity} {asOfIso} />
 </main>

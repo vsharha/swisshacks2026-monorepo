@@ -14,7 +14,7 @@
 	import PatternRail from '$lib/components/app/PatternRail.svelte';
 	import Stage3Detail from '$lib/components/app/Stage3Detail.svelte';
 	import BookGlobe from '$lib/components/app/BookGlobe.svelte';
-	import NewsFeedPanel from '$lib/components/app/NewsFeedPanel.svelte';
+	import EventFeedPanel from '$lib/components/app/EventFeedPanel.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -209,7 +209,7 @@
 
 		<!-- Center · selected entity · right rail · pattern match + action -->
 		{#if selected}
-			<EntityView entity={selected} {asOfIso} />
+			<EntityView entity={selected} graph={data.graph} {asOfIso} />
 
 			<PatternRail
 				entity={selected}
@@ -231,7 +231,7 @@
 				<BookGlobe {book} onselect={(id) => (selectedId = id)} />
 			</div>
 
-			<NewsFeedPanel {book} asOfIso={nowIso} onselect={(id) => (selectedId = id)} />
+			<EventFeedPanel {book} asOfIso={nowIso} onselect={(id) => (selectedId = id)} />
 		{/if}
 	</div>
 

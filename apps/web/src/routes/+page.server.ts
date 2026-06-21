@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { fail } from '@sveltejs/kit';
 import type { AuditEntry, HumanDecision, HumanRole, RiskRating } from '@kyc/core';
 import { governanceCheck } from '@kyc/core/governance';
+import { buildGraph } from '@kyc/core/graph';
 import { loadBook, loadPatternLibrary } from '$lib/server/data';
 import { analyzeEntity } from '$lib/server/analyze';
 import { appendAudit, auditCount, caseStateFor, currentRating, listAudit } from '$lib/server/audit';
@@ -28,9 +29,14 @@ export const load: PageServerLoad = () => {
 		book.map((e) => [e.baseline.entityId, caseStateFor(e.baseline.entityId)])
 	);
 
+	// Relationship layer: entities, their owners/controllers and domicile countries.
+	// Built once from the book; each entity view renders its own neighbourhood.
+	const graph = buildGraph(book.map((e) => e.baseline));
+
 	return {
 		book,
 		patterns,
+		graph,
 		timeStart,
 		timeEnd,
 		ratings,

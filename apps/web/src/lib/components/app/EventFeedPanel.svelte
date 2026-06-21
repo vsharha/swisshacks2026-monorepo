@@ -12,15 +12,13 @@
 	// Risk weight for the "risk-weighted, then recent" ordering.
 	const STATUS_RANK: Record<RiskStatus, number> = { alert: 2, watch: 1, stable: 0 };
 
-	// One flat, ranked feed of news/media headlines across the whole book:
-	// EventRegistry signals only, past of the clock, alert/watch companies first,
-	// then newest, then most confident. Capped to keep the rail scannable.
+	// One flat, ranked feed of every signal across the whole book (all source
+	// types, not just media), past of the clock, alert/watch companies first, then
+	// newest, then most confident. Capped to keep the rail scannable.
 	const items = $derived(
 		book
 			.flatMap((e) =>
-				e.signals
-					.filter((s) => s.source === 'eventregistry' && s.date <= asOfIso)
-					.map((s) => ({ entity: e, signal: s }))
+				e.signals.filter((s) => s.date <= asOfIso).map((s) => ({ entity: e, signal: s }))
 			)
 			.sort((a, b) => {
 				const rank = STATUS_RANK[b.entity.drift.status] - STATUS_RANK[a.entity.drift.status];
@@ -29,13 +27,13 @@
 				if (date !== 0) return date;
 				return b.signal.confidence - a.signal.confidence;
 			})
-			.slice(0, 20)
+			.slice(0, 25)
 	);
 </script>
 
 <div class="border-line bg-panel flex min-h-0 min-w-0 flex-col rounded-lg border p-4">
 	<div class="text-muted2 mb-2 text-[10px] tracking-[0.16em] uppercase">
-		Latest news · {items.length}
+		Latest events · {items.length}
 	</div>
 
 	<div class="min-h-0 flex-1 space-y-1.5 overflow-y-auto pr-1">
@@ -77,20 +75,20 @@
 							rel="noopener noreferrer"
 							onclick={(e) => e.stopPropagation()}
 							class="text-muted2 hover:text-text mt-0.5 shrink-0"
-							title="Open source article"
+							title="Open source"
 						>
 							<ArrowSquareOut size={11} />
 						</a>
 					{/if}
 				</div>
 
-				<!-- outlet + tone -->
+				<!-- source-derived research context -->
 				<div class="text-muted2 mt-1 text-[10px] leading-snug">
 					{deriveMarketResearch(signal)}
 				</div>
 			</div>
 		{:else}
-			<div class="text-muted2 py-6 text-center text-[11px]">No recent news.</div>
+			<div class="text-muted2 py-6 text-center text-[11px]">No recent events.</div>
 		{/each}
 	</div>
 </div>
