@@ -44,8 +44,10 @@
 	let canvas: HTMLCanvasElement;
 	let wrap: HTMLDivElement;
 
-	// Rotation state, driven by autorotation + pointer drag.
-	let phi = 0;
+	// Rotation state, driven by autorotation + pointer drag. The screen-centre
+	// longitude is (270° − phi); -1.0 rad starts the view over the mid-Atlantic
+	// (≈ 33°W) rather than North America.
+	let phi = -1.0;
 	let theta = 0.25;
 	let size = $state(0);
 	let pointerDown = false;
