@@ -28,8 +28,7 @@
 				</div>
 				<Dialog.Title>Re-KYC recommendation</Dialog.Title>
 				<Dialog.Description>
-					<span class="font-mono">{alert.modelVersion}</span>
-					· confidence {pct(alert.confidence)} · composite {alert.composite.toFixed(2)} ·
+					confidence {pct(alert.confidence)} · composite {alert.composite.toFixed(2)} ·
 					{fmtDate(alert.createdAt)}
 				</Dialog.Description>
 			</Dialog.Header>

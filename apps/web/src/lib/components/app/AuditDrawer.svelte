@@ -14,7 +14,7 @@
 			case 'escalation_decision':
 				return `escalation ${e.escalated ? 'FIRED' : 'held'} · ${e.reason}`;
 			case 'alert_raised':
-				return `alert raised · ${e.modelVersion}`;
+				return `alert raised`;
 			case 'human_action':
 				return `${e.decision} · ${e.role} · ${e.actor} · ${e.rationale}`;
 			case 'outcome':
