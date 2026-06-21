@@ -70,7 +70,7 @@
 	const rise = (delay = 0) => ({ y: 8, duration: 280, delay, easing: cubicOut });
 </script>
 
-<aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-l pl-4 pb-4">
+<aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-l pl-4">
 	<div class="min-h-0 flex-1 overflow-y-auto pr-1">
 		{#if hasMatch && archetype}
 			<div class="flex items-center justify-between">
@@ -146,7 +146,7 @@
 	<!-- Maker-checker governance gate — shown only when the composite has crossed. -->
 	{#if isAlert}
 		<div
-			class="border-line shrink-0 border-t pt-3"
+			class="border-line shrink-0 border-t pt-3 pb-4"
 			transition:slide={{ duration: 340, easing: cubicOut }}
 		>
 			<div class="mb-2 flex items-center justify-between" in:fly={rise(40)}>
