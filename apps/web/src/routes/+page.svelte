@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import { goto, preloadData } from '$app/navigation';
 	import { scoreDriftVector } from '@kyc/core/drift';
 	import BookList from '$lib/components/app/BookList.svelte';
 	import BookGlobe from '$lib/components/app/BookGlobe.svelte';
@@ -9,6 +10,18 @@
 	let { data }: { data: PageData } = $props();
 
 	const nowIso = $derived(new Date(Date.parse(data.timeEnd)).toISOString());
+
+	// Precache the customer pages (route code + load data) so opening one is
+	// instant. The two headline demos are warmed first, then the rest of the book.
+	onMount(() => {
+		const priority = ['strategy', 'smartbird'];
+		const ids = data.book.map((e) => e.baseline.entityId);
+		const ordered = [
+			...priority.filter((id) => ids.includes(id)),
+			...ids.filter((id) => !priority.includes(id))
+		];
+		for (const id of ordered) void preloadData(`/${id}`);
+	});
 
 	// Each customer's current drift, independent of any per-customer replay.
 	const book = $derived(

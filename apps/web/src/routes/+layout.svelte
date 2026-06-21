@@ -3,7 +3,7 @@
 	import type { Snippet } from 'svelte';
 	import favicon from '$lib/assets/favicon.svg';
 	import { page } from '$app/state';
-	import { goto } from '$app/navigation';
+	import { goto, onNavigate } from '$app/navigation';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 	import TopBar from '$lib/components/app/TopBar.svelte';
@@ -17,6 +17,18 @@
 
 	// The role switch only does something on a customer page, so it only shows there.
 	const onEntity = $derived(!!page.params.entityId);
+
+	// Animated SPA transitions via the View Transitions API (progressive
+	// enhancement — browsers without it just navigate instantly, as before).
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
