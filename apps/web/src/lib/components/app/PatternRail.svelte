@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { AXES, type DriftAxis, type HumanRole, type PatternArchetype } from '@kyc/core';
 	import type { CaseState } from '@kyc/core/governance';
+	import { fly, slide } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 	import { enhance } from '$app/forms';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import { fmtDate, type BookEntity } from '$lib/view';
@@ -63,6 +65,9 @@
 		archetype ? alertingAxes.filter((a) => archetype.axes.includes(a)) : []
 	);
 	const hasMatch = $derived(!!archetype && sim >= 0.3);
+
+	// Staggered rise used to cascade the re-KYC actions in as the bar appears.
+	const rise = (delay = 0) => ({ y: 8, duration: 280, delay, easing: cubicOut });
 </script>
 
 <aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-l pl-4">
@@ -140,8 +145,11 @@
 
 	<!-- Maker-checker governance gate — shown only when the composite has crossed. -->
 	{#if isAlert}
-		<div class="border-line shrink-0 border-t pt-3">
-			<div class="mb-2 flex items-center justify-between">
+		<div
+			class="border-line shrink-0 border-t pt-3"
+			transition:slide={{ duration: 340, easing: cubicOut }}
+		>
+			<div class="mb-2 flex items-center justify-between" in:fly={rise(40)}>
 				<span class="text-muted2 text-[10px] tracking-[0.16em] uppercase">Re-KYC approval</span>
 				<span class="text-muted2 font-mono text-[10px]">
 					<span style={status !== 'open' ? 'color: var(--text)' : ''}>Maker</span>
@@ -154,12 +162,12 @@
 				{#if role === 'analyst'}
 					<div class="flex flex-col gap-2">
 						{#if last?.decision === 'reject'}
-							<p class="text-[10px] leading-relaxed" style="color: var(--watch)">
+							<p class="text-[10px] leading-relaxed" style="color: var(--watch)" in:fly={rise(80)}>
 								Returned by compliance: {last.rationale}
 							</p>
 						{/if}
 						<!-- Investigate first: Stage 3 is the tool you use to make the call. -->
-						<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze}>
+						<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze} in:fly={rise(120)}>
 							<input type="hidden" name="entityId" value={entityId} />
 							<input type="hidden" name="asOf" value={asOfIso} />
 							<Button
@@ -176,12 +184,13 @@
 						<!-- The decision lives below the tool you use to make it. -->
 						<div
 							class="text-muted2 my-0.5 flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase"
+							in:fly={rise(180)}
 						>
 							<span class="bg-line h-px flex-1"></span>
 							decide
 							<span class="bg-line h-px flex-1"></span>
 						</div>
-						<div class="flex gap-2">
+						<div class="flex gap-2" in:fly={rise(240)}>
 							<form method="POST" action="?/decide" use:enhance={enhanceGov} class="flex-1">
 								<input type="hidden" name="entityId" value={entityId} />
 								<input type="hidden" name="role" value={role} />
@@ -211,19 +220,22 @@
 						</div>
 					</div>
 				{:else}
-					<p class="text-muted2 text-[11px] leading-relaxed">Awaiting analyst review.</p>
+					<p class="text-muted2 text-[11px] leading-relaxed" in:fly={rise(80)}>
+						Awaiting analyst review.
+					</p>
 				{/if}
 			{:else if status === 'pending_approval'}
 				<div
 					class="mb-2 rounded-md px-2.5 py-1.5 text-[11px]"
 					style="background: color-mix(in oklab, var(--watch) 10%, transparent); color: var(--watch)"
+					in:fly={rise(80)}
 				>
 					Pending compliance approval{last ? ` · raised by ${last.actor}` : ''}
 				</div>
 				{#if role === 'compliance_officer'}
 					<div class="flex flex-col gap-2">
 						<!-- Investigate first: review the Stage 3 synthesis before the checkpoint. -->
-						<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze}>
+						<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze} in:fly={rise(120)}>
 							<input type="hidden" name="entityId" value={entityId} />
 							<input type="hidden" name="asOf" value={asOfIso} />
 							<Button
@@ -240,12 +252,13 @@
 
 						<div
 							class="text-muted2 my-0.5 flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase"
+							in:fly={rise(180)}
 						>
 							<span class="bg-line h-px flex-1"></span>
 							decide
 							<span class="bg-line h-px flex-1"></span>
 						</div>
-						<div class="flex gap-2">
+						<div class="flex gap-2" in:fly={rise(240)}>
 							<form method="POST" action="?/review" use:enhance={enhanceGov} class="flex-1">
 								<input type="hidden" name="entityId" value={entityId} />
 								<input type="hidden" name="role" value={role} />
@@ -287,14 +300,16 @@
 				</div>
 			{/if}
 			{#if hasAlert}
-				<Button
-					variant="link"
-					size="sm"
-					onclick={onViewStage3}
-					class="text-brand mt-1.5 h-auto p-0 text-[11px] font-medium"
-				>
-					View Stage 3 detail →
-				</Button>
+				<div in:fly={rise(0)}>
+					<Button
+						variant="link"
+						size="sm"
+						onclick={onViewStage3}
+						class="text-brand mt-1.5 h-auto p-0 text-[11px] font-medium"
+					>
+						View Stage 3 detail →
+					</Button>
+				</div>
 			{:else if llmNote}
 				<p class="text-muted2 mt-2 text-[10px] leading-relaxed">{llmNote}</p>
 			{/if}
