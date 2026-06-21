@@ -14,13 +14,13 @@ import { appendAudit, listAudit } from './audit';
 
 /**
  * Server-only Stage 2/3 escalation. Lives in $lib/server so the framework keeps
- * the API key (PUBLICAI_API_KEY, read via the private env) off the client. The
+ * the API key (LLM_API_KEY, read via the private env) off the client. The
  * tier orchestration itself is the shared @kyc/core `runEscalation`; this wrapper
  * adds the app-specific side effects — recording each verdict in the append-only
  * audit log — and adapts the result to the page's shape.
  *
- * Reasoning runs on Apertus (Swiss open model) over Public AI; without a key the
- * cheap deterministic tiers still run and deep synthesis is skipped.
+ * Reasoning runs on OpenAI; without a key the cheap deterministic tiers still run
+ * and deep synthesis is skipped.
  */
 
 export type RunCost = EscalationCost;
@@ -40,13 +40,22 @@ export async function analyzeEntity(entityId: string, asOf: string): Promise<Ana
 	const entity = loadBook().find((e) => e.baseline.entityId === entityId);
 	if (!entity) return { llm: false };
 
-	const apiKey = env.PUBLICAI_API_KEY;
+	const apiKey = env.LLM_API_KEY;
 	if (!apiKey) return { llm: false };
+
+	// Defaults to Apertus / Public AI; override endpoint + per-stage models via
+	// .env (e.g. LLM_BASE_URL + LLM_STAGE{2,3}_MODEL → OpenAI).
+	const config = {
+		apiKey,
+		baseURL: env.LLM_BASE_URL || undefined,
+		stage2Model: env.LLM_STAGE2_MODEL || undefined,
+		stage3Model: env.LLM_STAGE3_MODEL || undefined
+	};
 
 	const prior = priorComposite(listAudit(entityId, 500), entityId);
 
 	const result = await runEscalation({
-		config: { apiKey },
+		config,
 		baseline: entity.baseline,
 		signals: entity.signals,
 		archetypes: loadPatternLibrary(),
