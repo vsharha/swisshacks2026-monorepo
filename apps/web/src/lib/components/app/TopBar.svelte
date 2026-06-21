@@ -33,7 +33,7 @@
 		aria-label="Go to overview"
 		class="flex items-baseline gap-3 rounded-md transition-opacity hover:opacity-70"
 	>
-		<span class="text-galaxy font-sans text-[15px] font-bold tracking-[0.22em]">AMINA</span>
+		<span class="text-galaxy font-sans text-[15px] font-bold tracking-[0.22em]">SENTINEL</span>
 		<span class="bg-line h-3.5 w-px self-center"></span>
 		<span class="text-muted2 text-[11px] tracking-[0.28em] uppercase">KYC-Drift Monitor</span>
 	</button>

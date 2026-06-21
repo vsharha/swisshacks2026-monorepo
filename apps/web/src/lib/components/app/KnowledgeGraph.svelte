@@ -373,6 +373,7 @@
 							fill="var(--alert)"
 							stroke="var(--panel)"
 							stroke-width="2"
+							class="animate-pulse"
 						/>
 						<text
 							x={o.x}
