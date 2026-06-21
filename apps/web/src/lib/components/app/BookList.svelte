@@ -1,16 +1,36 @@
 <script lang="ts">
+	import { Input } from '$lib/components/ui/input';
 	import { statusVar, FLAG, HQ, type BookEntity } from '$lib/view';
+	import MagnifyingGlass from 'phosphor-svelte/lib/MagnifyingGlass';
 
 	let {
 		book,
 		selectedId,
 		onselect
 	}: { book: BookEntity[]; selectedId: string; onselect: (id: string) => void } = $props();
+
+	let query = $state('');
+
+	const filtered = $derived.by(() => {
+		const q = query.trim().toLowerCase();
+		if (!q) return book;
+		return book.filter((e) => {
+			const b = e.baseline;
+			const haystack = [b.name, b.jurisdiction, HQ[b.entityId]?.city, ...(b.aliases ?? [])];
+			return haystack.some((s) => s?.toLowerCase().includes(q));
+		});
+	});
 </script>
 
-<div class="text-muted2 mb-2 text-[10px] tracking-[0.18em] uppercase">Book · {book.length}</div>
+<div class="text-muted2 mb-2 text-[10px] tracking-[0.18em] uppercase">Book · {filtered.length}</div>
+<div class="relative mb-2">
+	<MagnifyingGlass
+		class="text-muted2 pointer-events-none absolute top-1/2 left-2.5 size-3.5 -translate-y-1/2"
+	/>
+	<Input type="text" bind:value={query} placeholder="Search book…" class="h-8 pl-8 text-[12.5px]" />
+</div>
 <div class="border-line divide-line divide-y border-y">
-	{#each book as e (e.baseline.entityId)}
+	{#each filtered as e (e.baseline.entityId)}
 		{@const st = e.drift.status}
 		{@const sel = selectedId === e.baseline.entityId}
 		<button
@@ -43,5 +63,7 @@
 				></div>
 			</div>
 		</button>
+	{:else}
+		<div class="text-muted2 px-2.5 py-6 text-center text-[11px]">No matches for “{query}”</div>
 	{/each}
 </div>
