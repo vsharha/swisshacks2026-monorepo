@@ -48,6 +48,51 @@ const archetypes: PatternArchetype[] = [
       },
     ],
   } satisfies Record<string, unknown>),
+  PatternArchetypeSchema.parse({
+    id: "overstock-blockchain-2018",
+    name: "Overstock.com crypto-treasury pivot (2018)",
+    period: "2017–2020",
+    summary:
+      "An established operating company (the online retailer Overstock.com) over-rotated its balance sheet and strategy into a single crypto/blockchain theme — pouring capital into the tZERO security-token platform and a portfolio of blockchain bets via Medici Ventures while the retail core stagnated. The blockchain narrative roughly tripled the stock in late 2017, detaching its market value from the underlying operating business and turning it into a NAV-driven crypto proxy. The bet ran under a controlling, founder-CEO (Patrick Byrne), whose concentrated governance and abrupt 2019 exit — liquidating his entire stake into gold and crypto — left the strategy stranded. The archetype: a real, substantive company converts itself into a leveraged, concentrated single-asset crypto-treasury vehicle under founder control, whose value untethers from operations and unwinds reflexively when the narrative breaks. Distinct from the buzzword-shell rename (cf. long-blockchain-2017) — here the operating business is genuine; the risk is strategic over-rotation, leverage, and ownership concentration, not fraud.",
+    axes: ["business_model", "ownership", "scale"],
+    arc: [
+      { date: "2017-08-01", label: "Pushes capital into tZERO and blockchain bets via Medici Ventures" },
+      { date: "2017-12-01", label: "Stock surges ~3x as the company rebrands around blockchain, detaching from retail" },
+      { date: "2018-08-01", label: "tZERO security-token offering closes (~$134M raised)" },
+      { date: "2019-08-22", label: "Founder-CEO Patrick Byrne resigns amid a governance scandal; liquidates his entire stake" },
+      { date: "2020-01-01", label: "Blockchain bets stall and the stock round-trips its surge; the company retreats from the strategy" },
+    ],
+    outcome:
+      "Adverse. The crypto-treasury over-rotation failed to deliver: the stock round-tripped its surge, the founder-CEO exited under a governance cloud and dumped his stake, and the company retreated from the strategy. The base-rate outcome for an operating company that converts into a leveraged, single-asset crypto-treasury proxy under concentrated founder control is a reflexive unwind and ownership/governance instability → recommend enhanced due diligence and re-KYC when a live entity matches.",
+    keywords: [
+      "crypto treasury",
+      "digital asset treasury",
+      "bitcoin",
+      "blockchain pivot",
+      "balance-sheet conversion",
+      "single-asset",
+      "concentration",
+      "leverage",
+      "convertible debt",
+      "NAV premium",
+      "founder control",
+      "super-voting",
+      "controlling shareholder",
+      "stock surge",
+      "reflexive unwind",
+      "security token",
+    ],
+    citations: [
+      {
+        sourceUrl: "https://en.wikipedia.org/wiki/Overstock.com",
+        title: "Overstock.com — tZERO/blockchain pivot and the 2019 founder-CEO resignation",
+      },
+      {
+        sourceUrl: "https://en.wikipedia.org/wiki/Patrick_M._Byrne",
+        title: "Patrick Byrne — Overstock founder-CEO, 2019 resignation and stake liquidation",
+      },
+    ],
+  } satisfies Record<string, unknown>),
 ];
 
 for (const archetype of archetypes) {

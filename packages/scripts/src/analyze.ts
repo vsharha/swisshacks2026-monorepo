@@ -28,7 +28,7 @@ if (!apiKey) {
   process.exit(0);
 }
 
-const entityId = "smartbird";
+const entityId = process.env.ENTITY ?? "smartbird";
 const asOf = process.env.AS_OF ?? "2026-06-20T00:00:00Z";
 
 const baseline = KYCBaselineSchema.parse(await readData(`baselines/${entityId}.json`));
@@ -36,8 +36,11 @@ const signals: Signal[] = [];
 for (const source of ["eventregistry", "sec"]) {
   signals.push(...SignalArraySchema.parse(await readData(`signals/${entityId}.${source}.json`)));
 }
+// Match against the whole pattern library (the live route does the same) so the
+// model picks the best-fitting archetype rather than a single hardcoded one.
 const archetypes: PatternArchetype[] = [
   PatternArchetypeSchema.parse(await readData("pattern-library/long-blockchain-2017.json")),
+  PatternArchetypeSchema.parse(await readData("pattern-library/overstock-blockchain-2018.json")),
 ];
 
 const config = {
