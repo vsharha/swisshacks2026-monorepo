@@ -8,6 +8,13 @@
 	let { alert = null, open = $bindable(false) }: { alert?: Alert | null; open?: boolean } =
 		$props();
 
+	// Reset the scroll position when the dialog opens so a reused content element
+	// never lands mid-way down the previous alert.
+	let content = $state<HTMLElement | null>(null);
+	$effect(() => {
+		if (open && content) content.scrollTop = 0;
+	});
+
 	const AXIS_LABEL: Record<DriftAxis, string> = {
 		business_model: 'Business model',
 		ownership: 'Ownership',
@@ -20,7 +27,7 @@
 </script>
 
 <Dialog.Root bind:open>
-	<Dialog.Content class="max-h-[85vh] max-w-xl overflow-y-auto">
+	<Dialog.Content bind:ref={content} class="max-h-[85vh] max-w-xl overflow-y-auto">
 		{#if alert}
 			<Dialog.Header>
 				<div class="text-muted2 text-[10px] tracking-[0.16em] uppercase">
