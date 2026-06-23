@@ -1,6 +1,11 @@
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import type { LanguageModel } from "ai";
 
+// Cost model lives in a pure module (no AI SDK) so cost-only consumers — e.g. the
+// SvelteKit app replaying captured verdicts — can import it without bundling the
+// provider factory. Re-exported here for back-compat.
+export { costUsd, type LLMUsage } from "./cost.ts";
+
 /**
  * LLM tier configuration. Framework-agnostic — the caller (SvelteKit route or
  * offline script) injects the apiKey and any overrides, never reading the env
@@ -28,55 +33,32 @@ export const STAGE2_MODEL = "swiss-ai/apertus-8b-instruct";
 export const STAGE3_MODEL = "swiss-ai/apertus-70b-instruct";
 
 export interface LLMConfig {
-  apiKey: string;
-  /** Override the inference endpoint (default: Public AI / Apertus). */
-  baseURL?: string;
-  /** Override the Stage 2 model id (default: Apertus-8B). */
-  stage2Model?: string;
-  /** Override the Stage 3 model id (default: Apertus-70B). */
-  stage3Model?: string;
+	apiKey: string;
+	/** Override the inference endpoint (default: Public AI / Apertus). */
+	baseURL?: string;
+	/** Override the Stage 2 model id (default: Apertus-8B). */
+	stage2Model?: string;
+	/** Override the Stage 3 model id (default: Apertus-70B). */
+	stage3Model?: string;
 }
 
 /** The model id for a stage, honouring any per-stage override. */
 export function stageModel(config: LLMConfig, stage: 2 | 3): string {
-  return stage === 2
-    ? (config.stage2Model ?? STAGE2_MODEL)
-    : (config.stage3Model ?? STAGE3_MODEL);
+	return stage === 2
+		? (config.stage2Model ?? STAGE2_MODEL)
+		: (config.stage3Model ?? STAGE3_MODEL);
 }
 
 /** Resolve an AI SDK language model bound to the caller-supplied key + endpoint. */
 export function languageModel(config: LLMConfig, model: string): LanguageModel {
-  const provider = createOpenAICompatible({
-    name: "llm",
-    baseURL: config.baseURL ?? DEFAULT_BASE_URL,
-    apiKey: config.apiKey,
-    // Apertus/OpenAI both honour response_format: json_schema. Without this the
-    // AI SDK falls back to prompt-only JSON, which Apertus doesn't emit
-    // schema-cleanly → AI_NoObjectGeneratedError. See stage2/stage3.
-    supportsStructuredOutputs: true,
-  });
-  return provider(model);
-}
-
-/** Token usage from one LLM call. */
-export interface LLMUsage {
-  inputTokens: number;
-  outputTokens: number;
-}
-
-/** Per-model price in USD per million tokens (input / output). */
-const PRICING: Record<string, { input: number; output: number }> = {
-  // Apertus via Public AI is free during the hackathon → $0 marginal cost. This
-  // strengthens the funnel (Swiss open model, zero unit cost vs the naive
-  // baseline); swap to representative self-host pricing if you want non-zero $.
-  "swiss-ai/apertus-8b-instruct": { input: 0, output: 0 },
-  "swiss-ai/apertus-70b-instruct": { input: 0, output: 0 },
-};
-
-/** USD cost of a call. Unknown models are treated as free (Apertus is free). */
-export function costUsd(model: string, usage: LLMUsage): number {
-  const p = PRICING[model] ?? { input: 0, output: 0 };
-  return (
-    (usage.inputTokens * p.input + usage.outputTokens * p.output) / 1_000_000
-  );
+	const provider = createOpenAICompatible({
+		name: "llm",
+		baseURL: config.baseURL ?? DEFAULT_BASE_URL,
+		apiKey: config.apiKey,
+		// Apertus/OpenAI both honour response_format: json_schema. Without this the
+		// AI SDK falls back to prompt-only JSON, which Apertus doesn't emit
+		// schema-cleanly → AI_NoObjectGeneratedError. See stage2/stage3.
+		supportsStructuredOutputs: true,
+	});
+	return provider(model);
 }
