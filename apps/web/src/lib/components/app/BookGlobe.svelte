@@ -58,8 +58,8 @@
 	// hold still for RESUME_DELAY, then ease back up to speed over RAMP_DURATION.
 	// cobe has no built-in interaction/idle handling — the spin and this ramp are
 	// driven by our own rAF loop.
-	const AUTO_SPEED = 0.0008;
-	const RESUME_DELAY = 2000;
+	const AUTO_SPEED = 0.0006;
+	const RESUME_DELAY = 1000;
 	const RAMP_DURATION = 1500;
 	let lastInteraction = -1e9; // far in the past ⇒ spins at full speed on load
 
