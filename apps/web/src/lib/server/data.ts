@@ -1,6 +1,3 @@
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import {
 	KYCBaselineSchema,
 	PatternArchetypeSchema,
@@ -10,20 +7,35 @@ import {
 	type Signal
 } from '@kyc/core';
 
-/** Walk up to the workspace root (holds pnpm-workspace.yaml) to find data/. */
-function repoRoot(): string {
-	let dir = dirname(fileURLToPath(import.meta.url));
-	while (dir !== dirname(dir)) {
-		if (existsSync(join(dir, 'pnpm-workspace.yaml'))) return dir;
-		dir = dirname(dir);
-	}
-	throw new Error('Could not locate repo root');
-}
+/**
+ * The customer book and pattern library, bundled into the build at compile time
+ * via Vite's `import.meta.glob` (`?raw`, eager) rather than read from disk. This
+ * is what lets the app run on Cloudflare Pages — there is no filesystem at the
+ * edge, so the repo-root `data/` JSON is inlined as strings and parsed here.
+ * `?raw` keeps the existing JSON.parse → Zod flow (no surprises from Vite's JSON
+ * transform), and `eager` keeps these loaders synchronous.
+ */
 
-export const dataDir = join(repoRoot(), 'data');
+// The options must be an inline object literal — Vite static-analyses it.
+const baselineRaw = import.meta.glob('../../../../../data/baselines/*.json', {
+	query: '?raw',
+	import: 'default',
+	eager: true
+}) as Record<string, string>;
+const signalRaw = import.meta.glob('../../../../../data/signals/*.json', {
+	query: '?raw',
+	import: 'default',
+	eager: true
+}) as Record<string, string>;
+const patternRaw = import.meta.glob('../../../../../data/pattern-library/*.json', {
+	query: '?raw',
+	import: 'default',
+	eager: true
+}) as Record<string, string>;
 
-function readJson(relPath: string): unknown {
-	return JSON.parse(readFileSync(join(dataDir, relPath), 'utf8'));
+/** Filename (with extension) for a glob key. */
+function basename(path: string): string {
+	return path.slice(path.lastIndexOf('/') + 1);
 }
 
 export interface EntityData {
@@ -33,18 +45,16 @@ export interface EntityData {
 
 /** Load every baseline plus its merged signals (all sources). */
 export function loadBook(): EntityData[] {
-	const baselineFiles = readdirSync(join(dataDir, 'baselines')).filter((f) => f.endsWith('.json'));
 	const book: EntityData[] = [];
-	for (const file of baselineFiles) {
-		const baseline = KYCBaselineSchema.parse(readJson(`baselines/${file}`));
+	for (const raw of Object.values(baselineRaw)) {
+		const baseline = KYCBaselineSchema.parse(JSON.parse(raw));
 		const signals: Signal[] = [];
-		const sigDir = join(dataDir, 'signals');
-		// Load every signal file for this entity, regardless of source suffix
+		// Every signal file for this entity, regardless of source suffix
 		// (eventregistry, sec, screen, …) — one connector layer, many sources.
 		const prefix = `${baseline.entityId}.`;
-		for (const file of readdirSync(sigDir)) {
-			if (file.startsWith(prefix) && file.endsWith('.json')) {
-				signals.push(...SignalArraySchema.parse(readJson(`signals/${file}`)));
+		for (const [path, sigRaw] of Object.entries(signalRaw)) {
+			if (basename(path).startsWith(prefix)) {
+				signals.push(...SignalArraySchema.parse(JSON.parse(sigRaw)));
 			}
 		}
 		book.push({ baseline, signals });
@@ -55,9 +65,5 @@ export function loadBook(): EntityData[] {
 
 /** Load the pattern library of known drift archetypes. */
 export function loadPatternLibrary(): PatternArchetype[] {
-	const dir = join(dataDir, 'pattern-library');
-	if (!existsSync(dir)) return [];
-	return readdirSync(dir)
-		.filter((f) => f.endsWith('.json'))
-		.map((f) => PatternArchetypeSchema.parse(readJson(`pattern-library/${f}`)));
+	return Object.values(patternRaw).map((raw) => PatternArchetypeSchema.parse(JSON.parse(raw)));
 }

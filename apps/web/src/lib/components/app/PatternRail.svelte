@@ -19,6 +19,7 @@
 		auditCount,
 		llmNote,
 		analyzing,
+		analyzable,
 		hasAlert,
 		onViewStage3,
 		enhanceGov,
@@ -32,6 +33,8 @@
 		auditCount: number;
 		llmNote: string | null;
 		analyzing: boolean;
+		/** Whether this entity has a captured Stage 2/3 analysis to replay. */
+		analyzable: boolean;
 		hasAlert: boolean;
 		onViewStage3: () => void;
 		enhanceGov: SubmitFunction;
@@ -167,19 +170,26 @@
 							</p>
 						{/if}
 						<!-- Investigate first: Stage 3 is the tool you use to make the call. -->
-						<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze} in:fly={rise(120)}>
-							<input type="hidden" name="entityId" value={entityId} />
-							<input type="hidden" name="asOf" value={asOfIso} />
-							<Button
-								type="submit"
-								size="sm"
-								disabled={analyzing}
-								class="w-full rounded-md text-[12px] font-medium"
+						{#if analyzable}
+							<form
+								method="POST"
+								action="?/analyze"
+								use:enhance={enhanceAnalyze}
+								in:fly={rise(120)}
 							>
-								<MagnifyingGlass size={13} weight="bold" class="mr-1.5" />
-								{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
-							</Button>
-						</form>
+								<input type="hidden" name="entityId" value={entityId} />
+								<input type="hidden" name="asOf" value={asOfIso} />
+								<Button
+									type="submit"
+									size="sm"
+									disabled={analyzing}
+									class="w-full rounded-md text-[12px] font-medium"
+								>
+									<MagnifyingGlass size={13} weight="bold" class="mr-1.5" />
+									{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
+								</Button>
+							</form>
+						{/if}
 
 						<!-- The decision lives below the tool you use to make it. -->
 						<div
@@ -235,20 +245,27 @@
 				{#if role === 'compliance_officer'}
 					<div class="flex flex-col gap-2">
 						<!-- Investigate first: review the Stage 3 synthesis before the checkpoint. -->
-						<form method="POST" action="?/analyze" use:enhance={enhanceAnalyze} in:fly={rise(120)}>
-							<input type="hidden" name="entityId" value={entityId} />
-							<input type="hidden" name="asOf" value={asOfIso} />
-							<Button
-								type="submit"
-								variant="ghost"
-								size="sm"
-								disabled={analyzing}
-								class="text-muted2 hover:text-text hover:bg-panel2 w-full rounded-md text-[11px]"
+						{#if analyzable}
+							<form
+								method="POST"
+								action="?/analyze"
+								use:enhance={enhanceAnalyze}
+								in:fly={rise(120)}
 							>
-								<MagnifyingGlass size={13} weight="bold" class="mr-1.5" />
-								{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
-							</Button>
-						</form>
+								<input type="hidden" name="entityId" value={entityId} />
+								<input type="hidden" name="asOf" value={asOfIso} />
+								<Button
+									type="submit"
+									variant="ghost"
+									size="sm"
+									disabled={analyzing}
+									class="text-muted2 hover:text-text hover:bg-panel2 w-full rounded-md text-[11px]"
+								>
+									<MagnifyingGlass size={13} weight="bold" class="mr-1.5" />
+									{analyzing ? 'Analyzing…' : 'Deep analysis · Stage 3'}
+								</Button>
+							</form>
+						{/if}
 
 						<div
 							class="text-muted2 my-0.5 flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase"

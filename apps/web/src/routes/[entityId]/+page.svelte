@@ -78,7 +78,7 @@
 			ui.stage3.alert = (body.alert as Alert | null) ?? null;
 			if (body.llm && body.alert)
 				llmNote = 'Stage 3 synthesis complete — written to the audit log.';
-			else if (!body.llm) llmNote = 'No LLM_API_KEY configured — deep synthesis skipped.';
+			else if (!body.llm) llmNote = 'No captured analysis for this customer — Stage 3 skipped.';
 			else llmNote = 'Composite below the alert threshold — no Stage 3 synthesis.';
 			if (Array.isArray(body.events)) toastEvents(body.events as AuditEntry[]);
 			await invalidateAll();
@@ -171,6 +171,7 @@
 		auditCount={data.auditCount}
 		{llmNote}
 		{analyzing}
+		analyzable={data.analyzable}
 		hasAlert={!!ui.stage3.alert}
 		onViewStage3={() => (ui.stage3.open = true)}
 		{enhanceGov}

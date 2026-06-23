@@ -1,26 +1,23 @@
 import { randomUUID } from 'node:crypto';
-import { env } from '$env/dynamic/private';
 import type { Alert, AuditEntry, DriftAxis } from '@kyc/core';
 import { AXES } from '@kyc/core';
-import {
-	priorComposite,
-	runEscalation,
-	type AxisMateriality,
-	type EscalationCost
-} from '@kyc/core/pipeline';
-import { costUsd } from '@kyc/core/llm';
-import { loadBook, loadPatternLibrary } from './data';
-import { appendAudit, listAudit } from './audit';
+import type { AxisMateriality, EscalationCost, EscalationResult } from '@kyc/core/pipeline';
+import { costUsd } from '@kyc/core/llm/cost';
+import { appendAudit } from './audit';
 
 /**
- * Server-only Stage 2/3 escalation. Lives in $lib/server so the framework keeps
- * the API key (LLM_API_KEY, read via the private env) off the client. The
- * tier orchestration itself is the shared @kyc/core `runEscalation`; this wrapper
- * adds the app-specific side effects — recording each verdict in the append-only
- * audit log — and adapts the result to the page's shape.
+ * Stage 2/3 replay. The escalation cascade is expensive and hits an external LLM,
+ * so the public demo never runs it live: instead we replay deterministic verdicts
+ * captured offline (`pnpm --filter @kyc/scripts capture`) into `data/analysis/`.
  *
- * Reasoning runs on OpenAI; without a key the cheap deterministic tiers still run
- * and deep synthesis is skipped.
+ * This keeps the deployed SvelteKit app free of all real-API logic — no LLM
+ * client, no connectors — which is both the cost story and what makes it safe to
+ * publish. Only the two demo heroes have a captured analysis; every other entity
+ * returns `{ llm: false }` (its Analyze button is hidden in the UI).
+ *
+ * The side effects mirror the old live path exactly: each tier's verdict is
+ * recorded in the append-only audit log and the result is adapted to the page's
+ * shape, so the UI and audit drawer behave identically.
  */
 
 export type RunCost = EscalationCost;
@@ -36,36 +33,37 @@ export interface AnalyzeResult {
 
 const now = () => new Date().toISOString();
 
-export async function analyzeEntity(entityId: string, asOf: string): Promise<AnalyzeResult> {
-	const entity = loadBook().find((e) => e.baseline.entityId === entityId);
-	if (!entity) return { llm: false };
+// Captured escalation results, bundled at build time (see data.ts for why ?raw).
+const fixtureRaw = import.meta.glob('../../../../../data/analysis/*.json', {
+	query: '?raw',
+	import: 'default',
+	eager: true
+}) as Record<string, string>;
 
-	const apiKey = env.LLM_API_KEY;
-	if (!apiKey) return { llm: false };
+const FIXTURES: Record<string, EscalationResult> = Object.fromEntries(
+	Object.entries(fixtureRaw).map(([path, raw]) => [
+		path.slice(path.lastIndexOf('/') + 1).replace(/\.json$/, ''),
+		JSON.parse(raw) as EscalationResult
+	])
+);
 
-	// Defaults to Apertus / Public AI; override endpoint + per-stage models via
-	// .env (e.g. LLM_BASE_URL + LLM_STAGE{2,3}_MODEL → OpenAI).
-	const config = {
-		apiKey,
-		baseURL: env.LLM_BASE_URL || undefined,
-		stage2Model: env.LLM_STAGE2_MODEL || undefined,
-		stage3Model: env.LLM_STAGE3_MODEL || undefined
-	};
+/** Entities with a captured analysis to replay (heroes). */
+export const ANALYZABLE = new Set(Object.keys(FIXTURES));
 
-	const prior = priorComposite(listAudit(entityId, 500), entityId);
+/**
+ * Replay the captured escalation for an entity, recording each tier in the audit
+ * log. There is no `asOf` parameter — the fixture is the canonical analysis,
+ * independent of the scrubber clock.
+ */
+export async function analyzeEntity(entityId: string): Promise<AnalyzeResult> {
+	const result = FIXTURES[entityId];
+	if (!result) return { llm: false };
 
-	const result = await runEscalation({
-		config,
-		baseline: entity.baseline,
-		signals: entity.signals,
-		archetypes: loadPatternLibrary(),
-		asOf,
-		alertId: `alert-${entityId}-${Date.now()}`,
-		priorComposite: prior
-	});
+	// Hold for the deep-reasoning beat so the Stage 3 toast lands like the real thing.
+	await new Promise((resolve) => setTimeout(resolve, 2000));
 
-	// Stage 1 — record the composite-level evaluation (axis omitted) so later runs
-	// can detect a delta-triggered jump (proposal 2).
+	// Stage 1 — composite-level evaluation (axis omitted) so later runs can detect
+	// a delta-triggered jump.
 	const compositeConfidence = Math.max(...AXES.map((a) => result.drift.axes[a].confidence));
 	appendAudit({
 		id: randomUUID(),
@@ -77,7 +75,7 @@ export async function analyzeEntity(entityId: string, asOf: string): Promise<Ana
 		confidence: compositeConfidence
 	});
 
-	// Stage 2 — record each per-axis materiality verdict (with its cost).
+	// Stage 2 — each per-axis materiality verdict (with its cost).
 	const materiality: Partial<Record<DriftAxis, AxisMateriality>> = {};
 	for (const { axis, result: m, usage, model } of result.stage2) {
 		materiality[axis] = m;

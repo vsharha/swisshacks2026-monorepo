@@ -1,0 +1,9 @@
+{
+	// Cloudflare Pages project for the @kyc/web app. `nodejs_compat` is required
+	// because the app imports `node:crypto` (audit hash-chain + ids); everything
+	// else runs on the standard Workers runtime — no live external API calls.
+	"name": "kyc-drift-monitor",
+	"compatibility_date": "2026-06-01",
+	"compatibility_flags": ["nodejs_compat"],
+	"pages_build_output_dir": ".svelte-kit/cloudflare"
+}

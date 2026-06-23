@@ -4,7 +4,7 @@ import type { AuditEntry, HumanDecision, HumanRole } from '@kyc/core';
 import { governanceCheck } from '@kyc/core/governance';
 import { buildGraph } from '@kyc/core/graph';
 import { loadBook, loadPatternLibrary } from '$lib/server/data';
-import { analyzeEntity } from '$lib/server/analyze';
+import { ANALYZABLE, analyzeEntity } from '$lib/server/analyze';
 import { appendAudit, auditCount, caseStateFor, currentRating, listAudit } from '$lib/server/audit';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -29,6 +29,7 @@ export const load: PageServerLoad = ({ params }) => {
 		entity,
 		graph,
 		archetype: patterns[0],
+		analyzable: ANALYZABLE.has(entity.baseline.entityId),
 		rating: currentRating(entity.baseline.entityId, entity.baseline.riskRating),
 		caseState: caseStateFor(entity.baseline.entityId),
 		timeStart,
@@ -42,8 +43,7 @@ export const actions: Actions = {
 	analyze: async ({ request }) => {
 		const form = await request.formData();
 		const entityId = String(form.get('entityId'));
-		const asOf = String(form.get('asOf'));
-		const result = await analyzeEntity(entityId, asOf);
+		const result = await analyzeEntity(entityId);
 		return { ...result, auditCount: auditCount(), audit: listAudit(undefined, 40) };
 	},
 
