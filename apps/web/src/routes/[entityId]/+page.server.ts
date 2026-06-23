@@ -28,7 +28,7 @@ export const load: PageServerLoad = ({ params }) => {
 	return {
 		entity,
 		graph,
-		archetype: patterns[0],
+		archetypes: patterns,
 		analyzable: ANALYZABLE.has(entity.baseline.entityId),
 		rating: currentRating(entity.baseline.entityId, entity.baseline.riskRating),
 		caseState: caseStateFor(entity.baseline.entityId),

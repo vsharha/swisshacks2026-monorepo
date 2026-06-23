@@ -12,7 +12,7 @@
 
 	let {
 		entity,
-		archetype,
+		archetypes,
 		asOfIso,
 		role,
 		caseState,
@@ -26,7 +26,7 @@
 		enhanceAnalyze
 	}: {
 		entity: BookEntity;
-		archetype: PatternArchetype | undefined;
+		archetypes: PatternArchetype[];
 		asOfIso: string;
 		role: HumanRole;
 		caseState: CaseState | undefined;
@@ -56,14 +56,27 @@
 	const isAlert = $derived(entity.drift.status === 'alert');
 	const alertingAxes = $derived(AXES.filter((a) => entity.drift.axes[a].status !== 'stable'));
 
-	// Reasoning by analogy — overlap of the live drift signature with the archetype.
-	const sim = $derived.by(() => {
-		if (!archetype || alertingAxes.length === 0) return 0;
-		const set = new Set(archetype.axes);
+	// Reasoning by analogy — Jaccard overlap of the live drift signature with an
+	// archetype's axes.
+	function similarity(axes: DriftAxis[]): number {
+		if (alertingAxes.length === 0) return 0;
+		const set = new Set(axes);
 		const overlap = alertingAxes.filter((a) => set.has(a)).length;
-		const union = new Set([...alertingAxes, ...archetype.axes]).size;
+		const union = new Set([...alertingAxes, ...axes]).size;
 		return overlap / union;
+	}
+
+	// The closest archetype to this customer's drift signature (first wins a tie).
+	const match = $derived.by(() => {
+		let best: { archetype: PatternArchetype; sim: number } | undefined;
+		for (const a of archetypes) {
+			const sim = similarity(a.axes);
+			if (!best || sim > best.sim) best = { archetype: a, sim };
+		}
+		return best;
 	});
+	const archetype = $derived(match?.archetype);
+	const sim = $derived(match?.sim ?? 0);
 	const sharedAxes = $derived(
 		archetype ? alertingAxes.filter((a) => archetype.axes.includes(a)) : []
 	);

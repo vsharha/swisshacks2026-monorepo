@@ -164,7 +164,7 @@
 	<!-- Right · pattern match + governance -->
 	<PatternRail
 		entity={selected}
-		archetype={data.archetype}
+		archetypes={data.archetypes}
 		{asOfIso}
 		role={ui.role}
 		caseState={data.caseState}
