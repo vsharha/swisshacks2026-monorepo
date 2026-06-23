@@ -3,6 +3,10 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { cn } from '$lib/utils.js';
 	import ClipboardText from 'phosphor-svelte/lib/ClipboardText';
+	import GithubLogo from 'phosphor-svelte/lib/GithubLogo';
+	import ArrowUpRight from 'phosphor-svelte/lib/ArrowUpRight';
+
+	const REPO_URL = 'https://github.com/vsharha/swisshacks2026-monorepo';
 
 	let {
 		auditCount,
@@ -34,14 +38,16 @@
 		class="flex items-center gap-3 rounded-md transition-opacity hover:opacity-70"
 	>
 		<span class="text-galaxy font-sans text-[15px] font-bold tracking-[0.22em]">SENTINEL</span>
-		<span class="bg-line h-3.5 w-px self-center"></span>
-		<span class="text-muted2 text-[11px] tracking-[0.28em] uppercase">KYC-Drift Monitor</span>
+		<span class="bg-line hidden h-3.5 w-px self-center sm:block"></span>
+		<span class="text-muted2 hidden text-[11px] tracking-[0.28em] uppercase sm:inline"
+			>KYC-Drift Monitor</span
+		>
 	</button>
 
 	<div class="flex items-center gap-3">
 		{#if selected}
 			<div
-				class="border-line flex items-center gap-0.5 rounded-md border p-0.5"
+				class="border-line hidden items-center gap-0.5 rounded-md border p-0.5 sm:flex"
 				role="group"
 				aria-label="Active role"
 			>
@@ -62,8 +68,21 @@
 		{/if}
 
 		<Button
+			href={REPO_URL}
+			target="_blank"
+			rel="noreferrer"
 			size="sm"
-			class="gap-2 rounded-md px-3 text-[11px] font-medium"
+			class="gap-1 rounded-md bg-black px-2.5 text-white hover:bg-black/85"
+			title="View the source on GitHub"
+			aria-label="View the source on GitHub"
+		>
+			<GithubLogo weight="bold" />
+			<ArrowUpRight weight="bold" class="size-3" />
+		</Button>
+
+		<Button
+			size="sm"
+			class="hidden gap-2 rounded-md px-3 text-[11px] font-medium sm:inline-flex"
 			onclick={onOpenAudit}
 			title="Open the append-only audit trail"
 		>
