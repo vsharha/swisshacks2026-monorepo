@@ -14,6 +14,11 @@ Hand-rolled markup is only acceptable for genuinely bespoke, app-specific visual
 
 Token reference: the AMINA design system in `docs/reference/amina-design-system.md` — it drives shadcn via the CSS vars in `layout.css`.
 
+## Dev server
+
+- Before starting the dev server, check whether one is already running for this project (e.g. `pgrep -fl "vite dev"`, or probe the expected port) and reuse it rather than spawning another.
+- When a change requires a fresh process (config, deps, env), kill the existing dev server and restart it — never leave multiple instances running at once.
+
 ## Docs
 
 The `docs/` directory holds relevant background and reference material — consult to it when needed:
