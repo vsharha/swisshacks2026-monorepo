@@ -5,7 +5,7 @@
 	// prerendered/static files (the worker reaches them via the ASSETS binding).
 	// `nodejs_compat` is required because the app imports `node:crypto` (audit
 	// hash-chain + ids); there are no live external API calls.
-	"name": "kyc-drift-monitor",
+	"name": "sentinel",
 	"compatibility_date": "2026-06-01",
 	"compatibility_flags": ["nodejs_compat"],
 	"main": ".svelte-kit/cloudflare/_worker.js",
