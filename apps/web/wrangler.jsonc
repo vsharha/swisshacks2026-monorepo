@@ -1,9 +1,16 @@
 {
-	// Cloudflare Pages project for the @kyc/web app. `nodejs_compat` is required
-	// because the app imports `node:crypto` (audit hash-chain + ids); everything
-	// else runs on the standard Workers runtime — no live external API calls.
+	// Cloudflare Workers deployment for the @kyc/web app (Workers Static Assets).
+	// @sveltejs/adapter-cloudflare emits the worker entry + static assets into
+	// .svelte-kit/cloudflare; `main` is the SSR worker and `assets` serves the
+	// prerendered/static files (the worker reaches them via the ASSETS binding).
+	// `nodejs_compat` is required because the app imports `node:crypto` (audit
+	// hash-chain + ids); there are no live external API calls.
 	"name": "kyc-drift-monitor",
 	"compatibility_date": "2026-06-01",
 	"compatibility_flags": ["nodejs_compat"],
-	"pages_build_output_dir": ".svelte-kit/cloudflare"
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	}
 }
