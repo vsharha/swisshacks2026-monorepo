@@ -31,7 +31,7 @@
 	);
 </script>
 
-<div class="border-line bg-panel flex min-h-0 min-w-0 flex-col rounded-lg border p-4">
+<div class="border-line bg-panel my-4 flex min-h-0 min-w-0 flex-col rounded-lg border p-4">
 	<div class="text-muted2 mb-2 text-[10px] tracking-[0.16em] uppercase">
 		Latest events · {items.length}
 	</div>

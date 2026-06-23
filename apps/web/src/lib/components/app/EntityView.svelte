@@ -11,7 +11,7 @@
 		$props();
 </script>
 
-<main class="flex min-h-0 min-w-0 flex-col">
+<main class="flex min-h-0 min-w-0 flex-col pt-4">
 	<Tabs.Root value="overview" class="flex min-h-0 flex-1 flex-col gap-4">
 		<Tabs.List variant="line" class="gap-5 self-start">
 			<Tabs.Trigger value="overview" class="text-[11px] tracking-[0.14em] uppercase">

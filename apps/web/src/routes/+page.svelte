@@ -34,16 +34,16 @@
 	const open = (id: string) => goto(`/${id}`);
 </script>
 
-<div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5 py-4">
+<div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5">
 	<!-- Left · customer register -->
-	<aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-r pr-4">
+	<aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-r pr-4 py-4">
 		<div class="flex min-h-0 flex-col gap-1 overflow-y-auto">
 			<BookList {book} selectedId="" onselect={open} />
 		</div>
 	</aside>
 
 	<!-- Centre · book globe -->
-	<div class="min-h-0 self-stretch">
+	<div class="min-h-0 self-stretch py-4">
 		<BookGlobe {book} onselect={open} />
 	</div>
 
