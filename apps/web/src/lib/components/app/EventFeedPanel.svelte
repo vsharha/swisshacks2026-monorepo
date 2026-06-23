@@ -12,19 +12,19 @@
 	// Risk weight for the "risk-weighted, then recent" ordering.
 	const STATUS_RANK: Record<RiskStatus, number> = { alert: 2, watch: 1, stable: 0 };
 
-	// One flat, ranked feed of every signal across the whole book (all source
-	// types, not just media), past of the clock, alert/watch companies first, then
-	// newest, then most confident. Capped to keep the rail scannable.
+	// One flat feed of every signal across the whole book (all source types, not
+	// just media), past of the clock, newest first — then by company risk and
+	// confidence to break ties. Capped to keep the rail scannable.
 	const items = $derived(
 		book
 			.flatMap((e) =>
 				e.signals.filter((s) => s.date <= asOfIso).map((s) => ({ entity: e, signal: s }))
 			)
 			.sort((a, b) => {
-				const rank = STATUS_RANK[b.entity.drift.status] - STATUS_RANK[a.entity.drift.status];
-				if (rank !== 0) return rank;
 				const date = b.signal.date.localeCompare(a.signal.date);
 				if (date !== 0) return date;
+				const rank = STATUS_RANK[b.entity.drift.status] - STATUS_RANK[a.entity.drift.status];
+				if (rank !== 0) return rank;
 				return b.signal.confidence - a.signal.confidence;
 			})
 			.slice(0, 25)
