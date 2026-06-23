@@ -32,8 +32,9 @@ The `docs/` directory holds relevant background and reference material — consu
 
 Access to the EventRegistry API is provided.
 
-## Commtting guidance
+## Committing guidance
 
+- Always `git pull` before committing
 - Commit after each meaningful change with a short title describing what was done
 - No description block
 - Commit as the user, not as yourself
