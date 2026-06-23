@@ -1,0 +1,95 @@
+{
+  "id": "alert-strategy-1782034811227",
+  "entityId": "strategy",
+  "createdAt": "2026-06-21T09:40:18.078Z",
+  "composite": 0.7732461267653765,
+  "status": "alert",
+  "triggeringAxes": [
+    "business_model",
+    "ownership",
+    "scale"
+  ],
+  "recommendedAction": "enhanced_due_diligence_and_rekyc",
+  "reasoning": "The drift is material and concentrated in the same axes that matter most for a strategic-risk transformation: business_model (1.00), ownership (0.98), and scale (1.00). The onboarding profile was a conventional enterprise analytics/software vendor, but current signals portray the company primarily as a bitcoin/crypto-treasury proxy rather than an operating software business. Multiple business-model signals explicitly frame the name around bitcoin buying, crypto-treasury dynamics, and MSTR-holder concerns rather than software licensing or cloud subscriptions, including er-9364093262, er-9362694676, er-9360496545, er-9360970246, er-9364436101, er-9364472428, er-9364636674, er-2026-06-1202874296, and er-2026-06-1202735497. \n\nOwnership/governance risk is also elevated. Signals reference criticism of Michael Saylor's promotion and treatment of holders, stress in preferred stock instruments, and market-structure products tied to the company’s volatility, which together indicate concentrated key-person influence and increasingly complex capital/ownership dynamics: er-9358831072, er-9363010729, er-9358686047, and er-9363113334. \n\nScale/financial-profile drift is significant as well. Signals point to stock issuance relative to bitcoin purchases and broader market-cap deterioration, suggesting the firm’s valuation and financing profile are being driven by treasury strategy and reflexive market behavior rather than core software operations (er-9358412748, er-9363113334). \n\nThis does not read like a thin buzzword rename or shell-style promotion. Instead, it more closely matches a substantive operating company that has over-rotated into a concentrated crypto-treasury identity under strong founder influence. Given the base-rate adverse outcome for that archetype—reflexive unwind, governance instability, and value detachment from the original business—re-KYC is warranted to reassess source of funds, capital-raising methods, governance concentration, treasury-risk management, and whether the customer still fits the original low-risk classification.",
+  "citations": [
+    {
+      "signalId": "er-9364093262",
+      "sourceUrl": "https://247wallst.com/investing/2026/06/19/buy-hold-or-sell-strategy-inc-resumed-its-bitcoin-buying-spree-but-will-warshs-first-fed-meeting-and-severe-tech-compression-crush-mstr-stock-to-65/",
+      "title": "Buy, Hold, or Sell: Strategy Inc. Resumed Its Bitcoin Buying Spree, but Will Warsh's First Fed Meeting and Severe Tech Compression Crush MSTR Stock to $65?"
+    },
+    {
+      "signalId": "er-9362694676",
+      "sourceUrl": "https://cryptobriefing.com/digital-asset-treasury-companies-model-weakens/",
+      "title": "Digital asset treasury companies face challenges as public model weakens"
+    },
+    {
+      "signalId": "er-9360496545",
+      "sourceUrl": "https://bitcoinist.com/michael-saylor-rejects-protocol-yield-in-bitcoin-digital-asset-stack/",
+      "title": "Michael Saylor Rejects Protocol Yield In Bitcoin Digital Asset Stack"
+    },
+    {
+      "signalId": "er-9360970246",
+      "sourceUrl": "https://coinpedia.org/news/michael-saylor-reveals-when-bitcoin-price-might-start-rallying-again/",
+      "title": "Michael Saylor Reveals When Bitcoin Price Might Start Rallying Again"
+    },
+    {
+      "signalId": "er-9364436101",
+      "sourceUrl": "https://financefeeds.com/microstrategys-msci-index-seat-hangs/",
+      "title": "MicroStrategy's MSCI Index Seat Hangs in the Balance"
+    },
+    {
+      "signalId": "er-9364472428",
+      "sourceUrl": "https://coinfomania.com/cryptokaleo-amplifies-concerns-over-saylors-treatment-of-mstr-holders/",
+      "title": "CryptoKaleo Amplifies Concerns Over Saylor's Treatment of MSTR Holders"
+    },
+    {
+      "signalId": "er-9364636674",
+      "sourceUrl": "https://economictimes.indiatimes.com/markets/cryptocurrency/the-crypto-treasury-dream-unravels-after-a-90-stock-plunge/articleshow/131869889.cms",
+      "title": "The crypto-treasury dream unravels after a 90% stock plunge"
+    },
+    {
+      "signalId": "er-2026-06-1202874296",
+      "sourceUrl": "https://www.fa-mag.com/news/the-crypto-treasury-dream-unravels-after-a-90--stock-plunge-87461.html",
+      "title": "The Crypto-Treasury Dream Unravels After A 90% Stock Plunge"
+    },
+    {
+      "signalId": "er-2026-06-1202735497",
+      "sourceUrl": "https://www.bloomberg.com/news/articles/2026-06-18/the-crypto-treasury-dream-unravels-after-a-90-stock-plunge",
+      "title": "The Crypto-Treasury Dream Unravels After a 90% Stock Plunge"
+    },
+    {
+      "signalId": "er-9358831072",
+      "sourceUrl": "https://cryptobriefing.com/bitcoin-policy-uk-saylor-strc-criticism/",
+      "title": "Bitcoin Policy UK CEO criticizes Michael Saylor's STRC promotion as dishonest"
+    },
+    {
+      "signalId": "er-9363010729",
+      "sourceUrl": "https://cryptobriefing.com/strategy-strc-preferred-stock-all-time-low/",
+      "title": "Strategy's STRC preferred stock falls to all-time low of $82.53"
+    },
+    {
+      "signalId": "er-9358686047",
+      "sourceUrl": "https://247wallst.com/investing/2026/06/15/mstx-vs-mstu-which-2x-microstrategy-etf-survives-the-volatility/",
+      "title": "MSTX vs. MSTU: Which 2x MicroStrategy ETF Survives the Volatility?"
+    },
+    {
+      "signalId": "er-9363113334",
+      "sourceUrl": "https://cryptobriefing.com/strategy-drops-top-250-market-cap-40b/",
+      "title": "Strategy falls out of top 250 US companies as market cap drops to $40B"
+    },
+    {
+      "signalId": "er-9358412748",
+      "sourceUrl": "https://beincrypto.com/strategy-bitcoin-buy-stock-sales-reserve/",
+      "title": "MicroStrategy Sells More Stock Than It Buys Bitcoin: A Red Flag?"
+    }
+  ],
+  "patternMatch": {
+    "archetypeId": "overstock-blockchain-2018",
+    "archetypeName": "Overstock.com crypto-treasury pivot (2018)",
+    "similarity": 0.92,
+    "outcome": "Adverse. The crypto-treasury over-rotation failed to deliver: the stock round-tripped its surge, the founder-CEO exited under a governance cloud and dumped his stake, and the company retreated from the strategy. The base-rate outcome for an operating company that converts into a leveraged, single-asset crypto-treasury proxy under concentrated founder control is a reflexive unwind and ownership/governance instability → recommend enhanced due diligence and re-KYC when a live entity matches."
+  },
+  "relationshipPaths": [],
+  "confidence": 0.94,
+  "modelVersion": "gpt-5.4"
+}

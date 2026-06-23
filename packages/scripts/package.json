@@ -14,6 +14,7 @@
     "build:patterns": "tsx src/build-pattern-library.ts",
     "score:drift": "tsx src/score-drift.ts",
     "analyze": "tsx src/analyze.ts",
+    "capture": "tsx src/capture-fixtures.ts",
     "lint": "eslint .",
     "check": "tsc --noEmit",
     "fix": "eslint src --fix",

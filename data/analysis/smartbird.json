@@ -1,0 +1,508 @@
+{
+  "drift": {
+    "entityId": "smartbird",
+    "asOf": "2026-06-20T00:00:00Z",
+    "axes": {
+      "business_model": {
+        "score": 0.9999999999998672,
+        "confidence": 0.8472250579047637,
+        "status": "alert",
+        "tierReached": "stage0",
+        "signalIds": [
+          "er-9363547897",
+          "er-2026-06-1203290530",
+          "er-9363376047",
+          "er-9363369492",
+          "er-9363093508",
+          "er-9363081838",
+          "er-9363079941",
+          "er-2026-06-1202957483",
+          "er-9362955774",
+          "er-9362636249",
+          "er-9362613408",
+          "er-9362511501",
+          "er-2026-06-1202577952",
+          "er-9362495654",
+          "er-9362478908",
+          "er-2026-06-1202550401",
+          "er-9362365720",
+          "er-9362141906",
+          "er-9362078739",
+          "er-9361980896",
+          "er-9361911305",
+          "er-9361838784",
+          "er-9361838781",
+          "er-9361724621",
+          "er-9361764958",
+          "er-9361735130",
+          "er-9361698838",
+          "er-9361650172",
+          "er-9361647710",
+          "er-9361612893",
+          "er-9361612162",
+          "er-9361611419",
+          "er-9361584494",
+          "er-9361567982",
+          "er-9361545733",
+          "er-9361530329",
+          "er-9361496379",
+          "er-9361493730",
+          "er-9361470044",
+          "er-9361451177",
+          "er-9361441638",
+          "er-9361437636",
+          "er-9361433320",
+          "er-2026-06-1201750043",
+          "er-9361423741",
+          "er-9361415142",
+          "er-9361401918",
+          "sec-0001193125-26-273417",
+          "sec-0001628280-26-043145",
+          "er-9354277301",
+          "sec-0001193125-26-267762",
+          "er-9351492696",
+          "er-9347076217",
+          "sec-0001628280-26-040772",
+          "er-9344142623",
+          "er-1306104986",
+          "er-9338648478",
+          "er-9336532405",
+          "er-9336308118",
+          "er-9336303571",
+          "er-9336145967",
+          "er-9336129253",
+          "er-9336108333",
+          "er-9336102327",
+          "er-9336098680",
+          "er-9336097843",
+          "er-9235560082",
+          "er-9234055585",
+          "er-2026-05-1180478790",
+          "er-9233604899",
+          "er-2026-05-1179923176",
+          "er-2026-05-1179924345",
+          "er-2026-05-1179923189",
+          "er-2026-05-1179923271",
+          "er-2026-05-1179923169",
+          "er-2026-05-1179923046",
+          "er-2026-05-1179923051",
+          "er-2026-05-1179922173",
+          "er-2026-05-1179921260",
+          "er-2026-05-1179918081",
+          "er-2026-05-1179917187",
+          "er-2026-05-1179917022",
+          "er-2026-05-1179915692",
+          "er-2026-05-1179780994",
+          "er-2026-05-1178783900",
+          "er-9230219466",
+          "er-9229937631",
+          "er-9229829528",
+          "er-9229560539",
+          "er-9229552234",
+          "er-2026-05-1177566398",
+          "er-2026-05-1177548985",
+          "er-9229397352",
+          "er-9229391385",
+          "er-9229380733",
+          "er-9229371960",
+          "er-9229368779",
+          "er-9229368168",
+          "er-9229366464",
+          "er-9229366329",
+          "er-9229364671",
+          "er-9229364105",
+          "er-9229363967",
+          "er-9229361983",
+          "er-9229361816",
+          "er-9229361554",
+          "er-9229359573",
+          "er-9229359312",
+          "er-9229359286",
+          "er-9229340486",
+          "er-9229338256",
+          "er-9229329756",
+          "er-9229307000",
+          "er-2026-05-1177445345",
+          "er-9229302848",
+          "er-9229272910",
+          "er-2026-05-1177415825",
+          "er-9229264723",
+          "er-9229260569",
+          "er-9229257625",
+          "er-9229257376",
+          "er-9229257078",
+          "er-9229256905",
+          "er-9229254561",
+          "er-9229254376",
+          "er-2026-05-1177403105",
+          "er-9229247179",
+          "er-9229233093",
+          "er-2026-05-1175512616",
+          "er-2026-05-1175502897",
+          "er-2026-05-1174316978",
+          "er-9224919579",
+          "er-9224904828",
+          "er-9224901025",
+          "er-9224895994",
+          "er-9224896685",
+          "er-9224894793",
+          "er-9224893902",
+          "er-9224892730",
+          "er-9224796928",
+          "er-2026-05-1174188967",
+          "er-9224323958",
+          "er-9224242670",
+          "sec-0001628280-26-026081",
+          "sec-0001628280-26-003900",
+          "sec-0001628280-25-050181",
+          "sec-0001653909-25-000049",
+          "sec-0001653909-25-000032",
+          "sec-0001653909-25-000023",
+          "sec-0001628280-25-011965",
+          "sec-0001628280-24-045700",
+          "sec-0001653909-24-000064",
+          "sec-0001628280-24-035616",
+          "sec-0001653909-24-000035",
+          "sec-0001628280-24-021669",
+          "sec-0001653909-24-000020",
+          "sec-0001653909-23-000100",
+          "sec-0001653909-23-000093",
+          "sec-0001653909-23-000085",
+          "sec-0001653909-23-000072",
+          "sec-0001653909-22-000082",
+          "sec-0001653909-22-000060",
+          "sec-0001653909-22-000042",
+          "sec-0001653909-22-000034",
+          "sec-0001653909-22-000009",
+          "sec-0001653909-21-000008",
+          "sec-0001628280-21-022029"
+        ],
+        "reasoning": "167 signal(s); latest: \"Allbirds stock takes flight after announcing new CEO and name change\" (2026-06-19)."
+      },
+      "ownership": {
+        "score": 0.9906652677082357,
+        "confidence": 0.8468820563559755,
+        "status": "alert",
+        "tierReached": "stage0",
+        "signalIds": [
+          "er-9362313422",
+          "er-9362284854",
+          "er-9362099267",
+          "er-9361931719",
+          "er-9361926538",
+          "er-9361924572",
+          "er-9361821991",
+          "er-9361819322",
+          "er-9361773292",
+          "er-9361770537",
+          "er-9361721979",
+          "er-9361720580",
+          "er-9361716614",
+          "er-9361649322",
+          "er-9340570474",
+          "sec-0001628280-26-036896",
+          "sec-0001628280-25-047831",
+          "sec-0001653909-25-000081",
+          "sec-0001653909-25-000020",
+          "sec-0001653909-25-000014",
+          "sec-0000932471-24-000269",
+          "sec-0001653909-24-000061",
+          "sec-0001653909-24-000052",
+          "sec-0001653909-24-000022",
+          "sec-0001653909-24-000012",
+          "sec-0000315066-24-000957",
+          "sec-0001653909-23-000062",
+          "sec-0001653909-23-000054",
+          "sec-0001653909-23-000051",
+          "sec-0001653909-23-000023",
+          "sec-0001306550-23-007058",
+          "sec-0001653909-22-000068",
+          "sec-0001653909-22-000029",
+          "sec-0001193125-22-039785",
+          "sec-0001193125-22-039784",
+          "sec-0001104659-22-017292",
+          "sec-0001104659-22-016412",
+          "sec-0001193125-22-031016",
+          "sec-0000769993-22-000040",
+          "sec-0000769993-22-000042",
+          "sec-0001104659-22-001872",
+          "sec-0000080255-21-001579",
+          "sec-0000315066-21-001896",
+          "sec-0000038777-21-000208",
+          "sec-0001088875-21-000105"
+        ],
+        "reasoning": "45 signal(s); latest: \"Former Allbirds CEO tapped as president of Sorel\" (2026-06-18)."
+      },
+      "jurisdiction": {
+        "score": 0,
+        "confidence": 0,
+        "status": "stable",
+        "tierReached": "stage0",
+        "signalIds": []
+      },
+      "scale": {
+        "score": 0.9942922877729513,
+        "confidence": 0.9694050389953675,
+        "status": "alert",
+        "tierReached": "stage0",
+        "signalIds": [
+          "er-2026-06-1196227811",
+          "sec-0001628280-26-042166",
+          "er-9350895943",
+          "er-9347431860",
+          "er-9347431108",
+          "er-9347430879",
+          "er-9340749907",
+          "er-9336740149",
+          "sec-0001628280-26-038894",
+          "er-2026-05-1178112823",
+          "er-2026-05-1175462920",
+          "sec-0001628280-26-035302",
+          "sec-0001653909-26-000006",
+          "sec-0001193125-26-164338",
+          "sec-0001193125-26-155150",
+          "linkedin-smartbird-hiring_freeze-2026-04-02",
+          "sec-0001628280-26-022192",
+          "sec-0001628280-26-022181",
+          "linkedin-smartbird-headcount_drop-2026-03-25",
+          "market-smartbird-valuation_change-2026-03-20",
+          "sec-0001628280-25-050327",
+          "sec-0001653909-25-000051",
+          "sec-0001193125-25-153141",
+          "sec-0001653909-25-000026",
+          "sec-0001628280-25-012130",
+          "sec-0001628280-24-045882",
+          "sec-0001628280-24-035760",
+          "sec-0001628280-24-021813",
+          "sec-0001653909-24-000015",
+          "sec-0001653909-23-000102",
+          "sec-0001653909-23-000087",
+          "sec-0001653909-23-000064",
+          "sec-0001653909-23-000045",
+          "sec-0001653909-23-000030",
+          "sec-0001653909-22-000085",
+          "sec-0001653909-22-000065",
+          "sec-0001653909-22-000039",
+          "sec-0001653909-22-000016",
+          "sec-0001653909-21-000014",
+          "sec-0001628280-21-017824"
+        ],
+        "reasoning": "40 signal(s); latest: \"Sustainable fashion isn't a standalone category\" (2026-06-11)."
+      },
+      "reputation": {
+        "score": 0.5912335186717471,
+        "confidence": 0.5804565956086546,
+        "status": "watch",
+        "tierReached": "stage0",
+        "signalIds": [
+          "er-2026-06-1191945886",
+          "er-9347383139",
+          "er-9344370492",
+          "er-9344252018",
+          "er-9227451868",
+          "er-2026-05-1176095930",
+          "er-9225160270",
+          "er-2026-05-1174092033"
+        ],
+        "reasoning": "8 signal(s); latest: \"This $40 Skechers Sneaker Is Breathable, Machine-Washable, and Ultra Comfortable\" (2026-06-07)."
+      }
+    },
+    "composite": 0.8147714782159654,
+    "status": "alert"
+  },
+  "drifting": [
+    "business_model",
+    "ownership",
+    "scale",
+    "reputation"
+  ],
+  "stage2": [
+    {
+      "axis": "business_model",
+      "result": {
+        "score": 0.97,
+        "confidence": 0.95,
+        "verdict": "material",
+        "reasoning": "Multiple signals show a rebrand to Smartbird and a pivot from direct-to-consumer footwear into AI/AI infrastructure — a fundamental departure from the onboarded business model that invalidates the original KYC assumptions."
+      },
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0
+      },
+      "model": "gpt-5.4-mini"
+    },
+    {
+      "axis": "ownership",
+      "result": {
+        "score": 0.95,
+        "confidence": 0.9,
+        "verdict": "material",
+        "reasoning": "Acquisition of Allbirds and its IP by American Exchange Group / WSG Brands, combined with new executive leadership around the pivot, points to a likely change in control and beneficial ownership that requires re-verification."
+      },
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0
+      },
+      "model": "gpt-5.4-mini"
+    },
+    {
+      "axis": "scale",
+      "result": {
+        "score": 0.9,
+        "confidence": 0.85,
+        "verdict": "material",
+        "reasoning": "Repeated reports of the stock surging on the AI-pivot and rename announcement indicate a sharp, sentiment-driven change in financial profile and activity tempo relative to onboarding."
+      },
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0
+      },
+      "model": "gpt-5.4-mini"
+    },
+    {
+      "axis": "reputation",
+      "result": {
+        "score": 0.72,
+        "confidence": 0.8,
+        "verdict": "uncertain",
+        "reasoning": "Adverse-media framing around a buzzword-driven AI pivot, rename, and stock pump raises reputational and market-abuse concerns, though on its own it is not conclusive of structural KYC drift."
+      },
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0
+      },
+      "model": "gpt-5.4-mini"
+    }
+  ],
+  "escalated": true,
+  "escalationReason": "Composite 0.81 crossed the alert threshold.",
+  "stage3": {
+    "alert": {
+      "id": "alert-smartbird",
+      "entityId": "smartbird",
+      "createdAt": "2026-06-23T16:50:18.291Z",
+      "composite": 0.8147714782159654,
+      "status": "alert",
+      "triggeringAxes": [
+        "business_model",
+        "ownership",
+        "scale",
+        "reputation"
+      ],
+      "recommendedAction": "Escalate to enhanced due diligence and immediate re-KYC review; place the customer relationship on heightened monitoring pending confirmation of current legal entity, ownership/control, operating model, and source of funds tied to the announced pivot/acquisition transactions.",
+      "reasoning": "The alert is driven by extreme drift on business_model (1.00), ownership (0.99), and scale (0.99), with additional reputation watch signals. The current evidence indicates a material departure from the onboarding profile of a direct-to-consumer sustainable footwear/apparel company. Multiple signals state that Allbirds has rebranded to Smartbird and is pivoting from footwear into AI/AI infrastructure, with associated stock-price surge language, which is a fundamental business-model change relative to onboarding (er-9361764958, er-9361650172, er-9361612893, er-9361612162, er-9361611419, er-9361496379, er-9362636249). Separately, there are repeated signals that American Exchange Group and WSG Brands acquired or partnered in the acquisition of Allbirds and its intellectual property, indicating possible transfer of key assets and/or control that requires validation of the surviving entity, beneficial ownership, and governance structure (er-9362284854, er-9361649322, er-2026-06-1203290530, er-9363376047, er-9363369492). Ownership drift is reinforced by executive turnover/new leadership signals, including a new CEO in connection with the AI shift and the former Allbirds CEO moving to SOREL, which suggests meaningful management change around the same time as the strategic pivot and acquisition activity (er-9361650172, er-9361647710, er-9362313422, er-9361931719, er-9361926538, er-9361924572). The scale axis is credibly triggered by repeated references to the stock surging/pumping on the announcement of the AI pivot and rename, which can increase financial-crime and market-abuse exposure even if not determinative on its own (er-9361764958, er-9361496379, er-9362636249, er-9361584494, er-9361647710). Jurisdiction remains stable, so the concern is not geographic expansion but rather a sharp identity/control/strategy discontinuity. Given the combination of a buzzword-driven AI pivot, rename, stock surge, and questions around substantive continuity after IP acquisition, this no longer fits the original low-risk KYC profile and merits immediate re-underwriting.",
+      "citations": [
+        {
+          "signalId": "er-9361764958",
+          "sourceUrl": "https://ktla.com/news/allbirds-pivot-to-ai-rebrands/",
+          "title": "Allbirds officially rebrands as it pivots from footwear to A.I., sending stock soaring"
+        },
+        {
+          "signalId": "er-9361650172",
+          "sourceUrl": "https://www.myrtlebeachonline.com/news/business/article316166493.html",
+          "title": "Allbirds becomes Smartbird, names new CEO amid AI shift"
+        },
+        {
+          "signalId": "er-9361612893",
+          "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/allbirds-becomes-smartbird-names-ceo-183811815.html",
+          "title": "Allbirds becomes Smartbird, names new CEO amid AI shift"
+        },
+        {
+          "signalId": "er-9361612162",
+          "sourceUrl": "https://ca.finance.yahoo.com/news/allbirds-becomes-smartbird-names-ceo-183811815.html",
+          "title": "Allbirds becomes Smartbird, names new CEO amid AI shift"
+        },
+        {
+          "signalId": "er-9361611419",
+          "sourceUrl": "https://www.marketscreener.com/news/allbirds-rebrands-as-smartbird-in-ai-pivot-hires-amazon-alum-as-ceo-ce7f5cdcd08ff62d",
+          "title": "Allbirds rebrands as Smartbird in AI pivot, hires Amazon alum as CEO"
+        },
+        {
+          "signalId": "er-9361496379",
+          "sourceUrl": "https://finance.yahoo.com/technology/ai/articles/allbirds-stock-pumps-again-sneaker-162130805.html",
+          "title": "Allbirds Stock Pumps Again as Sneaker Firm Completes AI Pivot, Rebranding to Smartbird"
+        },
+        {
+          "signalId": "er-9362636249",
+          "sourceUrl": "https://www.benzinga.com/trading-ideas/movers/26/06/53273389/why-is-smartbird-stock-surging-thursday",
+          "title": "Why Is Smartbird Stock Surging Thursday? - Allbirds (NASDAQ:BIRD)"
+        },
+        {
+          "signalId": "er-9362284854",
+          "sourceUrl": "https://fashionunited.com/news/business/american-exchange-group-partners-with-wsg-brands-on-allbirds-acquisition/2026061873044",
+          "title": "American Exchange Group partners with WSG Brands on Allbirds acquisition"
+        },
+        {
+          "signalId": "er-9361649322",
+          "sourceUrl": "https://www.cnhinews.com/news/article_fbb6be90-e132-570c-a07f-fd41025f56e7.html",
+          "title": "American Exchange Group Proudly Announces Partnership with WSG Brands in the Acquisition of Allbirds"
+        },
+        {
+          "signalId": "er-2026-06-1203290530",
+          "sourceUrl": "https://si.fashionnetwork.com/news/American-exchange-group-wsg-brands-acquire-allbirds-intellectual-property,1841478.html",
+          "title": "American Exchange Group, WSG Brands acquire Allbirds intellectual property"
+        },
+        {
+          "signalId": "er-9363376047",
+          "sourceUrl": "https://il.fashionnetwork.com/news/American-exchange-group-wsg-brands-acquire-allbirds-intellectual-property,1841478.html",
+          "title": "American Exchange Group, WSG Brands acquire Allbirds intellectual property"
+        },
+        {
+          "signalId": "er-9363369492",
+          "sourceUrl": "https://us.fashionnetwork.com/news/American-exchange-group-wsg-brands-acquire-allbirds-intellectual-property,1841463.html",
+          "title": "American Exchange Group, WSG Brands acquire Allbirds intellectual property"
+        },
+        {
+          "signalId": "er-9362313422",
+          "sourceUrl": "https://fashionunited.uk/news/people/former-allbirds-ceo-tapped-as-president-of-sorel/2026061888724",
+          "title": "Former Allbirds CEO tapped as president of Sorel"
+        },
+        {
+          "signalId": "er-9361931719",
+          "sourceUrl": "https://il.fashionnetwork.com/news/Sorel-names-joe-vernachio-new-president,1841077.html",
+          "title": "Sorel names Joe Vernachio new president"
+        },
+        {
+          "signalId": "er-9361926538",
+          "sourceUrl": "https://si.fashionnetwork.com/news/Sorel-names-joe-vernachio-new-president,1841077.html",
+          "title": "Sorel names Joe Vernachio new president"
+        },
+        {
+          "signalId": "er-9361924572",
+          "sourceUrl": "https://us.fashionnetwork.com/news/Sorel-names-joe-vernachio-new-president,1841085.html",
+          "title": "Sorel names Joe Vernachio new president"
+        },
+        {
+          "signalId": "er-9361584494",
+          "sourceUrl": "https://www.benzinga.com/trading-ideas/movers/26/06/53259486/why-is-smartbird-stock-gaining-wednesday",
+          "title": "Why Is Smartbird Stock Gaining Wednesday? - Allbirds (NASDAQ:BIRD)"
+        },
+        {
+          "signalId": "er-9361647710",
+          "sourceUrl": "https://dnyuz.com/2026/06/17/allbirds-stock-takes-flight-after-announcing-new-ceo-and-name-change-2/",
+          "title": "Allbirds stock takes flight after announcing new CEO and name change"
+        }
+      ],
+      "patternMatch": {
+        "archetypeId": "long-blockchain-2017",
+        "archetypeName": "Long Blockchain Corp (2017)",
+        "similarity": 0.93,
+        "outcome": "Adverse. Nasdaq delisting, SEC registration revoked, and insider-trading charges. The base-rate outcome for this archetype is severe regulatory action → recommend enhanced due diligence and re-KYC when a live entity matches."
+      },
+      "relationshipPaths": [],
+      "confidence": 0.95,
+      "modelVersion": "gpt-5.4"
+    },
+    "usage": {
+      "inputTokens": 0,
+      "outputTokens": 0
+    },
+    "model": "gpt-5.4"
+  },
+  "cost": {
+    "stage2Calls": 4,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "usd": 0
+  }
+}
