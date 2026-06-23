@@ -54,6 +54,21 @@
 	let lastX = 0;
 	let lastY = 0;
 
+	// Auto-rotation: full speed by default, but after the user finishes dragging,
+	// hold still for RESUME_DELAY, then ease back up to speed over RAMP_DURATION.
+	// cobe has no built-in interaction/idle handling — the spin and this ramp are
+	// driven by our own rAF loop.
+	const AUTO_SPEED = 0.0008;
+	const RESUME_DELAY = 2000;
+	const RAMP_DURATION = 1500;
+	let lastInteraction = -1e9; // far in the past ⇒ spins at full speed on load
+
+	// Momentum: carry the drag's spin on release and let it decay so the globe
+	// coasts to a stop instead of halting abruptly.
+	const INERTIA_DECAY = 0.97; // per-frame velocity falloff after release
+	let velocity = 0; // radians/frame carried from the last drag movement
+	let lastMoveTime = 0;
+
 	/** Replicate cobe's lat/lng → normalised screen projection for the overlay. */
 	function project(lat: number, lng: number): Screen {
 		const latR = (lat * Math.PI) / 180;
@@ -110,8 +125,24 @@
 			});
 		}
 
-		function frame() {
-			if (!pointerDown) phi += 0.0008;
+		function frame(now: number) {
+			if (pointerDown) {
+				// Keep resetting the idle timer while the user is dragging.
+				lastInteraction = now;
+			} else {
+				// Coast on residual momentum from the drag, decaying to a stop.
+				if (velocity !== 0) {
+					phi += velocity;
+					velocity *= INERTIA_DECAY;
+					if (Math.abs(velocity) < 1e-5) velocity = 0;
+				}
+				const elapsed = now - lastInteraction;
+				if (elapsed >= RESUME_DELAY) {
+					const t = Math.min(1, (elapsed - RESUME_DELAY) / RAMP_DURATION);
+					const ease = t * t * (3 - 2 * t); // smoothstep — gentle acceleration
+					phi += AUTO_SPEED * ease;
+				}
+			}
 			globe?.update({ phi, theta });
 			const next: Record<string, Screen> = {};
 			for (const m of located) next[m.entity.baseline.entityId] = project(m.hq.lat, m.hq.lng);
@@ -137,6 +168,7 @@
 	// ── Pointer drag to rotate ─────────────────────────────────────────────
 	function onPointerDown(e: PointerEvent) {
 		pointerDown = true;
+		velocity = 0; // a fresh grab cancels any leftover coast
 		lastX = e.clientX;
 		lastY = e.clientY;
 		canvas.setPointerCapture(e.pointerId);
@@ -147,10 +179,21 @@
 		const dy = e.clientY - lastY;
 		lastX = e.clientX;
 		lastY = e.clientY;
-		phi += dx * 0.005;
+		const dphi = dx * 0.005;
+		phi += dphi;
 		theta = Math.max(-0.6, Math.min(0.6, theta + dy * 0.005));
+		velocity = dphi; // latest movement seeds the release momentum
+		lastMoveTime = performance.now();
 	}
 	function onPointerUp(e: PointerEvent) {
+		// Only start the idle countdown when an actual drag ends — a bare
+		// pointerleave (no drag) must not pause the spin.
+		if (pointerDown) {
+			lastInteraction = performance.now();
+			// If the pointer paused before lifting, don't fling — only a release
+			// that closely follows movement carries momentum.
+			if (performance.now() - lastMoveTime > 80) velocity = 0;
+		}
 		pointerDown = false;
 		canvas.releasePointerCapture?.(e.pointerId);
 	}
