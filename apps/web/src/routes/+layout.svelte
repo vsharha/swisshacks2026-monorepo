@@ -44,7 +44,16 @@
 			onHome={() => goto('/')}
 		/>
 
-		{@render children()}
+		<!-- The dense, three-column layouts need real width — show the app on sm+
+		     and a friendly notice on phones. -->
+		<div class="hidden min-h-0 flex-1 flex-col sm:flex">
+			{@render children()}
+		</div>
+		<div class="flex flex-1 items-center justify-center sm:hidden">
+			<p class="text-muted2 max-w-[16rem] text-center text-sm leading-relaxed">
+				Not optimised for mobile yet — open SENTINEL on a wider screen.
+			</p>
+		</div>
 	</div>
 </Tooltip.Provider>
 
