@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { GraphEdgeType, GraphNode, RiskGraph } from '@kyc/core';
-	import { statusVar, type BookEntity } from '$lib/view';
+	import type { BookEntity } from '$lib/view';
 
 	let { entity, graph, asOfIso }: { entity: BookEntity; graph: RiskGraph; asOfIso: string } =
 		$props();
@@ -231,6 +231,9 @@
 		</div>
 		<div class="text-muted2 flex items-center gap-3 text-[9px]">
 			<span class="flex items-center gap-1">
+				<span class="h-2 w-2 rounded-full" style="background: var(--brand)"></span>Customer
+			</span>
+			<span class="flex items-center gap-1">
 				<span class="h-2 w-2 rounded-full" style="background: var(--galaxy)"></span>Owner
 			</span>
 			<span class="flex items-center gap-1">
@@ -393,7 +396,7 @@
 						cx={model.d.CX}
 						cy={model.d.CY}
 						r="13"
-						fill={statusVar[entity.drift.status]}
+						fill="var(--brand)"
 						stroke="var(--panel)"
 						stroke-width="2.5"
 						class="animate-pulse"
