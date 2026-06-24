@@ -12,6 +12,6 @@
     "fix": "pnpm -r run fix",
     "format": "pnpm -r run format",
     "build": "pnpm -r run build",
-    "deploy": "pnpm --filter @kyc/web deploy"
+    "deploy:cf": "pnpm --filter @kyc/web deploy:cf"
   }
 }
