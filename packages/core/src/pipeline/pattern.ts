@@ -10,7 +10,30 @@ export interface SelectedPatternMatch {
 const AXIS_WEIGHT = 0.25;
 const KEYWORD_WEIGHT = 0.75;
 const KEYWORD_TARGET = 3;
-const MIN_PATTERN_SCORE = 0.5;
+const MIN_PATTERN_SCORE = 0.3;
+const PARTIAL_KEYWORD_FLOOR = 0.66;
+const PARTIAL_KEYWORD_SCORE = 0.7;
+
+const TOKEN_ALIASES: Record<string, string[]> = {
+  btc: ["bitcoin"],
+  crypto: ["digital", "asset"],
+  notes: ["debt"],
+  note: ["debt"],
+  bonds: ["debt"],
+  bond: ["debt"],
+  credit: ["debt"],
+  shares: ["stock"],
+  share: ["stock"],
+  equity: ["stock"],
+  flying: ["surge", "spike", "pump"],
+  flight: ["surge", "spike", "pump"],
+  soaring: ["surge", "spike", "pump"],
+  soars: ["surge", "spike", "pump"],
+  skyrockets: ["surge", "spike", "pump"],
+  skyrocketing: ["surge", "spike", "pump"],
+  jumps: ["surge", "spike", "pump"],
+  jumped: ["surge", "spike", "pump"],
+};
 
 function axisSimilarity(alertingAxes: DriftAxis[], archetypeAxes: DriftAxis[]): number {
   if (alertingAxes.length === 0) return 0;
@@ -21,12 +44,18 @@ function axisSimilarity(alertingAxes: DriftAxis[], archetypeAxes: DriftAxis[]): 
 }
 
 function tokens(value: string): string[] {
-  return value
-    .toLowerCase()
+  const normalized = value.toLowerCase().replace(/\ba\s*\.?\s*i\.?\b/g, "ai");
+  const split = normalized
     .replace(/[^a-z0-9]+/g, " ")
     .trim()
     .split(/\s+/)
     .filter(Boolean);
+  const compacted =
+    normalized.match(/[a-z0-9]+(?:[-_.][a-z0-9]+)+/g)?.map((token) =>
+      token.replace(/[^a-z0-9]/g, ""),
+    ) ?? [];
+
+  return [...split, ...compacted];
 }
 
 function signalText(signal: Signal): string {
@@ -41,21 +70,103 @@ function signalText(signal: Signal): string {
     .join(" ");
 }
 
-function hasKeyword(haystackTokens: string[], keyword: string): boolean {
-  const keywordTokens = tokens(keyword);
-  return keywordTokens.every((keywordToken) =>
-    haystackTokens.some((haystackToken) =>
-      keywordToken.length <= 2
-        ? haystackToken === keywordToken
-        : haystackToken === keywordToken || haystackToken.startsWith(keywordToken),
-    ),
-  );
+function inferredConceptText(signal: Signal): string {
+  const text = signalText(signal);
+  const lower = text.toLowerCase();
+  const concepts: string[] = [];
+
+  if (
+    /valuation_change|hiring_freeze|headcount_drop|margin pressure|restructur|collapse|near-zero|\bdown\b|plunge|pressure/.test(
+      lower,
+    )
+  ) {
+    concepts.push("struggling brand");
+  }
+
+  if (/convertible (notes?|bonds?)/.test(lower)) {
+    concepts.push("convertible debt");
+  }
+
+  if (
+    /(digital[-\s]?asset|crypto|bitcoin|btc).{0,80}(purchase|buy|accumul|reserve|treasury|holding)/.test(
+      lower,
+    ) ||
+    /(purchase|buy|accumul|reserve|treasury|holding).{0,80}(digital[-\s]?asset|crypto|bitcoin|btc)/.test(
+      lower,
+    )
+  ) {
+    concepts.push("digital asset treasury crypto treasury");
+  }
+
+  if (
+    /(shares?|stock).{0,60}(flying|soar|surge|skyrocket|jump|pump|spike)/.test(lower) ||
+    /(flying|soar|surge|skyrocket|jump|pump|spike).{0,60}(shares?|stock)/.test(lower)
+  ) {
+    concepts.push("stock pump stock surge spike");
+  }
+
+  if (/re[-\s]?brand|rename|name change/.test(lower)) {
+    concepts.push("rename rebrand");
+  }
+
+  if (/\bai\b.{0,50}(pivot|shift|infrastructure|company)/.test(lower)) {
+    concepts.push("ai pivot buzzword");
+  }
+
+  return [text, ...concepts].join(" ");
 }
 
-function matchedKeywords(signal: Signal, archetype: PatternArchetype): string[] {
+function tokenForms(token: string): Set<string> {
+  const forms = new Set([token]);
+  if (token.length > 4 && token.endsWith("ies")) forms.add(`${token.slice(0, -3)}y`);
+  if (token.length > 4 && token.endsWith("ing")) forms.add(token.slice(0, -3));
+  if (token.length > 4 && token.endsWith("ed")) forms.add(token.slice(0, -2));
+  if (token.length > 4 && token.endsWith("es")) forms.add(token.slice(0, -2));
+  if (token.length > 3 && token.endsWith("s")) forms.add(token.slice(0, -1));
+
+  for (const form of [...forms]) {
+    for (const alias of TOKEN_ALIASES[form] ?? []) forms.add(alias);
+  }
+
+  return forms;
+}
+
+function tokenMatches(haystackToken: string, keywordToken: string): boolean {
+  const haystackForms = tokenForms(haystackToken);
+  const keywordForms = tokenForms(keywordToken);
+
+  for (const expected of keywordForms) {
+    for (const actual of haystackForms) {
+      if (expected.length <= 2 ? actual === expected : actual === expected || actual.startsWith(expected)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+function keywordScore(haystackTokens: string[], keyword: string): number {
+  const keywordTokens = tokens(keyword);
+  if (keywordTokens.length === 0) return 0;
+
+  const matched = keywordTokens.filter((keywordToken) =>
+    haystackTokens.some((haystackToken) => tokenMatches(haystackToken, keywordToken)),
+  ).length;
+  if (matched === keywordTokens.length) return 1;
+
+  const coverage = matched / keywordTokens.length;
+  return keywordTokens.length >= 3 && coverage >= PARTIAL_KEYWORD_FLOOR
+    ? PARTIAL_KEYWORD_SCORE
+    : 0;
+}
+
+function matchedKeywords(signal: Signal, archetype: PatternArchetype): Array<[string, number]> {
   if (archetype.keywords.length === 0) return [];
-  const haystackTokens = tokens(signalText(signal));
-  return archetype.keywords.filter((keyword) => hasKeyword(haystackTokens, keyword));
+  const haystackTokens = tokens(inferredConceptText(signal));
+  return archetype.keywords
+    .map((keyword) => [keyword, keywordScore(haystackTokens, keyword)] as [string, number])
+    .filter(([, score]) => score > 0);
 }
 
 function keywordEvidence(signals: Signal[], archetype: PatternArchetype): {
@@ -66,18 +177,21 @@ function keywordEvidence(signals: Signal[], archetype: PatternArchetype): {
     return { axes: [], similarity: 0 };
   }
 
-  const hits = new Set<string>();
+  const hits = new Map<string, number>();
   const axes = new Set<DriftAxis>();
   for (const signal of signals) {
     const signalHits = matchedKeywords(signal, archetype);
     if (signalHits.length === 0) continue;
     axes.add(signal.axis);
-    for (const hit of signalHits) hits.add(hit);
+    for (const [hit, score] of signalHits) {
+      hits.set(hit, Math.max(hits.get(hit) ?? 0, score));
+    }
   }
 
+  const score = [...hits.values()].reduce((sum, hitScore) => sum + hitScore, 0);
   return {
     axes: [...axes],
-    similarity: Math.min(1, hits.size / Math.min(KEYWORD_TARGET, archetype.keywords.length)),
+    similarity: Math.min(1, score / Math.min(KEYWORD_TARGET, archetype.keywords.length)),
   };
 }
 

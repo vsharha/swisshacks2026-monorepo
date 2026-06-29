@@ -87,6 +87,38 @@ describe("selectPatternMatch", () => {
     expect(match?.source).toBe("signals");
   });
 
+  it("can predict a crypto-treasury pattern from partial financing language", () => {
+    const match = selectPatternMatch(
+      [longBlockchain, overstock],
+      ["business_model", "ownership", "scale"],
+      [
+        signal(
+          "scale",
+          "$500M convertible notes priced to fund further digital-asset purchases.",
+        ),
+      ],
+    );
+
+    expect(match?.archetype.id).toBe("overstock-blockchain-2018");
+    expect(match?.similarity).toBeGreaterThanOrEqual(0.3);
+    expect(match?.source).toBe("signals");
+  });
+
+  it("can predict a buzzword-rename pattern from distress signals", () => {
+    const match = selectPatternMatch(
+      [longBlockchain, overstock],
+      ["business_model", "ownership", "scale"],
+      [
+        signal("scale", "Market capitalisation down 38% year-on-year amid margin pressure."),
+        signal("scale", "Open roles collapse to near-zero - effective hiring freeze."),
+      ],
+    );
+
+    expect(match?.archetype.id).toBe("long-blockchain-2017");
+    expect(match?.similarity).toBeGreaterThanOrEqual(0.3);
+    expect(match?.source).toBe("signals");
+  });
+
   it("does not match a pattern from axes alone", () => {
     const match = selectPatternMatch(
       [longBlockchain, overstock],

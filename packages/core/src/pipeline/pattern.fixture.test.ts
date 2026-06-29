@@ -53,19 +53,20 @@ function matchAt(
 describe("fixture pattern prediction", () => {
   const archetypes = loadPatterns();
 
-  it("predicts Strategy's Overstock pattern before composite alert", () => {
+  it("predicts Strategy's Overstock pattern from the first financing signal", () => {
     const { baseline, signals } = loadEntity("strategy");
-    const { drift, match } = matchAt(archetypes, baseline, signals, "2026-04-28T23:59:59Z");
+    const { drift, match } = matchAt(archetypes, baseline, signals, "2026-04-15T23:59:59Z");
 
     expect(drift.status).toBe("watch");
     expect(match?.archetype.id).toBe("overstock-blockchain-2018");
   });
 
-  it("does not fabricate Smartbird's Long Blockchain pattern before the rebrand cluster", () => {
+  it("predicts Smartbird's Long Blockchain pattern before the rebrand cluster", () => {
     const { baseline, signals } = loadEntity("smartbird");
-    const { match } = matchAt(archetypes, baseline, signals, "2026-06-16T23:59:59Z");
+    const { drift, match } = matchAt(archetypes, baseline, signals, "2026-05-28T23:59:59Z");
 
-    expect(match).toBeUndefined();
+    expect(drift.status).toBe("alert");
+    expect(match?.archetype.id).toBe("long-blockchain-2017");
   });
 
   it("keeps Smartbird on Long Blockchain after the rebrand cluster appears", () => {
