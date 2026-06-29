@@ -151,6 +151,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{data.entity.baseline.name} · Sentinel</title>
+</svelte:head>
+
 <div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5">
 	<!-- Left · selected customer detail -->
 	<aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-r pr-4 pt-4 pb-4">

@@ -34,6 +34,10 @@
 	const open = (id: string) => goto(`/${id}`);
 </script>
 
+<svelte:head>
+	<title>Sentinel · KYC-Drift Monitor</title>
+</svelte:head>
+
 <div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5">
 	<!-- Left · customer register -->
 	<aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-r pr-4 py-4">
