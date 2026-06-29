@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { HumanRole } from '@kyc/core';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { Badge } from '$lib/components/ui/badge/index.js';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import { cn } from '$lib/utils.js';
 	import ClipboardText from 'phosphor-svelte/lib/ClipboardText';
 	import GithubLogo from 'phosphor-svelte/lib/GithubLogo';
@@ -31,18 +33,36 @@
 </script>
 
 <header class="border-line flex h-16 shrink-0 items-center justify-between border-b">
-	<button
-		type="button"
-		onclick={onHome}
-		aria-label="Go to overview"
-		class="flex items-center gap-3 rounded-md transition-opacity hover:opacity-70"
-	>
-		<span class="text-galaxy font-sans text-[15px] font-bold tracking-[0.22em]">SENTINEL</span>
-		<span class="bg-line hidden h-3.5 w-px self-center sm:block"></span>
-		<span class="text-muted2 hidden text-[11px] tracking-[0.28em] uppercase sm:inline"
-			>KYC-Drift Monitor</span
+	<div class="flex items-center gap-3">
+		<button
+			type="button"
+			onclick={onHome}
+			aria-label="Go to overview"
+			class="flex items-center gap-3 rounded-md transition-opacity hover:opacity-70"
 		>
-	</button>
+			<span class="text-galaxy font-sans text-[15px] font-bold tracking-[0.22em]">SENTINEL</span>
+			<span class="bg-line hidden h-3.5 w-px self-center sm:block"></span>
+			<span class="text-muted2 hidden text-[11px] tracking-[0.28em] uppercase sm:inline"
+				>KYC-Drift Monitor</span
+			>
+		</button>
+
+		<Tooltip.Root>
+			<Tooltip.Trigger>
+				<Badge
+					variant="outline"
+					class="border-line text-muted2 cursor-default rounded-md text-[10px] tracking-[0.18em] uppercase"
+				>
+					Demo
+				</Badge>
+			</Tooltip.Trigger>
+			<Tooltip.Content class="max-w-xs text-pretty">
+				Live demo of the real KYC-Drift Monitor. Monitoring, drift scoring, and the audit trail run
+				exactly as in production — only the deep LLM reasoning calls are served from pre-computed
+				responses to keep the demo fast and free.
+			</Tooltip.Content>
+		</Tooltip.Root>
+	</div>
 
 	<div class="flex items-center gap-3">
 		{#if selected}
