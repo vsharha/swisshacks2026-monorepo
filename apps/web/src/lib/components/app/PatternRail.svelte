@@ -1,6 +1,13 @@
 <script lang="ts">
-	import { AXES, type DriftAxis, type HumanRole, type PatternArchetype } from '@kyc/core';
+	import {
+		AXES,
+		type DriftAxis,
+		type HumanRole,
+		type PatternArchetype,
+		type PatternMatch
+	} from '@kyc/core';
 	import type { CaseState } from '@kyc/core/governance';
+	import { selectPatternMatch } from '@kyc/core/pipeline';
 	import { fly, slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { enhance } from '$app/forms';
@@ -13,6 +20,7 @@
 	let {
 		entity,
 		archetypes,
+		capturedPatternMatch,
 		asOfIso,
 		role,
 		caseState,
@@ -27,6 +35,7 @@
 	}: {
 		entity: BookEntity;
 		archetypes: PatternArchetype[];
+		capturedPatternMatch: PatternMatch | undefined;
 		asOfIso: string;
 		role: HumanRole;
 		caseState: CaseState | undefined;
@@ -56,31 +65,15 @@
 	const isAlert = $derived(entity.drift.status === 'alert');
 	const alertingAxes = $derived(AXES.filter((a) => entity.drift.axes[a].status !== 'stable'));
 
-	// Reasoning by analogy — Jaccard overlap of the live drift signature with an
-	// archetype's axes.
-	function similarity(axes: DriftAxis[]): number {
-		if (alertingAxes.length === 0) return 0;
-		const set = new Set(axes);
-		const overlap = alertingAxes.filter((a) => set.has(a)).length;
-		const union = new Set([...alertingAxes, ...axes]).size;
-		return overlap / union;
-	}
-
-	// The closest archetype to this customer's drift signature (first wins a tie).
-	const match = $derived.by(() => {
-		let best: { archetype: PatternArchetype; sim: number } | undefined;
-		for (const a of archetypes) {
-			const sim = similarity(a.axes);
-			if (!best || sim > best.sim) best = { archetype: a, sim };
-		}
-		return best;
-	});
+	// Prefer captured Stage 3 reasoning when available; fall back to fast
+	// axis-overlap for entities that have not been through deep synthesis.
+	const match = $derived(selectPatternMatch(archetypes, alertingAxes, capturedPatternMatch));
 	const archetype = $derived(match?.archetype);
-	const sim = $derived(match?.sim ?? 0);
+	const sim = $derived(match?.similarity ?? 0);
 	const sharedAxes = $derived(
 		archetype ? alertingAxes.filter((a) => archetype.axes.includes(a)) : []
 	);
-	const hasMatch = $derived(!!archetype && sim >= 0.3);
+	const hasMatch = $derived(alertingAxes.length > 0 && !!archetype && sim >= 0.3);
 
 	// Staggered rise used to cascade the re-KYC actions in as the bar appears.
 	const rise = (delay = 0) => ({ y: 8, duration: 280, delay, easing: cubicOut });

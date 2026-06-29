@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import type { Alert, AuditEntry, DriftAxis } from '@kyc/core';
+import type { Alert, AuditEntry, DriftAxis, PatternMatch } from '@kyc/core';
 import { AXES } from '@kyc/core';
 import type { AxisMateriality, EscalationCost, EscalationResult } from '@kyc/core/pipeline';
 import { costUsd } from '@kyc/core/llm/cost';
@@ -49,6 +49,11 @@ const FIXTURES: Record<string, EscalationResult> = Object.fromEntries(
 
 /** Entities with a captured analysis to replay (heroes). */
 export const ANALYZABLE = new Set(Object.keys(FIXTURES));
+
+/** Captured Stage 3 pattern match, when the offline analysis produced one. */
+export function capturedPatternMatchFor(entityId: string): PatternMatch | undefined {
+	return FIXTURES[entityId]?.stage3?.alert.patternMatch;
+}
 
 /**
  * Replay the captured escalation for an entity, recording each tier in the audit

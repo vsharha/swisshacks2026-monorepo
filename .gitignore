@@ -13,3 +13,8 @@ data/audit.jsonl
 
 # Visual brainstorming companion
 .superpowers/
+
+# Local agent/tooling state
+.agents/
+.codex/
+.pnpm-store/
