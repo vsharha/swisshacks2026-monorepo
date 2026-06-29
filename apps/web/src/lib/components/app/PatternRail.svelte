@@ -1,11 +1,5 @@
 <script lang="ts">
-	import {
-		AXES,
-		type DriftAxis,
-		type HumanRole,
-		type PatternArchetype,
-		type PatternMatch
-	} from '@kyc/core';
+	import { AXES, type DriftAxis, type HumanRole, type PatternArchetype } from '@kyc/core';
 	import type { CaseState } from '@kyc/core/governance';
 	import { selectPatternMatch } from '@kyc/core/pipeline';
 	import { fly, slide } from 'svelte/transition';
@@ -20,7 +14,6 @@
 	let {
 		entity,
 		archetypes,
-		capturedPatternMatch,
 		asOfIso,
 		role,
 		caseState,
@@ -35,7 +28,6 @@
 	}: {
 		entity: BookEntity;
 		archetypes: PatternArchetype[];
-		capturedPatternMatch: PatternMatch | undefined;
 		asOfIso: string;
 		role: HumanRole;
 		caseState: CaseState | undefined;
@@ -64,16 +56,13 @@
 	const entityId = $derived(entity.baseline.entityId);
 	const isAlert = $derived(entity.drift.status === 'alert');
 	const alertingAxes = $derived(AXES.filter((a) => entity.drift.axes[a].status !== 'stable'));
+	const evidenceSignals = $derived(entity.signals.filter((s) => s.date <= asOfIso));
 
-	// Prefer captured Stage 3 reasoning when available; fall back to fast
-	// axis-overlap for entities that have not been through deep synthesis.
-	const match = $derived(selectPatternMatch(archetypes, alertingAxes, capturedPatternMatch));
+	const match = $derived(selectPatternMatch(archetypes, alertingAxes, evidenceSignals));
 	const archetype = $derived(match?.archetype);
 	const sim = $derived(match?.similarity ?? 0);
-	const sharedAxes = $derived(
-		archetype ? alertingAxes.filter((a) => archetype.axes.includes(a)) : []
-	);
-	const hasMatch = $derived(alertingAxes.length > 0 && !!archetype && sim >= 0.3);
+	const sharedAxes = $derived(match?.axes ?? []);
+	const hasMatch = $derived(!!archetype && sim >= 0.3);
 
 	// Staggered rise used to cascade the re-KYC actions in as the bar appears.
 	const rise = (delay = 0) => ({ y: 8, duration: 280, delay, easing: cubicOut });

@@ -165,7 +165,6 @@
 	<PatternRail
 		entity={selected}
 		archetypes={data.archetypes}
-		capturedPatternMatch={data.capturedPatternMatch}
 		{asOfIso}
 		role={ui.role}
 		caseState={data.caseState}

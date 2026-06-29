@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { PatternArchetype, PatternMatch } from "../schemas/index.ts";
+import type { DriftAxis, PatternArchetype, Signal } from "../schemas/index.ts";
 import { selectPatternMatch } from "./pattern.ts";
 
 const longBlockchain: PatternArchetype = {
@@ -10,7 +10,18 @@ const longBlockchain: PatternArchetype = {
   axes: ["business_model", "scale", "reputation"],
   arc: [],
   outcome: "Adverse regulatory action.",
-  keywords: ["blockchain"],
+  keywords: [
+    "rename",
+    "rebrand",
+    "buzzword",
+    "blockchain",
+    "AI pivot",
+    "stock pump",
+    "spike",
+    "thin substance",
+    "struggling brand",
+    "delisting",
+  ],
   citations: [],
 };
 
@@ -22,38 +33,106 @@ const overstock: PatternArchetype = {
   axes: ["business_model", "ownership", "scale"],
   arc: [],
   outcome: "Adverse strategic unwind.",
-  keywords: ["blockchain"],
+  keywords: [
+    "crypto treasury",
+    "digital asset treasury",
+    "bitcoin",
+    "blockchain pivot",
+    "balance-sheet conversion",
+    "single-asset",
+    "concentration",
+    "leverage",
+    "convertible debt",
+    "NAV premium",
+    "founder control",
+    "super-voting",
+    "controlling shareholder",
+    "stock surge",
+    "reflexive unwind",
+    "security token",
+  ],
   citations: [],
 };
 
-describe("selectPatternMatch", () => {
-  it("prefers the captured Stage 3 pattern over the axis-overlap fallback", () => {
-    const captured: PatternMatch = {
-      archetypeId: "long-blockchain-2017",
-      archetypeName: "Long Blockchain Corp (2017)",
-      similarity: 0.93,
-      outcome: "Adverse regulatory action.",
-    };
+function signal(axis: DriftAxis, title: string, payload: Record<string, unknown> = {}): Signal {
+  return {
+    id: title.toLowerCase().replace(/\W+/g, "-"),
+    entityId: "entity",
+    axis,
+    type: `${axis}_change`,
+    date: "2026-06-17",
+    sourceUrl: "https://example.com/signal",
+    title,
+    source: "eventregistry",
+    payload,
+    confidence: 0.9,
+  };
+}
 
+describe("selectPatternMatch", () => {
+  it("can predict a pattern from signal evidence before any drift axis has crossed", () => {
     const match = selectPatternMatch(
       [longBlockchain, overstock],
-      ["business_model", "ownership", "scale"],
-      captured,
+      [],
+      [
+        signal(
+          "business_model",
+          "Allbirds rebrands as Smartbird in AI pivot, triggering a stock pump",
+        ),
+      ],
     );
 
     expect(match?.archetype.id).toBe("long-blockchain-2017");
-    expect(match?.similarity).toBe(0.93);
-    expect(match?.source).toBe("stage3");
+    expect(match?.axes).toEqual(["business_model"]);
+    expect(match?.source).toBe("signals");
   });
 
-  it("falls back to the closest axis-overlap pattern without a captured match", () => {
+  it("does not match a pattern from axes alone", () => {
     const match = selectPatternMatch(
       [longBlockchain, overstock],
       ["business_model", "ownership", "scale"],
+      [
+        signal("business_model", "Allbirds CEO sells shares to cover tax obligations"),
+        signal("ownership", "SC 13G beneficial ownership filing"),
+        signal("scale", "Sustainable fashion is not a standalone category"),
+      ],
+    );
+
+    expect(match).toBeUndefined();
+  });
+
+  it("matches the buzzword-rename archetype from live signal text", () => {
+    const match = selectPatternMatch(
+      [longBlockchain, overstock],
+      ["business_model", "ownership", "scale"],
+      [
+        signal(
+          "business_model",
+          "Allbirds rebrands as Smartbird in AI pivot, sending stock soaring",
+        ),
+        signal("scale", "Allbirds stock pumps again after sneaker firm completes AI pivot"),
+        signal("ownership", "New CEO appointed during Smartbird name change"),
+      ],
+    );
+
+    expect(match?.archetype.id).toBe("long-blockchain-2017");
+    expect(match?.similarity).toBeGreaterThan(0.7);
+    expect(match?.source).toBe("signals");
+  });
+
+  it("matches the crypto-treasury archetype from live signal text", () => {
+    const match = selectPatternMatch(
+      [longBlockchain, overstock],
+      ["business_model", "ownership", "scale"],
+      [
+        signal("business_model", "Strategy renews Bitcoin treasury bet"),
+        signal("scale", "Preferred stock risks rise as bitcoin buying accelerates"),
+        signal("ownership", "Founder control and concentration concerns around crypto strategy"),
+      ],
     );
 
     expect(match?.archetype.id).toBe("overstock-blockchain-2018");
-    expect(match?.similarity).toBe(1);
-    expect(match?.source).toBe("axis");
+    expect(match?.similarity).toBeGreaterThan(0.7);
+    expect(match?.source).toBe("signals");
   });
 });

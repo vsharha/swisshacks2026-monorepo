@@ -4,7 +4,7 @@ import type { AuditEntry, HumanDecision, HumanRole } from '@kyc/core';
 import { governanceCheck } from '@kyc/core/governance';
 import { buildGraph } from '@kyc/core/graph';
 import { loadBook, loadPatternLibrary } from '$lib/server/data';
-import { ANALYZABLE, analyzeEntity, capturedPatternMatchFor } from '$lib/server/analyze';
+import { ANALYZABLE, analyzeEntity } from '$lib/server/analyze';
 import { appendAudit, auditCount, caseStateFor, currentRating, listAudit } from '$lib/server/audit';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -29,7 +29,6 @@ export const load: PageServerLoad = ({ params }) => {
 		entity,
 		graph,
 		archetypes: patterns,
-		capturedPatternMatch: capturedPatternMatchFor(entity.baseline.entityId),
 		analyzable: ANALYZABLE.has(entity.baseline.entityId),
 		rating: currentRating(entity.baseline.entityId, entity.baseline.riskRating),
 		caseState: caseStateFor(entity.baseline.entityId),
