@@ -16,7 +16,7 @@ Token reference: the AMINA design system in `docs/reference/amina-design-system.
 
 ## Dev server
 
-- Before starting the dev server, check whether one is already running for this project (e.g. `pgrep -fl "vite dev"`, or probe the expected port) and reuse it rather than spawning another.
+- Before starting the dev server, check whether one is already running for this project (e.g. `ps aux | rg "apps/web/.+vite.+ dev|[p]npm.+@kyc/web.+dev"`, or probe the expected port) and reuse it rather than spawning another.
 - When a change requires a fresh process (config, deps, env), kill the existing dev server and restart it — never leave multiple instances running at once.
 
 ## Docs
