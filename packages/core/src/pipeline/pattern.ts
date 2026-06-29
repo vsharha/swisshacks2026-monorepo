@@ -11,8 +11,10 @@ const AXIS_WEIGHT = 0.25;
 const KEYWORD_WEIGHT = 0.75;
 const KEYWORD_TARGET = 3;
 const MIN_PATTERN_SCORE = 0.3;
+const MIN_OBSERVATION_DAYS = 330;
 const PARTIAL_KEYWORD_FLOOR = 0.66;
 const PARTIAL_KEYWORD_SCORE = 0.7;
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 const TOKEN_ALIASES: Record<string, string[]> = {
   btc: ["bitcoin"],
@@ -74,6 +76,23 @@ function inferredConceptText(signal: Signal): string {
   const text = signalText(signal);
   const lower = text.toLowerCase();
   const concepts: string[] = [];
+  const payloadItems = typeof signal.payload.items === "string" ? signal.payload.items : "";
+  const secItems = new Set(payloadItems.split(/[,\s]+/).filter(Boolean));
+
+  if (signal.type === "name_or_charter_change" || secItems.has("5.03")) {
+    concepts.push("rename rebrand");
+  }
+
+  if (
+    signal.type === "material_agreement" &&
+    (secItems.has("2.03") || secItems.has("3.02"))
+  ) {
+    concepts.push("convertible debt leverage");
+  }
+
+  if (signal.type === "equity_sale") {
+    concepts.push("convertible debt leverage");
+  }
 
   if (
     /valuation_change|hiring_freeze|headcount_drop|margin pressure|restructur|collapse|near-zero|\bdown\b|plunge|pressure/.test(
@@ -199,12 +218,19 @@ function uniqueAxes(axes: DriftAxis[]): DriftAxis[] {
   return [...new Set(axes)];
 }
 
+function observationDays(signals: Signal[]): number {
+  const times = signals.map((signal) => Date.parse(signal.date)).filter(Number.isFinite);
+  if (times.length === 0) return 0;
+  return (Math.max(...times) - Math.min(...times)) / MS_PER_DAY;
+}
+
 export function selectPatternMatch(
   archetypes: PatternArchetype[],
   alertingAxes: DriftAxis[],
   signals: Signal[],
 ): SelectedPatternMatch | undefined {
   if (signals.length === 0) return undefined;
+  if (observationDays(signals) < MIN_OBSERVATION_DAYS) return undefined;
 
   let best: SelectedPatternMatch | undefined;
   for (const archetype of archetypes) {

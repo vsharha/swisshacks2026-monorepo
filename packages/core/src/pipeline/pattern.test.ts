@@ -54,13 +54,18 @@ const overstock: PatternArchetype = {
   citations: [],
 };
 
-function signal(axis: DriftAxis, title: string, payload: Record<string, unknown> = {}): Signal {
+function signal(
+  axis: DriftAxis,
+  title: string,
+  payload: Record<string, unknown> = {},
+  date = "2026-06-17",
+): Signal {
   return {
     id: title.toLowerCase().replace(/\W+/g, "-"),
     entityId: "entity",
     axis,
     type: `${axis}_change`,
-    date: "2026-06-17",
+    date,
     sourceUrl: "https://example.com/signal",
     title,
     source: "eventregistry",
@@ -75,6 +80,7 @@ describe("selectPatternMatch", () => {
       [longBlockchain, overstock],
       [],
       [
+        signal("scale", "Quarterly baseline update", {}, "2025-06-01"),
         signal(
           "business_model",
           "Allbirds rebrands as Smartbird in AI pivot, triggering a stock pump",
@@ -92,6 +98,7 @@ describe("selectPatternMatch", () => {
       [longBlockchain, overstock],
       ["business_model", "ownership", "scale"],
       [
+        signal("ownership", "Annual proxy filed", {}, "2025-06-01"),
         signal(
           "scale",
           "$500M convertible notes priced to fund further digital-asset purchases.",
@@ -109,6 +116,7 @@ describe("selectPatternMatch", () => {
       [longBlockchain, overstock],
       ["business_model", "ownership", "scale"],
       [
+        signal("ownership", "Annual ownership filing", {}, "2025-06-01"),
         signal("scale", "Market capitalisation down 38% year-on-year amid margin pressure."),
         signal("scale", "Open roles collapse to near-zero - effective hiring freeze."),
       ],
@@ -138,6 +146,7 @@ describe("selectPatternMatch", () => {
       [longBlockchain, overstock],
       ["business_model", "ownership", "scale"],
       [
+        signal("scale", "Quarterly baseline update", {}, "2025-06-01"),
         signal(
           "business_model",
           "Allbirds rebrands as Smartbird in AI pivot, sending stock soaring",
@@ -157,6 +166,7 @@ describe("selectPatternMatch", () => {
       [longBlockchain, overstock],
       ["business_model", "ownership", "scale"],
       [
+        signal("scale", "Quarterly baseline update", {}, "2025-06-01"),
         signal("business_model", "Strategy renews Bitcoin treasury bet"),
         signal("scale", "Preferred stock risks rise as bitcoin buying accelerates"),
         signal("ownership", "Founder control and concentration concerns around crypto strategy"),

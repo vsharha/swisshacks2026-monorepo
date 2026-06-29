@@ -53,19 +53,47 @@ function matchAt(
 describe("fixture pattern prediction", () => {
   const archetypes = loadPatterns();
 
-  it("predicts Strategy's Overstock pattern from the first financing signal", () => {
+  it("does not predict Strategy's Overstock pattern from the first filing burst", () => {
     const { baseline, signals } = loadEntity("strategy");
-    const { drift, match } = matchAt(archetypes, baseline, signals, "2026-04-15T23:59:59Z");
+    const { match } = matchAt(archetypes, baseline, signals, "2021-01-31T23:59:59Z");
+
+    expect(match).toBeUndefined();
+  });
+
+  it("does not predict Strategy's Overstock pattern after only one quarter", () => {
+    const { baseline, signals } = loadEntity("strategy");
+    const { match } = matchAt(archetypes, baseline, signals, "2021-03-05T23:59:59Z");
+
+    expect(match).toBeUndefined();
+  });
+
+  it("predicts Strategy's Overstock pattern by the first replay year", () => {
+    const { baseline, signals } = loadEntity("strategy");
+    const { drift, match } = matchAt(archetypes, baseline, signals, "2021-12-04T23:59:59Z");
 
     expect(drift.status).toBe("watch");
     expect(match?.archetype.id).toBe("overstock-blockchain-2018");
   });
 
-  it("predicts Smartbird's Long Blockchain pattern before the rebrand cluster", () => {
+  it("does not predict Smartbird's Long Blockchain pattern from the first charter filing", () => {
     const { baseline, signals } = loadEntity("smartbird");
-    const { drift, match } = matchAt(archetypes, baseline, signals, "2026-05-28T23:59:59Z");
+    const { match } = matchAt(archetypes, baseline, signals, "2021-11-05T23:59:59Z");
 
-    expect(drift.status).toBe("alert");
+    expect(match).toBeUndefined();
+  });
+
+  it("does not predict Smartbird's Long Blockchain pattern after only one quarter", () => {
+    const { baseline, signals } = loadEntity("smartbird");
+    const { match } = matchAt(archetypes, baseline, signals, "2021-12-10T23:59:59Z");
+
+    expect(match).toBeUndefined();
+  });
+
+  it("predicts Smartbird's Long Blockchain pattern by the first replay year", () => {
+    const { baseline, signals } = loadEntity("smartbird");
+    const { drift, match } = matchAt(archetypes, baseline, signals, "2022-08-31T23:59:59Z");
+
+    expect(drift.status).toBe("watch");
     expect(match?.archetype.id).toBe("long-blockchain-2017");
   });
 
