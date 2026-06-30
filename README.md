@@ -2,9 +2,9 @@
 
 Dynamic KYC-Drift Monitor for AMINA Bank's SwissHacks 2026 challenge.
 
-[Live demo](https://sentinel.viktorsharha.com)
+![Sentinel demo GIF](docs/assets/sentinel-demo.gif)
 
-![Sentinel demo](docs/assets/sentinel-demo.gif)
+[Live demo](https://sentinel.viktorsharha.com)
 
 Sentinel watches a bank's customer book for KYC drift: the slow, structural
 changes that invalidate the risk profile a customer was onboarded with. Instead
