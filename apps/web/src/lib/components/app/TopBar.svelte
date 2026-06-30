@@ -2,7 +2,7 @@
 	import type { HumanRole } from '@kyc/core';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
-	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import * as Popover from '$lib/components/ui/popover/index.js';
 	import { cn } from '$lib/utils.js';
 	import ClipboardText from 'phosphor-svelte/lib/ClipboardText';
 	import GithubLogo from 'phosphor-svelte/lib/GithubLogo';
@@ -47,21 +47,26 @@
 			>
 		</button>
 
-		<Tooltip.Root>
-			<Tooltip.Trigger>
+		<Popover.Root>
+			<Popover.Trigger>
 				<Badge
 					variant="outline"
-					class="border-line text-muted2 cursor-default rounded-md text-[10px] tracking-[0.18em] uppercase"
+					class="border-line text-muted2 rounded-md text-[10px] tracking-[0.18em] uppercase"
 				>
 					Demo
 				</Badge>
-			</Tooltip.Trigger>
-			<Tooltip.Content class="max-w-xs text-pretty">
-				Live demo of the real KYC-Drift Monitor. Monitoring, drift scoring, and the audit trail run
-				exactly as in production — only the deep LLM reasoning calls are served from pre-computed
-				responses to keep the demo fast and free.
-			</Tooltip.Content>
-		</Tooltip.Root>
+			</Popover.Trigger>
+			<Popover.Content side="bottom" align="start" class="max-w-[calc(100vw-2rem)] text-pretty">
+				<Popover.Header>
+					<Popover.Title>Demo mode</Popover.Title>
+					<Popover.Description>
+						Live demo of the real KYC-Drift Monitor. Monitoring, drift scoring, and the audit trail
+						run exactly as in production — only the deep LLM reasoning calls are served from
+						pre-computed responses to keep the demo fast and free.
+					</Popover.Description>
+				</Popover.Header>
+			</Popover.Content>
+		</Popover.Root>
 	</div>
 
 	<div class="flex items-center gap-3">
