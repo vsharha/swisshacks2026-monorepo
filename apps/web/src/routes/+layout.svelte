@@ -4,6 +4,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { page } from '$app/state';
 	import { goto, onNavigate } from '$app/navigation';
+	import { ModeWatcher } from 'mode-watcher';
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 	import TopBar from '$lib/components/app/TopBar.svelte';
 	import AuditDrawer from '$lib/components/app/AuditDrawer.svelte';
@@ -31,6 +32,8 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
+
+<ModeWatcher />
 
 <div class="bg-bg text-text flex h-screen flex-col overflow-hidden px-5 pb-4 font-sans text-sm">
 	<TopBar

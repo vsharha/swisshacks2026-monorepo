@@ -52,6 +52,7 @@
 		"@fontsource-variable/bitter": "^5.2.10",
 		"@kyc/core": "workspace:*",
 		"cobe": "^2.0.1",
+		"mode-watcher": "^1.1.0",
 		"svelte-sonner": "^1.1.1"
 	}
 }

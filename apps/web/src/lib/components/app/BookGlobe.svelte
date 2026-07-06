@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import createGlobe from 'cobe';
+	import { mode } from 'mode-watcher';
 	import type { RiskStatus } from '@kyc/core';
 	import type { BookEntity } from '$lib/view';
 	import { HQ, FLAG } from '$lib/view';
@@ -27,6 +28,15 @@
 		watch: 'WATCH',
 		alert: 'ALERT'
 	};
+
+	// Land base colour flips with the app theme; cobe's `dark` flag inverts
+	// which side of the sphere gets shaded, so the two travel together.
+	const LIGHT_BASE: [number, number, number] = [1, 1, 1];
+	const DARK_BASE: [number, number, number] = [0.3, 0.32, 0.34];
+	// The atmosphere halo: bright white reads as a glow on the light canvas,
+	// but the same white blooms into a glare against the dark panel — dim it.
+	const LIGHT_GLOW: [number, number, number] = [1, 1, 1];
+	const DARK_GLOW: [number, number, number] = [0.15, 0.17, 0.19];
 
 	// Only book entries with a known HQ get a marker.
 	const located = $derived(
@@ -100,6 +110,7 @@
 			size = Math.max(1, Math.min(rect.width, rect.height));
 			canvas.style.width = `${size}px`;
 			canvas.style.height = `${size}px`;
+			const isDark = mode.current === 'dark';
 			globe?.destroy();
 			globe = createGlobe(canvas, {
 				devicePixelRatio: dpr,
@@ -107,15 +118,15 @@
 				height: size * dpr,
 				phi,
 				theta,
-				dark: 0,
+				dark: isDark ? 1 : 0,
 				diffuse: 1.1,
 				scale: SCALE,
 				mapSamples: 16000,
 				mapBrightness: 1.25,
 				mapBaseBrightness: 0.05,
-				baseColor: [1, 1, 1],
+				baseColor: isDark ? DARK_BASE : LIGHT_BASE,
 				markerColor: [0.98, 0.27, 0.09],
-				glowColor: [1, 1, 1],
+				glowColor: isDark ? DARK_GLOW : LIGHT_GLOW,
 				markerElevation: MARKER_ELEVATION,
 				markers: located.map((m) => ({
 					location: [m.hq.lat, m.hq.lng] as [number, number],
@@ -143,7 +154,14 @@
 					phi += AUTO_SPEED * ease;
 				}
 			}
-			globe?.update({ phi, theta });
+			const isDark = mode.current === 'dark';
+			globe?.update({
+				phi,
+				theta,
+				dark: isDark ? 1 : 0,
+				baseColor: isDark ? DARK_BASE : LIGHT_BASE,
+				glowColor: isDark ? DARK_GLOW : LIGHT_GLOW
+			});
 			const next: Record<string, Screen> = {};
 			for (const m of located) next[m.entity.baseline.entityId] = project(m.hq.lat, m.hq.lng);
 			screens = next;
@@ -249,7 +267,7 @@
 						<!-- risk callout, offset up-right from the marker -->
 						<button
 							type="button"
-							class="pointer-events-auto absolute z-10 flex translate-x-3 -translate-y-[calc(100%+10px)] cursor-pointer items-center gap-2 rounded-md border border-white/10 bg-[#161a1d] px-2.5 py-1.5 text-left whitespace-nowrap shadow-lg ring-1 ring-black/20 transition-transform hover:scale-[1.03]"
+							class="border-line bg-panel pointer-events-auto absolute z-10 flex translate-x-3 -translate-y-[calc(100%+10px)] cursor-pointer items-center gap-2 rounded-md border px-2.5 py-1.5 text-left whitespace-nowrap shadow-lg transition-transform hover:scale-[1.03]"
 							style="left:{sc.x * 100}%;top:{sc.y * 100}%;opacity:{op}"
 							onpointerenter={() => (hoveredId = id)}
 							onpointerleave={() => (hoveredId = hoveredId === id ? null : hoveredId)}
@@ -261,11 +279,11 @@
 								style="background:{dot}"
 							></span>
 							<span class="flex items-center gap-2 text-xs leading-none">
-								<span class="font-semibold text-white">
+								<span class="text-text font-semibold">
 									{FLAG[e.baseline.jurisdiction] ?? ''}
 									{e.baseline.name}
 								</span>
-								<span class="text-white/25">|</span>
+								<span class="text-muted2">|</span>
 								<span class="font-mono tracking-wide tabular-nums" style="color:{dot}">
 									{STATUS_LABEL[e.drift.status]}
 									{(e.drift.composite * 100).toFixed(0)}%

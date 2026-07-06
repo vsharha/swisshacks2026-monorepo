@@ -3,6 +3,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import * as Popover from '$lib/components/ui/popover/index.js';
+	import ModeToggle from '$lib/components/app/ModeToggle.svelte';
 	import { cn } from '$lib/utils.js';
 	import ClipboardText from 'phosphor-svelte/lib/ClipboardText';
 	import GithubLogo from 'phosphor-svelte/lib/GithubLogo';
@@ -91,6 +92,8 @@
 				{/each}
 			</div>
 		{/if}
+
+		<ModeToggle />
 
 		<Button
 			href={REPO_URL}

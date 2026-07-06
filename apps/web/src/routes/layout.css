@@ -70,6 +70,44 @@
 	--ring: var(--brand);
 }
 
+.dark {
+	color-scheme: dark;
+
+	/* Surfaces */
+	--bg: #0b0e11;
+	--panel: #14181c;
+	--panel-2: #1a1f24;
+	--line: rgba(255, 255, 255, 0.08);
+	--line-2: rgba(255, 255, 255, 0.14);
+
+	/* Ink */
+	--text: #f3f4f6;
+	--text-2: #d1d5db;
+	--muted: #9ca3af;
+
+	/* Deep petrol reads as near-black ink on light surfaces — lighten it so
+	   the wordmark and neutral graph nodes stay legible on dark surfaces. */
+	--galaxy: #8fb4bd;
+
+	/* Brand tint needs to stay legible against a dark panel */
+	--brand-tint: rgba(20, 184, 166, 0.14);
+
+	--background: var(--bg);
+	--foreground: var(--text);
+	--card: var(--panel);
+	--card-foreground: var(--text);
+	--popover: var(--panel);
+	--popover-foreground: var(--text);
+	--secondary: var(--panel-2);
+	--secondary-foreground: var(--text);
+	--muted-color: var(--panel-2);
+	--muted-foreground: var(--muted);
+	--accent: var(--brand-tint);
+	--accent-foreground: var(--brand);
+	--border: var(--line);
+	--input: var(--line);
+}
+
 /* The galaxy escalation scope — the one dark device. Flip surfaces to deep
    petrol; brand + risk channel keep their hues and pop harder on galaxy. */
 .galaxy {
