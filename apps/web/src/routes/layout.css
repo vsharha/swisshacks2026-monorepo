@@ -56,7 +56,7 @@
 	--card-foreground: var(--text);
 	--popover: var(--panel);
 	--popover-foreground: var(--text);
-	--primary: var(--brand); /* primary action = AMINA teal */
+	--primary: var(--brand-ink); /* primary action = deeper teal (white text ≥ AA) */
 	--primary-foreground: #ffffff;
 	--secondary: var(--panel-2);
 	--secondary-foreground: var(--text);

@@ -32,11 +32,11 @@
 	// Land base colour flips with the app theme; cobe's `dark` flag inverts
 	// which side of the sphere gets shaded, so the two travel together.
 	const LIGHT_BASE: [number, number, number] = [1, 1, 1];
-	const DARK_BASE: [number, number, number] = [0.3, 0.32, 0.34];
+	const DARK_BASE: [number, number, number] = [0.46, 0.49, 0.52];
 	// The atmosphere halo: bright white reads as a glow on the light canvas,
 	// but the same white blooms into a glare against the dark panel — dim it.
 	const LIGHT_GLOW: [number, number, number] = [1, 1, 1];
-	const DARK_GLOW: [number, number, number] = [0.15, 0.17, 0.19];
+	const DARK_GLOW: [number, number, number] = [0.12, 0.14, 0.16];
 
 	// Only book entries with a known HQ get a marker.
 	const located = $derived(
@@ -57,6 +57,7 @@
 	// Rotation state, driven by autorotation + pointer drag. The screen-centre
 	// longitude is (270° − phi); -1.0 rad starts the view over the mid-Atlantic
 	// (≈ 33°W) rather than North America.
+	// The README demo capture is framed at phi -0.77 / theta 0.55.
 	let phi = -1.0;
 	let theta = 0.25;
 	let size = $state(0);
@@ -123,7 +124,7 @@
 				scale: SCALE,
 				mapSamples: 16000,
 				mapBrightness: 1.25,
-				mapBaseBrightness: 0.05,
+				mapBaseBrightness: isDark ? 0.022 : 0.05,
 				baseColor: isDark ? DARK_BASE : LIGHT_BASE,
 				markerColor: [0.98, 0.27, 0.09],
 				glowColor: isDark ? DARK_GLOW : LIGHT_GLOW,
