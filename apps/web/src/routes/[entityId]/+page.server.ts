@@ -6,6 +6,8 @@ import { buildGraph } from '@kyc/core/graph';
 import { loadBook, loadPatternLibrary } from '$lib/server/data';
 import { ANALYZABLE, analyzeEntity } from '$lib/server/analyze';
 import { appendAudit, auditCount, caseStateFor, currentRating, listAudit } from '$lib/server/audit';
+import { getRatingConfig } from '$lib/server/ratings';
+import { topRating } from '@kyc/core';
 import type { Actions, PageServerLoad } from './$types';
 
 const now = () => new Date().toISOString();
@@ -120,8 +122,11 @@ export const actions: Actions = {
 		// Priority audit entries surfaced to the client as toasts.
 		const events: AuditEntry[] = [];
 
+		// Approving an escalation raises the customer to the top of the (customisable)
+		// rating scale — not a hardcoded 'high'.
+		const top = topRating(getRatingConfig()).id;
 		let rating = currentRating(entityId, baseRating);
-		if (decision === 'approve' && rating !== 'high') {
+		if (decision === 'approve' && rating !== top) {
 			events.push(
 				appendAudit({
 					id: randomUUID(),
@@ -129,11 +134,11 @@ export const actions: Actions = {
 					entityId,
 					kind: 'outcome',
 					fromRating: rating,
-					toRating: 'high',
+					toRating: top,
 					newStatus: 'alert'
 				})
 			);
-			rating = 'high';
+			rating = top;
 		}
 
 		return {

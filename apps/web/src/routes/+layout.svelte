@@ -8,12 +8,14 @@
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 	import TopBar from '$lib/components/app/TopBar.svelte';
 	import AuditDrawer from '$lib/components/app/AuditDrawer.svelte';
+	import RatingSettings from '$lib/components/app/RatingSettings.svelte';
 	import { auditActions, ui } from '$lib/ui.svelte';
 	import type { LayoutData } from './$types';
 
 	let { data, children }: { data: LayoutData; children: Snippet } = $props();
 
 	let showAudit = $state(false);
+	let showRatings = $state(false);
 
 	// The role switch only does something on a customer page, so it only shows there.
 	const onEntity = $derived(!!page.params.entityId);
@@ -42,6 +44,7 @@
 		selected={onEntity}
 		onRoleChange={(r) => (ui.role = r)}
 		onOpenAudit={() => (showAudit = true)}
+		onOpenRatings={() => (showRatings = true)}
 		onHome={() => goto('/')}
 	/>
 
@@ -58,4 +61,5 @@
 </div>
 
 <AuditDrawer bind:open={showAudit} entries={data.audit} actions={auditActions} />
+<RatingSettings bind:open={showRatings} config={data.ratingConfig} />
 <Toaster position="bottom-right" closeButton />

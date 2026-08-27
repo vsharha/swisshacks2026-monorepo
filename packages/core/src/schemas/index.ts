@@ -1,4 +1,5 @@
 export * from "./common.ts";
+export * from "./rating.ts";
 export * from "./signal.ts";
 export * from "./baseline.ts";
 export * from "./drift.ts";

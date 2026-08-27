@@ -21,8 +21,14 @@ export const AXES = DriftAxisSchema.options;
 export const RiskStatusSchema = z.enum(["stable", "watch", "alert"]);
 export type RiskStatus = z.infer<typeof RiskStatusSchema>;
 
-/** Onboarding / current KYC risk rating. */
-export const RiskRatingSchema = z.enum(["low", "medium", "high"]);
+/**
+ * Onboarding / current KYC risk rating — an id from the (customisable) rating
+ * scale. Not a fixed enum: institutions define their own levels (see
+ * `RatingConfigSchema`), so this is validated as a non-empty id and resolved to a
+ * label/colour through the active `RatingConfig`. `low`/`medium`/`high` are the
+ * default scale's ids.
+ */
+export const RiskRatingSchema = z.string().min(1);
 export type RiskRating = z.infer<typeof RiskRatingSchema>;
 
 /** Line-of-defence role that performed a human action (governance). */

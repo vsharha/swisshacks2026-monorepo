@@ -8,6 +8,7 @@
 	import ClipboardText from 'phosphor-svelte/lib/ClipboardText';
 	import GithubLogo from 'phosphor-svelte/lib/GithubLogo';
 	import ArrowUpRight from 'phosphor-svelte/lib/ArrowUpRight';
+	import SlidersHorizontal from 'phosphor-svelte/lib/SlidersHorizontal';
 
 	const REPO_URL = 'https://github.com/vsharha/swisshacks2026-monorepo';
 
@@ -17,6 +18,7 @@
 		selected,
 		onRoleChange,
 		onOpenAudit,
+		onOpenRatings,
 		onHome
 	}: {
 		auditCount: number;
@@ -24,6 +26,7 @@
 		selected: boolean;
 		onRoleChange: (r: HumanRole) => void;
 		onOpenAudit: () => void;
+		onOpenRatings: () => void;
 		onHome: () => void;
 	} = $props();
 
@@ -94,6 +97,18 @@
 		{/if}
 
 		<ModeToggle />
+
+		<Button
+			variant="outline"
+			size="sm"
+			class="border-line text-muted2 hover:text-text gap-2 rounded-md px-2.5 text-[11px] font-medium"
+			onclick={onOpenRatings}
+			title="Customise the KYC rating scale"
+			aria-label="Customise the KYC rating scale"
+		>
+			<SlidersHorizontal weight="bold" />
+			<span class="hidden md:inline">Rating scale</span>
+		</Button>
 
 		<Button
 			href={REPO_URL}

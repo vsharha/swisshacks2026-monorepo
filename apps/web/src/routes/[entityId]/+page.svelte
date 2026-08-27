@@ -2,7 +2,13 @@
 	import { untrack } from 'svelte';
 	import { toast } from 'svelte-sonner';
 	import { goto, invalidateAll } from '$app/navigation';
-	import { AXES, type Alert, type AuditEntry, type RiskRating } from '@kyc/core';
+	import {
+		AXES,
+		ratingLabel as coreRatingLabel,
+		type Alert,
+		type AuditEntry,
+		type RiskRating
+	} from '@kyc/core';
 	import { scoreDriftVector } from '@kyc/core/drift';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import CompanyDetail from '$lib/components/app/CompanyDetail.svelte';
@@ -37,7 +43,7 @@
 
 	type ActionResult = { type: string; data?: Record<string, unknown> };
 
-	const ratingLabel = (r: RiskRating) => r.charAt(0).toUpperCase() + r.slice(1);
+	const ratingLabel = (r: RiskRating) => coreRatingLabel(data.ratingConfig, r);
 
 	// Map the priority audit entries an action appended into toasts.
 	function toastEvents(events: AuditEntry[]) {
@@ -158,7 +164,12 @@
 <div class="grid min-h-0 flex-1 grid-cols-[240px_1fr_264px] gap-5">
 	<!-- Left · selected customer detail -->
 	<aside class="border-line flex min-h-0 min-w-0 flex-col gap-3 border-r pr-4 pt-4 pb-4">
-		<CompanyDetail entity={selected} rating={data.rating} onback={() => goto('/')} />
+		<CompanyDetail
+			entity={selected}
+			rating={data.rating}
+			ratingConfig={data.ratingConfig}
+			onback={() => goto('/')}
+		/>
 		<CostFunnel {funnel} {llmCost} />
 	</aside>
 

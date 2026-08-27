@@ -1,13 +1,19 @@
 <script lang="ts">
-	import type { RiskRating } from '@kyc/core';
+	import { ratingColor, ratingLabel, type RatingConfig, type RiskRating } from '@kyc/core';
 	import { fmtDate, statusVar, type BookEntity } from '$lib/view';
 	import { Button } from '$lib/components/ui/button/index.js';
 
 	let {
 		entity,
 		rating,
+		ratingConfig,
 		onback
-	}: { entity: BookEntity; rating: RiskRating | undefined; onback: () => void } = $props();
+	}: {
+		entity: BookEntity;
+		rating: RiskRating | undefined;
+		ratingConfig: RatingConfig;
+		onback: () => void;
+	} = $props();
 
 	const baseline = $derived(entity.baseline);
 	const status = $derived(entity.drift.status);
@@ -40,10 +46,17 @@
 		<dt class="text-muted2">Onboarded</dt>
 		<dd class="text-text2 font-mono">{fmtDate(baseline.onboardedAt)}</dd>
 
-		<dt class="text-muted2">Baseline</dt>
-		<dd class="text-text2 uppercase">
-			{baseline.riskRating}{#if drifted}<span class="uppercase" style="color: var(--alert)">
-					→ {drifted}</span
+		<dt class="text-muted2">Rating</dt>
+		<dd class="flex items-center gap-1.5">
+			<span
+				class="font-medium"
+				style="color: {ratingColor(ratingConfig, baseline.riskRating)}"
+				title="Onboarding rating">{ratingLabel(ratingConfig, baseline.riskRating)}</span
+			>
+			{#if drifted}<span class="text-muted2">→</span><span
+					class="font-semibold"
+					style="color: {ratingColor(ratingConfig, drifted)}"
+					title="Current rating">{ratingLabel(ratingConfig, drifted)}</span
 				>{/if}
 		</dd>
 
