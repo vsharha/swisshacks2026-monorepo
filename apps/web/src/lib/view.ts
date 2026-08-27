@@ -40,9 +40,36 @@ export const AXIS_LABEL: Record<DriftAxis, string> = {
 	reputation: 'Reputation / media'
 };
 
-/** ISO timestamp → YYYY-MM-DD. */
-export function fmtDate(d: string): string {
-	return d.slice(0, 10);
+/**
+ * Human-readable calendar date, e.g. `19 Aug 2026`. Accepts an ISO string, epoch
+ * millis, or a Date. Formatted in UTC so a date never slips a day across timezones
+ * (signals carry ISO dates, not wall-clock local times).
+ */
+export function fmtDate(d: string | number | Date): string {
+	const date = d instanceof Date ? d : new Date(typeof d === 'number' ? d : Date.parse(d));
+	if (Number.isNaN(date.getTime())) return typeof d === 'string' ? d.slice(0, 10) : '';
+	return date.toLocaleDateString('en-GB', {
+		day: '2-digit',
+		month: 'short',
+		year: 'numeric',
+		timeZone: 'UTC'
+	});
+}
+
+/** Time of day, e.g. `14:30` (UTC, 24h). */
+export function fmtTime(d: string | number | Date): string {
+	const date = d instanceof Date ? d : new Date(typeof d === 'number' ? d : Date.parse(d));
+	if (Number.isNaN(date.getTime())) return '';
+	return date.toLocaleTimeString('en-GB', {
+		hour: '2-digit',
+		minute: '2-digit',
+		timeZone: 'UTC'
+	});
+}
+
+/** Full timestamp, e.g. `19 Aug 2026 · 14:30`. */
+export function fmtDateTime(d: string | number | Date): string {
+	return `${fmtDate(d)} · ${fmtTime(d)}`;
 }
 
 /** SEC 8-K item code → short plain-English label. */
@@ -161,7 +188,7 @@ export function deriveMarketResearch(s: Signal): string {
 		case 'sec_edgar': {
 			const form = str(p.form);
 			const reportDate = str(p.reportDate);
-			return `Regulatory filing${form ? ` ${form}` : ''}${reportDate ? ` · ${reportDate.slice(0, 10)}` : ''}`;
+			return `Regulatory filing${form ? ` ${form}` : ''}${reportDate ? ` · ${fmtDate(reportDate)}` : ''}`;
 		}
 		case 'chain': {
 			const magnitude = num(p.magnitudeUsd);

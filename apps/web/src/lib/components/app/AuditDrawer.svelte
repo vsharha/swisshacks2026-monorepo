@@ -3,6 +3,7 @@
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { fmtDateTime } from '$lib/view';
 	import type { UiAction } from '$lib/ui.svelte';
 
 	let {
@@ -41,7 +42,7 @@
 		outcome: 'var(--alert)'
 	};
 
-	const time = (ts: string) => new Date(ts).toLocaleTimeString('en-GB');
+	const time = (ts: string) => fmtDateTime(ts);
 </script>
 
 <Sheet.Root bind:open>

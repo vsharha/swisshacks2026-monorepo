@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Signal } from '@kyc/core';
+	import { fmtDate } from '$lib/view';
 
 	let {
 		signals,
@@ -25,8 +26,7 @@
 		return ((t - start) / (end - start)) * 100;
 	}
 
-	const fmt = (t: number) =>
-		new Date(t).toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: '2-digit' });
+	const fmt = (t: number) => fmtDate(t);
 </script>
 
 <div class="flex flex-col gap-1.5">
